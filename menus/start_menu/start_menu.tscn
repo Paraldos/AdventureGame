@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dktms3asg5cjd"]
+[gd_scene load_steps=5 format=3 uid="uid://dktms3asg5cjd"]
 
+[ext_resource type="Texture2D" uid="uid://c85fb8ma5v5du" path="res://assets/img/Forest.png" id="1_ct3sm"]
 [ext_resource type="Theme" uid="uid://hkvsdpf57b8i" path="res://themes/main_theme.tres" id="1_dwi2f"]
 [ext_resource type="Texture2D" uid="uid://cp3ka6qwl6pir" path="res://assets/img/menu_background.png" id="2_vx1b8"]
 
@@ -20,22 +21,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_dwi2f")
-columns = 2
+texture = ExtResource("1_ct3sm")
+expand_mode = 3
 
-[node name="Panel" type="Panel" parent="GridContainer"]
-layout_mode = 2
+[node name="Panel" type="Panel" parent="."]
+offset_right = 111.0
+offset_bottom = 224.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("1_dwi2f")
 theme_override_styles/panel = SubResource("StyleBoxTexture_ct3sm")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,18 +49,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Button" type="Button" parent="GridContainer/Panel/VBoxContainer"]
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "New Game"
 
-[node name="Button2" type="Button" parent="GridContainer/Panel/VBoxContainer"]
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Load Game"
 
-[node name="Button3" type="Button" parent="GridContainer/Panel/VBoxContainer"]
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Options"
 
-[node name="Button4" type="Button" parent="GridContainer/Panel/VBoxContainer"]
+[node name="Button4" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Exit"

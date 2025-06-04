@@ -22,7 +22,7 @@ window/size/viewport_height=224
 window/size/window_width_override=786
 window/size/window_height_override=672
 window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
+window/stretch/aspect="keep_width"
 
 [rendering]
 
