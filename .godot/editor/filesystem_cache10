@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1749031506
+::res://::1749049053
 icon.svg::CompressedTexture2D/CompressedTexture2D::4651596545558766206::1748968129::1748968137::1::::<><><>0<>0<>6426e64e59806102689f4b9fee933573<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1749001079
 ::res://addons/pixel_art_preset/::1749001332
@@ -8,13 +8,21 @@ icon.svg::CompressedTexture2D/CompressedTexture2D::4651596545558766206::17489681
 ::res://assets/fonts/::1749000744
 Pixel Lofi.otf::FontFile/FontFile::5165438923637274998::1749000744::1749000744::1::::<><><>0<>0<>b0f284f1694b3e60b1b13c3962008fe8<>res://.godot/imported/Pixel Lofi.otf-52ff08eddb7d5669a33ca98b7c19ad65.fontdata::
 PixelSimpel.otf::FontFile/FontFile::8311948867811791580::1749000686::1749000686::1::::<><><>0<>0<>f09806a6aece80a6b294c105e78bad19<>res://.godot/imported/PixelSimpel.otf-69d0e21ece5bd291e92995038c14635a.fontdata::
-::res://assets/img/::1749025369
+::res://assets/img/::1749050937
 fighter.png::CompressedTexture2D/CompressedTexture2D::3284778310441962822::1749009814::1749009814::1::::<><><>0<>0<>ca08f2dffc4daf10cc8ee3e7019a9428<>res://.godot/imported/fighter.png-d7ca9c9b1cd4be704837c8b5db121f61.ctex::
-Forest (1).png::CompressedTexture2D/CompressedTexture2D::3919172120582516850::1749008114::1749008114::1::::<><><>0<>0<>7842e18f24a1f59413961a3ff4970482<>res://.godot/imported/Forest (1).png-4a119b7f47f68d15659b725baaed4fdf.ctex::
+Forest (1).png::CompressedTexture2D/CompressedTexture2D::3919172120582516850::1749050970::1749050995::1::::<><><>0<>0<>7842e18f24a1f59413961a3ff4970482<>res://.godot/imported/Forest (1).png-4a119b7f47f68d15659b725baaed4fdf.ctex::
 Forest (2).png::CompressedTexture2D/CompressedTexture2D::5281132691016535837::1749008114::1749008114::1::::<><><>0<>0<>baf6621c9324a5dd999e13064e823368<>res://.godot/imported/Forest (2).png-8d333cc95d588b9d7164142eea1088bd.ctex::
 menu_background.png::CompressedTexture2D/CompressedTexture2D::5884085422954266437::1749002479::1749002480::1::::<><><>0<>0<>209df499e9b6337d3452fe5cdd80aa49<>res://.godot/imported/menu_background.png-9d2de854b9e6767900b32a90282ea6b8.ctex::
 ::res://menus/::1748968482
-::res://menus/start_menu/::1749023441
-start_menu.tscn::PackedScene/PackedScene::7901135884471089869::1749023441::0::1::::<><><>0<>0<><>::uid://bv3qgshk50hug::::res://assets/img/Forest (1).png<>uid://hkvsdpf57b8i::::res://themes/main_theme.tres<>uid://cp3ka6qwl6pir::::res://assets/img/menu_background.png
-::res://themes/::1749023441
-main_theme.tres::Theme/Theme::513273065155852206::1749023441::0::1::::<><><>0<>0<><>::uid://cfuga3gyhrlvi::::res://assets/fonts/Pixel Lofi.otf
+::res://menus/start_menu/::1749050942
+start_menu.gd::GDScript::4562480055973176381::1749032380::0::1::::<>CanvasLayer<><>0<>0<><>::
+start_menu.tscn::PackedScene::7901135884471089869::1749050942::0::1::::<><><>0<>0<><>::uid://b6adm6g8c5j8h::::res://menus/start_menu/start_menu.gd<>uid://bv3qgshk50hug::::res://assets/img/Forest (1).png<>uid://hkvsdpf57b8i::::res://themes/main_theme.tres<>uid://cp3ka6qwl6pir::::res://assets/img/menu_background.png
+::res://tec/::1749031855
+::res://tec/scene_changer/::1749032838
+scene_changer.gd::GDScript::1383486357117048196::1749032688::0::1::::<>CanvasLayer<><>0<>0<><>::
+scene_changer.tscn::PackedScene::7643971509393058331::1749032838::0::1::::<><><>0<>0<><>::uid://tyf222oqcec7::::res://tec/scene_changer/scene_changer.gd
+::res://themes/::1749049060
+main_theme.tres::Theme::513273065155852206::1749049060::0::1::::<><><>0<>0<><>::uid://cfuga3gyhrlvi::::res://assets/fonts/Pixel Lofi.otf
+::res://world/::1749032364
+::res://world/locations/::1749050942
+location_template.tscn::PackedScene::4784902059343131733::1749050942::0::1::::<><><>0<>0<><>::uid://bv3qgshk50hug::::res://assets/img/Forest (1).png

@@ -1,9 +1,9 @@
 CanvasLayer
+TextureRect
 Polygon2D
 AnimationPlayer
 ColorRect
 Node
-TextureRect
 Button
 Control
 Panel

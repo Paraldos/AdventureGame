@@ -1,6 +1,15 @@
-[gd_scene format=3 uid="uid://caf3vxlpej462"]
+[gd_scene load_steps=2 format=3 uid="uid://caf3vxlpej462"]
 
-[node name="LocationTemplate" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bv3qgshk50hug" path="res://assets/img/Forest (1).png" id="1_yti5r"]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(70, 102, 145, 47, 212, 123, 79, 197)
+[node name="LocationTemplate" type="CanvasLayer"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yti5r")
+expand_mode = 5
+stretch_mode = 5
