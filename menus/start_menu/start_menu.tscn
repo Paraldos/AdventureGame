@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dktms3asg5cjd"]
+[gd_scene load_steps=6 format=3 uid="uid://dktms3asg5cjd"]
 
+[ext_resource type="Script" uid="uid://b6adm6g8c5j8h" path="res://menus/start_menu/start_menu.gd" id="1_12nag"]
 [ext_resource type="Texture2D" uid="uid://bv3qgshk50hug" path="res://assets/img/Forest (1).png" id="1_ct3sm"]
 [ext_resource type="Theme" uid="uid://hkvsdpf57b8i" path="res://themes/main_theme.tres" id="1_dwi2f"]
 [ext_resource type="Texture2D" uid="uid://cp3ka6qwl6pir" path="res://assets/img/menu_background.png" id="2_vx1b8"]
@@ -12,6 +13,7 @@ texture_margin_right = 16.0
 texture_margin_bottom = 16.0
 
 [node name="StartMenu" type="CanvasLayer"]
+script = ExtResource("1_12nag")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -49,7 +51,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+[node name="NewBtn" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "New Game"
 
@@ -64,3 +66,5 @@ text = "Options"
 [node name="Button4" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
+
+[connection signal="pressed" from="Panel/VBoxContainer/NewBtn" to="." method="_on_new_btn_pressed"]

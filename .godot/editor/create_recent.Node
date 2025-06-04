@@ -1,3 +1,8 @@
+CanvasLayer
+Polygon2D
+AnimationPlayer
+ColorRect
+Node
 TextureRect
 Button
 Control
@@ -6,6 +11,3 @@ Label
 GridContainer
 HBoxContainer
 VBoxContainer
-Polygon2D
-ColorRect
-CanvasLayer

@@ -15,6 +15,10 @@ run/main_scene="uid://dktms3asg5cjd"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneChanger="*res://tec/scene_changer/scene_changer.tscn"
+
 [display]
 
 window/size/viewport_width=256
