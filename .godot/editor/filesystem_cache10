@@ -1,3 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1748968136
-icon.svg::CompressedTexture2D::4651596545558766206::1748968129::1748968137::1::::<><><>0<>0<>6426e64e59806102689f4b9fee933573<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://::1749000714
+icon.svg::CompressedTexture2D/CompressedTexture2D::4651596545558766206::1748968129::1748968137::1::::<><><>0<>0<>6426e64e59806102689f4b9fee933573<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1749000676
+::res://assets/fonts/::1749000744
+Pixel Lofi.otf::FontFile::5165438923637274998::1749000744::1749000744::1::::<><><>0<>0<>b0f284f1694b3e60b1b13c3962008fe8<>res://.godot/imported/Pixel Lofi.otf-52ff08eddb7d5669a33ca98b7c19ad65.fontdata::
+PixelSimpel.otf::FontFile::8311948867811791580::1749000686::1749000686::1::::<><><>0<>0<>f09806a6aece80a6b294c105e78bad19<>res://.godot/imported/PixelSimpel.otf-69d0e21ece5bd291e92995038c14635a.fontdata::
+::res://menus/::1748968482
+::res://menus/start_menu/::1749000381
+start_menu.tscn::PackedScene::7901135884471089869::1749000381::0::1::::<><><>0<>0<><>::
+::res://themes/::1749000720
+main_theme.tres::Theme::513273065155852206::1749000720::0::1::::<><><>0<>0<><>::
