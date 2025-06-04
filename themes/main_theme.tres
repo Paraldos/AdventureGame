@@ -26,7 +26,6 @@ Button/colors/font_focus_color = Color(0.976471, 0.658824, 0.145098, 1)
 Button/colors/font_hover_color = Color(0.976471, 0.658824, 0.145098, 1)
 Button/colors/font_hover_pressed_color = Color(0.992157, 0.847059, 0.207843, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/constants/outline_size = 3
 Button/styles/focus = SubResource("StyleBoxEmpty_rjgu6")
 Button/styles/hover = SubResource("StyleBoxEmpty_vu6l5")
 Button/styles/normal = SubResource("StyleBoxEmpty_ydht1")

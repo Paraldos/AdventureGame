@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dktms3asg5cjd"]
+[gd_scene load_steps=6 format=3 uid="uid://dktms3asg5cjd"]
 
-[ext_resource type="Texture2D" uid="uid://c85fb8ma5v5du" path="res://assets/img/Forest.png" id="1_ct3sm"]
+[ext_resource type="Texture2D" uid="uid://bv3qgshk50hug" path="res://assets/img/Forest (1).png" id="1_ct3sm"]
 [ext_resource type="Theme" uid="uid://hkvsdpf57b8i" path="res://themes/main_theme.tres" id="1_dwi2f"]
 [ext_resource type="Texture2D" uid="uid://cp3ka6qwl6pir" path="res://assets/img/menu_background.png" id="2_vx1b8"]
+[ext_resource type="Texture2D" uid="uid://bm2f23uriprg5" path="res://assets/img/fighter.png" id="4_12nag"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ct3sm"]
 texture = ExtResource("2_vx1b8")
@@ -64,3 +65,8 @@ text = "Options"
 [node name="Button4" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
+
+[node name="Fighter" type="Sprite2D" parent="."]
+position = Vector2(177, 166)
+texture = ExtResource("4_12nag")
+flip_h = true
