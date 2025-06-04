@@ -1,12 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1749000714
+::res://::1749001868
 icon.svg::CompressedTexture2D/CompressedTexture2D::4651596545558766206::1748968129::1748968137::1::::<><><>0<>0<>6426e64e59806102689f4b9fee933573<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://assets/::1749000676
+::res://addons/::1749001079
+::res://addons/pixel_art_preset/::1749001332
+::res://addons/pixel_art_preset/images/::1749001332
+::res://assets/::1749001818
 ::res://assets/fonts/::1749000744
-Pixel Lofi.otf::FontFile::5165438923637274998::1749000744::1749000744::1::::<><><>0<>0<>b0f284f1694b3e60b1b13c3962008fe8<>res://.godot/imported/Pixel Lofi.otf-52ff08eddb7d5669a33ca98b7c19ad65.fontdata::
-PixelSimpel.otf::FontFile::8311948867811791580::1749000686::1749000686::1::::<><><>0<>0<>f09806a6aece80a6b294c105e78bad19<>res://.godot/imported/PixelSimpel.otf-69d0e21ece5bd291e92995038c14635a.fontdata::
+Pixel Lofi.otf::FontFile/FontFile::5165438923637274998::1749000744::1749000744::1::::<><><>0<>0<>b0f284f1694b3e60b1b13c3962008fe8<>res://.godot/imported/Pixel Lofi.otf-52ff08eddb7d5669a33ca98b7c19ad65.fontdata::
+PixelSimpel.otf::FontFile/FontFile::8311948867811791580::1749000686::1749000686::1::::<><><>0<>0<>f09806a6aece80a6b294c105e78bad19<>res://.godot/imported/PixelSimpel.otf-69d0e21ece5bd291e92995038c14635a.fontdata::
+::res://assets/img/::1749002214
+menu_background.png::CompressedTexture2D::5884085422954266437::1749002479::1749002480::1::::<><><>0<>0<>209df499e9b6337d3452fe5cdd80aa49<>res://.godot/imported/menu_background.png-9d2de854b9e6767900b32a90282ea6b8.ctex::
 ::res://menus/::1748968482
-::res://menus/start_menu/::1749000381
-start_menu.tscn::PackedScene::7901135884471089869::1749000381::0::1::::<><><>0<>0<><>::
-::res://themes/::1749000720
-main_theme.tres::Theme::513273065155852206::1749000720::0::1::::<><><>0<>0<><>::
+::res://menus/start_menu/::1749002148
+start_menu.tscn::PackedScene::7901135884471089869::1749002148::0::1::::<><><>0<>0<><>::uid://hkvsdpf57b8i::::res://themes/main_theme.tres<>uid://cp3ka6qwl6pir::::res://assets/img/menu_background.png
+::res://themes/::1749001565
+main_theme.tres::Theme::513273065155852206::1749001565::0::1::::<><><>0<>0<><>::uid://cfuga3gyhrlvi::::res://assets/fonts/Pixel Lofi.otf
