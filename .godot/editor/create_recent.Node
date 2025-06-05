@@ -1,3 +1,6 @@
+MarginContainer
+Panel
+Control
 CanvasLayer
 TextureRect
 Polygon2D
@@ -5,8 +8,6 @@ AnimationPlayer
 ColorRect
 Node
 Button
-Control
-Panel
 Label
 GridContainer
 HBoxContainer
