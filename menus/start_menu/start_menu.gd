@@ -6,3 +6,6 @@ func _on_new_btn_pressed() -> void:
 
 func _randome_background():
 	pass
+
+func _on_load_btn_pressed() -> void:
+	print("Load button pressed")
