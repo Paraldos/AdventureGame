@@ -1,10 +1,10 @@
+Control
 GridContainer
 Button
 PanelContainer
 HBoxContainer
 MarginContainer
 Panel
-Control
 CanvasLayer
 TextureRect
 Polygon2D

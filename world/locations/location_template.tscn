@@ -14,32 +14,41 @@ texture = ExtResource("1_yti5r")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -72.0
-offset_top = -15.0
+offset_top = -15.5
 offset_right = 72.0
-offset_bottom = 16.0
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="GridContainer" parent="Panel"]
+[node name="HBoxContainer" type="GridContainer" parent="Control/Panel"]
 layout_mode = 2
 size_flags_horizontal = 4
 columns = 3
 
-[node name="Button" type="Button" parent="Panel/HBoxContainer"]
+[node name="Button" type="Button" parent="Control/Panel/HBoxContainer"]
 layout_mode = 2
 text = "AR"
 
-[node name="Button2" type="Button" parent="Panel/HBoxContainer"]
+[node name="Button2" type="Button" parent="Control/Panel/HBoxContainer"]
 layout_mode = 2
 text = "AR"
 
-[node name="Button3" type="Button" parent="Panel/HBoxContainer"]
+[node name="Button3" type="Button" parent="Control/Panel/HBoxContainer"]
 layout_mode = 2
 text = "AR"

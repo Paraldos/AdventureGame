@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1749207613
+::res://::1749457407
 icon.svg::CompressedTexture2D/CompressedTexture2D::4651596545558766206::1748968129::1748968137::1::::<><><>0<>0<>6426e64e59806102689f4b9fee933573<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1749001079
 ::res://addons/pixel_art_preset/::1749001332
@@ -15,14 +15,14 @@ Forest (2).png::CompressedTexture2D/CompressedTexture2D::5281132691016535837::17
 menu_background.png::CompressedTexture2D/CompressedTexture2D::5884085422954266437::1749002479::1749002480::1::::<><><>0<>0<>209df499e9b6337d3452fe5cdd80aa49<>res://.godot/imported/menu_background.png-9d2de854b9e6767900b32a90282ea6b8.ctex::
 ::res://menus/::1748968482
 ::res://menus/start_menu/::1749050942
-start_menu.gd::GDScript/GDScript::4562480055973176381::1749032380::0::1::::<>CanvasLayer<><>0<>0<><>::
+start_menu.gd::GDScript::4562480055973176381::1749412460::0::1::::<>CanvasLayer<><>0<>0<><>::
 start_menu.tscn::PackedScene/PackedScene::7901135884471089869::1749050942::0::1::::<><><>0<>0<><>::uid://b6adm6g8c5j8h::::res://menus/start_menu/start_menu.gd<>uid://bv3qgshk50hug::::res://assets/img/Forest (1).png<>uid://hkvsdpf57b8i::::res://themes/main_theme.tres<>uid://cp3ka6qwl6pir::::res://assets/img/menu_background.png
 ::res://tec/::1749031855
 ::res://tec/scene_changer/::1749032838
 scene_changer.gd::GDScript/GDScript::1383486357117048196::1749032688::0::1::::<>CanvasLayer<><>0<>0<><>::
 scene_changer.tscn::PackedScene/PackedScene::7643971509393058331::1749032838::0::1::::<><><>0<>0<><>::uid://tyf222oqcec7::::res://tec/scene_changer/scene_changer.gd
-::res://themes/::1749109635
-main_theme.tres::Theme::513273065155852206::1749109635::0::1::::<><><>0<>0<><>::uid://cfuga3gyhrlvi::::res://assets/fonts/Pixel Lofi.otf
+::res://themes/::1749207681
+main_theme.tres::Theme::513273065155852206::1749207681::0::1::::<><><>0<>0<><>::uid://cfuga3gyhrlvi::::res://assets/fonts/Pixel Lofi.otf
 ::res://world/::1749032364
-::res://world/locations/::1749109634
-location_template.tscn::PackedScene::4784902059343131733::1749109634::0::1::::<><><>0<>0<><>::uid://bv3qgshk50hug::::res://assets/img/Forest (1).png
+::res://world/locations/::1749207688
+location_template.tscn::PackedScene::4784902059343131733::1749207688::0::1::::<><><>0<>0<><>::uid://bv3qgshk50hug::::res://assets/img/Forest (1).png
