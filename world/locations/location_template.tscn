@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://caf3vxlpej462"]
+[gd_scene load_steps=5 format=3 uid="uid://caf3vxlpej462"]
 
 [ext_resource type="Texture2D" uid="uid://bv3qgshk50hug" path="res://assets/img/Forest (1).png" id="1_yti5r"]
+[ext_resource type="Texture2D" uid="uid://dih6xu5dny3ep" path="res://assets/img/panel.png" id="2_i47tb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ip30t"]
+texture = ExtResource("2_i47tb")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="Theme" id="Theme_hsiw2"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ip30t")
 
 [node name="LocationTemplate" type="CanvasLayer"]
 
@@ -21,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_hsiw2")
 
 [node name="Panel" type="PanelContainer" parent="Control"]
 layout_mode = 1
