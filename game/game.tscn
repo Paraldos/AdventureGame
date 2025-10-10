@@ -30,18 +30,6 @@ position = Vector2(80, 96)
 [node name="Creature3" parent="." instance=ExtResource("2_h7iqs")]
 position = Vector2(120, 96)
 
-[node name="Creature4" parent="." instance=ExtResource("2_h7iqs")]
-position = Vector2(200, 96)
-scale = Vector2(-1, 1)
-
-[node name="Creature5" parent="." instance=ExtResource("2_h7iqs")]
-position = Vector2(240, 96)
-scale = Vector2(-1, 1)
-
-[node name="Creature6" parent="." instance=ExtResource("2_h7iqs")]
-position = Vector2(280, 96)
-scale = Vector2(-1, 1)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]

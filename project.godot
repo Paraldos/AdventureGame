@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="uid://dh5nnoo583xdg"
+run/main_scene="uid://dxrdh8o85iiyl"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameData="*res://singeltons/game_data.gd"
+SceneManager="*res://singeltons/scene_manager.tscn"
 
 [display]
 
