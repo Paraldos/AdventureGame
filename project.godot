@@ -10,26 +10,11 @@ config_version=5
 
 [application]
 
-config/name="AdventureGame"
-run/main_scene="uid://dktms3asg5cjd"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/name="New Game Project"
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[autoload]
-
-SceneChanger="*res://tec/scene_changer/scene_changer.tscn"
-
-[display]
-
-window/size/viewport_width=256
-window/size/viewport_height=224
-window/size/window_width_override=786
-window/size/window_height_override=672
-window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_width"
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
