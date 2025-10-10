@@ -1,7 +1,104 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh5nnoo583xdg"]
+[gd_scene load_steps=4 format=3 uid="uid://dh5nnoo583xdg"]
 
-[ext_resource type="PackedScene" uid="uid://da0m2aguaj7an" path="res://location_ui/location_ui.tscn" id="1_l1rk1"]
+[ext_resource type="PackedScene" uid="uid://cc5lnbv826w40" path="res://creatures/templates/creature.tscn" id="2_h7iqs"]
+[ext_resource type="Texture2D" uid="uid://hjtc3d34co3y" path="res://assets/img/floor.png" id="2_vasa2"]
+[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="3_h7iqs"]
 
 [node name="Game" type="Node2D"]
 
-[node name="LocationUi" parent="." instance=ExtResource("1_l1rk1")]
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 0.078431375, 0.12156863, 1)
+
+[node name="Floor" type="Sprite2D" parent="."]
+position = Vector2(160, 112)
+texture = ExtResource("2_vasa2")
+
+[node name="Creature" parent="." instance=ExtResource("2_h7iqs")]
+position = Vector2(40, 96)
+
+[node name="Creature2" parent="." instance=ExtResource("2_h7iqs")]
+position = Vector2(80, 96)
+
+[node name="Creature3" parent="." instance=ExtResource("2_h7iqs")]
+position = Vector2(120, 96)
+
+[node name="Creature4" parent="." instance=ExtResource("2_h7iqs")]
+position = Vector2(200, 96)
+scale = Vector2(-1, 1)
+
+[node name="Creature5" parent="." instance=ExtResource("2_h7iqs")]
+position = Vector2(240, 96)
+scale = Vector2(-1, 1)
+
+[node name="Creature6" parent="." instance=ExtResource("2_h7iqs")]
+position = Vector2(280, 96)
+scale = Vector2(-1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_h7iqs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bert"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fighter"
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

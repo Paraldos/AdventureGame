@@ -1,0 +1,94 @@
+[gd_scene load_steps=15 format=3 uid="uid://cc5lnbv826w40"]
+
+[ext_resource type="Script" uid="uid://dumim65fw3rvl" path="res://creatures/templates/creature.gd" id="1_fk5vs"]
+[ext_resource type="Texture2D" uid="uid://cjknrdyfjs33a" path="res://assets/img/life_bar-Sheet.png" id="1_p10ob"]
+[ext_resource type="Texture2D" uid="uid://ctivve7vptkfp" path="res://assets/img/Idle_Right_Down.png" id="2_fk5vs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fuuu"]
+atlas = ExtResource("1_p10ob")
+region = Rect2(0, 0, 31, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxrkv"]
+atlas = ExtResource("1_p10ob")
+region = Rect2(0, 6, 31, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7iqs"]
+atlas = ExtResource("2_fk5vs")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dakft"]
+atlas = ExtResource("2_fk5vs")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5opy"]
+atlas = ExtResource("2_fk5vs")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y36n6"]
+atlas = ExtResource("2_fk5vs")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8g03"]
+atlas = ExtResource("2_fk5vs")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8tme"]
+atlas = ExtResource("2_fk5vs")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vho3"]
+atlas = ExtResource("2_fk5vs")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf6n1"]
+atlas = ExtResource("2_fk5vs")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsp63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7iqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dakft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5opy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y36n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8g03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8tme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vho3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf6n1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Creature" type="Node2D"]
+script = ExtResource("1_fk5vs")
+
+[node name="Lifebar" type="TextureProgressBar" parent="."]
+offset_left = -16.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 24.0
+value = 50.0
+texture_under = SubResource("AtlasTexture_4fuuu")
+texture_progress = SubResource("AtlasTexture_dxrkv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vsp63")
+autoplay = "default"
+frame_progress = 0.1261571
