@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dxbr2pe0xoeby"]
+
+[ext_resource type="FontFile" uid="uid://bve80n4wytaqf" path="res://assets/fonts/PixelSimpel.otf" id="1_e04sg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e04sg"]
+content_margin_left = 5.0
+content_margin_top = 6.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0627451, 0.078431375, 0.12156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4509804, 0.74509805, 0.827451, 1)
+
+[resource]
+default_font = ExtResource("1_e04sg")
+default_font_size = 8
+Button/styles/normal = SubResource("StyleBoxFlat_e04sg")

@@ -1,11 +1,11 @@
+Button
+HBoxContainer
+CanvasLayer
 Control
 GridContainer
-Button
 PanelContainer
-HBoxContainer
 MarginContainer
 Panel
-CanvasLayer
 TextureRect
 Polygon2D
 AnimationPlayer

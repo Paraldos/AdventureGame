@@ -1,3 +1,12 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1760121359
+::res://::1760122949
 icon.svg::CompressedTexture2D/CompressedTexture2D::1790880795757653::1760121356::1760121360::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1760122611
+::res://assets/fonts/::1760122605
+PixelSimpel.otf::FontFile::3870692945352214589::1760122604::1760122605::1::::<><><>0<>0<>94130dc326849ab65bcd08efaab1557a<>res://.godot/imported/PixelSimpel.otf-69d0e21ece5bd291e92995038c14635a.fontdata::
+::res://assets/theme/::1760122863
+main_theme.tres::Theme::8776751033017215946::1760122863::0::1::::<><><>0<>0<><>::uid://bve80n4wytaqf::::res://assets/fonts/PixelSimpel.otf
+::res://game/::1760122527
+game.tscn::PackedScene::7713328583756503672::1760122527::0::1::::<><><>0<>0<><>::uid://da0m2aguaj7an::::res://location_ui/location_ui.tscn
+::res://location_ui/::1760122863
+location_ui.tscn::PackedScene::7211648325457353045::1760122863::0::1::::<><><>0<>0<><>::uid://dxbr2pe0xoeby::::res://assets/theme/main_theme.tres
