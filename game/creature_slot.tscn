@@ -45,13 +45,16 @@ _data = {
 script = ExtResource("1_8jju3")
 
 [node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
 offset_left = -8.0
 offset_top = -20.0
 offset_right = 8.0
 offset_bottom = 16.0
 theme = ExtResource("1_mabo7")
+disabled = true
 
 [node name="Pointer" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, -18)
 texture = ExtResource("2_8jju3")
 
@@ -61,3 +64,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_y36n6")
 }
 autoplay = "loop"
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
