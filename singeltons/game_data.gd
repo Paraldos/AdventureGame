@@ -1,3 +1,4 @@
 extends Node
 
-var heros = []
+var creatures = []
+var selected_hero = 0

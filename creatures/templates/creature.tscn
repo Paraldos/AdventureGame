@@ -2,93 +2,113 @@
 
 [ext_resource type="Script" uid="uid://dumim65fw3rvl" path="res://creatures/templates/creature.gd" id="1_fk5vs"]
 [ext_resource type="Texture2D" uid="uid://cjknrdyfjs33a" path="res://assets/img/life_bar-Sheet.png" id="1_p10ob"]
-[ext_resource type="Texture2D" uid="uid://ctivve7vptkfp" path="res://assets/img/Idle_Right_Down.png" id="2_fk5vs"]
+[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="2_r258m"]
+[ext_resource type="Texture2D" uid="uid://bgo4vx2jq2il8" path="res://assets/img/ini_background.png" id="3_jgjw7"]
+[ext_resource type="Texture2D" uid="uid://hws4suxcj775" path="res://assets/img/creature_btn1.png" id="3_kvdc2"]
+[ext_resource type="Texture2D" uid="uid://bbkrjy7811uhk" path="res://assets/img/creature_btn3.png" id="4_4yiu6"]
+[ext_resource type="Texture2D" uid="uid://cov20g0n4tc17" path="res://assets/img/creature_btn2.png" id="5_6uoe4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jgjw7"]
+texture = ExtResource("3_kvdc2")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5cknt"]
+texture = ExtResource("4_4yiu6")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvdc2"]
+texture = ExtResource("4_4yiu6")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4yiu6"]
+texture = ExtResource("5_6uoe4")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6uoe4"]
+texture = ExtResource("4_4yiu6")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4fuuu"]
 atlas = ExtResource("1_p10ob")
-region = Rect2(0, 0, 31, 6)
+region = Rect2(0, 0, 31, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxrkv"]
 atlas = ExtResource("1_p10ob")
-region = Rect2(0, 6, 31, 6)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h7iqs"]
-atlas = ExtResource("2_fk5vs")
-region = Rect2(0, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dakft"]
-atlas = ExtResource("2_fk5vs")
-region = Rect2(48, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5opy"]
-atlas = ExtResource("2_fk5vs")
-region = Rect2(96, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y36n6"]
-atlas = ExtResource("2_fk5vs")
-region = Rect2(144, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l8g03"]
-atlas = ExtResource("2_fk5vs")
-region = Rect2(192, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j8tme"]
-atlas = ExtResource("2_fk5vs")
-region = Rect2(240, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3vho3"]
-atlas = ExtResource("2_fk5vs")
-region = Rect2(288, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qf6n1"]
-atlas = ExtResource("2_fk5vs")
-region = Rect2(336, 0, 48, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vsp63"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h7iqs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dakft")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u5opy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y36n6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l8g03")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j8tme")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3vho3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qf6n1")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+region = Rect2(0, 8, 31, 8)
 
 [node name="Creature" type="Node2D"]
 script = ExtResource("1_fk5vs")
 
-[node name="Lifebar" type="TextureProgressBar" parent="."]
-offset_left = -16.0
-offset_top = 16.0
-offset_right = 16.0
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Idle" type="AnimatedSprite2D" parent="Sprites"]
+unique_name_in_owner = true
+autoplay = "default"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -24.0
+offset_right = 20.0
 offset_bottom = 24.0
+grow_horizontal = 2
+theme = ExtResource("2_r258m")
+theme_override_constants/separation = 1
+
+[node name="MainBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_jgjw7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5cknt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kvdc2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4yiu6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_6uoe4")
+toggle_mode = true
+
+[node name="Control" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_r258m")
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control"]
+layout_mode = 2
+texture = ExtResource("3_jgjw7")
+
+[node name="Label" type="Label" parent="VBoxContainer/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 6
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lifebar" type="TextureProgressBar" parent="VBoxContainer/Control"]
+layout_mode = 2
+size_flags_vertical = 4
 value = 50.0
 texture_under = SubResource("AtlasTexture_4fuuu")
 texture_progress = SubResource("AtlasTexture_dxrkv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_vsp63")
-autoplay = "default"
-frame_progress = 0.1261571
+[connection signal="pressed" from="VBoxContainer/MainBtn" to="." method="_on_main_btn_pressed"]

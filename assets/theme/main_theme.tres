@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dxbr2pe0xoeby"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dxbr2pe0xoeby"]
 
 [ext_resource type="FontFile" uid="uid://bve80n4wytaqf" path="res://assets/fonts/PixelSimpel.otf" id="1_e04sg"]
 [ext_resource type="Texture2D" uid="uid://ci6guqs0arhwi" path="res://assets/img/ability_btn2.png" id="1_thknt"]
@@ -34,6 +34,9 @@ texture_margin_top = 3.0
 texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b85mk"]
+content_margin_top = 2.0
+
 [resource]
 default_font = ExtResource("1_e04sg")
 default_font_size = 8
@@ -41,3 +44,4 @@ Button/styles/disabled = SubResource("StyleBoxTexture_b85mk")
 Button/styles/focus = SubResource("StyleBoxTexture_ryqvi")
 Button/styles/hover = SubResource("StyleBoxTexture_vdebs")
 Button/styles/normal = SubResource("StyleBoxTexture_0vr3v")
+Label/styles/normal = SubResource("StyleBoxEmpty_b85mk")

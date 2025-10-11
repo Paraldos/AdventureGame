@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh5nnoo583xdg"]
+[gd_scene load_steps=5 format=3 uid="uid://dh5nnoo583xdg"]
 
-[ext_resource type="PackedScene" uid="uid://cc5lnbv826w40" path="res://creatures/templates/creature.tscn" id="2_h7iqs"]
+[ext_resource type="Script" uid="uid://c7vse8i5dwtwh" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://hjtc3d34co3y" path="res://assets/img/floor.png" id="2_vasa2"]
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="3_h7iqs"]
+[ext_resource type="PackedScene" uid="uid://cp71gm3mkgqk0" path="res://controlls/main_controlls/main_controlls.tscn" id="4_4fuuu"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_h7iqs")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -21,72 +23,84 @@ color = Color(0.0627451, 0.078431375, 0.12156863, 1)
 position = Vector2(160, 112)
 texture = ExtResource("2_vasa2")
 
-[node name="Creature" parent="." instance=ExtResource("2_h7iqs")]
-position = Vector2(40, 96)
-
-[node name="Creature2" parent="." instance=ExtResource("2_h7iqs")]
-position = Vector2(80, 96)
-
-[node name="Creature3" parent="." instance=ExtResource("2_h7iqs")]
-position = Vector2(120, 96)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -52.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("3_h7iqs")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
-layout_mode = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_h7iqs")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Control2" type="Control" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 0
+mouse_filter = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Bert"
+[node name="VBoxContainer" type="GridContainer" parent="CanvasLayer/HBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -7.0
+offset_right = 32.5
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+columns = 3
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer/Control2/VBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-text = "Fighter"
+size_flags_horizontal = 4
+text = "Map"
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(16, 16)
+[node name="Button2" type="Button" parent="CanvasLayer/HBoxContainer/Control2/VBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+text = "Fight"
 
-[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(16, 16)
+[node name="Button3" type="Button" parent="CanvasLayer/HBoxContainer/Control2/VBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+text = "Search"
 
-[node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(16, 16)
-layout_mode = 2
+[node name="MainControlls" parent="CanvasLayer" instance=ExtResource("4_4fuuu")]
 
-[node name="Button4" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(16, 16)
-layout_mode = 2
+[node name="pos1" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(32, 96)
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="pos2" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(80, 96)
+
+[node name="pos3" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(128, 96)
+
+[node name="pos4" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(192, 96)
+
+[node name="pos5" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(240, 96)
+
+[node name="pos6" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(288, 96)
