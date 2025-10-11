@@ -4,7 +4,7 @@ icon.svg::CompressedTexture2D/CompressedTexture2D::1790880795757653::1760121356:
 ::res://assets/::1760207314
 ::res://assets/fonts/::1760207322
 PixelSimpel.otf::FontFile::3870692945352214589::1760207321::1760207322::1::::<><><>0<>0<>94130dc326849ab65bcd08efaab1557a<>res://.godot/imported/PixelSimpel.otf-69d0e21ece5bd291e92995038c14635a.fontdata::
-::res://assets/img/::1760215016
+::res://assets/img/::1760215815
 ability_btn1.png::CompressedTexture2D::8444476409289733404::1760125584::1760125470::1::::<><><>0<>0<>035ace0b8136755681db549918f8e764<>res://.godot/imported/ability_btn1.png-7a6213d8cfecc0f3c54134f01dd9224f.ctex::
 ability_btn2.png::CompressedTexture2D::5398748714017655352::1760125584::1760125470::1::::<><><>0<>0<>67e1059d6a34d0f7c8d93706a002b416<>res://.godot/imported/ability_btn2.png-27c0b39e9e3cfa0c3299b0671285a894.ctex::
 ability_btn3.png::CompressedTexture2D::6120123556622661002::1760125584::1760125470::1::::<><><>0<>0<>af232ccfa75208004a4f5d365d197597<>res://.godot/imported/ability_btn3.png-d2ab157e4fd50bc9791536dfa99f7a76.ctex::
@@ -14,7 +14,8 @@ accept_btn1.png::CompressedTexture2D::3968527042313344871::1760215016::176021501
 accept_btn2.png::CompressedTexture2D::599908252066579396::1760215016::1760215016::1::::<><><>0<>0<>b0de5648f13d11e5e4606d7d6b854956<>res://.godot/imported/accept_btn2.png-cee726938317c5a23ae259ea6984924c.ctex::
 accept_btn-Sheet.png::CompressedTexture2D::3504420423983613986::1760214353::1760214358::1::::<><><>0<>0<>e006378c87c7c18fcb5cafb6d8781a3a<>res://.godot/imported/accept_btn-Sheet.png-e397ebb077b39e9acc1e582cb78accfb.ctex::
 attributes-Sheet.png::CompressedTexture2D::2011563318671335383::1760210124::1760210125::1::::<><><>0<>0<>34d2d0c2d94880ee0d8de350c4425792<>res://.godot/imported/attributes-Sheet.png-21755acef56ac3f7a344cc7649195a3a.ctex::
-attributes.png::CompressedTexture2D::9204567485866276919::1760210858::1760210860::1::::<><><>0<>0<>d50b64b6dc3592952a613dd1509d4b21<>res://.godot/imported/attributes.png-5cae18129127c27fb879bf475bed35e6.ctex::
+attributes.png::CompressedTexture2D::9204567485866276919::1760215683::1760215683::1::::<><><>0<>0<>d50b64b6dc3592952a613dd1509d4b21<>res://.godot/imported/attributes.png-5cae18129127c27fb879bf475bed35e6.ctex::
+attribute_bubble.png::CompressedTexture2D::4069871422103896960::1760216082::1760216083::1::::<><><>0<>0<>f1fb7d00ae9a9513501f6af1a0a55bf5<>res://.godot/imported/attribute_bubble.png-7c03ea29f2b960c1a2654ff770fea6ea.ctex::
 btn1.png::CompressedTexture2D::6883691133146023147::1760209731::1760209740::1::::<><><>0<>0<>f7486236de59d79db4ab0d05b53a2743<>res://.godot/imported/btn1.png-4e13c2992ebb2f1eb490c13f6a34270d.ctex::
 btn2.png::CompressedTexture2D::1724252160970945795::1760209731::1760209740::1::::<><><>0<>0<>ad59aa4c65049df9ce3040a204d65eed<>res://.godot/imported/btn2.png-8ea9306f2cb96016ccfe770cf802cabd.ctex::
 btn3.png::CompressedTexture2D::613359489470750585::1760209731::1760209740::1::::<><><>0<>0<>195f1f2002ab3ed0d6fc8da0a3dbcc1e<>res://.godot/imported/btn3.png-a7c3121fb537b77868396f5b27edab7b.ctex::
@@ -38,9 +39,9 @@ buff-Sheet.png::CompressedTexture2D::7443979310297649805::1760199483::1760199867
 death-Sheet.png::CompressedTexture2D::133381324396279385::1760199483::1760199867::1::::<><><>0<>0<>2e5e7fb4df8bb0dc9fb574e7aaf7e166<>res://.godot/imported/death-Sheet.png-e2f3d9fe73ec10135ef483eb8e1e87e5.ctex::
 hurt.png::CompressedTexture2D::7815844688442697240::1760199483::1760199867::1::::<><><>0<>0<>950bb69b819ca9d151e1e32738be3b13<>res://.godot/imported/hurt.png-c843c1055a3489ccd67a5d4ce3f097e9.ctex::
 idle-Sheet.png::CompressedTexture2D::6190103550987427244::1760199483::1760199867::1::::<><><>0<>0<>46629b7f9852a7da6707743650b755bd<>res://.godot/imported/idle-Sheet.png-413b18ea0deb7463be1dd8a936f42cbc.ctex::
-::res://assets/theme/::1760209912
+::res://assets/theme/::1760216039
 creature_selector_theme.tres::Theme::7805356251864551329::1760203185::0::1::::<><><>0<>0<><>::uid://cov20g0n4tc17::::res://assets/img/creature_btn2.png<>uid://bbkrjy7811uhk::::res://assets/img/creature_btn3.png<>uid://hws4suxcj775::::res://assets/img/creature_btn1.png
-main_theme.tres::Theme::8776751033017215946::1760209912::0::1::::<><><>0<>0<><>::uid://ytigfo5n1b6b::::res://assets/img/btn2.png<>uid://i0d7aac5t330::::res://assets/img/btn3.png<>uid://c5crnfwg3lwyl::::res://assets/img/btn1.png<>uid://ba44qjj6lavpu::::res://assets/img/panel.png
+main_theme.tres::Theme::8776751033017215946::1760216039::0::1::::<><><>0<>0<><>::uid://ytigfo5n1b6b::::res://assets/img/btn2.png<>uid://i0d7aac5t330::::res://assets/img/btn3.png<>uid://c5crnfwg3lwyl::::res://assets/img/btn1.png<>uid://ba44qjj6lavpu::::res://assets/img/panel.png
 ::res://controlls/::1760163527
 ::res://controlls/main_controlls/::1760202535
 main_controlls.gd::GDScript::4313096603539939187::1760202535::0::1::::<>Control<><>0<>0<><>::
@@ -56,9 +57,9 @@ game.gd::GDScript::7063338092680858847::1760208445::0::1::::<>Node2D<><>0<>0<><>
 game.tscn::PackedScene::7713328583756503672::1760211761::0::1::::<><><>0<>0<><>::uid://c7vse8i5dwtwh::::res://game/game.gd<>uid://dxbr2pe0xoeby::::res://assets/theme/main_theme.tres<>uid://cp71gm3mkgqk0::::res://controlls/main_controlls/main_controlls.tscn<>uid://bynj70jtjetox::::res://assets/img/DESERT TILESET 32x32.png<>uid://b4q7v1n1u370q::::res://game/slot.tscn
 slot.gd::GDScript::2182508635830246127::1760211761::0::1::::Slot<>Marker2D<><>0<>0<><>::
 slot.tscn::PackedScene::4456909025600273538::1760209181::0::1::::<><><>0<>0<><>::uid://6dhulyc34mgl::::res://game/slot.gd<>uid://djg8cvd887cqj::::res://assets/theme/creature_selector_theme.tres<>uid://5t4ole0i0o0s::::res://assets/img/pointer.png
-::res://hero_creation/::1760214894
-hero_creation.gd::GDScript::2614578524080686689::1760211542::0::1::::<>CanvasLayer<><>0<>0<><>::
-hero_creation.tscn::PackedScene::463933016322996884::1760214894::0::1::::<><><>0<>0<><>::uid://dxbr2pe0xoeby::::res://assets/theme/main_theme.tres<>uid://d4e048h4rv6bb::::res://assets/img/attributes.png<>uid://bdiryxumx4r3n::::res://hero_creation/hero_creation.gd<>uid://b2x7o7ognf3q4::::res://assets/img/x_btn1.png<>uid://bwsncca7makd0::::res://assets/img/accept_btn1.png<>uid://b7egansu1kkw0::::res://assets/img/x_btn2.png<>uid://isunv4jk5h3a::::res://assets/img/accept_btn2.png
+::res://hero_creation/::1760216049
+hero_creation.gd::GDScript::2614578524080686689::1760215383::0::1::::<>CanvasLayer<><>0<>0<><>::
+hero_creation.tscn::PackedScene::463933016322996884::1760216049::0::1::::<><><>0<>0<><>::uid://dxbr2pe0xoeby::::res://assets/theme/main_theme.tres<>uid://d4e048h4rv6bb::::res://assets/img/attributes.png<>uid://bdiryxumx4r3n::::res://hero_creation/hero_creation.gd<>uid://bx8qgm8u2vueq::::res://assets/img/attribute_bubble.png<>uid://b2x7o7ognf3q4::::res://assets/img/x_btn1.png<>uid://bwsncca7makd0::::res://assets/img/accept_btn1.png<>uid://b7egansu1kkw0::::res://assets/img/x_btn2.png<>uid://isunv4jk5h3a::::res://assets/img/accept_btn2.png
 ::res://singeltons/::1760208856
 creature_manager.gd::GDScript::8317590574270430753::1760211092::0::1::::<>Node<><>0<>0<><>::
 game_data.gd::GDScript::3170763953898692595::1760208974::0::1::::<>Node<><>0<>0<><>::
