@@ -105,9 +105,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Lifebar" type="TextureProgressBar" parent="VBoxContainer/Control"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-value = 50.0
 texture_under = SubResource("AtlasTexture_4fuuu")
 texture_progress = SubResource("AtlasTexture_dxrkv")
 

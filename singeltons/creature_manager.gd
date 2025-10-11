@@ -105,23 +105,26 @@ var list_of_male_names = [
 	"Lucan",
     "Neo"
 ]
+var fighter = {
+	name = "NPC",
+	archetype = "Fighter",
+	max_hp = 50,
+	current_hp = 50,
+	strength = 1,
+	cool = 1,
+	charm = 1,
+	wits = 1,
+	level = 1,
+	template = 'res://creatures/fighter/fighter.tscn'
+}
 
 func _ready() -> void:
 	rng.randomize()
 
 func create_hero():
-	var hero = {}
+	var hero = fighter
 	list_of_female_names.shuffle()
 	hero.name = list_of_female_names[0]
-	hero.class = "Fighter"
-	hero.max_hp = 50
-	hero.current_hp = 50
-	hero.position = 0
-	hero.strength = 1
-	hero.cool = 1
-	hero.charm = 1
-	hero.wits = 1
-	hero.template = 'res://creatures/fighter/fighter.tscn'
 	return hero
 
 func add_creature_to_screen(hero : Dictionary, target_position : Vector2, index : int):

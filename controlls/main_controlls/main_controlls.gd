@@ -8,4 +8,4 @@ func _ready() -> void:
 
 func _on_select_hero():
 	name_label.text = "%s" % GameData.creatures[GameData.selected_hero].name
-	class_label.text = "%s" % GameData.creatures[GameData.selected_hero].class
+	class_label.text = "%s (%s)" % [GameData.creatures[GameData.selected_hero].archetype, GameData.creatures[GameData.selected_hero].level]
