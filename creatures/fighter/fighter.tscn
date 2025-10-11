@@ -1,46 +1,27 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3f40uinkuugn"]
+[gd_scene load_steps=8 format=3 uid="uid://b3f40uinkuugn"]
 
 [ext_resource type="PackedScene" uid="uid://cc5lnbv826w40" path="res://creatures/templates/creature.tscn" id="1_5dr6d"]
-[ext_resource type="Texture2D" uid="uid://ctivve7vptkfp" path="res://assets/img/Idle_Right_Down.png" id="2_yry30"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yry30"]
-atlas = ExtResource("2_yry30")
-region = Rect2(0, 0, 48, 64)
+[ext_resource type="Texture2D" uid="uid://brny1tfwnrxj3" path="res://assets/img/char_templates/idle-Sheet.png" id="2_yry30"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2uodg"]
 atlas = ExtResource("2_yry30")
-region = Rect2(48, 0, 48, 64)
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6wb1"]
 atlas = ExtResource("2_yry30")
-region = Rect2(96, 0, 48, 64)
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_moa3a"]
 atlas = ExtResource("2_yry30")
-region = Rect2(144, 0, 48, 64)
+region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nxig"]
 atlas = ExtResource("2_yry30")
-region = Rect2(192, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7fcy"]
-atlas = ExtResource("2_yry30")
-region = Rect2(240, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8pvrx"]
-atlas = ExtResource("2_yry30")
-region = Rect2(288, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cxu0s"]
-atlas = ExtResource("2_yry30")
-region = Rect2(336, 0, 48, 64)
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ufst"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yry30")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2uodg")
 }, {
@@ -52,15 +33,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8nxig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v7fcy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8pvrx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cxu0s")
 }],
 "loop": true,
 "name": &"default",
@@ -71,3 +43,4 @@ animations = [{
 
 [node name="Idle" parent="Sprites" index="0"]
 sprite_frames = SubResource("SpriteFrames_2ufst")
+frame_progress = 0.34803882

@@ -1,5 +1,9 @@
+ProgressBar
+Sprite2D
+AnimationPlayer
 Node2D
 Button
+AnimatedSprite2D
 TextureButton
 VBoxContainer
 Node
@@ -9,7 +13,3 @@ TextureRect
 HBoxContainer
 Control
 GridContainer
-CanvasLayer
-AnimationPlayer
-ColorRect
-AnimatedSprite2D

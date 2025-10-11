@@ -4,6 +4,7 @@ extends Control
 @onready var class_label: Label = %ClassLabel
 
 func _ready() -> void:
+	return
 	SignalManager.select_hero.connect(_on_select_hero)
 
 func _on_select_hero():
