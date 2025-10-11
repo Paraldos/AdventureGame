@@ -106,18 +106,29 @@ var list_of_male_names = [
     "Neo"
 ]
 var fighter = {
-	name = "",
+	name = "Fighter",
 	max_hp = 50,
 	current_hp = 50,
-	strength = 1,
+	strength = 2,
 	dex = 1,
-	wits = 1,
-	charm = 1,
+	wits = 0,
+	charm = 0,
+	level = 1,
+	template = 'res://creatures/fighter/fighter.tscn'
+}
+var hacker = {
+	name = "Hacker",
+	max_hp = 50,
+	current_hp = 50,
+	strength = 0,
+	dex = 1,
+	wits = 2,
+	charm = 0,
 	level = 1,
 	template = 'res://creatures/fighter/fighter.tscn'
 }
 var hero_roles = [
-	fighter
+	fighter, hacker
 ]
 
 func _ready() -> void:

@@ -427,29 +427,29 @@ tile_set = SubResource("TileSet_u5opy")
 
 [node name="Slot" parent="." instance=ExtResource("5_dakft")]
 unique_name_in_owner = true
-position = Vector2(24, 48)
+position = Vector2(24, 56)
 
 [node name="Slot1" parent="." instance=ExtResource("5_dakft")]
 unique_name_in_owner = true
-position = Vector2(56, 48)
+position = Vector2(56, 56)
 index = 1
 
 [node name="Slot2" parent="." instance=ExtResource("5_dakft")]
 unique_name_in_owner = true
-position = Vector2(88, 48)
+position = Vector2(88, 56)
 index = 2
 
 [node name="Slot3" parent="." instance=ExtResource("5_dakft")]
 unique_name_in_owner = true
-position = Vector2(136, 48)
+position = Vector2(136, 56)
 index = 3
 
 [node name="Slot4" parent="." instance=ExtResource("5_dakft")]
 unique_name_in_owner = true
-position = Vector2(168, 48)
+position = Vector2(168, 56)
 index = 4
 
 [node name="Slot5" parent="." instance=ExtResource("5_dakft")]
 unique_name_in_owner = true
-position = Vector2(200, 48)
+position = Vector2(200, 56)
 index = 5
