@@ -203,7 +203,7 @@ focus_mode = 0
 texture_normal = ExtResource("4_qi0hw")
 texture_hover = ExtResource("5_ssf5x")
 
-[node name="ListOfClasses" type="VBoxContainer" parent="."]
+[node name="RolesContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
 offset_left = 120.0
 offset_top = 16.0
@@ -212,12 +212,12 @@ offset_bottom = 116.0
 theme = ExtResource("1_hjk36")
 theme_override_constants/separation = -1
 
-[node name="Button" type="Button" parent="ListOfClasses"]
+[node name="Button" type="Button" parent="RolesContainer"]
 layout_mode = 2
 text = "Fighter"
 alignment = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ListOfClasses/Button"]
+[node name="HBoxContainer" type="HBoxContainer" parent="RolesContainer/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -229,37 +229,37 @@ grow_vertical = 2
 theme_override_constants/separation = 1
 alignment = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ListOfClasses/Button/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="RolesContainer/Button/HBoxContainer"]
 self_modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
 layout_mode = 2
 texture = ExtResource("3_qdwdt")
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="ListOfClasses/Button/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="RolesContainer/Button/HBoxContainer"]
 self_modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
 layout_mode = 2
 texture = ExtResource("3_qdwdt")
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="ListOfClasses/Button/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="RolesContainer/Button/HBoxContainer"]
 self_modulate = Color(0.45882353, 0.654902, 0.2627451, 1)
 layout_mode = 2
 texture = ExtResource("3_qdwdt")
 stretch_mode = 5
 
-[node name="Button2" type="Button" parent="ListOfClasses"]
+[node name="Button2" type="Button" parent="RolesContainer"]
 layout_mode = 2
 text = "Class 1"
 
-[node name="Button3" type="Button" parent="ListOfClasses"]
+[node name="Button3" type="Button" parent="RolesContainer"]
 layout_mode = 2
 text = "Class 1"
 
-[node name="Button4" type="Button" parent="ListOfClasses"]
+[node name="Button4" type="Button" parent="RolesContainer"]
 layout_mode = 2
 text = "Class 1"
 
-[node name="Button5" type="Button" parent="ListOfClasses"]
+[node name="Button5" type="Button" parent="RolesContainer"]
 layout_mode = 2
 text = "Class 1"
 

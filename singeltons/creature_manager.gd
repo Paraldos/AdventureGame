@@ -116,6 +116,9 @@ var fighter = {
 	level = 1,
 	template = 'res://creatures/fighter/fighter.tscn'
 }
+var hero_roles = [
+	fighter
+]
 
 func _ready() -> void:
 	rng.randomize()
