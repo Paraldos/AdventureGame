@@ -106,14 +106,13 @@ var list_of_male_names = [
     "Neo"
 ]
 var fighter = {
-	name = "NPC",
-	archetype = "Fighter",
+	name = "",
 	max_hp = 50,
 	current_hp = 50,
 	strength = 1,
-	cool = 1,
-	charm = 1,
+	dex = 1,
 	wits = 1,
+	charm = 1,
 	level = 1,
 	template = 'res://creatures/fighter/fighter.tscn'
 }

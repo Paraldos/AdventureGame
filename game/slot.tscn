@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4q7v1n1u370q"]
 
-[ext_resource type="Script" uid="uid://6dhulyc34mgl" path="res://game/creature_slot.gd" id="1_8jju3"]
+[ext_resource type="Script" uid="uid://6dhulyc34mgl" path="res://game/slot.gd" id="1_8jju3"]
 [ext_resource type="Theme" uid="uid://djg8cvd887cqj" path="res://assets/theme/creature_selector_theme.tres" id="1_mabo7"]
 [ext_resource type="Texture2D" uid="uid://5t4ole0i0o0s" path="res://assets/img/pointer.png" id="2_8jju3"]
 
@@ -41,7 +41,7 @@ _data = {
 &"loop": SubResource("Animation_u5opy")
 }
 
-[node name="CreatureSlot" type="Marker2D"]
+[node name="Slot" type="Marker2D"]
 script = ExtResource("1_8jju3")
 
 [node name="Button" type="Button" parent="."]
@@ -50,8 +50,8 @@ offset_left = -8.0
 offset_top = -20.0
 offset_right = 8.0
 offset_bottom = 16.0
+focus_mode = 0
 theme = ExtResource("1_mabo7")
-disabled = true
 
 [node name="Pointer" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -67,3 +67,4 @@ autoplay = "loop"
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

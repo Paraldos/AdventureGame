@@ -1,8 +1,15 @@
 extends CanvasLayer
 
 func _on_start_btn_pressed() -> void:
-	_new_game()
 	SceneManager.got_to_scene("game/game")
+	_new_game()
 
 func _new_game():
-	pass
+	GameData.slots = [
+		Slot.BTN_STATUS.ACTIVE,
+		Slot.BTN_STATUS.ACTIVE,
+		Slot.BTN_STATUS.ACTIVE,
+		Slot.BTN_STATUS.INVISIBLE,
+		Slot.BTN_STATUS.INVISIBLE,
+		Slot.BTN_STATUS.INVISIBLE 
+	]

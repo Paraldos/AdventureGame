@@ -23,10 +23,14 @@ CreatureManager="*res://singeltons/creature_manager.gd"
 Utils="*res://singeltons/utils.tscn"
 SignalManager="*res://singeltons/signal_manager.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
-window/size/viewport_width=213
-window/size/viewport_height=120
+window/size/viewport_width=224
+window/size/viewport_height=128
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctivve7vptkfp"
-path="res://.godot/imported/Idle_Right_Down.png-23d66285213dc1b6d07b5848bd4b8a00.ctex"
+uid="uid://i0d7aac5t330"
+path="res://.godot/imported/btn3.png-a7c3121fb537b77868396f5b27edab7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/Idle_Right_Down.png"
-dest_files=["res://.godot/imported/Idle_Right_Down.png-23d66285213dc1b6d07b5848bd4b8a00.ctex"]
+source_file="res://assets/img/btn3.png"
+dest_files=["res://.godot/imported/btn3.png-a7c3121fb537b77868396f5b27edab7b.ctex"]
 
 [params]
 

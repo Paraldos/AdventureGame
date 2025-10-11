@@ -1,12 +1,12 @@
 extends Node2D
 
 @onready var positions = [
-	%pos1,
-	%pos2,
-	%pos3,
-	%pos4,
-	%pos5,
-	%pos6,
+	%Slot,
+	%Slot1,
+	%Slot2,
+	%Slot3,
+	%Slot4,
+	%Slot5,
 ]
 
 func _ready():
