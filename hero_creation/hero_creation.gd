@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var class_btn: Button = %ClassBtn
+@onready var role_btn: Button = %RoleBtn
 @onready var roles_container: VBoxContainer = %RolesContainer
 
 var bp_role_btn = preload("res://hero_creation/role_btn.tscn")
@@ -8,8 +8,14 @@ var index = 0
 
 func _ready() -> void:
 	roles_container.visible = false
+	CreatureManager.create_hero(
+		CreatureManager.hero_roles.pick_random(),
+		CreatureManager.hero_backgrounds.pick_random(),
+		index
+	)
 	for role in CreatureManager.hero_roles:
 		var btn = bp_role_btn.instantiate()
+		btn.index = index
 		btn.role = role
 		roles_container.add_child(btn)
 
