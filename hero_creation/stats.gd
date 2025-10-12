@@ -14,7 +14,7 @@ func _update():
 func _update_left_text():
 	var actor = GameData.actors[index]
 	label_left.text = ""
-	label_left.text += "HP: %s / %s\n" % [ActorManager.get_max_hp(index), actor.current_hp]
+	label_left.text += "HP: %s / %s\n" % [actor.current_hp, ActorManager.get_max_hp(index)]
 
 func _update_right_text():
 	var actor = GameData.actors[index]

@@ -186,6 +186,7 @@ func create_hero(role, background, index) -> void:
 	hero.background = background.duplicate()
 	# final touch
 	GameData.actors[index] = hero
+	hero.current_hp = get_max_hp(index)
 
 func get_attribute(index : int, attribute : String) -> int:
 	var value = 0
