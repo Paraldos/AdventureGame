@@ -3,10 +3,15 @@ extends PanelContainer
 @onready var roles_menu: OptionButton = %RolesMenu
 @onready var backgrounds_menu: OptionButton = %BackgroundsMenu
 var index = -1
+var disabled = true
 
 func _ready() -> void:
-	_start_role_menu()
-	_start_background_menu()
+	SignalManager.update_actor_value.connect(_udpate_selected)
+	await _start_role_menu()
+	await _udpate_selected()
+	await _start_background_menu()
+	await _update_background()
+	disabled = false
 
 func _start_role_menu():
 	# set filter
@@ -16,12 +21,10 @@ func _start_role_menu():
 	roles_menu.clear()
 	# fill
 	await get_tree().process_frame
-	var selected_id = GameData.actors[index].id
 	for i in ActorManager.hero_roles.size():
 		var role = ActorManager.hero_roles[i]
 		roles_menu.add_item(Utils.id_to_string(role.id))
-		if role.id == selected_id:
-			roles_menu.select(i)
+	return
 
 func _start_background_menu():
 	# set filter
@@ -31,22 +34,43 @@ func _start_background_menu():
 	backgrounds_menu.clear()
 	# fill
 	await get_tree().process_frame
-	var selected_id = GameData.actors[index].background
 	for i in ActorManager.hero_backgrounds.size():
 		var background = ActorManager.hero_backgrounds[i]
 		backgrounds_menu.add_item(Utils.id_to_string(background.id))
-		if background.id == selected_id:
+	return
+
+func _udpate_selected():
+	disabled = true
+	await _update_role()
+	await _update_background()
+	disabled = false
+
+func _update_role():
+	var selected_role = GameData.actors[index].role.id
+	for i in ActorManager.hero_roles.size():
+		var role = ActorManager.hero_roles[i]
+		if role.id == selected_role:
+			roles_menu.select(i)
+			return
+
+func _update_background():
+	var selected_background = GameData.actors[index].background.id
+	for i in ActorManager.hero_backgrounds.size():
+		var background = ActorManager.hero_backgrounds[i]
+		if background.id == selected_background:
 			backgrounds_menu.select(i)
+			return
 
 func _on_roles_menu_item_selected(_index: int) -> void:
-	_create_hero()
+	if disabled: return
+	disabled = true
+	GameData.actors[index].role = ActorManager.hero_roles[roles_menu.get_selected_id()].duplicate()
+	SignalManager.update_actor_value.emit()
+	disabled = false
 
 func _on_backgrounds_menu_item_selected(_index: int) -> void:
-	_create_hero()
-
-func _create_hero():
-	ActorManager.create_hero(
-		ActorManager.hero_roles[roles_menu.get_selected_id()],
-		ActorManager.hero_backgrounds[backgrounds_menu.get_selected_id()],
-		index
-	)
+	if disabled: return
+	disabled = true
+	GameData.actors[index].background = ActorManager.hero_backgrounds[backgrounds_menu.get_selected_id()].duplicate()
+	SignalManager.update_actor_value.emit()
+	disabled = false

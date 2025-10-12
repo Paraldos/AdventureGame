@@ -7,14 +7,14 @@ extends HBoxContainer
 var index = -1
 
 func _ready() -> void:
-	SignalManager.update_actor_hero_creation.connect(_update)
+	SignalManager.update_actor_value.connect(_update)
 
 func _update():
 	label_strength.text = "Strength
-	%s" % GameData.actors[index].strength
+	%s" % ActorManager.get_attribute(index, "strength")
 	label_dex.text = "Dex
-	%s" % GameData.actors[index].dex
+	%s" % ActorManager.get_attribute(index, "dex")
 	label_charm.text = "Charm
-	%s" % GameData.actors[index].charm
+	%s" % ActorManager.get_attribute(index, "charm")
 	label_wits.text = "Wits
-	%s" % GameData.actors[index].wits
+	%s" % ActorManager.get_attribute(index, "wits")

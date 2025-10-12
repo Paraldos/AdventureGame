@@ -13,8 +13,7 @@ var bp_hero_creation = preload('res://hero_creation/hero_creation.tscn')
 func _ready() -> void:
 	_on_update_slot_btn()
 	SignalManager.update_slot_btn.connect(_on_update_slot_btn)
-	SignalManager.update_actor.connect(_on_update_actor)
-	SignalManager.update_all_actors.connect(_on_update_all_actors)
+	SignalManager.update_actor_template.connect(_on_update_actor)
 	pointer.visible = false
 
 func _on_button_mouse_entered() -> void:
@@ -33,12 +32,9 @@ func _on_update_actor(target_index):
 	# spawn new actor
 	if not GameData.actors[target_index]: return
 	var actor: Dictionary = GameData.actors[target_index]
-	var bp: PackedScene = load(actor.template)
+	var bp: PackedScene = load(actor.role.template)
 	var inst: Node2D = bp.instantiate()
 	actor_container.add_child(inst)
-
-func _on_update_all_actors():
-	_on_update_actor(index)
 
 func _on_update_slot_btn():
 	match  GameData.slots[index]:

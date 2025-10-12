@@ -22,22 +22,20 @@ func _ready() -> void:
 			ActorManager.hero_backgrounds.pick_random(),
 			index
 		)
-	SignalManager.update_actor.emit(index)
+		SignalManager.update_actor_template.emit(index)
+	SignalManager.update_actor_value.emit()
 
 func _on_x_btn_pressed() -> void:
 	if old_actor:
 		GameData.actors[index] = old_actor
 	else:
 		GameData.actors[index] = null
-	SignalManager.update_actor.emit(index)
+	SignalManager.update_actor_value.emit()
 	queue_free()
 
 func _on_accept_btn_pressed() -> void:
-	print(GameData.actors)
 	queue_free()
 
 func _on_return_btn_pressed() -> void:
-	print('return')
-	print(old_actor)
-	GameData.actors[index] = old_actor
-	SignalManager.update_actor.emit(index)
+	GameData.actors[index] = old_actor.duplicate()
+	SignalManager.update_actor_value.emit()

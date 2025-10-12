@@ -111,25 +111,27 @@ var list_of_male_names = [
 var brawler = {
 	id = "brawler",
 	sex = "male",
-	max_hp = 50,
-	current_hp = 50,
+	# attributes
 	charm = 0,
 	dex = 1,
 	strength = 2,
 	wits = 0,
-	level = 1,
+	# hp
+	max_hp = 50,
+	# template
 	template = 'res://actors/fighter/fighter.tscn'
 }
 var hacker = {
 	id = "hacker",
 	sex = "female",
-	max_hp = 50,
-	current_hp = 50,
+	# attributes
 	charm = 0,
 	dex = 1,
 	strength = 0,
 	wits = 2,
-	level = 1,
+	# hp
+	max_hp = 50,
+	# template
 	template = 'res://actors/fighter/fighter.tscn'
 }
 var hero_roles = [ brawler, hacker ]
@@ -161,15 +163,16 @@ func _ready() -> void:
 	rng.randomize()
 
 # =============================================== helper
+var hero_template = {
+	name = "",
+	current_hp = 0,
+	level = 1,
+	role = {},
+	background = {}
+}
+
 func create_hero(role, background, index) -> void:
-	# role
-	var hero = role.duplicate()
-	# background
-	hero.background = background.id
-	hero.charm += background.charm
-	hero.dex += background.dex
-	hero.strength += background.strength
-	hero.wits += background.wits
+	var hero = hero_template.duplicate()
 	# name
 	if role.sex == "male":
 		list_of_male_names.shuffle()
@@ -179,7 +182,18 @@ func create_hero(role, background, index) -> void:
 		hero.name = list_of_female_names[0]
 	if index >= GameData.actors.size():
 		GameData.actors.resize(index + 1)
+	hero.role = role.duplicate()
+	hero.background = background.duplicate()
 	# final touch
 	GameData.actors[index] = hero
-	SignalManager.update_actor.emit(index)
-	SignalManager.update_actor_hero_creation.emit()
+
+func get_attribute(index : int, attribute : String) -> int:
+	var value = 0
+	value += GameData.actors[index].role[attribute]
+	value += GameData.actors[index].background[attribute]
+	return value
+
+func get_max_hp(index : int) -> int:
+	var value = 0
+	value += GameData.actors[index].role.max_hp
+	return value

@@ -2,6 +2,5 @@ extends Node
 
 signal select_hero
 signal update_slot_btn
-signal update_actor(index)
-signal update_all_actors
-signal update_actor_hero_creation
+signal update_actor_value
+signal update_actor_template(index)
