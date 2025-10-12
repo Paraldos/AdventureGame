@@ -17,11 +17,11 @@ func _ready() -> void:
 	_on_update_slot_btn()
 	match GameManager.state:
 		GameManager.STATES.NONE:
-			print('none')
+			pass
 		GameManager.STATES.BATTLE:
-			print('battle')
+			pass
 		GameManager.STATES.CONVERSATION:
-			print('conversation')
+			pass
 	visible = true
 
 func _on_update_slot_btn():
