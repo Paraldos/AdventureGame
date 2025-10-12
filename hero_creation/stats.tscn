@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpxinys4bv6xo"]
+
+[ext_resource type="Script" uid="uid://bmj3yartjwpx1" path="res://hero_creation/stats.gd" id="1_2eknx"]
+
+[node name="Stats" type="GridContainer"]
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 2
+script = ExtResource("1_2eknx")
+
+[node name="LabelLeft" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "HP: 16 / 4"
+
+[node name="LabelRight" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Damage: 5"

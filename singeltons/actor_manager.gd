@@ -109,9 +109,8 @@ var list_of_male_names = [
     "Neo"
 ]
 var brawler = {
-	name = "Brawler",
+	role_id = "brawler",
 	sex = "male",
-	background = "",
 	max_hp = 50,
 	current_hp = 50,
 	charm = 0,
@@ -122,9 +121,8 @@ var brawler = {
 	template = 'res://actors/fighter/fighter.tscn'
 }
 var hacker = {
-	name = "Hacker",
+	role_id = "hacker",
 	sex = "female",
-	background = "",
 	max_hp = 50,
 	current_hp = 50,
 	charm = 0,
@@ -137,21 +135,21 @@ var hacker = {
 var hero_roles = [ brawler, hacker ]
 
 var streetkid = {
-	name = "Streetkid",
+	background_id = "streetkid",
 	charm = 1,
 	dex = 1,
 	strength = 0,
 	wits = 0,
 }
 var corpo = {
-	name = "Corpo", 
+	background_id = "corpo", 
 	charm = 1,
 	dex = 0,
 	strength = 0,
 	wits = 1
 }
 var mutant = {
-	name = "Mutant",
+	background_name = "mutant",
 	charm = 0,
 	dex = 1,
 	strength = 1,

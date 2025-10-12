@@ -1,20 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://guy552h6jltk"]
 
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_hjk36"]
-[ext_resource type="Texture2D" uid="uid://d4e048h4rv6bb" path="res://assets/img/attributes.png" id="1_ntd0c"]
 [ext_resource type="Script" uid="uid://bdiryxumx4r3n" path="res://hero_creation/hero_creation.gd" id="2_yfv7x"]
-[ext_resource type="Texture2D" uid="uid://c5crnfwg3lwyl" path="res://assets/img/btn1.png" id="3_n1wo6"]
+[ext_resource type="PackedScene" uid="uid://cja63mf1ulnpi" path="res://hero_creation/role_and_background_selector.tscn" id="3_qdwdt"]
 [ext_resource type="Texture2D" uid="uid://b2x7o7ognf3q4" path="res://assets/img/x_btn1.png" id="4_el4w6"]
+[ext_resource type="PackedScene" uid="uid://ej142y2sc4y4" path="res://hero_creation/attributes.tscn" id="4_qdwdt"]
 [ext_resource type="Texture2D" uid="uid://bwsncca7makd0" path="res://assets/img/accept_btn1.png" id="4_qi0hw"]
+[ext_resource type="PackedScene" uid="uid://cpxinys4bv6xo" path="res://hero_creation/stats.tscn" id="5_n1wo6"]
 [ext_resource type="Texture2D" uid="uid://b7egansu1kkw0" path="res://assets/img/x_btn2.png" id="5_qdwdt"]
 [ext_resource type="Texture2D" uid="uid://isunv4jk5h3a" path="res://assets/img/accept_btn2.png" id="5_ssf5x"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7onh3"]
-texture = ExtResource("3_n1wo6")
-texture_margin_left = 1.0
-texture_margin_top = 1.0
-texture_margin_right = 1.0
-texture_margin_bottom = 1.0
 
 [node name="HeroCreation" type="CanvasLayer"]
 script = ExtResource("2_yfv7x")
@@ -47,140 +41,17 @@ layout_mode = 2
 texture_filter = 1
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_7onh3")
-
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = -1
-theme_override_constants/margin_top = -1
-theme_override_constants/margin_right = -1
-theme_override_constants/margin_bottom = -1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = -1
-
-[node name="RolesMenu" type="OptionButton" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="RoleAndBackgroundSelector" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer" instance=ExtResource("3_qdwdt")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("1_hjk36")
 
-[node name="BackgroundsMenu" type="OptionButton" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Attributes" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer" instance=ExtResource("4_qdwdt")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-self_modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
-layout_mode = 2
-texture = ExtResource("1_ntd0c")
-
-[node name="LabelStrength" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect"]
+[node name="Stats" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer" instance=ExtResource("5_n1wo6")]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 2
-text = "Strength
-1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-self_modulate = Color(0.45882353, 0.654902, 0.2627451, 1)
 layout_mode = 2
-texture = ExtResource("1_ntd0c")
-
-[node name="LabelDex" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect2"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 2
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect4" type="TextureRect" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-self_modulate = Color(0.9098039, 0.75686276, 0.4392157, 1)
-layout_mode = 2
-texture = ExtResource("1_ntd0c")
-
-[node name="LabelCharm" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect4"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 2
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-self_modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
-layout_mode = 2
-texture = ExtResource("1_ntd0c")
-
-[node name="LabelWits" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect3"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 2
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GridContainer" type="GridContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 2
-theme_override_constants/v_separation = 2
-columns = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "HP: 16 / 4"
-
-[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Damage: 5"
-
-[node name="Label3" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Armor: 2"
-
-[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -207,7 +78,5 @@ focus_mode = 0
 texture_normal = ExtResource("4_qi0hw")
 texture_hover = ExtResource("5_ssf5x")
 
-[connection signal="item_selected" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/RolesMenu" to="." method="_on_roles_menu_item_selected"]
-[connection signal="item_selected" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/BackgroundsMenu" to="." method="_on_backgrounds_menu_item_selected"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer3/XBtn" to="." method="_on_x_btn_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer3/AcceptBtn" to="." method="_on_accept_btn_pressed"]
