@@ -29,10 +29,14 @@ func _on_update_actor(_index):
 	_update_attributes()
 
 func _update_attributes():
-	label_strength.text = "Strength: %s" % GameData.actors[index].strength
-	label_dex.text = "Dex: %s" % GameData.actors[index].dex
-	label_charm.text = "Charm: %s" % GameData.actors[index].charm
-	label_wits.text = "Wits: %s" % GameData.actors[index].wits
+	label_strength.text = "Strength
+	%s" % GameData.actors[index].strength
+	label_dex.text = "Dex
+	%s" % GameData.actors[index].dex
+	label_charm.text = "Charm
+	%s" % GameData.actors[index].charm
+	label_wits.text = "Wits
+	%s" % GameData.actors[index].wits
 
 func _on_x_btn_pressed() -> void:
 	ActorManager.remove_hero(index)

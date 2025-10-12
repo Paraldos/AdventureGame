@@ -76,7 +76,7 @@ text = "Background"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
@@ -93,7 +93,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 2
-text = "1"
+text = "Strength
+1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
