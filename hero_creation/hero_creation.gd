@@ -30,7 +30,7 @@ func _on_x_btn_pressed() -> void:
 		GameData.actors[index] = old_actor
 	else:
 		GameData.actors[index] = null
-	SignalManager.update_actor_value.emit()
+	SignalManager.update_actor_template.emit(index)
 	queue_free()
 
 func _on_accept_btn_pressed() -> void:
