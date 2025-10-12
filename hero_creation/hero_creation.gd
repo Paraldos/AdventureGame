@@ -8,12 +8,12 @@ var index = 0
 
 func _ready() -> void:
 	roles_container.visible = false
-	CreatureManager.create_hero(
-		CreatureManager.hero_roles.pick_random(),
-		CreatureManager.hero_backgrounds.pick_random(),
+	ActorManager.create_hero(
+		ActorManager.hero_roles.pick_random(),
+		ActorManager.hero_backgrounds.pick_random(),
 		index
 	)
-	for role in CreatureManager.hero_roles:
+	for role in ActorManager.hero_roles:
 		var btn = bp_role_btn.instantiate()
 		btn.index = index
 		btn.role = role

@@ -118,7 +118,7 @@ var brawler = {
 	charm = 0,
 	wits = 0,
 	level = 1,
-	template = 'res://creatures/fighter/fighter.tscn'
+	template = 'res://actors/fighter/fighter.tscn'
 }
 var hacker = {
 	name = "Hacker",
@@ -130,7 +130,7 @@ var hacker = {
 	charm = 0,
 	wits = 2,
 	level = 1,
-	template = 'res://creatures/fighter/fighter.tscn'
+	template = 'res://actors/fighter/fighter.tscn'
 }
 var hero_roles = [ brawler, hacker ]
 
@@ -151,13 +151,6 @@ func create_hero(role, _background, index) -> void:
 	else:
 		list_of_female_names.shuffle()
 		hero.name = list_of_female_names[0]
-	if index >= GameData.creatures.size():
-		GameData.creatures.resize(index + 1)
-	GameData.creatures[index] = hero
-
-func add_creature_to_screen(hero : Dictionary, target_position : Vector2, index : int):
-	var template = load(hero.template)
-	var creature = template.instantiate()
-	creature.position = target_position
-	creature.index = index
-	get_tree().current_scene.add_child(creature)
+	if index >= GameData.actors.size():
+		GameData.actors.resize(index + 1)
+	GameData.actors[index] = hero

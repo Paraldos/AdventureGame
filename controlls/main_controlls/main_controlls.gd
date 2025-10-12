@@ -8,5 +8,5 @@ func _ready() -> void:
 	SignalManager.select_hero.connect(_on_select_hero)
 
 func _on_select_hero():
-	name_label.text = "%s" % GameData.creatures[GameData.selected_hero].name
-	class_label.text = "%s (%s)" % [GameData.creatures[GameData.selected_hero].archetype, GameData.creatures[GameData.selected_hero].level]
+	name_label.text = "%s" % GameData.actors[GameData.selected_actor].name
+	class_label.text = "%s (%s)" % [GameData.actors[GameData.selected_actor].archetype, GameData.actors[GameData.selected_actor].level]
