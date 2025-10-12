@@ -1,10 +1,12 @@
-[gd_resource type="Theme" load_steps=21 format=4 uid="uid://dxbr2pe0xoeby"]
+[gd_resource type="Theme" load_steps=25 format=4 uid="uid://dxbr2pe0xoeby"]
 
 [ext_resource type="Texture2D" uid="uid://ytigfo5n1b6b" path="res://assets/img/btn2.png" id="1_tnish"]
 [ext_resource type="Texture2D" uid="uid://i0d7aac5t330" path="res://assets/img/btn3.png" id="3_b85mk"]
 [ext_resource type="Texture2D" uid="uid://c5crnfwg3lwyl" path="res://assets/img/btn1.png" id="4_0vr3v"]
 [ext_resource type="Texture2D" uid="uid://5t4ole0i0o0s" path="res://assets/img/pointer.png" id="4_b85mk"]
 [ext_resource type="Texture2D" uid="uid://ba44qjj6lavpu" path="res://assets/img/panel.png" id="5_b85mk"]
+[ext_resource type="Texture2D" uid="uid://cqy25ag8328ki" path="res://assets/img/radio_btn2.png" id="6_ryqvi"]
+[ext_resource type="Texture2D" uid="uid://cx01f8x2c1kae" path="res://assets/img/radio_btn1.png" id="7_vdebs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b85mk"]
 texture = ExtResource("1_tnish")
@@ -45,6 +47,17 @@ texture_margin_left = 6.0
 texture_margin_top = 12.0
 texture_margin_right = 6.0
 texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b85mk"]
+bg_color = Color(0.30980393, 0.56078434, 0.7294118, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xamdb"]
+texture = ExtResource("4_0vr3v")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_top = 1.0
 
 [sub_resource type="Image" id="Image_b85mk"]
 data = {
@@ -1316,5 +1329,20 @@ Button/styles/normal = SubResource("StyleBoxTexture_0vr3v")
 Button/styles/pressed = SubResource("StyleBoxTexture_ryqvi")
 Label/constants/line_spacing = 1
 Label/styles/normal = SubResource("StyleBoxEmpty_b85mk")
+OptionButton/colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 OptionButton/icons/arrow = ExtResource("4_b85mk")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_tjmdt")
+PopupMenu/colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+PopupMenu/constants/icon_max_width = 0
+PopupMenu/icons/checked = ExtResource("7_vdebs")
+PopupMenu/icons/checked_disabled = ExtResource("6_ryqvi")
+PopupMenu/icons/radio_checked = ExtResource("6_ryqvi")
+PopupMenu/icons/radio_checked_disabled = ExtResource("7_vdebs")
+PopupMenu/icons/radio_unchecked = ExtResource("7_vdebs")
+PopupMenu/icons/radio_unchecked_disabled = ExtResource("7_vdebs")
+PopupMenu/icons/submenu = ExtResource("7_vdebs")
+PopupMenu/icons/submenu_mirrored = ExtResource("7_vdebs")
+PopupMenu/icons/unchecked = ExtResource("7_vdebs")
+PopupMenu/icons/unchecked_disabled = ExtResource("6_ryqvi")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_b85mk")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_xamdb")

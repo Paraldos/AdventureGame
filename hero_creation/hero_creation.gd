@@ -11,17 +11,17 @@ extends CanvasLayer
 var index = 0
 
 func _ready() -> void:
-	SignalManager.update_actor_hero_creation.connect(_on_update_actor_hero_creation)
+	backgrounds_menu.get_popup().canvas_item_default_texture_filter = Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
 	ActorManager.create_hero(
 		ActorManager.hero_roles.pick_random(),
 		ActorManager.hero_backgrounds.pick_random(),
 		index
 	)
-	SignalManager.update_actor_hero_creation.emit()
+	_role_menu_setup()
+	_background_menu_setup()
 
 func _on_update_actor_hero_creation():
 	_update_attributes()
-	_update_role_menu()
 
 func _update_attributes():
 	label_strength.text = "Strength
@@ -33,13 +33,19 @@ func _update_attributes():
 	label_wits.text = "Wits
 	%s" % GameData.actors[index].wits
 
-func _update_role_menu():
+func _role_menu_setup():
+	roles_menu.get_popup().canvas_item_default_texture_filter = Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
 	roles_menu.clear()
 	for i in ActorManager.hero_roles.size():
 		var role = ActorManager.hero_roles[i]
 		roles_menu.add_item(role.name)
-		if GameData.actors[i] == role:
-			roles_menu.select(i)
+
+func _background_menu_setup():
+	SignalManager.update_actor_hero_creation.connect(_on_update_actor_hero_creation)
+	backgrounds_menu.clear()
+	for i in ActorManager.hero_backgrounds.size():
+		var background = ActorManager.hero_backgrounds[i]
+		backgrounds_menu.add_item(background.name)
 
 func _on_x_btn_pressed() -> void:
 	ActorManager.remove_hero(index)
@@ -50,3 +56,17 @@ func _on_accept_btn_pressed() -> void:
 
 func _on_role_btn_pressed() -> void:
 	pass
+
+func _on_roles_menu_item_selected(_index: int) -> void:
+	ActorManager.create_hero(
+		ActorManager.hero_roles[roles_menu.get_selected_id()],
+		ActorManager.hero_backgrounds[backgrounds_menu.get_selected_id()],
+		index
+	)
+
+func _on_backgrounds_menu_item_selected(_index: int) -> void:
+	ActorManager.create_hero(
+		ActorManager.hero_roles[roles_menu.get_selected_id()],
+		ActorManager.hero_backgrounds[backgrounds_menu.get_selected_id()],
+		index
+	)

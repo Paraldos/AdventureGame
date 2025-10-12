@@ -44,6 +44,7 @@ theme_override_constants/margin_bottom = 6
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/PanelContainer"]
+texture_filter = 1
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer"]
@@ -66,6 +67,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
+theme = ExtResource("1_hjk36")
 
 [node name="BackgroundsMenu" type="OptionButton" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -205,5 +207,7 @@ focus_mode = 0
 texture_normal = ExtResource("4_qi0hw")
 texture_hover = ExtResource("5_ssf5x")
 
+[connection signal="item_selected" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/RolesMenu" to="." method="_on_roles_menu_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/BackgroundsMenu" to="." method="_on_backgrounds_menu_item_selected"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer3/XBtn" to="." method="_on_x_btn_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer3/AcceptBtn" to="." method="_on_accept_btn_pressed"]

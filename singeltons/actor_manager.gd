@@ -111,12 +111,12 @@ var list_of_male_names = [
 var brawler = {
 	name = "Brawler",
 	sex = "male",
-	background = null,
+	background = "",
 	max_hp = 50,
 	current_hp = 50,
-	strength = 2,
-	dex = 1,
 	charm = 0,
+	dex = 1,
+	strength = 2,
 	wits = 0,
 	level = 1,
 	template = 'res://actors/fighter/fighter.tscn'
@@ -124,21 +124,39 @@ var brawler = {
 var hacker = {
 	name = "Hacker",
 	sex = "female",
-	background = null,
+	background = "",
 	max_hp = 50,
 	current_hp = 50,
-	strength = 0,
-	dex = 1,
 	charm = 0,
+	dex = 1,
+	strength = 0,
 	wits = 2,
 	level = 1,
 	template = 'res://actors/fighter/fighter.tscn'
 }
 var hero_roles = [ brawler, hacker ]
 
-var streetkid = { charm = 1, dex = 1 }
-var corpo = { wits = 1, dex = 1 }
-var mutant = { strength = 1, dex = 1 }
+var streetkid = {
+	name = "Streetkid",
+	charm = 1,
+	dex = 1,
+	strength = 0,
+	wits = 0,
+}
+var corpo = {
+	name = "Corpo", 
+	charm = 1,
+	dex = 0,
+	strength = 0,
+	wits = 1
+}
+var mutant = {
+	name = "Mutant",
+	charm = 0,
+	dex = 1,
+	strength = 1,
+	wits = 0,
+}
 var hero_backgrounds = [ streetkid, corpo, mutant ]
 
 func _ready() -> void:
@@ -149,8 +167,16 @@ func remove_hero(index) -> void:
 	GameData.actors[index] = null
 	SignalManager.update_actor.emit(index)
 
-func create_hero(role, _background, index) -> void:
+func create_hero(role, background, index) -> void:
+	# role
 	var hero = role.duplicate()
+	# background
+	hero.background = background.name
+	hero.charm += background.charm
+	hero.dex += background.dex
+	hero.strength += background.strength
+	hero.wits += background.wits
+	# name
 	if role.sex == "male":
 		list_of_male_names.shuffle()
 		hero.name = list_of_male_names[0]
@@ -159,6 +185,7 @@ func create_hero(role, _background, index) -> void:
 		hero.name = list_of_female_names[0]
 	if index >= GameData.actors.size():
 		GameData.actors.resize(index + 1)
+	# final touch
 	GameData.actors[index] = hero
 	SignalManager.update_actor.emit(index)
 	SignalManager.update_actor_hero_creation.emit()
