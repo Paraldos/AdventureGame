@@ -10,7 +10,8 @@ func _ready() -> void:
 func got_to_scene(scene_path : String) -> void:
 	await _fade_in()
 	get_tree().change_scene_to_file('res://%s.tscn' % scene_path)
-	_fade_out()
+	await _fade_out()
+	SignalManager.scene_changed.emit()
 
 func _fade_in():
 	color_rect.mouse_filter = Control.MOUSE_FILTER_STOP
