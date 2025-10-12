@@ -17,3 +17,7 @@ func string_to_id(txt: String) -> String:
 		if words[i].length() > 0:
 			words[i] = words[i].to_lower()
 	return "_".join(words)
+
+func load_json(path: String) -> Variant:
+	var txt := FileAccess.get_file_as_string(path)
+	return JSON.parse_string(txt)

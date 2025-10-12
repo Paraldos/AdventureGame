@@ -1,0 +1,23 @@
+{
+  "streetkid": {
+    "id": "streetkid",
+    "charm": 1,
+    "dex": 1,
+    "strength": 0,
+    "wits": 0
+  },
+  "corpo": {
+    "id": "corpo",
+    "charm": 1,
+    "dex": 0,
+    "strength": 0,
+    "wits": 1
+  },
+  "mutant": {
+    "id": "mutant",
+    "charm": 0,
+    "dex": 1,
+    "strength": 1,
+    "wits": 0
+  }
+}

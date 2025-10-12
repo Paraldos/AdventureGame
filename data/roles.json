@@ -1,0 +1,22 @@
+{
+  "brawler": {
+    "id": "brawler",
+    "sex": "male",
+    "charm": 0,
+    "dex": 1,
+    "strength": 2,
+    "wits": 0,
+    "max_hp": 50,
+    "template": "res://actors/fighter/fighter.tscn"
+  },
+  "hacker": {
+    "id": "hacker",
+    "sex": "female",
+    "charm": 0,
+    "dex": 1,
+    "strength": 0,
+    "wits": 2,
+    "max_hp": 50,
+    "template": "res://actors/fighter/fighter.tscn"
+  }
+}
