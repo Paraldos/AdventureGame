@@ -111,6 +111,7 @@ var list_of_male_names = [
 var brawler = {
 	name = "Brawler",
 	sex = "male",
+	background = null,
 	max_hp = 50,
 	current_hp = 50,
 	strength = 2,
@@ -123,6 +124,7 @@ var brawler = {
 var hacker = {
 	name = "Hacker",
 	sex = "female",
+	background = null,
 	max_hp = 50,
 	current_hp = 50,
 	strength = 0,
@@ -154,3 +156,4 @@ func create_hero(role, _background, index) -> void:
 	if index >= GameData.actors.size():
 		GameData.actors.resize(index + 1)
 	GameData.actors[index] = hero
+	SignalManager.update_actor.emit(index)
