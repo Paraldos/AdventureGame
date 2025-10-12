@@ -2,7 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://bx8qgm8u2vueq" path="res://assets/img/attribute_bubble.png" id="1_l3h6s"]
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_ndfcg"]
-[ext_resource type="Script" uid="uid://b3wp2bagebxp0" path="res://hero_creation/role_btn.gd" id="2_ba7i1"]
+
+[sub_resource type="GDScript" id="GDScript_ndfcg"]
+script/source = "extends Button
+
+var index
+var role
+
+func _ready() -> void:
+	text = role.name
+
+func _on_pressed() -> void:
+	var background = GameData.actors[index].background
+	ActorManager.create_hero(role, background, index)
+"
 
 [node name="RoleBtn" type="Button"]
 offset_right = 56.0
@@ -10,7 +23,7 @@ offset_bottom = 9.0
 theme = ExtResource("1_ndfcg")
 text = "?!"
 alignment = 0
-script = ExtResource("2_ba7i1")
+script = SubResource("GDScript_ndfcg")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

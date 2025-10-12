@@ -1,3 +1,4 @@
+OptionButton
 Node2D
 MarginContainer
 PanelContainer
@@ -12,4 +13,3 @@ VBoxContainer
 Control
 TileMapLayer
 ProgressBar
-Sprite2D

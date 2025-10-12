@@ -161,3 +161,4 @@ func create_hero(role, _background, index) -> void:
 		GameData.actors.resize(index + 1)
 	GameData.actors[index] = hero
 	SignalManager.update_actor.emit(index)
+	SignalManager.update_actor_hero_creation.emit()

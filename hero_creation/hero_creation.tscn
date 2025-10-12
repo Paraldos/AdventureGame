@@ -61,18 +61,17 @@ theme_override_constants/margin_bottom = -1
 layout_mode = 2
 theme_override_constants/separation = -1
 
-[node name="RoleBtn" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="RolesMenu" type="OptionButton" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
-text = "Role"
 
-[node name="RaceBtn" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="BackgroundsMenu" type="OptionButton" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
-text = "Background"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -206,16 +205,5 @@ focus_mode = 0
 texture_normal = ExtResource("4_qi0hw")
 texture_hover = ExtResource("5_ssf5x")
 
-[node name="RolesContainer" type="VBoxContainer" parent="."]
-unique_name_in_owner = true
-offset_left = 120.0
-offset_top = 16.0
-offset_right = 216.0
-offset_bottom = 116.0
-theme = ExtResource("1_hjk36")
-theme_override_constants/separation = -1
-
-[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/RoleBtn" to="." method="_on_role_btn_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/RaceBtn" to="." method="_on_race_btn_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer3/XBtn" to="." method="_on_x_btn_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer3/AcceptBtn" to="." method="_on_accept_btn_pressed"]

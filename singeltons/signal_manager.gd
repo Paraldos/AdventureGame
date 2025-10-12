@@ -4,3 +4,4 @@ signal select_hero
 signal update_slot_btn
 signal update_actor(index)
 signal update_all_actors
+signal update_actor_hero_creation
