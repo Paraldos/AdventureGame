@@ -1,6 +1,6 @@
 extends Node
 
-var game_state = Utils.GAMESTATES.HEROCREATION
+var game_state
 var actors : Array
 var selected_actor = 0
 var slots = [

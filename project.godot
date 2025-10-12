@@ -22,6 +22,7 @@ GameData="*res://singeltons/game_data.gd"
 SceneManager="*res://singeltons/scene_manager.tscn"
 SignalManager="*res://singeltons/signal_manager.gd"
 ActorManager="*res://singeltons/actor_manager.gd"
+GameManager="*res://singeltons/game_manager.gd"
 
 [debug]
 
