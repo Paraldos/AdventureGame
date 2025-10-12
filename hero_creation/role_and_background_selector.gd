@@ -6,11 +6,9 @@ var index = -1
 var disabled = true
 
 func _ready() -> void:
-	SignalManager.update_actor_value.connect(_udpate_selected)
 	await _start_role_menu()
-	await _udpate_selected()
 	await _start_background_menu()
-	await _update_background()
+	SignalManager.update_actor_value.connect(_udpate_selected)
 	disabled = false
 
 func _start_role_menu():
@@ -24,6 +22,7 @@ func _start_role_menu():
 	for i in ActorManager.hero_roles.size():
 		var role = ActorManager.hero_roles[i]
 		roles_menu.add_item(Utils.id_to_string(role.id))
+	await _update_role()
 	return
 
 func _start_background_menu():
@@ -37,6 +36,7 @@ func _start_background_menu():
 	for i in ActorManager.hero_backgrounds.size():
 		var background = ActorManager.hero_backgrounds[i]
 		backgrounds_menu.add_item(Utils.id_to_string(background.id))
+	await _update_background()
 	return
 
 func _udpate_selected():
@@ -63,14 +63,10 @@ func _update_background():
 
 func _on_roles_menu_item_selected(_index: int) -> void:
 	if disabled: return
-	disabled = true
 	GameData.actors[index].role = ActorManager.hero_roles[roles_menu.get_selected_id()].duplicate()
 	SignalManager.update_actor_value.emit()
-	disabled = false
 
 func _on_backgrounds_menu_item_selected(_index: int) -> void:
 	if disabled: return
-	disabled = true
 	GameData.actors[index].background = ActorManager.hero_backgrounds[backgrounds_menu.get_selected_id()].duplicate()
 	SignalManager.update_actor_value.emit()
-	disabled = false
