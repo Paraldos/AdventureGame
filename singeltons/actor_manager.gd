@@ -109,7 +109,7 @@ var list_of_male_names = [
     "Neo"
 ]
 var brawler = {
-	role_id = "brawler",
+	id = "brawler",
 	sex = "male",
 	max_hp = 50,
 	current_hp = 50,
@@ -121,7 +121,7 @@ var brawler = {
 	template = 'res://actors/fighter/fighter.tscn'
 }
 var hacker = {
-	role_id = "hacker",
+	id = "hacker",
 	sex = "female",
 	max_hp = 50,
 	current_hp = 50,
@@ -135,21 +135,21 @@ var hacker = {
 var hero_roles = [ brawler, hacker ]
 
 var streetkid = {
-	background_id = "streetkid",
+	id = "streetkid",
 	charm = 1,
 	dex = 1,
 	strength = 0,
 	wits = 0,
 }
 var corpo = {
-	background_id = "corpo", 
+	id = "corpo", 
 	charm = 1,
 	dex = 0,
 	strength = 0,
 	wits = 1
 }
 var mutant = {
-	background_name = "mutant",
+	id = "mutant",
 	charm = 0,
 	dex = 1,
 	strength = 1,
@@ -169,7 +169,7 @@ func create_hero(role, background, index) -> void:
 	# role
 	var hero = role.duplicate()
 	# background
-	hero.background = background.name
+	hero.background = background.id
 	hero.charm += background.charm
 	hero.dex += background.dex
 	hero.strength += background.strength

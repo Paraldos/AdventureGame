@@ -18,6 +18,7 @@ func _update_left_text():
 
 func _update_right_text():
 	var actor = GameData.actors[index]
+	label_right.text = ""
 	label_right.text += "Name: %s\n" % actor.name
-	label_right.text += "Role: %s\n" % actor.role_id
-	label_right.text += "Name: %s\n" % actor.background_id
+	label_right.text += "Role: %s\n" % Utils.id_to_string(actor.id)
+	label_right.text += "Background: %s\n" % Utils.id_to_string(actor.background)

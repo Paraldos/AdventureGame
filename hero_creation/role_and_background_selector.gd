@@ -13,14 +13,14 @@ func _start_role_menu():
 	roles_menu.clear()
 	for i in ActorManager.hero_roles.size():
 		var role = ActorManager.hero_roles[i]
-		roles_menu.add_item(role.name)
+		roles_menu.add_item(Utils.id_to_string(role.id))
 
 func _start_background_menu():
 	backgrounds_menu.get_popup().canvas_item_default_texture_filter = Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
 	backgrounds_menu.clear()
 	for i in ActorManager.hero_backgrounds.size():
 		var background = ActorManager.hero_backgrounds[i]
-		backgrounds_menu.add_item(background.name)
+		backgrounds_menu.add_item(Utils.id_to_string(background.id))
 
 func _on_roles_menu_item_selected(_index: int) -> void:
 	_create_hero()
