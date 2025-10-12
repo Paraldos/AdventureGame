@@ -14,16 +14,13 @@ func _ready() -> void:
 	visible = false
 	pointer.visible = false
 	SignalManager.update_actor_template.connect(_on_update_actor)
-	SignalManager.scene_changed.connect(_on_scene_changed)
-
-func _on_scene_changed():
 	_on_update_slot_btn()
 	match GameManager.state:
-		GameManager.GAMESTATES.NONE:
+		GameManager.STATES.NONE:
 			print('none')
-		GameManager.GAMESTATES.BATTLE:
+		GameManager.STATES.BATTLE:
 			print('battle')
-		GameManager.GAMESTATES.CONVERSATION:
+		GameManager.STATES.CONVERSATION:
 			print('conversation')
 	visible = true
 
