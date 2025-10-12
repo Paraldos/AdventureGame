@@ -76,6 +76,7 @@ text = "Background"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
@@ -83,13 +84,15 @@ self_modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
 layout_mode = 2
 texture = ExtResource("1_ntd0c")
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect"]
+[node name="LabelStrength" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/outline_size = 2
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -99,29 +102,15 @@ self_modulate = Color(0.45882353, 0.654902, 0.2627451, 1)
 layout_mode = 2
 texture = ExtResource("1_ntd0c")
 
-[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect2"]
+[node name="LabelDex" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect2"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-self_modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
-layout_mode = 2
-texture = ExtResource("1_ntd0c")
-
-[node name="Label3" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+theme_override_constants/outline_size = 2
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -131,13 +120,33 @@ self_modulate = Color(0.9098039, 0.75686276, 0.4392157, 1)
 layout_mode = 2
 texture = ExtResource("1_ntd0c")
 
-[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect4"]
+[node name="LabelCharm" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect4"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/outline_size = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+self_modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
+layout_mode = 2
+texture = ExtResource("1_ntd0c")
+
+[node name="LabelWits" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextureRect3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
