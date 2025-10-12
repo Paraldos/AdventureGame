@@ -1,5 +1,7 @@
 extends Node
 
+enum GAMESTATES { HEROCREATION, BATTLE, CONVERSATION }
+
 var game
 
 func id_to_string(txt: String) -> String:

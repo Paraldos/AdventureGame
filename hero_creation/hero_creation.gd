@@ -10,7 +10,6 @@ var index = 0
 var old_actor = null
 
 func _ready() -> void:
-	print(index)
 	role_and_background_selector.index = index
 	attributes.index = index
 	stats.index = index

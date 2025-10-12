@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Utils="*res://singeltons/utils.tscn"
 GameData="*res://singeltons/game_data.gd"
 SceneManager="*res://singeltons/scene_manager.tscn"
-Utils="*res://singeltons/utils.tscn"
 SignalManager="*res://singeltons/signal_manager.gd"
 ActorManager="*res://singeltons/actor_manager.gd"
 
@@ -40,3 +40,5 @@ window/stretch/mode="canvas_items"
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
