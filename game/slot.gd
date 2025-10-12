@@ -34,6 +34,7 @@ func _on_update_actor(target_index):
 	var actor: Dictionary = GameData.actors[target_index]
 	var bp: PackedScene = load(actor.role.template)
 	var inst: Node2D = bp.instantiate()
+	inst.index = index
 	actor_container.add_child(inst)
 
 func _on_update_slot_btn():

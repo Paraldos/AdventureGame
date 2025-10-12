@@ -8,14 +8,15 @@ func _ready() -> void:
 	_update_lifebar()
 
 func _update_lifebar(slow = false):
-	return
 	var tween_time = 0.8
-	lifebar.max_value = GameData.actors[index].max_hp * 100
+	var max_hp = ActorManager.get_max_hp(index)
+	var current_hp = ActorManager.get_current_hp(index)
+	lifebar.max_value = max_hp * 100
 	if slow:
 		var tween = create_tween()
-		tween.tween_property(lifebar, 'value', GameData.actors[index].current_hp * 100, tween_time)
+		tween.tween_property(lifebar, 'value', current_hp, tween_time)
 	else:
-		lifebar.value = GameData.actors[index].current_hp * 100
+		lifebar.value = current_hp * 100
 
 func _on_main_btn_pressed() -> void:
 	GameData.selected_actor = index

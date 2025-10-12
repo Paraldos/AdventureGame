@@ -10,6 +10,7 @@ var index = 0
 var old_actor = null
 
 func _ready() -> void:
+	print(index)
 	role_and_background_selector.index = index
 	attributes.index = index
 	stats.index = index
@@ -22,6 +23,7 @@ func _ready() -> void:
 			ActorManager.hero_backgrounds.pick_random(),
 			index
 		)
+		await get_tree().process_frame
 		SignalManager.update_actor_template.emit(index)
 	SignalManager.update_actor_value.emit()
 

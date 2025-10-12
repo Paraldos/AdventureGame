@@ -198,3 +198,8 @@ func get_max_hp(index : int) -> int:
 	var value = 0
 	value += GameData.actors[index].role.max_hp
 	return value
+
+func get_current_hp(index : int) -> int:
+	var value = 0
+	value += GameData.actors[index].current_hp
+	return value
