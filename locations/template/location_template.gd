@@ -10,5 +10,5 @@ extends Node2D
 ]
 
 func _ready():
-	Utils.game = self
+	Utils.current_location = self
 	SignalManager.select_hero.emit()

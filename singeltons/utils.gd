@@ -1,6 +1,6 @@
 extends Node
 
-var game
+var current_location
 
 func id_to_string(txt: String) -> String:
 	var words := txt.split("_", false)
