@@ -30,14 +30,12 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
-disabled = true
 
 [node name="BackgroundsMenu" type="OptionButton" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
-disabled = true
 
 [connection signal="item_selected" from="MarginContainer/HBoxContainer/RolesMenu" to="." method="_on_roles_menu_item_selected"]
 [connection signal="item_selected" from="MarginContainer/HBoxContainer/BackgroundsMenu" to="." method="_on_backgrounds_menu_item_selected"]
