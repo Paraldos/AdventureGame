@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctgvsngilny15"
-path="res://.godot/imported/ability_btn3.png-d2ab157e4fd50bc9791536dfa99f7a76.ctex"
+uid="uid://sjbolkwfnrpv"
+path="res://.godot/imported/undo_btn2.png-0f029207dc4bf4dcdcce76061c17f30c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/ability_btn3.png"
-dest_files=["res://.godot/imported/ability_btn3.png-d2ab157e4fd50bc9791536dfa99f7a76.ctex"]
+source_file="res://assets/img/ui/undo_btn2.png"
+dest_files=["res://.godot/imported/undo_btn2.png-0f029207dc4bf4dcdcce76061c17f30c.ctex"]
 
 [params]
 

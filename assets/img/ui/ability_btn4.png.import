@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://isunv4jk5h3a"
-path="res://.godot/imported/accept_btn2.png-cee726938317c5a23ae259ea6984924c.ctex"
+uid="uid://bp3eemndeps8p"
+path="res://.godot/imported/ability_btn4.png-eb0068c913861346376a90186767c595.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/accept_btn2.png"
-dest_files=["res://.godot/imported/accept_btn2.png-cee726938317c5a23ae259ea6984924c.ctex"]
+source_file="res://assets/img/ui/ability_btn4.png"
+dest_files=["res://.godot/imported/ability_btn4.png-eb0068c913861346376a90186767c595.ctex"]
 
 [params]
 

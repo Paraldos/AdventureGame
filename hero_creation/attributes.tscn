@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ej142y2sc4y4"]
 
-[ext_resource type="Texture2D" uid="uid://d4e048h4rv6bb" path="res://assets/img/attributes.png" id="1_lmqno"]
+[ext_resource type="Texture2D" uid="uid://d4e048h4rv6bb" path="res://assets/img/ui/attributes.png" id="1_lmqno"]
 [ext_resource type="Script" uid="uid://bbau0ydr7qeuj" path="res://hero_creation/attributes.gd" id="1_pioga"]
 
 [node name="Attributes" type="HBoxContainer"]

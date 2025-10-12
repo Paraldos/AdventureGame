@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cja63mf1ulnpi"]
 
-[ext_resource type="Texture2D" uid="uid://c5crnfwg3lwyl" path="res://assets/img/btn1.png" id="1_ttnuf"]
+[ext_resource type="Texture2D" uid="uid://c5crnfwg3lwyl" path="res://assets/img/ui/btn1.png" id="1_ttnuf"]
 [ext_resource type="Script" uid="uid://bb5evq4hnidap" path="res://hero_creation/role_and_background_selector.gd" id="2_2anrf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7onh3"]

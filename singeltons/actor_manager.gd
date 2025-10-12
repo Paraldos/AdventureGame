@@ -161,10 +161,6 @@ func _ready() -> void:
 	rng.randomize()
 
 # =============================================== helper
-func remove_hero(index) -> void:
-	GameData.actors[index] = null
-	SignalManager.update_actor.emit(index)
-
 func create_hero(role, background, index) -> void:
 	# role
 	var hero = role.duplicate()

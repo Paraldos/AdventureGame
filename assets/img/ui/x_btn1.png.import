@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpssj51f2yj6p"
-path="res://.godot/imported/Main Character - Male - Full spritesheet - No Guide.png-c4eec8f6df150c75bb6d1184ada7bd09.ctex"
+uid="uid://b2x7o7ognf3q4"
+path="res://.godot/imported/x_btn1.png-c6e3da67267349ba1bb44e42c3337ac4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/Main Character - Male - Full spritesheet - No Guide.png"
-dest_files=["res://.godot/imported/Main Character - Male - Full spritesheet - No Guide.png-c4eec8f6df150c75bb6d1184ada7bd09.ctex"]
+source_file="res://assets/img/ui/x_btn1.png"
+dest_files=["res://.godot/imported/x_btn1.png-c6e3da67267349ba1bb44e42c3337ac4.ctex"]
 
 [params]
 

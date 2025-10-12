@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bynj70jtjetox"
-path="res://.godot/imported/DESERT TILESET 32x32.png-5ad7e690d3ce6db6c99b4fed1d71b116.ctex"
+uid="uid://hws4suxcj775"
+path="res://.godot/imported/creature_btn1.png-f53587c9ecb742a7fc12f54ed4429aa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/DESERT TILESET 32x32.png"
-dest_files=["res://.godot/imported/DESERT TILESET 32x32.png-5ad7e690d3ce6db6c99b4fed1d71b116.ctex"]
+source_file="res://assets/img/ui/creature_btn1.png"
+dest_files=["res://.godot/imported/creature_btn1.png-f53587c9ecb742a7fc12f54ed4429aa2.ctex"]
 
 [params]
 

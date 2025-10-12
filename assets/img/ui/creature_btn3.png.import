@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clrheasg3fgsp"
-path="res://.godot/imported/ability_btn-Sheet.png-66da72bdeb45d93406b02811c235c07e.ctex"
+uid="uid://bbkrjy7811uhk"
+path="res://.godot/imported/creature_btn3.png-8175c15df0f35c358b0f5fdb4c47ef04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/ability_btn-Sheet.png"
-dest_files=["res://.godot/imported/ability_btn-Sheet.png-66da72bdeb45d93406b02811c235c07e.ctex"]
+source_file="res://assets/img/ui/creature_btn3.png"
+dest_files=["res://.godot/imported/creature_btn3.png-8175c15df0f35c358b0f5fdb4c47ef04.ctex"]
 
 [params]
 

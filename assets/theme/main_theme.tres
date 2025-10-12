@@ -1,12 +1,12 @@
 [gd_resource type="Theme" load_steps=25 format=4 uid="uid://dxbr2pe0xoeby"]
 
-[ext_resource type="Texture2D" uid="uid://ytigfo5n1b6b" path="res://assets/img/btn2.png" id="1_tnish"]
-[ext_resource type="Texture2D" uid="uid://i0d7aac5t330" path="res://assets/img/btn3.png" id="3_b85mk"]
-[ext_resource type="Texture2D" uid="uid://c5crnfwg3lwyl" path="res://assets/img/btn1.png" id="4_0vr3v"]
-[ext_resource type="Texture2D" uid="uid://5t4ole0i0o0s" path="res://assets/img/pointer.png" id="4_b85mk"]
-[ext_resource type="Texture2D" uid="uid://ba44qjj6lavpu" path="res://assets/img/panel.png" id="5_b85mk"]
-[ext_resource type="Texture2D" uid="uid://cqy25ag8328ki" path="res://assets/img/radio_btn2.png" id="6_ryqvi"]
-[ext_resource type="Texture2D" uid="uid://cx01f8x2c1kae" path="res://assets/img/radio_btn1.png" id="7_vdebs"]
+[ext_resource type="Texture2D" uid="uid://ytigfo5n1b6b" path="res://assets/img/ui/btn2.png" id="1_tnish"]
+[ext_resource type="Texture2D" uid="uid://i0d7aac5t330" path="res://assets/img/ui/btn3.png" id="3_b85mk"]
+[ext_resource type="Texture2D" uid="uid://c5crnfwg3lwyl" path="res://assets/img/ui/btn1.png" id="4_0vr3v"]
+[ext_resource type="Texture2D" uid="uid://5t4ole0i0o0s" path="res://assets/img/ui/pointer.png" id="4_b85mk"]
+[ext_resource type="Texture2D" uid="uid://ba44qjj6lavpu" path="res://assets/img/ui/panel.png" id="5_b85mk"]
+[ext_resource type="Texture2D" uid="uid://cqy25ag8328ki" path="res://assets/img/ui/radio_btn2.png" id="6_ryqvi"]
+[ext_resource type="Texture2D" uid="uid://cx01f8x2c1kae" path="res://assets/img/ui/radio_btn1.png" id="7_vdebs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b85mk"]
 texture = ExtResource("1_tnish")

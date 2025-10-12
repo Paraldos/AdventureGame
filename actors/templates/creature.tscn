@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dumim65fw3rvl" path="res://actors/templates/creature.gd" id="1_fk5vs"]
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="2_r258m"]
-[ext_resource type="Texture2D" uid="uid://c7nurt6huveky" path="res://assets/img/status_bar.png" id="5_5cknt"]
-[ext_resource type="Texture2D" uid="uid://b0s5a1f2c7ly2" path="res://assets/img/life_bar.png" id="6_kvdc2"]
+[ext_resource type="Texture2D" uid="uid://c7nurt6huveky" path="res://assets/img/ui/status_bar.png" id="5_5cknt"]
+[ext_resource type="Texture2D" uid="uid://b0s5a1f2c7ly2" path="res://assets/img/ui/life_bar.png" id="6_kvdc2"]
 
 [node name="Creature" type="Node2D"]
 script = ExtResource("1_fk5vs")

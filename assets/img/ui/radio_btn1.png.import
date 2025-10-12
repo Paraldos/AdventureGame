@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2x7o7ognf3q4"
-path="res://.godot/imported/x_btn1.png-739464d114e9e36bd64b2e9637ce2ea7.ctex"
+uid="uid://cx01f8x2c1kae"
+path="res://.godot/imported/radio_btn1.png-04bd823da9bd0cebec73f45ef2fd31f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/x_btn1.png"
-dest_files=["res://.godot/imported/x_btn1.png-739464d114e9e36bd64b2e9637ce2ea7.ctex"]
+source_file="res://assets/img/ui/radio_btn1.png"
+dest_files=["res://.godot/imported/radio_btn1.png-04bd823da9bd0cebec73f45ef2fd31f2.ctex"]
 
 [params]
 
