@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b3f40uinkuugn"]
 
-[ext_resource type="PackedScene" uid="uid://cc5lnbv826w40" path="res://actors/templates/creature.tscn" id="1_5dr6d"]
+[ext_resource type="PackedScene" uid="uid://cc5lnbv826w40" path="res://actors/templates/actor.tscn" id="1_5dr6d"]
 [ext_resource type="Texture2D" uid="uid://cqrhbqr0jmiwy" path="res://assets/img/char_templates/idle-Sheet.png" id="2_5u7vx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ge41c"]

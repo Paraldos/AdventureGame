@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4q7v1n1u370q"]
 
 [ext_resource type="Script" uid="uid://6dhulyc34mgl" path="res://game/slot.gd" id="1_8jju3"]
-[ext_resource type="Theme" uid="uid://djg8cvd887cqj" path="res://assets/theme/creature_selector_theme.tres" id="1_mabo7"]
+[ext_resource type="Theme" uid="uid://djg8cvd887cqj" path="res://assets/theme/actor_theme.tres" id="1_mabo7"]
 [ext_resource type="Texture2D" uid="uid://5t4ole0i0o0s" path="res://assets/img/ui/pointer.png" id="2_8jju3"]
 
 [sub_resource type="Animation" id="Animation_y36n6"]
