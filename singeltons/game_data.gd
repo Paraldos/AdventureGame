@@ -1,6 +1,6 @@
 extends Node
 
-var actors : Array[Dictionary]
+var actors : Array
 var selected_actor = 0
 var slots = [
 	Slot.BTN_STATUS.ACTIVE,

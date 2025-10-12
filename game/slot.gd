@@ -5,6 +5,7 @@ enum BTN_STATUS { INVISIBLE, DISABLED, ACTIVE }
 
 @onready var button: Button = %Button
 @onready var pointer: Sprite2D = %Pointer
+@onready var actor_container: Node2D = %ActorContainer
 
 @export var index = 0
 var bp_hero_creation = preload('res://hero_creation/hero_creation.tscn')
@@ -24,12 +25,17 @@ func _on_button_mouse_exited() -> void:
 	pointer.visible = false
 
 func _on_update_actor(target_index):
+	# guard
 	if not target_index == index: return
+	# cleanup
+	for child in actor_container.get_children():
+		child.queue_free()
+	# spawn new actor
+	if not GameData.actors[target_index]: return
 	var actor: Dictionary = GameData.actors[target_index]
-	print(actor.template)
 	var bp: PackedScene = load(actor.template)
 	var inst: Node2D = bp.instantiate()
-	add_child(inst)
+	actor_container.add_child(inst)
 
 func _on_update_all_actors():
 	_on_update_actor(index)

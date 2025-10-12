@@ -20,6 +20,7 @@ func _ready() -> void:
 		roles_container.add_child(btn)
 
 func _on_x_btn_pressed() -> void:
+	ActorManager.remove_hero(index)
 	queue_free()
 
 func _on_accept_btn_pressed() -> void:
@@ -27,9 +28,3 @@ func _on_accept_btn_pressed() -> void:
 
 func _on_role_btn_pressed() -> void:
 	roles_container.visible = !roles_container.visible
-
-func _on_race_btn_pressed() -> void:
-	roles_container.visible = false
-
-func _on_zodiac_btn_pressed() -> void:
-	roles_container.visible = false

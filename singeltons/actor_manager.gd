@@ -145,6 +145,10 @@ func _ready() -> void:
 	rng.randomize()
 
 # =============================================== helper
+func remove_hero(index) -> void:
+	GameData.actors[index] = null
+	SignalManager.update_actor.emit(index)
+
 func create_hero(role, _background, index) -> void:
 	var hero = role.duplicate()
 	if role.sex == "male":

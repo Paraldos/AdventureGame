@@ -43,6 +43,7 @@ _data = {
 
 [node name="Slot" type="Marker2D"]
 script = ExtResource("1_8jju3")
+index = null
 
 [node name="Button" type="Button" parent="."]
 unique_name_in_owner = true
@@ -64,6 +65,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_y36n6")
 }
 autoplay = "loop"
+
+[node name="ActorContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
