@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@export var dialogs : Array[Dialog]
+
 func _ready() -> void:
 	SignalManager.scene_change_finished.connect(_on_scene_change_finished)
 
