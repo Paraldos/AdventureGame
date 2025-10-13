@@ -40,6 +40,7 @@ alignment = 1
 
 [node name="StartBtn" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "Start"
 
 [connection signal="pressed" from="Control/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]

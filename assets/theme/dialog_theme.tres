@@ -1,7 +1,19 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://b4e32g31xbiik"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b4e32g31xbiik"]
 
 [ext_resource type="Texture2D" uid="uid://b65iw4a3mx4h7" path="res://assets/img/ui/dialog_bubble.png" id="1_rngpb"]
 [ext_resource type="FontFile" uid="uid://nn4nvg0af02x" path="res://assets/fonts/W95FA.otf" id="2_vxttx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1k1c"]
+content_margin_bottom = 1.0
+bg_color = Color(0.30980393, 0.56078434, 0.7294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxttx"]
+content_margin_bottom = 1.0
+bg_color = Color(0.23529412, 0.36862746, 0.54509807, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3b5k"]
+content_margin_bottom = 1.0
+bg_color = Color(0.30980393, 0.56078434, 0.7294118, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vxttx"]
 texture = ExtResource("1_rngpb")
@@ -13,6 +25,12 @@ texture_margin_bottom = 3.0
 [resource]
 default_font = ExtResource("2_vxttx")
 default_font_size = 4
-Label/colors/font_color = Color(0.0627451, 0.078431375, 0.12156863, 1)
+Button/colors/font_color = Color(0.78039217, 0.8117647, 0.8, 1)
+Button/colors/font_hover_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+Button/colors/font_pressed_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_i1k1c")
+Button/styles/normal = SubResource("StyleBoxFlat_vxttx")
+Button/styles/pressed = SubResource("StyleBoxFlat_r3b5k")
+Label/colors/font_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
 Label/constants/line_spacing = 1
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_vxttx")

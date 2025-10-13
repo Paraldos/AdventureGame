@@ -14,12 +14,10 @@ func _exit():
 	match state:
 		States.NONE:
 			pass
-		States.HEROCREATION:
-			pass
+		States.DIALOG:
+			DialogManager.disable_background_btn()
 
 func _enter(new_state):
 	match new_state:
-		States.HEROCREATION:
-			pass
-		States.BATTLE:
-			pass
+		States.DIALOG:
+			DialogManager.disable_background_btn(false)

@@ -6,4 +6,4 @@ enum Speakers { RANDOME_HERO, RANDOME_ENEMY, NARRATOR, BOSS }
 @export_multiline var text : String
 @export var speaker : Speakers
 @export var location : Array[String]
-@export var option : Array[DialogOption]
+@export var options : Array[DialogOption]

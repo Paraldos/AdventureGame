@@ -1,15 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://j3eaeq126b3d"]
+[gd_scene load_steps=6 format=3 uid="uid://j3eaeq126b3d"]
 
 [ext_resource type="Script" uid="uid://3vcc6vsw433v" path="res://dialog_manager/dialog_manager.gd" id="1_jch72"]
 [ext_resource type="Script" uid="uid://vqv617lov561" path="res://dialog_manager/dialog.gd" id="2_cbvse"]
+[ext_resource type="Script" uid="uid://c4papynmlhc0q" path="res://dialog_manager/dialog_option.gd" id="3_m5bya"]
+
+[sub_resource type="Resource" id="Resource_cbvse"]
+script = ExtResource("3_m5bya")
+text = "Option1"
+metadata/_custom_type_script = "uid://c4papynmlhc0q"
+
+[sub_resource type="Resource" id="Resource_m5bya"]
+script = ExtResource("3_m5bya")
+text = "Option2"
+metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [node name="DialogManager" type="CanvasLayer"]
 script = ExtResource("1_jch72")
 
 [node name="Dialog1" type="Node" parent="."]
 script = ExtResource("2_cbvse")
-text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
 location = Array[String](["TestArea"])
+options = Array[ExtResource("3_m5bya")]([SubResource("Resource_cbvse"), SubResource("Resource_m5bya")])
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Dialog2" type="Node" parent="."]
@@ -26,4 +38,4 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[connection signal="pressed" from="BackgroundBtn" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BackgroundBtn" to="." method="_on_background_btn_pressed"]

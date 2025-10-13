@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd6mtla6p1d56"]
+
+[ext_resource type="Script" uid="uid://bjserp341cpkk" path="res://dialog_manager/option_btn.gd" id="1_roibh"]
+
+[node name="OptionBtn" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 0
+script = ExtResource("1_roibh")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
