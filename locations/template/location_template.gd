@@ -8,6 +8,7 @@ extends Node2D
 	%Slot4,
 	%Slot5,
 ]
+@onready var narrator_dialog_position: Marker2D = %NarratorDialogPosition
 
 func _ready():
 	Utils.current_location = self

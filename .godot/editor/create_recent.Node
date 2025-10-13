@@ -1,3 +1,6 @@
+MarginContainer
+TextureRect
+Marker2D
 Button
 CollisionShape2D
 Area2D
@@ -8,7 +11,4 @@ Dialog
 CanvasLayer
 OptionButton
 Node2D
-MarginContainer
-TextureRect
 HBoxContainer
-TextureButton

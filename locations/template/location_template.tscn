@@ -239,3 +239,7 @@ index = 4
 unique_name_in_owner = true
 position = Vector2(200, 56)
 index = 5
+
+[node name="NarratorDialogPosition" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(112, 8)

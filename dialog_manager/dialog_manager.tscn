@@ -21,6 +21,7 @@ script = ExtResource("1_jch72")
 [node name="Dialog1" type="Node" parent="."]
 script = ExtResource("2_cbvse")
 text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
+speaker = 2
 location = Array[String](["TestArea"])
 options = Array[ExtResource("3_m5bya")]([SubResource("Resource_cbvse"), SubResource("Resource_m5bya")])
 metadata/_custom_type_script = "uid://vqv617lov561"
@@ -29,6 +30,7 @@ metadata/_custom_type_script = "uid://vqv617lov561"
 script = ExtResource("2_cbvse")
 text = "Dialog2"
 target_id = "Dialog1"
+speaker = 2
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="BackgroundBtn" type="Button" parent="."]

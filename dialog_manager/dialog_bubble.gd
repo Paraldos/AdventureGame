@@ -1,8 +1,11 @@
 extends Node2D
 class_name DialogBubble
 
+@onready var panel_container: PanelContainer = %PanelContainer
 @onready var content_container: VBoxContainer = %ContentContainer
 @onready var label: Label = %Label
+@onready var pointer_top: TextureRect = %PointerTop
+@onready var pointer_bottom: TextureRect = %PointerBottom
 var dialog : Dialog
 var text_length = 0
 var max_text_length = 75
@@ -13,6 +16,14 @@ func _ready() -> void:
 	SignalManager.background_btn_clicked.connect(_on_background_btn_clicked)
 	text_length = dialog.text.length()
 	_update_text()
+	global_position = Utils.current_location.narrator_dialog_position.global_position
+	if dialog.speaker == Dialog.Speakers.NARRATOR:
+		pointer_bottom.visible = false
+		panel_container.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	else:
+		panel_container.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
+		pointer_top.visible = false
+		pointer_bottom.visible = false
 
 func _on_background_btn_clicked():
 	_update_text()
