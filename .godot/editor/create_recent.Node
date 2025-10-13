@@ -1,3 +1,4 @@
+Dialog
 CanvasLayer
 OptionButton
 Node2D
@@ -11,4 +12,3 @@ Label
 GridContainer
 VBoxContainer
 Control
-TileMapLayer

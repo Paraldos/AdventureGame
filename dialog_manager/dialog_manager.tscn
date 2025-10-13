@@ -1,21 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://j3eaeq126b3d"]
+[gd_scene load_steps=3 format=3 uid="uid://j3eaeq126b3d"]
 
 [ext_resource type="Script" uid="uid://3vcc6vsw433v" path="res://dialog_manager/dialog_manager.gd" id="1_jch72"]
 [ext_resource type="Script" uid="uid://vqv617lov561" path="res://dialog_manager/dialog.gd" id="2_cbvse"]
-[ext_resource type="Script" uid="uid://c4papynmlhc0q" path="res://dialog_manager/dialog_option.gd" id="3_m5bya"]
-
-[sub_resource type="Resource" id="Resource_cbvse"]
-script = ExtResource("2_cbvse")
-id = "test1"
-text = "This is Test 1"
-metadata/_custom_type_script = "uid://vqv617lov561"
-
-[sub_resource type="Resource" id="Resource_m5bya"]
-script = ExtResource("2_cbvse")
-id = "test2"
-text = "This is Test 2"
-metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="DialogManager" type="CanvasLayer"]
 script = ExtResource("1_jch72")
-dialogs = Array[ExtResource("2_cbvse")]([SubResource("Resource_cbvse"), SubResource("Resource_m5bya")])
+
+[node name="Dialog1" type="Node" parent="."]
+script = ExtResource("2_cbvse")
+text = "Dialog 1"
+location = Array[String](["TestArea"])
+metadata/_custom_type_script = "uid://vqv617lov561"
+
+[node name="Dialog2" type="Node" parent="."]
+script = ExtResource("2_cbvse")
+text = "Dialog 2"
+metadata/_custom_type_script = "uid://vqv617lov561"
