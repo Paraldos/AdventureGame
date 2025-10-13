@@ -16,11 +16,11 @@ func _ready() -> void:
 	SignalManager.update_actor_template.connect(_on_update_actor)
 	_on_update_slot_btn()
 	match GameManager.state:
-		GameManager.STATES.NONE:
+		GameManager.States.NONE:
 			pass
-		GameManager.STATES.BATTLE:
+		GameManager.States.BATTLE:
 			pass
-		GameManager.STATES.CONVERSATION:
+		GameManager.States.DIALOG:
 			pass
 	visible = true
 

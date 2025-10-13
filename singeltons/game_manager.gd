@@ -1,8 +1,8 @@
 extends Node
 
-enum STATES { NONE, HEROCREATION, BATTLE, CONVERSATION }
+enum States { NONE, HEROCREATION, BATTLE, DIALOG }
 
-var state = STATES.NONE :
+var state = States.NONE :
 	set(new_state):
 		if new_state == state: return
 		_exit()
@@ -12,14 +12,14 @@ var state = STATES.NONE :
 
 func _exit():
 	match state:
-		STATES.NONE:
+		States.NONE:
 			pass
-		STATES.HEROCREATION:
+		States.HEROCREATION:
 			pass
 
 func _enter(new_state):
 	match new_state:
-		STATES.HEROCREATION:
+		States.HEROCREATION:
 			pass
-		STATES.BATTLE:
+		States.BATTLE:
 			pass

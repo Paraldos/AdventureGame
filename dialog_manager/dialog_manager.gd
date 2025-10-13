@@ -1,10 +1,12 @@
 extends CanvasLayer
 
 var bp_dialog_bubble = preload("res://dialog_manager/dialog_bubble.tscn")
+@onready var background_btn: Button = %BackgroundBtn
 
 # ============================================ ready
 func _ready() -> void:
 	SignalManager.scene_change_finished.connect(_on_scene_change_finished)
+	background_btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _on_scene_change_finished() -> void:
 	var dialog_id_for_this_location = _get_dialog_id_for_this_location()
@@ -18,12 +20,15 @@ func add_dialog_to_game_data(id: String) -> void:
 func start_dialog(dialog_id: String) -> void:
 	var dialog = get_node(dialog_id)
 	if not dialog: return
+	GameManager.state = GameManager.States.DIALOG
+	background_btn.mouse_filter = Control.MOUSE_FILTER_STOP
 	var bubble = bp_dialog_bubble.instantiate()
 	bubble.dialog = dialog
 	add_child(bubble)
 
 func _on_button_pressed() -> void:
-	if not GameManager.state == GameManager.STATES.CONVERSATION: return
+	if not GameManager.state == GameManager.States.DIALOG: return
+	print('bert')
 
 # ============================================ helper
 func _get_dialog_id_for_this_location() -> String:
