@@ -6,12 +6,13 @@
 
 [sub_resource type="Resource" id="Resource_cbvse"]
 script = ExtResource("3_m5bya")
-text = "Option1"
+text = "Go to Dialog 2"
+target_id = "Dialog2"
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [sub_resource type="Resource" id="Resource_m5bya"]
 script = ExtResource("3_m5bya")
-text = "Option2"
+text = "End Dialog"
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [node name="DialogManager" type="CanvasLayer"]
@@ -27,6 +28,7 @@ metadata/_custom_type_script = "uid://vqv617lov561"
 [node name="Dialog2" type="Node" parent="."]
 script = ExtResource("2_cbvse")
 text = "Dialog2"
+target_id = "Dialog1"
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="BackgroundBtn" type="Button" parent="."]

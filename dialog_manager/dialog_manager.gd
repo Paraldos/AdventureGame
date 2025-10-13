@@ -19,8 +19,8 @@ func _on_background_btn_pressed() -> void:
 	SignalManager.background_btn_clicked.emit()
 
 # ============================================ API
-func add_dialog_to_game_data(id: String) -> void:
-	GameData.dialog_queue.append( id )
+func add_dialog_to_game_data(dialog_id: String) -> void:
+	GameData.dialog_queue.append( dialog_id )
 
 func start_dialog(dialog_id: String) -> void:
 	# guard
@@ -32,6 +32,18 @@ func start_dialog(dialog_id: String) -> void:
 	var bubble = bp_dialog_bubble.instantiate()
 	bubble.dialog = dialog
 	add_child(bubble)
+
+func move_to_next_dialog(dialog_id: String):
+	# guard
+	var dialog = get_node(dialog_id)
+	if not dialog: return
+	# inst bubble
+	var bubble = bp_dialog_bubble.instantiate()
+	bubble.dialog = dialog
+	add_child(bubble)
+
+func end_dialog():
+	print('WIP: end dialog')
 
 func disable_background_btn(disable_btn = true):
 	if disable_btn:
