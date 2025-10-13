@@ -1,6 +1,6 @@
+TextureRect
 AnimationPlayer
 MarginContainer
-TextureRect
 Marker2D
 Button
 CollisionShape2D
@@ -12,4 +12,3 @@ Dialog
 CanvasLayer
 OptionButton
 Node2D
-HBoxContainer
