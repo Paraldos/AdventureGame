@@ -8,11 +8,21 @@ script = ExtResource("1_jch72")
 
 [node name="Dialog1" type="Node" parent="."]
 script = ExtResource("2_cbvse")
-text = "Dialog 1"
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 location = Array[String](["TestArea"])
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Dialog2" type="Node" parent="."]
 script = ExtResource("2_cbvse")
-text = "Dialog 2"
+text = "Dialog2"
 metadata/_custom_type_script = "uid://vqv617lov561"
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
