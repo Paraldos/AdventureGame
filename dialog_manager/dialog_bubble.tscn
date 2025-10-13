@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://b21pqknq7i2xa"]
+[gd_scene load_steps=7 format=3 uid="uid://b21pqknq7i2xa"]
 
 [ext_resource type="Script" uid="uid://blllm38qpqbc3" path="res://dialog_manager/dialog_bubble.gd" id="1_4fcfv"]
 [ext_resource type="Theme" uid="uid://b4e32g31xbiik" path="res://assets/theme/dialog_theme.tres" id="1_7grl3"]
 [ext_resource type="Texture2D" uid="uid://7ovo60wq83uk" path="res://assets/img/ui/dialog_pointer.png" id="3_2gkh8"]
 
+[sub_resource type="Animation" id="Animation_2gkh8"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ptk6g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wa8pd"]
+_data = {
+&"RESET": SubResource("Animation_ptk6g"),
+&"fade_in": SubResource("Animation_2gkh8")
+}
+
 [node name="DialogBubble" type="Node2D"]
+modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_4fcfv")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -59,3 +97,9 @@ size_flags_vertical = 8
 mouse_filter = 2
 texture = ExtResource("3_2gkh8")
 stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wa8pd")
+}
+autoplay = "fade_in"
