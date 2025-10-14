@@ -1,3 +1,4 @@
+Dialog
 HBoxContainer
 Container
 TextureRect
@@ -10,6 +11,4 @@ Area2D
 Label
 VBoxContainer
 PanelContainer
-Dialog
 CanvasLayer
-OptionButton

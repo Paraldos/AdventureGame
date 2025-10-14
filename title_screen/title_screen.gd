@@ -5,8 +5,7 @@ func _on_start_btn_pressed() -> void:
 	_new_game()
 
 func _new_game():
-	DialogManager.add_dialog_to_game_data("Dialog1")
-	DialogManager.add_dialog_to_game_data("Dialog2")
+	DialogManager.add_dialog_to_game_data("Start")
 	# actors
 	GameData.actors = []
 	GameData.actors.resize(7)
