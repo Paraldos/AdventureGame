@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var role_and_background_selector: PanelContainer = %RoleAndBackgroundSelector
+@onready var role_and_background_selector: HBoxContainer = %RoleAndBackgroundSelector
 @onready var attributes: HBoxContainer = %Attributes
 @onready var stats: GridContainer = %Stats
 @onready var x_btn: TextureButton = %XBtn

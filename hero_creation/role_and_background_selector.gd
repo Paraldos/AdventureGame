@@ -1,4 +1,4 @@
-extends PanelContainer
+extends HBoxContainer
 
 @onready var roles_menu: OptionButton = %RolesMenu
 @onready var backgrounds_menu: OptionButton = %BackgroundsMenu

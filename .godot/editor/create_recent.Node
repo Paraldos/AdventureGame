@@ -1,3 +1,5 @@
+HBoxContainer
+Container
 TextureRect
 AnimationPlayer
 MarginContainer
@@ -11,4 +13,3 @@ PanelContainer
 Dialog
 CanvasLayer
 OptionButton
-Node2D

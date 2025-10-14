@@ -1,41 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cja63mf1ulnpi"]
+[gd_scene load_steps=3 format=3 uid="uid://cja63mf1ulnpi"]
 
-[ext_resource type="Texture2D" uid="uid://c5crnfwg3lwyl" path="res://assets/img/ui/btn1.png" id="1_ttnuf"]
+[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_ttnuf"]
 [ext_resource type="Script" uid="uid://bb5evq4hnidap" path="res://hero_creation/role_and_background_selector.gd" id="2_2anrf"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7onh3"]
-texture = ExtResource("1_ttnuf")
-texture_margin_left = 1.0
-texture_margin_top = 1.0
-texture_margin_right = 1.0
-texture_margin_bottom = 1.0
-
-[node name="RoleAndBackgroundSelector" type="PanelContainer"]
-theme_override_styles/panel = SubResource("StyleBoxTexture_7onh3")
+[node name="RoleAndBackgroundSelector" type="HBoxContainer"]
+offset_right = 49.0
+offset_bottom = 10.0
+theme = ExtResource("1_ttnuf")
 script = ExtResource("2_2anrf")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-theme_override_constants/margin_left = -1
-theme_override_constants/margin_top = -1
-theme_override_constants/margin_right = -1
-theme_override_constants/margin_bottom = -1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = -1
-
-[node name="RolesMenu" type="OptionButton" parent="MarginContainer/HBoxContainer"]
+[node name="RolesMenu" type="OptionButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 
-[node name="BackgroundsMenu" type="OptionButton" parent="MarginContainer/HBoxContainer"]
+[node name="BackgroundsMenu" type="OptionButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 
-[connection signal="item_selected" from="MarginContainer/HBoxContainer/RolesMenu" to="." method="_on_roles_menu_item_selected"]
-[connection signal="item_selected" from="MarginContainer/HBoxContainer/BackgroundsMenu" to="." method="_on_backgrounds_menu_item_selected"]
+[connection signal="item_selected" from="RolesMenu" to="." method="_on_roles_menu_item_selected"]
+[connection signal="item_selected" from="BackgroundsMenu" to="." method="_on_backgrounds_menu_item_selected"]

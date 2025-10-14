@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dxbr2pe0xoeby"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://dxbr2pe0xoeby"]
 
 [ext_resource type="Texture2D" uid="uid://ytigfo5n1b6b" path="res://assets/img/ui/btn2.png" id="1_tnish"]
 [ext_resource type="Texture2D" uid="uid://i0d7aac5t330" path="res://assets/img/ui/btn3.png" id="3_b85mk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ba44qjj6lavpu" path="res://assets/img/ui/panel.png" id="5_b85mk"]
 [ext_resource type="Texture2D" uid="uid://cqy25ag8328ki" path="res://assets/img/ui/radio_btn2.png" id="6_ryqvi"]
 [ext_resource type="Texture2D" uid="uid://cx01f8x2c1kae" path="res://assets/img/ui/radio_btn1.png" id="7_vdebs"]
+[ext_resource type="Texture2D" uid="uid://dnqjm7w437dfh" path="res://assets/img/ui/panel_simple.png" id="8_tjmdt"]
 [ext_resource type="FontFile" uid="uid://nn4nvg0af02x" path="res://assets/fonts/W95FA.otf" id="8_vdebs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b85mk"]
@@ -58,10 +59,10 @@ texture_margin_right = 6.0
 texture_margin_bottom = 12.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b85mk"]
-bg_color = Color(0.30980393, 0.56078434, 0.7294118, 1)
+bg_color = Color(0.0627451, 0.078431375, 0.12156863, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xamdb"]
-texture = ExtResource("4_0vr3v")
+texture = ExtResource("8_tjmdt")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
@@ -79,12 +80,17 @@ Button/styles/disabled = SubResource("StyleBoxTexture_b85mk")
 Button/styles/hover = SubResource("StyleBoxTexture_vdebs")
 Button/styles/normal = SubResource("StyleBoxTexture_0vr3v")
 Button/styles/pressed = SubResource("StyleBoxTexture_ryqvi")
+Label/colors/font_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
 Label/constants/line_spacing = 1
 Label/styles/normal = SubResource("StyleBoxEmpty_b85mk")
-OptionButton/colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+OptionButton/colors/font_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
 OptionButton/icons/arrow = ExtResource("4_b85mk")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_tjmdt")
-PopupMenu/colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+PopupMenu/colors/font_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
+PopupMenu/colors/font_disabled_color = Color(0.45882353, 0.14117648, 0.21960784, 1)
+PopupMenu/colors/font_hover_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
+PopupMenu/colors/font_separator_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
+PopupMenu/colors/title_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
 PopupMenu/constants/icon_max_width = 0
 PopupMenu/icons/checked = ExtResource("7_vdebs")
 PopupMenu/icons/checked_disabled = ExtResource("6_ryqvi")
