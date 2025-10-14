@@ -29,7 +29,7 @@ metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start3" type="Node" parent="."]
 script = ExtResource("2_cbvse")
-text = "Shouldn’t be hard. This city’s crawling with people desperate enough to take any gig."
+text = "Shouldn’t be hard. This city’s crawling with people desperate to take any gig."
 options = Array[ExtResource("3_m5bya")]([SubResource("Resource_cbvse")])
 metadata/_custom_type_script = "uid://vqv617lov561"
 
