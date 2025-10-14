@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://j3eaeq126b3d"]
+[gd_scene load_steps=6 format=3 uid="uid://j3eaeq126b3d"]
 
 [ext_resource type="Script" uid="uid://3vcc6vsw433v" path="res://dialog_manager/dialog_manager.gd" id="1_jch72"]
 [ext_resource type="Script" uid="uid://vqv617lov561" path="res://dialog_manager/dialog.gd" id="2_cbvse"]
+[ext_resource type="PackedScene" uid="uid://bgr7yd4sct3b7" path="res://npcs/bug.tscn" id="3_65if4"]
 [ext_resource type="Script" uid="uid://c4papynmlhc0q" path="res://dialog_manager/dialog_option.gd" id="3_m5bya"]
 
 [sub_resource type="Resource" id="Resource_cbvse"]
@@ -15,22 +16,28 @@ script = ExtResource("1_jch72")
 [node name="Start" type="Node" parent="."]
 script = ExtResource("2_cbvse")
 text = "Hey, kid. You look fresh off the shuttle. Lucky for you, I know how things work around here."
-target_id = "Start2"
-speaker = 2
 location = Array[String](["TestArea"])
+target_id = "Start2"
+speaker = 4
+npc = ExtResource("3_65if4")
+npc_slot = 3
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start2" type="Node" parent="."]
 script = ExtResource("2_cbvse")
 text = "Rule number one: never walk alone. Get yourself a crew. A few mercs who can handle the dirt."
 target_id = "Start3"
-speaker = 2
+speaker = 4
+npc = ExtResource("3_65if4")
+npc_slot = 4
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start3" type="Node" parent="."]
 script = ExtResource("2_cbvse")
 text = "Shouldn’t be hard. This city’s crawling with people desperate to take any gig."
 options = Array[ExtResource("3_m5bya")]([SubResource("Resource_cbvse")])
+npc = ExtResource("3_65if4")
+npc_slot = 4
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="BackgroundBtn" type="Button" parent="."]

@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var positions = [
+@onready var slots = [
 	%Slot,
 	%Slot1,
 	%Slot2,

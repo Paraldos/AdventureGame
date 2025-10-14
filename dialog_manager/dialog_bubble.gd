@@ -11,22 +11,35 @@ var dialog : Dialog
 var chunks = []
 var max_chunk_length = 150
 var current_chunk = 0
+var npc
 
 func _ready() -> void:
 	SignalManager.background_btn_clicked.connect(_update_content)
+	pointer_top.visible = false
+	pointer_bottom.visible = false
 	await _create_chunks()
 	_update_content()
+	_add_npc()
 	_update_position()
 
+func _add_npc():
+	if not dialog.npc_slot or not dialog.npc: return
+	npc = dialog.npc.instantiate()
+	npc.global_position = Vector2(0, 40)
+	add_child(npc)
+
 func _update_position():
-	global_position = Utils.current_location.narrator_dialog_position.global_position
-	if dialog.speaker == Dialog.Speakers.NARRATOR:
+	if dialog.npc_slot && dialog.npc:
+		var pos = Utils.current_location.slots[dialog.npc_slot].global_position
+		panel_container.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
+		pointer_bottom.visible = true
+		global_position = pos + Vector2(0, -40)
+	elif dialog.speaker == Dialog.Speakers.NARRATOR:
+		global_position = Utils.current_location.narrator_dialog_position.global_position
 		pointer_bottom.visible = false
 		panel_container.set_anchors_preset(Control.PRESET_CENTER_TOP)
 	else:
-		panel_container.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
-		pointer_top.visible = false
-		pointer_bottom.visible = false
+		pass
 
 func _update_content():
 		if current_chunk >= chunks.size():
