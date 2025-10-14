@@ -71,9 +71,9 @@ expand_margin_top = 1.0
 [resource]
 default_font = ExtResource("8_vdebs")
 default_font_size = 4
-Button/colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
-Button/colors/font_hover_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
-Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
+Button/colors/font_hover_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
+Button/colors/font_hover_pressed_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
 Button/colors/font_pressed_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_b85mk")
 Button/styles/hover = SubResource("StyleBoxTexture_vdebs")
