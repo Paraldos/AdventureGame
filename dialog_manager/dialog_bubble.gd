@@ -30,7 +30,9 @@ func _update_position():
 
 func _update_content():
 		if current_chunk >= chunks.size():
-			if dialog.target_id:
+			if dialog.options:
+				return
+			elif dialog.target_id:
 				DialogManager.move_to_next_dialog(dialog.target_id)
 				queue_free()
 			else:
