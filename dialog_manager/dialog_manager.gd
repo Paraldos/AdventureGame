@@ -43,7 +43,7 @@ func move_to_next_dialog(dialog_id: String):
 	add_child(bubble)
 
 func end_dialog():
-	print('WIP: end dialog')
+	GameManager.state = GameManager.last_state
 
 func disable_background_btn(disable_btn = true):
 	if disable_btn:

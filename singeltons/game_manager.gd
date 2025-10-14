@@ -1,10 +1,12 @@
 extends Node
 
 enum States { NONE, HEROCREATION, BATTLE, DIALOG }
+var last_state
 
 var state = States.NONE :
 	set(new_state):
 		if new_state == state: return
+		last_state = state
 		_exit()
 		state = new_state
 		_enter(new_state)
