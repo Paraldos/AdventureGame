@@ -1,7 +1,7 @@
 extends Node
 class_name Dialog
 
-enum Speakers { RANDOME_HERO, RANDOME_ENEMY, NARRATOR, BOSS, NPC }
+enum Speakers { RANDOME_HERO, RANDOME_ENEMY, NARRATOR, BOSS, SLOT3, SLOT4, SLOT5 }
 
 @export_multiline var text : String
 @export var location : Array[String]
@@ -12,5 +12,4 @@ enum Speakers { RANDOME_HERO, RANDOME_ENEMY, NARRATOR, BOSS, NPC }
 
 @export_group("Speaker")
 @export var speaker : Speakers
-@export var npc : PackedScene
-@export var npc_slot : int
+@export var add_npc : PackedScene

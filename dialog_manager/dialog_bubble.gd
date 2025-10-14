@@ -11,7 +11,6 @@ var dialog : Dialog
 var chunks = []
 var max_chunk_length = 150
 var current_chunk = 0
-var npc
 
 func _ready() -> void:
 	SignalManager.background_btn_clicked.connect(_update_content)
@@ -19,27 +18,24 @@ func _ready() -> void:
 	pointer_bottom.visible = false
 	await _create_chunks()
 	_update_content()
-	_add_npc()
+	# _add_npc()
 	_update_position()
 
 func _add_npc():
-	if not dialog.npc_slot or not dialog.npc: return
-	npc = dialog.npc.instantiate()
-	npc.global_position = Vector2(0, 40)
-	add_child(npc)
+	if not dialog.add_npc: return
+	var npc = dialog.add_npc.instantiate()
+	npc.global_position = Vector2(0, 12)
+	DialogManager.npcs.append(npc)
+	get_tree().current_scene.add_child(npc)
 
 func _update_position():
-	if dialog.npc_slot && dialog.npc:
-		var pos = Utils.current_location.slots[dialog.npc_slot].global_position
-		panel_container.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
+	if dialog.speaker == Dialog.Speakers.SLOT3:
+		global_position = Utils.current_location.slots[3].global_position
 		pointer_bottom.visible = true
-		global_position = pos + Vector2(0, -40)
 	elif dialog.speaker == Dialog.Speakers.NARRATOR:
 		global_position = Utils.current_location.narrator_dialog_position.global_position
 		pointer_bottom.visible = false
 		panel_container.set_anchors_preset(Control.PRESET_CENTER_TOP)
-	else:
-		pass
 
 func _update_content():
 		if current_chunk >= chunks.size():

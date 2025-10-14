@@ -4,6 +4,7 @@ extends CanvasLayer
 var bp_dialog_bubble = preload("res://dialog_manager/dialog_bubble.tscn")
 var bp_option_btn = preload("res://dialog_manager/option_btn.tscn")
 var current_bubble
+var npcs = []
 
 # ============================================ ready
 func _ready() -> void:
