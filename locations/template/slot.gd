@@ -11,25 +11,28 @@ enum BTN_STATUS { INVISIBLE, DISABLED, ACTIVE }
 var bp_hero_creation = preload('res://hero_creation/hero_creation.tscn')
 
 func _ready() -> void:
+	SignalManager.update_actor_template.connect(_update_actor)
+	SignalManager.state_changed.connect(_update_slot_btn)
+	_update_slot_btn()
+
+# ========================================= update actor
+func _update_slot_btn():
 	button.visible = false
 	pointer.visible = false
-	SignalManager.update_actor_template.connect(_on_update_actor)
 	match GameManager.state:
 		GameManager.States.NONE:
 			pass
 		GameManager.States.RECRUTING:
 			button.visible = index <= 2
 
-# ========================================= update actor
-func _on_update_actor(target_index):
-	# guard
+func _update_actor(target_index):
 	if not target_index == index: return
 	# cleanup
 	for child in actor_container.get_children():
 		child.queue_free()
 	# spawn new actor
-	if not GameData.actors[target_index]: return
-	var actor: Dictionary = GameData.actors[target_index]
+	if not GameData.actors[index]: return
+	var actor: Dictionary = GameData.actors[index]
 	var bp: PackedScene = load(actor.role.template)
 	var inst: Node2D = bp.instantiate()
 	inst.index = index

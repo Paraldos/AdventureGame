@@ -20,12 +20,8 @@ func _on_scene_change_finished() -> void:
 func _on_background_btn_pressed() -> void:
 	if current_dialog.options:
 		return
-	elif current_dialog.target_id:
-		next_dialog( current_dialog.target_id )
-	elif current_dialog.start_recruting:
-		start_recurting()
 	else:
-		end_dialog()
+		next_step( current_dialog )
 
 # ============================================ api
 func add_dialog_to_game_data(dialog_id: String) -> void:
@@ -38,18 +34,22 @@ func start_dialog(dialog_id: String) -> void:
 	_add_npc()
 	_add_dialog_bubble()
 
-func next_dialog( dialog_id: String ):
+func next_step( dialog ):
 	current_bubble.queue_free()
-	start_dialog(dialog_id)
+	if dialog.target_id:
+		start_dialog(dialog.target_id)
+	elif dialog.start_recruting:
+		start_recurting()
+	else:
+		end_dialog()
 
 func end_dialog():
-	current_bubble.queue_free()
 	SignalManager.remove_npcs.emit()
 	_disable_background_btn()
 
 func start_recurting():
 	end_dialog()
-	print(current_dialog.start_recruting)
+	GameManager.state = GameManager.States.RECRUTING
 
 # ============================================ helper
 func _disable_background_btn(disable_btn = true):

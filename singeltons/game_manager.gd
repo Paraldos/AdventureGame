@@ -9,16 +9,12 @@ var state = States.NONE :
 		last_state = state
 		_exit()
 		state = new_state
-		_enter(new_state)
+		_enter()
 		GameData.game_state = new_state
 
 func _exit():
-	match state:
-		States.NONE:
-			pass
+	pass
 
 
-func _enter(new_state):
-	match new_state:
-		States.NONE:
-			pass
+func _enter():
+	SignalManager.state_changed.emit()
