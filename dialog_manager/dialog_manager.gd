@@ -21,11 +21,9 @@ func _on_background_btn_pressed() -> void:
 	if current_dialog.options:
 		return
 	elif current_dialog.target_id:
-		current_bubble.queue_free()
-		current_dialog = get_node( current_dialog.target_id )
-		if not current_dialog: return
-		_add_npc()
-		_add_dialog_bubble()
+		next_dialog( current_dialog.target_id )
+	elif current_dialog.start_recruting:
+		start_recurting()
 	else:
 		end_dialog()
 
@@ -40,13 +38,18 @@ func start_dialog(dialog_id: String) -> void:
 	_add_npc()
 	_add_dialog_bubble()
 
-func next_dialog():
-	pass
+func next_dialog( dialog_id: String ):
+	current_bubble.queue_free()
+	start_dialog(dialog_id)
 
 func end_dialog():
 	current_bubble.queue_free()
 	SignalManager.remove_npcs.emit()
 	_disable_background_btn()
+
+func start_recurting():
+	end_dialog()
+	print(current_dialog.start_recruting)
 
 # ============================================ helper
 func _disable_background_btn(disable_btn = true):
