@@ -15,6 +15,5 @@ var state = States.NONE :
 func _exit():
 	pass
 
-
 func _enter():
 	SignalManager.state_changed.emit()
