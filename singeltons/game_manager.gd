@@ -1,6 +1,6 @@
 extends Node
 
-enum States { NONE, HEROCREATION, BATTLE }
+enum States { NONE, RECRUTING, BATTLE }
 var last_state
 
 var state = States.NONE :

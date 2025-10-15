@@ -8,6 +8,7 @@
 [sub_resource type="Resource" id="Resource_cbvse"]
 script = ExtResource("4_m5bya")
 text = "Okay, let's do this."
+start_recruting = true
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [node name="DialogManager" type="CanvasLayer"]

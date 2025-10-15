@@ -9,6 +9,7 @@ enum Speakers { SLOT1, SLOT2, SLOT3, SLOT4, SLOT5, SLOT6, NARRATOR, RANDOME_HERO
 @export_group("Options")
 @export var target_id : String
 @export var options : Array[DialogOption]
+@export var start_recruting = false
 
 @export_group("Speaker")
 @export var speaker : Speakers

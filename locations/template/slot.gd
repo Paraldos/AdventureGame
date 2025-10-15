@@ -11,28 +11,14 @@ enum BTN_STATUS { INVISIBLE, DISABLED, ACTIVE }
 var bp_hero_creation = preload('res://hero_creation/hero_creation.tscn')
 
 func _ready() -> void:
-	visible = false
+	button.visible = false
 	pointer.visible = false
 	SignalManager.update_actor_template.connect(_on_update_actor)
-	_on_update_slot_btn()
 	match GameManager.state:
 		GameManager.States.NONE:
 			pass
-		GameManager.States.BATTLE:
-			pass
-	visible = true
-
-func _on_update_slot_btn():
-	match  GameData.slots[index]:
-		BTN_STATUS.INVISIBLE:
-			button.visible = false
-			button.disabled = true
-		BTN_STATUS.DISABLED:
-			button.visible = true
-			button.disabled = true
-		BTN_STATUS.ACTIVE:
-			button.visible = true
-			button.disabled = false
+		GameManager.States.RECRUTING:
+			button.visible = index <= 2
 
 # ========================================= update actor
 func _on_update_actor(target_index):
