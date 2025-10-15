@@ -1,6 +1,6 @@
 extends Node
 
-enum States { NONE, HEROCREATION, BATTLE, DIALOG }
+enum States { NONE, HEROCREATION, BATTLE }
 var last_state
 
 var state = States.NONE :
@@ -16,10 +16,9 @@ func _exit():
 	match state:
 		States.NONE:
 			pass
-		States.DIALOG:
-			DialogManager.disable_background_btn()
+
 
 func _enter(new_state):
 	match new_state:
-		States.DIALOG:
-			DialogManager.disable_background_btn(false)
+		States.NONE:
+			pass

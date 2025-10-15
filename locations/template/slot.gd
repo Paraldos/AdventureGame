@@ -20,8 +20,6 @@ func _ready() -> void:
 			pass
 		GameManager.States.BATTLE:
 			pass
-		GameManager.States.DIALOG:
-			pass
 	visible = true
 
 func _on_update_slot_btn():

@@ -1,10 +1,10 @@
 extends Node
 class_name Dialog
 
-enum Speakers { RANDOME_HERO, RANDOME_ENEMY, NARRATOR, BOSS, SLOT3, SLOT4, SLOT5 }
+enum Speakers { SLOT1, SLOT2, SLOT3, SLOT4, SLOT5, SLOT6, NARRATOR, RANDOME_HERO, RANDOMY_ENEMY }
 
 @export_multiline var text : String
-@export var location : Array[String]
+@export var location : String
 
 @export_group("Options")
 @export var target_id : String

@@ -47,13 +47,16 @@ script = ExtResource("1_4fcfv")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = -31.5
+offset_top = -13.0
 offset_right = 31.5
-offset_bottom = 11.0
 grow_horizontal = 2
+grow_vertical = 0
 mouse_filter = 2
 theme = ExtResource("1_7grl3")
 
@@ -71,6 +74,7 @@ text = "Hallo Bert"
 autowrap_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_top = -11
