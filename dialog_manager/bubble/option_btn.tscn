@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd6mtla6p1d56"]
 
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_hp57n"]
-[ext_resource type="Script" uid="uid://bjserp341cpkk" path="res://dialog_manager/option_btn.gd" id="1_roibh"]
+[ext_resource type="Script" uid="uid://bjserp341cpkk" path="res://dialog_manager/bubble/option_btn.gd" id="1_roibh"]
 
 [node name="OptionBtn" type="Button"]
 offset_right = 8.0

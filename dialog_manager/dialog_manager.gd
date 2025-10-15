@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 @onready var background_btn: Button = %BackgroundBtn
-var bp_dialog_bubble = preload("res://dialog_manager/dialog_bubble.tscn")
-var bp_option_btn = preload("res://dialog_manager/option_btn.tscn")
+var bp_dialog_bubble = preload("res://dialog_manager/bubble/dialog_bubble.tscn")
+var bp_option_btn = preload("res://dialog_manager/bubble/option_btn.tscn")
 var current_dialog
 var current_bubble
 
