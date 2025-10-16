@@ -2,6 +2,7 @@ extends PanelContainer
 class_name Quest
 
 enum QuestTypes { RECRUITE_MERCS }
+enum QuestStates { NONE, OPEN, SOLVED, FINISHED, FAILED }
 
 @onready var quest_open: TextureRect = %QuestOpen
 @onready var quest_done: TextureRect = %QuestDone
@@ -13,31 +14,38 @@ enum QuestTypes { RECRUITE_MERCS }
 @export var required_amount = 0
 @export var follow_up_dialog : String
 
-var open = false
-var solved = false
+var quest_state = QuestStates.FAILED :
+	set(new_state):
+		if new_state == quest_state: return
+		visible = new_state == QuestStates.OPEN or new_state == QuestStates.SOLVED
+		quest_open.visible = new_state == QuestStates.OPEN
+		quest_done.visible = new_state == QuestStates.SOLVED
+		quest_state = new_state
 
 func _ready() -> void:
-	SignalManager.merc_recruited.connect(update)
-	visible = false
-	quest_done.visible = false
+	SignalManager.start_quest.connect(_on_start_quest)
+	SignalManager.merc_recruited.connect(_update)
+	quest_state = QuestStates.NONE
 	label.text = title
 
-func open_quest():
-	visible = true
-	quest_open.visible = true
+func _on_start_quest(quest_id : String):
+	if quest_id != name: return
 	animation_player.play('fade_in')
+	quest_state = QuestStates.OPEN
 	GameData.open_quests.append(name)
 
-func solve_quest():
-	visible = false
-	GameData.closed_quests.append(name)
+func finish_quest():
+	animation_player.play_backwards('fade_in')
+	await animation_player.animation_finished
+	quest_state = QuestStates.FINISHED
 
 func quit_quest():
-	pass
+	GameData.closed_quests.append(name)
 
 # ================================================ update
-func update():
+func _update():
 	if quest_type == QuestTypes.RECRUITE_MERCS && _recruite_mercs_check():
+		quest_state = QuestStates.SOLVED
 		DialogManager.add_dialog_to_game_data(follow_up_dialog)
 
 func _recruite_mercs_check():

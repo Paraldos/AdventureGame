@@ -8,3 +8,4 @@ signal remove_npcs
 signal state_changed
 signal deselect_slot_btn
 signal merc_recruited
+signal start_quest(quest_id : String)

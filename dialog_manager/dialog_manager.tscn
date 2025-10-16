@@ -1,16 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://j3eaeq126b3d"]
+[gd_scene load_steps=4 format=3 uid="uid://j3eaeq126b3d"]
 
 [ext_resource type="Script" uid="uid://3vcc6vsw433v" path="res://dialog_manager/dialog_manager.gd" id="1_jch72"]
 [ext_resource type="Script" uid="uid://vqv617lov561" path="res://dialog_manager/resources/dialog.gd" id="2_1ku4q"]
 [ext_resource type="PackedScene" uid="uid://bgr7yd4sct3b7" path="res://npcs/bug.tscn" id="3_65if4"]
-[ext_resource type="Script" uid="uid://c4papynmlhc0q" path="res://dialog_manager/resources/dialog_option.gd" id="4_m5bya"]
-
-[sub_resource type="Resource" id="Resource_cbvse"]
-script = ExtResource("4_m5bya")
-text = "Okay, let's do this."
-start_recruting = true
-open_quest = "Recruite3Mercs"
-metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [node name="DialogManager" type="CanvasLayer"]
 script = ExtResource("1_jch72")
@@ -45,7 +37,8 @@ metadata/_custom_type_script = "uid://vqv617lov561"
 [node name="Start3" type="Node" parent="Test"]
 script = ExtResource("2_1ku4q")
 text = "Shouldn’t be hard. This city’s crawling with people desperate to take any gig."
-options = Array[ExtResource("4_m5bya")]([SubResource("Resource_cbvse")])
+start_recruting = true
+start_quest = "Recruite3Mercs"
 speaker = 3
 metadata/_custom_type_script = "uid://vqv617lov561"
 

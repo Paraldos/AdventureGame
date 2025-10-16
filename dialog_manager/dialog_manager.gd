@@ -32,8 +32,8 @@ func start_dialog(dialog_id: String) -> void:
 
 func next_step( dialog ):
 	current_bubble.queue_free()
-	if dialog.open_quest:
-		QuestManager.open_quest(dialog.open_quest)
+	if dialog.start_quest:
+		SignalManager.start_quest.emit(dialog.start_quest)
 	if dialog.start_recruting:
 		start_recurting()
 	if dialog.target_id:
