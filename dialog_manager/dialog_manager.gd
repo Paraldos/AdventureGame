@@ -34,6 +34,8 @@ func next_step( dialog ):
 	current_bubble.queue_free()
 	if dialog.start_quest:
 		SignalManager.start_quest.emit(dialog.start_quest)
+	if dialog.finish_quest:
+		SignalManager.finish_quest.emit(dialog.finish_quest)
 	if dialog.start_recruting:
 		start_recruting()
 	if dialog.target_id:

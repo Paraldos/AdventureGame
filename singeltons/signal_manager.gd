@@ -9,3 +9,4 @@ signal state_changed
 signal deselect_slot_btn
 signal merc_recruited
 signal start_quest(quest_id : String)
+signal finish_quest(quest_id : String)

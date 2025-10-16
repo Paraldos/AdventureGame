@@ -5,3 +5,4 @@ class_name DialogOption
 @export var target_id : String
 @export var start_recruting = false
 @export var start_quest : String
+@export var finish_quest : String

@@ -23,9 +23,11 @@ var quest_state = QuestStates.FAILED :
 		quest_done.visible = new_state == QuestStates.SOLVED
 		quest_state = new_state
 
+# ================================================ ready
 func _ready() -> void:
 	SignalManager.start_quest.connect(_on_start_quest)
 	SignalManager.merc_recruited.connect(_update)
+	SignalManager.finish_quest.connect(_on_finish_quest)
 	quest_state = QuestStates.NONE
 	label.text = title
 
@@ -35,18 +37,28 @@ func _on_start_quest(quest_id : String):
 	quest_state = QuestStates.OPEN
 	GameData.open_quests.append(name)
 
-func finish_quest():
+func _on_finish_quest(quest_id : String):
+	if quest_id != name: return
+	if quest_state != QuestStates.SOLVED: return
 	animation_player.play_backwards('fade_in')
 	await animation_player.animation_finished
 	quest_state = QuestStates.FINISHED
+	print('finished')
 
 func quit_quest():
 	GameData.closed_quests.append(name)
 
 # ================================================ update
 func _update():
-	if quest_type == QuestTypes.RECRUITE_MERCS && _recruite_mercs_check():
-		quest_state = QuestStates.SOLVED
+	if quest_state == QuestStates.NONE: return
+	if quest_state == QuestStates.FINISHED: return
+	if quest_state == QuestStates.FAILED: return
+	if quest_type == QuestTypes.RECRUITE_MERCS:
+		if _recruite_mercs_check():
+			quest_state = QuestStates.SOLVED
+		else:
+			quest_state = QuestStates.OPEN
+	if quest_state == QuestStates.SOLVED:
 		DialogManager.add_dialog_to_game_data(follow_up_dialog)
 
 func _recruite_mercs_check():

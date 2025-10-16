@@ -46,6 +46,7 @@ metadata/_custom_type_script = "uid://vqv617lov561"
 script = ExtResource("2_1ku4q")
 text = "Well done, kid. With those mercs, you should be fine for now."
 location = "TestArea"
+finish_quest = "Recruite3Mercs"
 speaker = 3
 add_npc = ExtResource("3_65if4")
 metadata/_custom_type_script = "uid://vqv617lov561"
