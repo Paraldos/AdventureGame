@@ -10,12 +10,3 @@ func _new_game():
 	GameData.actors = []
 	GameData.actors.resize(7)
 	GameData.actors.fill(null)
-	# slots
-	GameData.slots = [
-		Slot.BTN_STATUS.ACTIVE,
-		Slot.BTN_STATUS.ACTIVE,
-		Slot.BTN_STATUS.ACTIVE,
-		Slot.BTN_STATUS.INVISIBLE,
-		Slot.BTN_STATUS.INVISIBLE,
-		Slot.BTN_STATUS.INVISIBLE 
-	]

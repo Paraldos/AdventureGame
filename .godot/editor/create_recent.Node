@@ -1,15 +1,15 @@
+AnimationPlayer
+PanelContainer
+Container
+MarginContainer
+ColorRect
+Control
+HBoxContainer
+CheckButton      - Matches the "toggle" keyword.
+TextureRect
+Label
+Quest
+VBoxContainer
 CPUParticles2D
 Node
 CanvasLayer
-AnimatedSprite2D
-Dialog
-HBoxContainer
-Container
-TextureRect
-AnimationPlayer
-MarginContainer
-Marker2D
-Button
-CollisionShape2D
-Area2D
-Label
