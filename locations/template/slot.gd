@@ -9,16 +9,19 @@ enum BTN_STATUS { INVISIBLE, DISABLED, ACTIVE }
 
 @export var index = 0
 var bp_hero_creation = preload('res://hero_creation/hero_creation.tscn')
+var selected = false
 
 func _ready() -> void:
 	SignalManager.update_actor_template.connect(_update_actor)
 	SignalManager.state_changed.connect(_update_slot_btn)
+	SignalManager.remove_selected.connect(_update_slot_btn)
 	_update_slot_btn()
 
 # ========================================= update actor
 func _update_slot_btn():
 	button.visible = false
 	pointer.visible = false
+	selected = false
 	match GameManager.state:
 		GameManager.States.NONE:
 			pass
@@ -44,9 +47,13 @@ func _on_button_mouse_entered() -> void:
 	pointer.visible = true
 
 func _on_button_mouse_exited() -> void:
+	if selected: return
 	pointer.visible = false
 
 func _on_button_pressed() -> void:
-	var hero_creation = bp_hero_creation.instantiate()
-	hero_creation.index = index
-	get_tree().current_scene.add_child(hero_creation)
+	match GameManager.state:
+		GameManager.States.RECRUTING:
+			var hero_creation = bp_hero_creation.instantiate()
+			selected = true
+			hero_creation.index = index
+			get_tree().current_scene.add_child(hero_creation)

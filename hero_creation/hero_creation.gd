@@ -31,12 +31,16 @@ func _on_x_btn_pressed() -> void:
 		GameData.actors[index] = old_actor
 	else:
 		GameData.actors[index] = null
-	SignalManager.update_actor_template.emit(index)
-	queue_free()
+	close()
 
 func _on_accept_btn_pressed() -> void:
-	queue_free()
+	close()
 
 func _on_return_btn_pressed() -> void:
 	GameData.actors[index] = old_actor.duplicate()
 	SignalManager.update_actor_value.emit()
+
+func close() -> void:
+	SignalManager.update_actor_template.emit(index)
+	SignalManager.remove_selected.emit()
+	queue_free()

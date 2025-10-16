@@ -6,3 +6,4 @@ signal update_actor_template(index)
 signal scene_change_finished
 signal remove_npcs
 signal state_changed
+signal remove_selected
