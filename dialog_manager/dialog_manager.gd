@@ -35,7 +35,7 @@ func next_step( dialog ):
 	if dialog.start_quest:
 		SignalManager.start_quest.emit(dialog.start_quest)
 	if dialog.start_recruting:
-		start_recurting()
+		start_recruting()
 	if dialog.target_id:
 		start_dialog(dialog.target_id)
 	else:
@@ -45,7 +45,7 @@ func end_dialog():
 	SignalManager.remove_npcs.emit()
 	_disable_background_btn()
 
-func start_recurting():
+func start_recruting():
 	end_dialog()
 	GameManager.state = GameManager.States.RECRUTING
 
