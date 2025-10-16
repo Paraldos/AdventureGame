@@ -34,6 +34,7 @@ func _on_x_btn_pressed() -> void:
 	close()
 
 func _on_accept_btn_pressed() -> void:
+	SignalManager.merc_recruited.emit()
 	close()
 
 func _on_return_btn_pressed() -> void:
@@ -42,5 +43,5 @@ func _on_return_btn_pressed() -> void:
 
 func close() -> void:
 	SignalManager.update_actor_template.emit(index)
-	SignalManager.remove_selected.emit()
+	SignalManager.deselect_slot_btn.emit()
 	queue_free()

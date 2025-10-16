@@ -31,3 +31,5 @@ theme_override_constants/separation = 1
 [node name="Recruite3Mercs" parent="MarginContainer/ListOfQuests" instance=ExtResource("3_kr4k7")]
 layout_mode = 2
 title = "Recrute 3 Mercs"
+recruite_mercs = true
+required_amount = 3

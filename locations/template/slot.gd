@@ -8,13 +8,13 @@ enum BTN_STATUS { INVISIBLE, DISABLED, ACTIVE }
 @onready var actor_container: Node2D = %ActorContainer
 
 @export var index = 0
-var bp_hero_creation = preload('res://hero_creation/hero_creation.tscn')
+var bp_recruting = preload('res://merc_options/recruting/merc_recruting.tscn')
 var selected = false
 
 func _ready() -> void:
 	SignalManager.update_actor_template.connect(_update_actor)
 	SignalManager.state_changed.connect(_update_slot_btn)
-	SignalManager.remove_selected.connect(_update_slot_btn)
+	SignalManager.deselect_slot_btn.connect(_update_slot_btn)
 	_update_slot_btn()
 
 # ========================================= update actor
@@ -53,7 +53,7 @@ func _on_button_mouse_exited() -> void:
 func _on_button_pressed() -> void:
 	match GameManager.state:
 		GameManager.States.RECRUTING:
-			var hero_creation = bp_hero_creation.instantiate()
+			var recruting = bp_recruting.instantiate()
 			selected = true
-			hero_creation.index = index
-			get_tree().current_scene.add_child(hero_creation)
+			recruting.index = index
+			get_tree().current_scene.add_child(recruting)

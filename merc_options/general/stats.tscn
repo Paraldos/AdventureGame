@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cpxinys4bv6xo"]
 
-[ext_resource type="Script" uid="uid://bmj3yartjwpx1" path="res://hero_creation/stats.gd" id="1_2eknx"]
+[ext_resource type="Script" uid="uid://bmj3yartjwpx1" path="res://merc_options/general/stats.gd" id="1_2eknx"]
 
 [node name="Stats" type="GridContainer"]
 anchors_preset = 15

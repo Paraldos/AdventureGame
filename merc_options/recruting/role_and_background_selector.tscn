@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cja63mf1ulnpi"]
 
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_ttnuf"]
-[ext_resource type="Script" uid="uid://bb5evq4hnidap" path="res://hero_creation/role_and_background_selector.gd" id="2_2anrf"]
+[ext_resource type="Script" uid="uid://bb5evq4hnidap" path="res://merc_options/recruting/role_and_background_selector.gd" id="2_2anrf"]
 
 [node name="RoleAndBackgroundSelector" type="HBoxContainer"]
 offset_right = 49.0
