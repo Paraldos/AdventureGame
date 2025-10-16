@@ -67,7 +67,7 @@ func _add_npc():
 	if current_dialog.speaker < 2 or current_dialog.speaker > 5: return
 	var npc = current_dialog.add_npc.instantiate()
 	if current_dialog.speaker <= 5:
-		Utils.current_location.slots[current_dialog.speaker].add_child(npc)
+		Utils.current_location.slots[current_dialog.speaker].actor_container.add_child(npc)
 
 func _add_dialog_bubble():
 	current_bubble = bp_dialog_bubble.instantiate()
