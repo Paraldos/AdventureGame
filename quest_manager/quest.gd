@@ -13,6 +13,7 @@ enum QuestStates { NONE, OPEN, SOLVED, FINISHED, FAILED }
 @export var quest_type : QuestTypes
 @export var required_amount = 0
 @export var follow_up_dialog : String
+@export var start_battle : String
 
 var quest_state = QuestStates.FAILED :
 	set(new_state):

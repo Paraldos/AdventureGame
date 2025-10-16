@@ -16,25 +16,25 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Test" type="Node" parent="."]
+[node name="Tutorial" type="Node" parent="."]
 
-[node name="Start" type="Node" parent="Test"]
+[node name="Start" type="Node" parent="Tutorial"]
 script = ExtResource("2_1ku4q")
 text = "Hey, kid. You look fresh off the shuttle. Lucky for you, I know how things work around here."
 location = "TestArea"
-target_id = "Test/Start2"
+target_id = "Tutorial/Start2"
 speaker = 3
 add_npc = ExtResource("3_65if4")
 metadata/_custom_type_script = "uid://vqv617lov561"
 
-[node name="Start2" type="Node" parent="Test"]
+[node name="Start2" type="Node" parent="Tutorial"]
 script = ExtResource("2_1ku4q")
 text = "Rule number one: never walk alone. Get yourself a crew. A few mercs who can handle the dirt."
-target_id = "Test/Start3"
+target_id = "Tutorial/Start3"
 speaker = 3
 metadata/_custom_type_script = "uid://vqv617lov561"
 
-[node name="Start3" type="Node" parent="Test"]
+[node name="Start3" type="Node" parent="Tutorial"]
 script = ExtResource("2_1ku4q")
 text = "Shouldn’t be hard. This city’s crawling with people desperate to take any gig."
 start_recruting = true
@@ -42,10 +42,17 @@ start_quest = "Recruite3Mercs"
 speaker = 3
 metadata/_custom_type_script = "uid://vqv617lov561"
 
-[node name="Start4" type="Node" parent="Test"]
+[node name="Start4" type="Node" parent="Tutorial"]
 script = ExtResource("2_1ku4q")
-text = "Well done, kid. With those mercs, you should be fine for now.
-But let’s see what they can really do. I’ve got a batch of training drones lying around. Give me a sec, and I’ll set them up."
+text = "Well done, kid. With those mercs, you should be fine for now."
+location = "TestArea"
+speaker = 3
+add_npc = ExtResource("3_65if4")
+metadata/_custom_type_script = "uid://vqv617lov561"
+
+[node name="Start5" type="Node" parent="Tutorial"]
+script = ExtResource("2_1ku4q")
+text = "But let’s see what they can really do. I’ve got a batch of training drones lying around. Give me a sec, and I’ll set them up."
 location = "TestArea"
 speaker = 3
 add_npc = ExtResource("3_65if4")

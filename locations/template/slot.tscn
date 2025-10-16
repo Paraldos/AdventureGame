@@ -51,13 +51,25 @@ _data = {
 [node name="Slot" type="Marker2D"]
 script = ExtResource("1_8jju3")
 
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = -8.0
+offset_top = -20.0
+offset_right = 8.0
+offset_bottom = 16.0
+focus_mode = 0
+theme = ExtResource("1_mabo7")
+
+[node name="ActorContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+
 [node name="Pointer" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -18)
 texture = ExtResource("2_8jju3")
 
 [node name="BtnParticles" type="CPUParticles2D" parent="Pointer"]
-position = Vector2(0, 18)
+position = Vector2(0, 17)
 amount = 6
 emission_shape = 3
 emission_rect_extents = Vector2(7, 16)
@@ -72,18 +84,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_y36n6")
 }
 autoplay = "loop"
-
-[node name="Button" type="Button" parent="."]
-unique_name_in_owner = true
-offset_left = -8.0
-offset_top = -20.0
-offset_right = 8.0
-offset_bottom = 16.0
-focus_mode = 0
-theme = ExtResource("1_mabo7")
-
-[node name="ActorContainer" type="Node2D" parent="."]
-unique_name_in_owner = true
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

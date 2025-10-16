@@ -1,3 +1,4 @@
+Node
 AnimationPlayer
 PanelContainer
 Container
@@ -11,5 +12,3 @@ Label
 Quest
 VBoxContainer
 CPUParticles2D
-Node
-CanvasLayer

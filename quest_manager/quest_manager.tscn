@@ -32,4 +32,4 @@ theme_override_constants/separation = 1
 layout_mode = 2
 title = "Recrute 3 Mercs"
 required_amount = 3
-follow_up_dialog = "Test/Start4"
+follow_up_dialog = "Tutorial/Start4"
