@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cux11omgvy4r5"]
+
+[ext_resource type="FontFile" uid="uid://nn4nvg0af02x" path="res://assets/fonts/W95FA.otf" id="1_kski5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kski5"]
+bg_color = Color(0, 0, 0, 0.47058824)
+
+[resource]
+default_font = ExtResource("1_kski5")
+default_font_size = 10
+Label/styles/normal = SubResource("StyleBoxFlat_kski5")

@@ -1,14 +1,14 @@
+Button
+MarginContainer
+Label
+VBoxContainer
+Control
+PanelContainer
+ColorRect
+CanvasLayer
 Node
 AnimationPlayer
-PanelContainer
 Container
-MarginContainer
-ColorRect
-Control
 HBoxContainer
 CheckButton      - Matches the "toggle" keyword.
 TextureRect
-Label
-Quest
-VBoxContainer
-CPUParticles2D

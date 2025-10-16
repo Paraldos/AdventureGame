@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7gentj7s4jeq"]
+
+[ext_resource type="Script" uid="uid://0pylub4pun06" path="res://quest_manager/quest_done.gd" id="1_5r5i8"]
+[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_p34l8"]
+[ext_resource type="Theme" uid="uid://cux11omgvy4r5" path="res://assets/theme/headline_theme.tres" id="2_0s7q8"]
+
+[node name="QuestDone" type="CanvasLayer"]
+script = ExtResource("1_5r5i8")
+
+[node name="BackgroundBtn" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p34l8")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -40.5
+offset_right = 44.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_0s7q8")
+text = "Quest Done"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "XP"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="ContinueBtn" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[connection signal="pressed" from="BackgroundBtn" to="." method="_on_background_btn_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
