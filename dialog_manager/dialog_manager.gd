@@ -8,13 +8,8 @@ var current_bubble
 
 # ============================================ ready
 func _ready() -> void:
-	SignalManager.scene_change_finished.connect(_on_scene_change_finished)
+	SignalManager.scene_change_finished.connect(_check_location_for_valid_dialog)
 	_disable_background_btn()
-
-func _on_scene_change_finished() -> void:
-	var dialog_id_for_this_location = _get_dialog_id_for_this_location()
-	if dialog_id_for_this_location:
-		start_dialog(dialog_id_for_this_location)
 
 # ============================================ background btn
 func _on_background_btn_pressed() -> void:
@@ -26,6 +21,7 @@ func _on_background_btn_pressed() -> void:
 # ============================================ api
 func add_dialog_to_game_data(dialog_id: String) -> void:
 	GameData.dialog_queue.append( dialog_id )
+	_check_location_for_valid_dialog()
 
 func start_dialog(dialog_id: String) -> void:
 	current_dialog = get_node(dialog_id)
@@ -54,6 +50,13 @@ func start_recurting():
 	GameManager.state = GameManager.States.RECRUTING
 
 # ============================================ helper
+func _check_location_for_valid_dialog():
+	if not Utils.current_location: return
+	var dialog_id_for_this_location = _get_dialog_id_for_this_location()
+	if dialog_id_for_this_location:
+		start_dialog(dialog_id_for_this_location)
+		GameData.dialog_queue.erase( dialog_id_for_this_location )
+
 func _disable_background_btn(disable_btn = true):
 	if disable_btn:
 		background_btn.disabled = true

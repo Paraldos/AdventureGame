@@ -213,7 +213,6 @@ tile_set = SubResource("TileSet_u5opy")
 [node name="Slot" parent="." instance=ExtResource("5_w5uto")]
 unique_name_in_owner = true
 position = Vector2(24, 80)
-index = 0
 
 [node name="Slot1" parent="." instance=ExtResource("5_w5uto")]
 unique_name_in_owner = true

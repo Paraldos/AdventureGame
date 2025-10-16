@@ -37,10 +37,8 @@ func quit_quest():
 
 # ================================================ update
 func update():
-	match quest_type:
-		QuestTypes.RECRUITE_MERCS:
-			if _recruite_mercs_check():
-				DialogManager.add_dialog_to_game_data("Test/Start4")
+	if quest_type == QuestTypes.RECRUITE_MERCS && _recruite_mercs_check():
+		DialogManager.add_dialog_to_game_data(follow_up_dialog)
 
 func _recruite_mercs_check():
 	var amount_of_mercs = 0

@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://j3eaeq126b3d"]
+[gd_scene load_steps=6 format=3 uid="uid://j3eaeq126b3d"]
 
 [ext_resource type="Script" uid="uid://3vcc6vsw433v" path="res://dialog_manager/dialog_manager.gd" id="1_jch72"]
 [ext_resource type="Script" uid="uid://vqv617lov561" path="res://dialog_manager/resources/dialog.gd" id="2_1ku4q"]
 [ext_resource type="PackedScene" uid="uid://bgr7yd4sct3b7" path="res://npcs/bug.tscn" id="3_65if4"]
 [ext_resource type="Script" uid="uid://c4papynmlhc0q" path="res://dialog_manager/resources/dialog_option.gd" id="4_m5bya"]
-[ext_resource type="PackedScene" uid="uid://bu8i81qxtvh46" path="res://npcs/template/npc_template.tscn" id="5_65if4"]
 
 [sub_resource type="Resource" id="Resource_cbvse"]
 script = ExtResource("4_m5bya")
@@ -54,8 +53,9 @@ metadata/_custom_type_script = "uid://vqv617lov561"
 script = ExtResource("2_1ku4q")
 text = "Well done, kid. With those mercs, you should be fine for now.
 But let’s see what they can really do. I’ve got a batch of training drones lying around. Give me a sec, and I’ll set them up."
+location = "TestArea"
 speaker = 3
-add_npc = ExtResource("5_65if4")
+add_npc = ExtResource("3_65if4")
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [connection signal="pressed" from="BackgroundBtn" to="." method="_on_background_btn_pressed"]
