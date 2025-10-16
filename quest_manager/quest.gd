@@ -11,6 +11,7 @@ enum QuestTypes { RECRUITE_MERCS }
 @export var title = ""
 @export var quest_type : QuestTypes
 @export var required_amount = 0
+@export var follow_up_dialog : String
 
 var open = false
 var solved = false
@@ -38,7 +39,8 @@ func quit_quest():
 func update():
 	match quest_type:
 		QuestTypes.RECRUITE_MERCS:
-			print(_recruite_mercs_check())
+			if _recruite_mercs_check():
+				DialogManager.add_dialog_to_game_data("Test/Start4")
 
 func _recruite_mercs_check():
 	var amount_of_mercs = 0
