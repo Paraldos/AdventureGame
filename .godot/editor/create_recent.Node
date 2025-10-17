@@ -1,10 +1,10 @@
 Button
+ColorRect
+Control
 MarginContainer
 Label
 VBoxContainer
-Control
 PanelContainer
-ColorRect
 CanvasLayer
 Node
 AnimationPlayer

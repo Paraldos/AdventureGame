@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c00maqf8xr6dy"]
+
+[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_mly01"]
+[ext_resource type="Script" uid="uid://d26f5401n7ub3" path="res://singeltons/btn.gd" id="1_r3rr6"]
+
+[node name="Btn" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_mly01")
+script = ExtResource("1_r3rr6")

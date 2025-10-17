@@ -15,6 +15,7 @@ enum QuestStates { NONE, OPEN, SOLVED, FINISHED, FAILED }
 @export var follow_up_dialog : String
 @export var start_battle : String
 
+var bp_quest_done_notification = preload("res://quest_manager/quest_done_notification.tscn")
 var quest_state = QuestStates.FAILED :
 	set(new_state):
 		if new_state == quest_state: return
@@ -43,6 +44,9 @@ func _on_finish_quest(quest_id : String):
 	animation_player.play_backwards('fade_in')
 	await animation_player.animation_finished
 	quest_state = QuestStates.FINISHED
+	#
+	var quest_done_notification = bp_quest_done_notification.instantiate()
+	get_tree().current_scene.add_child(quest_done_notification)
 	print('finished')
 
 func quit_quest():

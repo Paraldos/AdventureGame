@@ -1,4 +1,4 @@
-extends Button
+extends Btn
 
 var option : DialogOption
 var parent_bubble : DialogBubble

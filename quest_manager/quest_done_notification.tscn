@@ -1,11 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7gentj7s4jeq"]
+[gd_scene load_steps=5 format=3 uid="uid://b7gentj7s4jeq"]
 
-[ext_resource type="Script" uid="uid://0pylub4pun06" path="res://quest_manager/quest_done.gd" id="1_5r5i8"]
-[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_p34l8"]
-[ext_resource type="Theme" uid="uid://cux11omgvy4r5" path="res://assets/theme/headline_theme.tres" id="2_0s7q8"]
+[ext_resource type="Script" uid="uid://0pylub4pun06" path="res://quest_manager/quest_done_notification.gd" id="1_sbav7"]
+[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="2_gxv17"]
+[ext_resource type="Theme" uid="uid://cux11omgvy4r5" path="res://assets/theme/headline_theme.tres" id="3_u441v"]
+[ext_resource type="PackedScene" uid="uid://c00maqf8xr6dy" path="res://singeltons/btn.tscn" id="4_gxv17"]
 
-[node name="QuestDone" type="CanvasLayer"]
-script = ExtResource("1_5r5i8")
+[node name="QuestDoneNotification" type="CanvasLayer"]
+script = ExtResource("1_sbav7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
 
 [node name="BackgroundBtn" type="Button" parent="."]
 anchors_preset = 15
@@ -13,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -27,7 +37,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_p34l8")
+theme = ExtResource("2_gxv17")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
@@ -52,10 +62,11 @@ theme_override_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 3
 
 [node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_0s7q8")
+theme = ExtResource("3_u441v")
 text = "Quest Done"
 horizontal_alignment = 1
 
@@ -69,9 +80,9 @@ layout_mode = 2
 text = "Credits"
 horizontal_alignment = 1
 
-[node name="ContinueBtn" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Btn" parent="Control/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_gxv17")]
 layout_mode = 2
 text = "Continue"
 
 [connection signal="pressed" from="BackgroundBtn" to="." method="_on_background_btn_pressed"]
-[connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/Btn" to="." method="_on_btn_pressed"]
