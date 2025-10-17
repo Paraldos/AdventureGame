@@ -10,7 +10,7 @@ func add_credits(value) -> void:
 
 # =========================================== new game
 func new_game():
-	DialogManager.add_dialog_to_game_data("Tutorial/Start")
+	SignalManager.enable_dialog.emit("Start", true)
 	# actors
 	GameData.actors = []
 	GameData.actors.resize(7)

@@ -1,8 +1,10 @@
+Button
+Marker2D
+CanvasLayer
+Node2D
 MarginContainer
 Label
 ColorRect
-CanvasLayer
-Button
 Control
 VBoxContainer
 PanelContainer
@@ -10,5 +12,3 @@ Node
 AnimationPlayer
 Container
 HBoxContainer
-CheckButton      - Matches the "toggle" keyword.
-TextureRect
