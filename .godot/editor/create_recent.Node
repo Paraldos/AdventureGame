@@ -1,11 +1,11 @@
-Button
-ColorRect
-Control
 MarginContainer
 Label
+ColorRect
+CanvasLayer
+Button
+Control
 VBoxContainer
 PanelContainer
-CanvasLayer
 Node
 AnimationPlayer
 Container

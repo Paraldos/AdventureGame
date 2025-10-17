@@ -12,10 +12,11 @@ enum QuestStates { NONE, OPEN, SOLVED, FINISHED, FAILED }
 @export var title = ""
 @export var quest_type : QuestTypes
 @export var required_amount = 0
+@export var reward_credits = 500
+@export_category('Quest Finished')
 @export var follow_up_dialog : String
-@export var start_battle : String
 
-var bp_quest_done_notification = preload("res://quest_manager/quest_done_notification.tscn")
+var bp_quest_done_notification = preload("res://ui/quests/quest_done_notification.tscn")
 var quest_state = QuestStates.FAILED :
 	set(new_state):
 		if new_state == quest_state: return
@@ -39,15 +40,18 @@ func _on_start_quest(quest_id : String):
 	GameData.open_quests.append(name)
 
 func _on_finish_quest(quest_id : String):
+	# guard
 	if quest_id != name: return
 	if quest_state != QuestStates.SOLVED: return
+	# animation
 	animation_player.play_backwards('fade_in')
 	await animation_player.animation_finished
 	quest_state = QuestStates.FINISHED
-	#
+	# reward
+	GameManager.add_credits(reward_credits)
+	# message
 	var quest_done_notification = bp_quest_done_notification.instantiate()
 	get_tree().current_scene.add_child(quest_done_notification)
-	print('finished')
 
 func quit_quest():
 	GameData.closed_quests.append(name)

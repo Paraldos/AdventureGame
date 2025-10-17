@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c3jxe1spmbdue"]
 
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_dyxh5"]
-[ext_resource type="Script" uid="uid://ksbh6b7mexum" path="res://quest_manager/quest.gd" id="1_oum3a"]
+[ext_resource type="Script" uid="uid://ksbh6b7mexum" path="res://ui/quests/quest.gd" id="1_oum3a"]
 [ext_resource type="Texture2D" uid="uid://cx01f8x2c1kae" path="res://assets/img/ui/radio_btn1.png" id="3_87q1c"]
 [ext_resource type="Texture2D" uid="uid://cqy25ag8328ki" path="res://assets/img/ui/radio_btn2.png" id="4_g1w7t"]
 

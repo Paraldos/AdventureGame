@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbvqgyqui8hgv"]
+
+[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_7u444"]
+
+[node name="CreditsUi" type="MarginContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -7.0
+offset_bottom = 5.0
+grow_horizontal = 0
+mouse_filter = 2
+theme = ExtResource("1_7u444")
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 1
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "Credits: xxx"

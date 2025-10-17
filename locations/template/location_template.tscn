@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh5nnoo583xdg"]
+[gd_scene load_steps=9 format=3 uid="uid://dh5nnoo583xdg"]
 
 [ext_resource type="Script" uid="uid://c7vse8i5dwtwh" path="res://locations/template/location_template.gd" id="1_45dvk"]
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="2_jugy5"]
 [ext_resource type="PackedScene" uid="uid://cp71gm3mkgqk0" path="res://controlls/main_controlls/main_controlls.tscn" id="3_sucpv"]
 [ext_resource type="Texture2D" uid="uid://cvr27oh50hle7" path="res://assets/img/streetstilesetDEMO.png" id="4_ss6mr"]
 [ext_resource type="PackedScene" uid="uid://b4q7v1n1u370q" path="res://locations/template/slot.tscn" id="5_w5uto"]
+[ext_resource type="PackedScene" uid="uid://b58vgspwnv1ru" path="res://ui/ui.tscn" id="6_vbyxi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y36n6"]
 texture = ExtResource("4_ss6mr")
@@ -242,3 +243,5 @@ index = 5
 [node name="NarratorDialogPosition" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(112, 8)
+
+[node name="Ui" parent="." instance=ExtResource("6_vbyxi")]

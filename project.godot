@@ -24,7 +24,6 @@ SignalManager="*res://singeltons/signal_manager.gd"
 ActorManager="*res://singeltons/actor_manager.gd"
 GameManager="*res://singeltons/game_manager.gd"
 DialogManager="*res://dialog_manager/dialog_manager.tscn"
-QuestManager="*res://quest_manager/quest_manager.tscn"
 BattleManager="*res://battle_manager/battle_manager.tscn"
 
 [debug]

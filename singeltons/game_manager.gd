@@ -3,6 +3,11 @@ extends Node
 enum States { NONE, RECRUTING, BATTLE }
 var last_state
 
+# =========================================== update game data
+func add_credits(value) -> void:
+	GameData.credits += value
+	SignalManager.update_credits.emit()
+
 # =========================================== new game
 func new_game():
 	DialogManager.add_dialog_to_game_data("Tutorial/Start")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7gentj7s4jeq"]
 
-[ext_resource type="Script" uid="uid://0pylub4pun06" path="res://quest_manager/quest_done_notification.gd" id="1_sbav7"]
+[ext_resource type="Script" uid="uid://0pylub4pun06" path="res://ui/quests/quest_done_notification.gd" id="1_sbav7"]
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="2_gxv17"]
 [ext_resource type="Theme" uid="uid://cux11omgvy4r5" path="res://assets/theme/headline_theme.tres" id="3_u441v"]
 [ext_resource type="PackedScene" uid="uid://c00maqf8xr6dy" path="res://singeltons/btn.tscn" id="4_gxv17"]
