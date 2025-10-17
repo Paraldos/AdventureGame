@@ -12,11 +12,12 @@ enum Speakers { SLOT1, SLOT2, SLOT3, SLOT4, SLOT5, SLOT6, NARRATOR, RANDOME_HERO
 var id
 var enabled = false
 var bubble
-var bp_dialog_bubble = preload("res://dialog_manager/bubble/dialog_bubble.tscn")
+var bp_dialog_bubble = preload("res://dialogs/bubble/dialog_bubble.tscn")
 
 # ===================================== ready
 func _ready() -> void:
 	id = name
+	GameData.dialogs.append([id, enabled])
 	SignalManager.scene_changed.connect(_on_scene_changed)
 	SignalManager.enable_dialog.connect(_on_enable_dialog)
 	SignalManager.dialog_option_selected.connect(_on_dialog_option_selected)
@@ -67,4 +68,4 @@ func _add_npc():
 func _add_dialog_bubble():
 	bubble = bp_dialog_bubble.instantiate()
 	bubble.dialog = self
-	DialogManager.add_child(bubble)
+	Dialogs.add_child(bubble)

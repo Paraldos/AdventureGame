@@ -71,10 +71,10 @@ func _update_quest():
 			quest_state = QuestStates.SOLVED
 		else:
 			quest_state = QuestStates.OPEN
-	if quest_state == QuestStates.SOLVED:
-		DialogManager.add_dialog_to_game_data(follow_up_dialog)
-	else:
-		DialogManager.remve_dialog_from_game_data(follow_up_dialog)
+#	if quest_state == QuestStates.SOLVED:
+#		DialogManager.add_dialog_to_game_data(follow_up_dialog)
+#	else:
+#		DialogManager.remve_dialog_from_game_data(follow_up_dialog)
 
 func _recruite_mercs_check():
 	var amount_of_mercs = 0

@@ -1,72 +1,70 @@
-[gd_scene load_steps=9 format=3 uid="uid://j3eaeq126b3d"]
+[gd_scene load_steps=8 format=3 uid="uid://j3eaeq126b3d"]
 
-[ext_resource type="Script" uid="uid://3vcc6vsw433v" path="res://dialog_manager/dialog_manager.gd" id="1_jch72"]
-[ext_resource type="Script" uid="uid://vqv617lov561" path="res://dialog_manager/resources/dialog.gd" id="2_1ku4q"]
-[ext_resource type="PackedScene" uid="uid://bgr7yd4sct3b7" path="res://npcs/bug.tscn" id="3_65if4"]
-[ext_resource type="Script" uid="uid://c4papynmlhc0q" path="res://dialog_manager/resources/dialog_option.gd" id="4_m5bya"]
+[ext_resource type="Script" uid="uid://vqv617lov561" path="res://dialogs/resources/dialog.gd" id="1_3musc"]
+[ext_resource type="PackedScene" uid="uid://bgr7yd4sct3b7" path="res://npcs/bug.tscn" id="2_llr4y"]
+[ext_resource type="Script" uid="uid://c4papynmlhc0q" path="res://dialogs/resources/dialog_option.gd" id="3_a3x5p"]
 
 [sub_resource type="Resource" id="Resource_65if4"]
-script = ExtResource("4_m5bya")
+script = ExtResource("3_a3x5p")
 next_dialog = "Start2"
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [sub_resource type="Resource" id="Resource_m5bya"]
-script = ExtResource("4_m5bya")
+script = ExtResource("3_a3x5p")
 next_dialog = "Start3"
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [sub_resource type="Resource" id="Resource_s6txv"]
-script = ExtResource("4_m5bya")
+script = ExtResource("3_a3x5p")
 text = "Okay"
 start_recruting = true
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [sub_resource type="Resource" id="Resource_s8b5a"]
-script = ExtResource("4_m5bya")
+script = ExtResource("3_a3x5p")
 next_dialog = "Start5"
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
-[node name="DialogManager" type="CanvasLayer"]
-script = ExtResource("1_jch72")
+[node name="Dialogs" type="CanvasLayer"]
 
 [node name="Tutorial" type="Node" parent="."]
 
 [node name="Start" type="Node" parent="Tutorial"]
-script = ExtResource("2_1ku4q")
+script = ExtResource("1_3musc")
 text = "Hey, kid. You look fresh off the shuttle. Lucky for you, I know how things work around here."
 location = "test_area"
 speaker = 3
-add_npc = ExtResource("3_65if4")
-options = Array[ExtResource("4_m5bya")]([SubResource("Resource_65if4")])
+add_npc = ExtResource("2_llr4y")
+options = Array[ExtResource("3_a3x5p")]([SubResource("Resource_65if4")])
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start2" type="Node" parent="Tutorial"]
-script = ExtResource("2_1ku4q")
+script = ExtResource("1_3musc")
 text = "Rule number one: never walk alone. Get yourself a crew. A few mercs who can handle the dirt."
 speaker = 3
-options = Array[ExtResource("4_m5bya")]([SubResource("Resource_m5bya")])
+options = Array[ExtResource("3_a3x5p")]([SubResource("Resource_m5bya")])
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start3" type="Node" parent="Tutorial"]
-script = ExtResource("2_1ku4q")
+script = ExtResource("1_3musc")
 text = "Shouldn’t be hard. This city’s crawling with people desperate to take any gig."
 speaker = 3
-options = Array[ExtResource("4_m5bya")]([SubResource("Resource_s6txv")])
+options = Array[ExtResource("3_a3x5p")]([SubResource("Resource_s6txv")])
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start4" type="Node" parent="Tutorial"]
-script = ExtResource("2_1ku4q")
+script = ExtResource("1_3musc")
 text = "Well done, kid. With those mercs, you should be fine for now."
 location = "TestArea"
 speaker = 3
-add_npc = ExtResource("3_65if4")
-options = Array[ExtResource("4_m5bya")]([SubResource("Resource_s8b5a")])
+add_npc = ExtResource("2_llr4y")
+options = Array[ExtResource("3_a3x5p")]([SubResource("Resource_s8b5a")])
 metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start5" type="Node" parent="Tutorial"]
-script = ExtResource("2_1ku4q")
+script = ExtResource("1_3musc")
 text = "But let’s see what they can really do. I’ve got a batch of training drones lying around. Give me a sec, and I’ll set them up."
 location = "TestArea"
 speaker = 3
-add_npc = ExtResource("3_65if4")
+add_npc = ExtResource("2_llr4y")
 metadata/_custom_type_script = "uid://vqv617lov561"

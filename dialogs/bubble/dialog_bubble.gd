@@ -8,7 +8,7 @@ class_name DialogBubble
 @onready var pointer_top: TextureRect = %PointerTop
 @onready var pointer_bottom: TextureRect = %PointerBottom
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-var bp_option_btn = preload("res://dialog_manager/bubble/option_btn.tscn")
+var bp_option_btn = preload("res://dialogs/bubble/option_btn.tscn")
 var dialog : Dialog
 
 func _ready() -> void:
