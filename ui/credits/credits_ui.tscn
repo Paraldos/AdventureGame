@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbvqgyqui8hgv"]
+[gd_scene load_steps=3 format=3 uid="uid://cbvqgyqui8hgv"]
 
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_7u444"]
+[ext_resource type="Script" uid="uid://rux272lauyte" path="res://ui/credits/credits_ui.gd" id="2_i66a0"]
 
 [node name="CreditsUi" type="MarginContainer"]
 anchors_preset = 1
@@ -15,6 +16,7 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+script = ExtResource("2_i66a0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -28,5 +30,7 @@ theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 1
 
 [node name="Label" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Credits: xxx"
+uppercase = true

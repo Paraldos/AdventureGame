@@ -20,7 +20,6 @@ var bp_quest_done_notification = preload("res://ui/quests/quest_done_notificatio
 var quest_state = QuestStates.NONE :
 	set(new_state):
 		if new_state == quest_state: return
-		print(new_state)
 		visible = new_state == QuestStates.OPEN or new_state == QuestStates.SOLVED
 		quest_open.visible = new_state == QuestStates.OPEN
 		quest_done.visible = new_state == QuestStates.SOLVED
