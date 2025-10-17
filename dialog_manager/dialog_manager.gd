@@ -20,8 +20,13 @@ func _on_background_btn_pressed() -> void:
 
 # ============================================ api
 func add_dialog_to_game_data(dialog_id: String) -> void:
-	GameData.dialog_queue.append( dialog_id )
+	if not GameData.dialog_queue.find(dialog_id) > 0:
+		GameData.dialog_queue.append( dialog_id )
 	_check_location_for_valid_dialog()
+
+func remve_dialog_from_game_data(dialog_id: String) -> void:
+	if GameData.dialog_queue.find(dialog_id) > 0:
+		GameData.dialog_queue.erase( dialog_id )
 
 func start_dialog(dialog_id: String) -> void:
 	current_dialog = get_node(dialog_id)
