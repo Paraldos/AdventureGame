@@ -2,12 +2,14 @@ extends Node
 
 enum ATTRIBUTES { STRENGTH, DEX, CHARM, WITS }
 
-var rng = RandomNumberGenerator.new()
 var roles = Utils.load_json("res://data/roles.json")
-var hero_roles = [ roles.brawler, roles.hacker ]
 var backgrounds = Utils.load_json("res://data/backgrounds.json")
-var hero_backgrounds = [ backgrounds.streetkid, backgrounds.corpo, backgrounds.mutant ]
 var names = Utils.load_json("res://data/names.json")
+
+var rng = RandomNumberGenerator.new()
+var hero_roles = [ roles.brawler, roles.hacker ]
+var hero_backgrounds = [ backgrounds.streetkid, backgrounds.corpo, backgrounds.mutant ]
+
 var hero_template = { name = "", current_hp = 0, level = 1, role = {}, background = {} }
 
 # =============================================== ready
