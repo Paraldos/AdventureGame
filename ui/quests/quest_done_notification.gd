@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var credits_label: Label = %CreditsLabel
+var quest
 
 func _ready():
 	credits_label.text = "Credits: %s" % GameData.credits

@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [sub_resource type="Resource" id="Resource_s8b5a"]
 script = ExtResource("3_a3x5p")
-next_dialog = "Start5"
+finish_quest = "Recruite3Mercs"
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [node name="Dialogs" type="CanvasLayer"]

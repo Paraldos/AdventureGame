@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b58vgspwnv1ru"]
 
 [ext_resource type="PackedScene" uid="uid://cbvqgyqui8hgv" path="res://ui/credits/credits_ui.tscn" id="1_wl5ax"]
-[ext_resource type="PackedScene" uid="uid://qr61wikj8dop" path="res://ui/quests/quests.tscn" id="2_ks8t7"]
+[ext_resource type="PackedScene" uid="uid://qr61wikj8dop" path="res://ui/quests/quests_ui.tscn" id="2_ks8t7"]
 
 [node name="Ui" type="CanvasLayer"]
 

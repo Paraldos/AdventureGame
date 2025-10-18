@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://qr61wikj8dop"]
+[gd_scene load_steps=4 format=3 uid="uid://qr61wikj8dop"]
 
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_67geo"]
+[ext_resource type="Script" uid="uid://0dvcl5dsvui8" path="res://ui/quests/quests_ui.gd" id="2_5lfea"]
 [ext_resource type="PackedScene" uid="uid://c3jxe1spmbdue" path="res://ui/quests/quest.tscn" id="2_qh1s6"]
 
-[node name="Quests" type="MarginContainer"]
+[node name="QuestUi" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -15,6 +16,7 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+script = ExtResource("2_5lfea")
 
 [node name="ListOfQuests" type="VBoxContainer" parent="."]
 unique_name_in_owner = true

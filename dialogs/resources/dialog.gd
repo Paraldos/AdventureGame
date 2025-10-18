@@ -17,7 +17,7 @@ var bp_dialog_bubble = preload("res://dialogs/bubble/dialog_bubble.tscn")
 # ===================================== ready
 func _ready() -> void:
 	id = name
-	GameData.dialogs.append([id, enabled])
+	GameData.dialogs[id] = {enabled = enabled}
 	SignalManager.scene_changed.connect(_on_scene_changed)
 	SignalManager.enable_dialog.connect(_on_enable_dialog)
 	SignalManager.dialog_option_selected.connect(_on_dialog_option_selected)

@@ -1,3 +1,4 @@
+Node
 Button
 Marker2D
 CanvasLayer
@@ -8,7 +9,6 @@ ColorRect
 Control
 VBoxContainer
 PanelContainer
-Node
 AnimationPlayer
 Container
 HBoxContainer

@@ -29,9 +29,12 @@ var quest_state = QuestStates.NONE :
 
 # ================================================ ready
 func _ready() -> void:
+	#
 	SignalManager.start_quest.connect(_on_start_quest)
-	SignalManager.merc_recruited.connect(_update_quest)
 	SignalManager.finish_quest.connect(_on_finish_quest)
+	#
+	SignalManager.merc_recruited.connect(_update_quest)
+	#
 	id = name
 	label.text = title
 	if GameData.open_quests.find(id) > 0:
@@ -60,6 +63,7 @@ func _on_finish_quest(quest_id : String):
 	GameManager.add_credits(reward_credits)
 	# message
 	var quest_done_notification = bp_quest_done_notification.instantiate()
+	quest_done_notification.quest = self
 	get_tree().current_scene.add_child(quest_done_notification)
 
 func quit_quest():
