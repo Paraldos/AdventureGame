@@ -10,7 +10,7 @@ signal deselect_slot_btn
 
 signal start_quest(quest_id : String)
 signal finish_quest(quest_id : String)
-signal merc_recruited
+signal update_quest
 
 signal update_credits
 

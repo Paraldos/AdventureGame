@@ -25,6 +25,7 @@ ActorManager="*res://singeltons/actor_manager.gd"
 GameManager="*res://singeltons/game_manager.gd"
 BattleManager="*res://battle_manager/battle_manager.tscn"
 Dialogs="*res://dialogs/dialogs.tscn"
+Quests="*res://quests/quests.tscn"
 
 [debug]
 

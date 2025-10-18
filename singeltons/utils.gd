@@ -2,6 +2,7 @@ extends Node
 
 var current_location
 var slots = [null, null, null, null, null, null]
+var list_of_quests = {}
 
 func id_to_string(txt: String) -> String:
 	var words := txt.split("_", false)

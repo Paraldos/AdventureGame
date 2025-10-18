@@ -34,7 +34,7 @@ func _on_x_btn_pressed() -> void:
 	close()
 
 func _on_accept_btn_pressed() -> void:
-	SignalManager.merc_recruited.emit()
+	SignalManager.update_quest.emit()
 	close()
 
 func _on_return_btn_pressed() -> void:

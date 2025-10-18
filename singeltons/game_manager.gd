@@ -11,8 +11,8 @@ func add_credits(value) -> void:
 # =========================================== new game
 func new_game():
 	# dialogs
-	for dialog in GameData.dialogs:
-		dialog[1] = false
+	# for dialog in GameData.dialogs:
+	# 	dialog[1] = false
 	SignalManager.enable_dialog.emit("Start", true)
 	# actors
 	GameData.actors = []

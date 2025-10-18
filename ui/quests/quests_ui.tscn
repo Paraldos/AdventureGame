@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://qr61wikj8dop"]
+[gd_scene load_steps=3 format=3 uid="uid://qr61wikj8dop"]
 
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_67geo"]
 [ext_resource type="Script" uid="uid://0dvcl5dsvui8" path="res://ui/quests/quests_ui.gd" id="2_5lfea"]
-[ext_resource type="PackedScene" uid="uid://c3jxe1spmbdue" path="res://ui/quests/quest.tscn" id="2_qh1s6"]
 
 [node name="QuestUi" type="MarginContainer"]
 anchors_preset = 15
@@ -25,9 +24,3 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
 theme_override_constants/separation = 1
-
-[node name="Recruite3Mercs" parent="ListOfQuests" instance=ExtResource("2_qh1s6")]
-layout_mode = 2
-title = "Recrute 3 Mercs"
-required_amount = 1
-follow_up_dialog = "Start4"
