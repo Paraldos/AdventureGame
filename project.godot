@@ -21,11 +21,11 @@ Utils="*res://singeltons/utils.tscn"
 GameData="*res://singeltons/game_data.gd"
 SceneManager="*res://singeltons/scene_manager.tscn"
 SignalManager="*res://singeltons/signal_manager.gd"
-ActorManager="*res://actor_manager/actor_manager.gd"
 GameManager="*res://singeltons/game_manager.gd"
 BattleManager="*res://battle_manager/battle_manager.tscn"
 Dialogs="*res://dialogs/dialogs.tscn"
 Quests="*res://quests/quests.tscn"
+ActorManager="*res://actor_manager/actor_manager.tscn"
 
 [debug]
 

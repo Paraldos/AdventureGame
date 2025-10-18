@@ -8,6 +8,8 @@ signal remove_npcs
 signal state_changed
 signal deselect_slot_btn
 
+signal remove_actor(index : int)
+
 signal start_quest(quest_id : String)
 signal update_quest
 signal finish_quest(quest_id : String)

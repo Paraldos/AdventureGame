@@ -1,31 +1,47 @@
 extends Node
 class_name Actor
 
-enum Backgrounds { STREETKID, CORPO, MUTANT }
+enum Backgrounds { NONE, STREETKID, CORPO, MUTANT }
+enum Sexes { NONE, MALE, FEMALE }
 
 @export var strength = 0
 @export var dex = 0
 @export var charm = 0
 @export var wits = 0
+@export var display : PackedScene
 @export var max_hp = 0
 var current_hp = 0
-@export var background : Backgrounds
-@export var display : PackedScene
+var background = null
 var actor_name = ""
-var id = ""
-var position = 0
+var id = name
+var slot_index = -1
 
-var roles = Utils.load_json("res://data/roles.json")
-var backgrounds = Utils.load_json("res://data/backgrounds.json")
 var names = Utils.load_json("res://data/names.json")
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
-	id = name
+	SignalManager.remove_actor.connect(_on_remove_actor)
+	actor_name = _get_randome_name(Sexes.MALE)
+	if not id:
+		id = name
+	print("id: ", id)
+
+func _get_randome_name(sex : Sexes):
+	if sex == Sexes.MALE:
+		names.male.shuffle()
+		return names.male[0]
+	else:
+		names.female.shuffle()
+		return names.female[0]
+
+func _on_remove_actor(target_slot_index : int):
+	if slot_index == target_slot_index:
+		queue_free()
 
 func get_attribute( attribute : String ) -> int:
 	var value = [attribute]
-	value += background[attribute]
+	if not background == null:
+		value += background[attribute]
 	return value
 
 func get_max_hp() -> int:

@@ -1,17 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://cesk4hurskoyb"]
+[gd_scene load_steps=5 format=3 uid="uid://cesk4hurskoyb"]
 
 [ext_resource type="Script" uid="uid://dqrdrb1wa2eo4" path="res://actor_manager/actor_manager.gd" id="1_xk1dc"]
 [ext_resource type="Script" uid="uid://d4h87owm58m0i" path="res://actor_manager/actor.gd" id="2_7swvp"]
+[ext_resource type="Script" uid="uid://c4yn5dl0se08o" path="res://actor_manager/background.gd" id="2_y82ap"]
 [ext_resource type="PackedScene" uid="uid://b3f40uinkuugn" path="res://actor_displays/fighter.tscn" id="3_y82ap"]
 
 [node name="ActorManager" type="Node"]
 script = ExtResource("1_xk1dc")
 
-[node name="Mercs" type="Node" parent="."]
+[node name="CurrentActors" type="Node" parent="."]
+unique_name_in_owner = true
 
-[node name="MercTemplates" type="Node" parent="."]
+[node name="BackgroundTemplates" type="Node" parent="."]
+unique_name_in_owner = true
 
-[node name="Brawler" type="Node" parent="MercTemplates"]
+[node name="Streetkid" type="Node" parent="BackgroundTemplates"]
+script = ExtResource("2_y82ap")
+dex = 1
+charm = 1
+
+[node name="Corpo" type="Node" parent="BackgroundTemplates"]
+script = ExtResource("2_y82ap")
+charm = 1
+wits = 1
+
+[node name="Mutant" type="Node" parent="BackgroundTemplates"]
+script = ExtResource("2_y82ap")
+strength = 1
+dex = 1
+
+[node name="RoleTemplates" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Brawler" type="Node" parent="RoleTemplates"]
 script = ExtResource("2_7swvp")
 strength = 2
 dex = 1
@@ -19,7 +40,7 @@ max_hp = 20
 display = ExtResource("3_y82ap")
 metadata/_custom_type_script = "uid://d4h87owm58m0i"
 
-[node name="Hacker" type="Node" parent="MercTemplates"]
+[node name="Hacker" type="Node" parent="RoleTemplates"]
 script = ExtResource("2_7swvp")
 dex = 1
 wits = 2

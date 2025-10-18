@@ -6,31 +6,23 @@ extends CanvasLayer
 @onready var x_btn: TextureButton = %XBtn
 @onready var return_btn: TextureButton = %ReturnBtn
 @onready var accept_btn: TextureButton = %AcceptBtn
-var index = 0
+var slot_index = 0
 var old_actor = null
 
 func _ready() -> void:
-	role_and_background_selector.index = index
-	attributes.index = index
-	stats.index = index
-	if GameData.actors[index]:
-		old_actor = GameData.actors[index].duplicate()
-	else:
-		return_btn.disabled = true
-		ActorManager.create_hero(
-			ActorManager.hero_roles.pick_random(),
-			ActorManager.hero_backgrounds.pick_random(),
-			index
-		)
-		await get_tree().process_frame
-		SignalManager.update_actor_template.emit(index)
-	SignalManager.update_actor_value.emit()
+	# create new actor
+	var new_actor = ActorManager.role_templates.get_child(0).duplicate()
+	new_actor.slot_index = slot_index
+	new_actor.background = ActorManager.background_templates.get_child(0)
+	ActorManager.current_actors.add_child(new_actor)
+	# role and background selector
+	role_and_background_selector.slot_index = slot_index
 
 func _on_x_btn_pressed() -> void:
 	if old_actor:
-		GameData.actors[index] = old_actor
+		GameData.actors[slot_index] = old_actor
 	else:
-		GameData.actors[index] = null
+		GameData.actors[slot_index] = null
 	close()
 
 func _on_accept_btn_pressed() -> void:
@@ -38,10 +30,10 @@ func _on_accept_btn_pressed() -> void:
 	close()
 
 func _on_return_btn_pressed() -> void:
-	GameData.actors[index] = old_actor.duplicate()
+	GameData.actors[slot_index] = old_actor.duplicate()
 	SignalManager.update_actor_value.emit()
 
 func close() -> void:
-	SignalManager.update_actor_template.emit(index)
+	SignalManager.update_actor_template.emit(slot_index)
 	SignalManager.deselect_slot_btn.emit()
 	queue_free()

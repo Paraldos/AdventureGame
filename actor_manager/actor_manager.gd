@@ -2,6 +2,10 @@ extends Node
 
 enum ATTRIBUTES { STRENGTH, DEX, CHARM, WITS }
 
+@onready var current_actors: Node = %CurrentActors
+@onready var background_templates: Node = %BackgroundTemplates
+@onready var role_templates: Node = %RoleTemplates
+
 var roles = Utils.load_json("res://data/roles.json")
 var backgrounds = Utils.load_json("res://data/backgrounds.json")
 var names = Utils.load_json("res://data/names.json")

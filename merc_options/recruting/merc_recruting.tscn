@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://sjbolkwfnrpv" path="res://assets/img/ui/undo_btn2.png" id="9_4lod0"]
 [ext_resource type="Texture2D" uid="uid://bw81x1euw8x15" path="res://assets/img/ui/undo_btn3.png" id="10_4lod0"]
 
-[node name="HeroCreation" type="CanvasLayer"]
+[node name="MercRecruting" type="CanvasLayer"]
 script = ExtResource("2_yfv7x")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
