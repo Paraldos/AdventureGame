@@ -13,9 +13,11 @@ enum QuestStates { NONE, READY, OPEN, SOLVED, CLOSED }
 @export var quest_type : QuestTypes
 @export var required_amount = 0
 @export var reward_credits = 500
+
 @export_category('Quest Finished')
 @export var follow_up_dialog : String
 
+var id
 var bp_quest_done_notification = preload("res://ui/quests/quest_done_notification.tscn")
 var quest_state = QuestStates.NONE :
 	set(new_state):
@@ -30,24 +32,25 @@ func _ready() -> void:
 	SignalManager.start_quest.connect(_on_start_quest)
 	SignalManager.merc_recruited.connect(_update_quest)
 	SignalManager.finish_quest.connect(_on_finish_quest)
+	id = name
 	label.text = title
-	if GameData.open_quests.find(name) > 0:
+	if GameData.open_quests.find(id) > 0:
 		quest_state = QuestStates.OPEN
 		_update_quest()
-	elif GameData.closed_quests.find(name):
+	elif GameData.closed_quests.find(id):
 		quest_state = QuestStates.CLOSED
 	else:
 		quest_state = QuestStates.READY
 
 func _on_start_quest(quest_id : String):
-	if quest_id != name: return
+	if quest_id != id: return
 	animation_player.play('fade_in')
 	quest_state = QuestStates.OPEN
-	GameData.open_quests.append(name)
+	GameData.open_quests.append(id)
 
 func _on_finish_quest(quest_id : String):
 	# guard
-	if quest_id != name: return
+	if quest_id != id: return
 	if quest_state != QuestStates.SOLVED: return
 	# animation
 	animation_player.play_backwards('fade_in')
@@ -60,7 +63,7 @@ func _on_finish_quest(quest_id : String):
 	get_tree().current_scene.add_child(quest_done_notification)
 
 func quit_quest():
-	GameData.closed_quests.append(name)
+	GameData.closed_quests.append(id)
 
 # ================================================ update
 func _update_quest():
@@ -71,10 +74,7 @@ func _update_quest():
 			quest_state = QuestStates.SOLVED
 		else:
 			quest_state = QuestStates.OPEN
-#	if quest_state == QuestStates.SOLVED:
-#		DialogManager.add_dialog_to_game_data(follow_up_dialog)
-#	else:
-#		DialogManager.remve_dialog_from_game_data(follow_up_dialog)
+	SignalManager.enable_dialog.emit(follow_up_dialog, quest_state == QuestStates.SOLVED)
 
 func _recruite_mercs_check():
 	var amount_of_mercs = 0

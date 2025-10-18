@@ -16,6 +16,7 @@ func _ready() -> void:
 	SignalManager.state_changed.connect(_update_slot_btn)
 	SignalManager.deselect_slot_btn.connect(_update_slot_btn)
 	_update_slot_btn()
+	Utils.slots[index] = self
 
 # ========================================= update actor
 func _update_slot_btn():

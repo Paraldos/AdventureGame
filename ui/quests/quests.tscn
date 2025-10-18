@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://qr61wikj8dop"]
 
-[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_cb4dc"]
-[ext_resource type="PackedScene" uid="uid://c3jxe1spmbdue" path="res://ui/quests/quest.tscn" id="2_5lfea"]
+[ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_67geo"]
+[ext_resource type="PackedScene" uid="uid://c3jxe1spmbdue" path="res://ui/quests/quest.tscn" id="2_qh1s6"]
 
-[node name="QuestsUi" type="MarginContainer"]
+[node name="Quests" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_cb4dc")
+theme = ExtResource("1_67geo")
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -24,8 +24,8 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme_override_constants/separation = 1
 
-[node name="Recruite3Mercs" parent="ListOfQuests" instance=ExtResource("2_5lfea")]
+[node name="Recruite3Mercs" parent="ListOfQuests" instance=ExtResource("2_qh1s6")]
 layout_mode = 2
 title = "Recrute 3 Mercs"
 required_amount = 1
-follow_up_dialog = "Tutorial/Start4"
+follow_up_dialog = "Start4"

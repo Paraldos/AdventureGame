@@ -26,6 +26,8 @@ func _ready() -> void:
 func _on_enable_dialog(target_id : String, new_status : bool):
 	if target_id != id: return
 	enabled = new_status
+	if Utils.current_location:
+		_start_dialog()
 
 func _on_scene_changed():
 	if not enabled: return
@@ -57,11 +59,11 @@ func _start_dialog():
 	enabled = false
 
 func _stop_dialog():
-	print('bert')
 	SignalManager.remove_npcs.emit()
 
 func _add_npc():
 	if not add_npc: return
+	if Utils.slots[speaker].actor_container.get_child_count() > 0: return
 	var npc = add_npc.instantiate()
 	Utils.current_location.slots[speaker].actor_container.add_child(npc)
 
