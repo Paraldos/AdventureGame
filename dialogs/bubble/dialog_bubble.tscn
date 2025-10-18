@@ -108,7 +108,7 @@ flip_v = true
 [node name="MarginContainer2" type="MarginContainer" parent="Marker/PanelContainer"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_bottom = -11
+theme_override_constants/margin_bottom = -9
 
 [node name="PointerBottom" type="TextureRect" parent="Marker/PanelContainer/MarginContainer2"]
 unique_name_in_owner = true
