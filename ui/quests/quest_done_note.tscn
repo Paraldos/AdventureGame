@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c00maqf8xr6dy" path="res://singeltons/btn.tscn" id="4_gxv17"]
 
 [node name="QuestDoneNote" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_sbav7")
 
 [node name="ColorRect" type="ColorRect" parent="."]

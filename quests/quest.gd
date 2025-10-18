@@ -8,7 +8,8 @@ enum QuestStates { NONE, OPEN, SOLVED, CLOSED }
 @export var quest_type : QuestTypes
 @export var required_amount = 0
 @export var reward_credits = 500
-@export var follow_up_dialog : String
+@export var solved_dialog : String
+@export var finished_dialog : String
 
 var id
 var bp_quest_done_note = preload("res://ui/quests/quest_done_note.tscn")
@@ -55,7 +56,7 @@ func _on_update_quest():
 			state = QuestStates.SOLVED
 		else:
 			state = QuestStates.OPEN
-	SignalManager.enable_dialog.emit(follow_up_dialog, state == QuestStates.SOLVED)
+	SignalManager.enable_dialog.emit( solved_dialog, state == QuestStates.SOLVED )
 
 func _recruite_mercs_check():
 	var amount_of_mercs = 0

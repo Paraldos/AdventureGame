@@ -23,8 +23,10 @@ func _ready() -> void:
 	SignalManager.dialog_option_selected.connect(_on_dialog_option_selected)
 	if options.size() == 0: print_debug('dialog has no options: %s' % id)
 
-func _on_enable_dialog(target_id : String, new_status : bool):
+func _on_enable_dialog(target_id : String, new_status = true, waiting_time = 0.0 ):
 	if target_id != id: return
+	if waiting_time > 0:
+		await get_tree().create_timer(waiting_time).timeout
 	enabled = new_status
 	if Utils.current_location:
 		_start_dialog()
