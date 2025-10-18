@@ -7,4 +7,4 @@ func _ready() -> void:
 	SignalManager.update_credits.connect(_on_update_credits)
 
 func _on_update_credits():
-	label.text = "Credits:%s" % GameData.credits
+	label.text = "%s $" % GameData.credits

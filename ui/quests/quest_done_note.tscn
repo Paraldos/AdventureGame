@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7gentj7s4jeq"]
 
-[ext_resource type="Script" uid="uid://0pylub4pun06" path="res://ui/quests/quest_done_notification.gd" id="1_sbav7"]
+[ext_resource type="Script" uid="uid://0pylub4pun06" path="res://ui/quests/quest_done_note.gd" id="1_sbav7"]
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="2_gxv17"]
 [ext_resource type="Theme" uid="uid://cux11omgvy4r5" path="res://assets/theme/headline_theme.tres" id="3_u441v"]
 [ext_resource type="PackedScene" uid="uid://c00maqf8xr6dy" path="res://singeltons/btn.tscn" id="4_gxv17"]
 
-[node name="QuestDoneNotification" type="CanvasLayer"]
+[node name="QuestDoneNote" type="CanvasLayer"]
 script = ExtResource("1_sbav7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -63,16 +63,12 @@ theme_override_constants/margin_bottom = 15
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 3
+alignment = 1
 
 [node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_u441v")
 text = "Quest Done"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "XP"
 horizontal_alignment = 1
 
 [node name="CreditsLabel" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]

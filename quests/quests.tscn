@@ -9,4 +9,5 @@
 [node name="Recruite3Mercs" type="Node" parent="Tutorial"]
 script = ExtResource("1_xtmqs")
 text = "Recruite 3 Mercs"
+follow_up_dialog = "Start4"
 metadata/_custom_type_script = "uid://dybbsarpjk67f"

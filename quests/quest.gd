@@ -11,6 +11,8 @@ enum QuestStates { NONE, OPEN, SOLVED, CLOSED }
 @export var follow_up_dialog : String
 
 var id
+var bp_quest_done_note = preload("res://ui/quests/quest_done_note.tscn")
+var rng = RandomNumberGenerator.new()
 var state = QuestStates.NONE :
 	set(new_state):
 		if new_state == state: return
@@ -24,6 +26,7 @@ func _ready() -> void:
 	SignalManager.update_quest.connect(_on_update_quest)
 	#
 	id = name
+	rng.randomize()
 	await get_tree().process_frame
 	Utils.list_of_quests[id] = self
 
@@ -31,8 +34,15 @@ func _on_start_quest(quest_id : String):
 	if quest_id != id: return
 	state = QuestStates.OPEN
 
-func _on_finish_quest():
+func _on_finish_quest( quest_id : String ):
+	if quest_id != id: return
+	# basics
+	GameManager.add_credits(reward_credits)
 	state = QuestStates.CLOSED
+	# note
+	var note = bp_quest_done_note.instantiate()
+	note.quest = self
+	get_tree().current_scene.add_child(note)
 
 # ================================================ upadte
 func _on_update_quest():

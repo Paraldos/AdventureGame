@@ -9,8 +9,9 @@ signal state_changed
 signal deselect_slot_btn
 
 signal start_quest(quest_id : String)
-signal finish_quest(quest_id : String)
 signal update_quest
+signal finish_quest(quest_id : String)
+signal quest_finished
 
 signal update_credits
 

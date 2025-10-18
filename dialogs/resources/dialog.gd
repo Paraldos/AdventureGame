@@ -44,9 +44,9 @@ func _on_dialog_option_selected( old_dialog_id : String, selected_option : Dialo
 		if selected_option.next_dialog == "":
 			_stop_dialog()
 		if selected_option.start_quest:
-			SignalManager.start_quest.emit(selected_option.start_quest)
+			SignalManager.start_quest.emit( selected_option.start_quest )
 		if selected_option.finish_quest:
-			SignalManager.finish_quest.emit(selected_option.finish_quest)
+			SignalManager.finish_quest.emit( selected_option.finish_quest )
 		if selected_option.start_recruting:
 			GameManager.state = GameManager.States.RECRUTING
 	if selected_option.next_dialog == id:
