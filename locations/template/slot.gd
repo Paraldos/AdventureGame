@@ -37,6 +37,7 @@ func _update_actor(target_index):
 	# spawn new actor
 	if not GameData.actors[index]: return
 	var actor: Dictionary = GameData.actors[index]
+	return
 	var bp: PackedScene = load(actor.role.template)
 	var inst: Node2D = bp.instantiate()
 	inst.index = index

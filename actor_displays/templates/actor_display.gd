@@ -2,9 +2,13 @@ extends Node2D
 
 @onready var idle: AnimatedSprite2D = %Idle
 @onready var lifebar: TextureProgressBar = %Lifebar
+@onready var status_bar: Node2D = %StatusBar
+
+@export var npc = false
 var index = 0
 
 func _ready() -> void:
+	status_bar.visible = npc
 	_update_lifebar()
 
 func _update_lifebar(slow = false):

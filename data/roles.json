@@ -7,7 +7,7 @@
     "strength": 2,
     "wits": 0,
     "max_hp": 50,
-    "template": "res://actors/fighter/fighter.tscn"
+    "template": "fighter"
   },
   "hacker": {
     "id": "hacker",
@@ -17,6 +17,6 @@
     "strength": 0,
     "wits": 2,
     "max_hp": 50,
-    "template": "res://actors/fighter/fighter.tscn"
+    "template": "fighter"
   }
 }

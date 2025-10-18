@@ -1,6 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://cesk4hurskoyb"]
+[gd_scene load_steps=4 format=3 uid="uid://cesk4hurskoyb"]
 
 [ext_resource type="Script" uid="uid://dqrdrb1wa2eo4" path="res://actor_manager/actor_manager.gd" id="1_xk1dc"]
+[ext_resource type="Script" uid="uid://d4h87owm58m0i" path="res://actor_manager/actor.gd" id="2_7swvp"]
+[ext_resource type="PackedScene" uid="uid://b3f40uinkuugn" path="res://actor_displays/fighter.tscn" id="3_y82ap"]
 
 [node name="ActorManager" type="Node"]
 script = ExtResource("1_xk1dc")
+
+[node name="Mercs" type="Node" parent="."]
+
+[node name="MercTemplates" type="Node" parent="."]
+
+[node name="Brawler" type="Node" parent="MercTemplates"]
+script = ExtResource("2_7swvp")
+strength = 2
+dex = 1
+max_hp = 20
+display = ExtResource("3_y82ap")
+metadata/_custom_type_script = "uid://d4h87owm58m0i"
+
+[node name="Hacker" type="Node" parent="MercTemplates"]
+script = ExtResource("2_7swvp")
+dex = 1
+wits = 2
+max_hp = 14
+display = ExtResource("3_y82ap")
+metadata/_custom_type_script = "uid://d4h87owm58m0i"
