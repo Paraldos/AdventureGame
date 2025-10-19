@@ -64,7 +64,7 @@ metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start5" type="Node" parent="Tutorial"]
 script = ExtResource("1_3musc")
-text = "But let’s see what they can really do. I’ve got a batch of training drones lying around. Give me a sec, and I’ll set them up."
+text = "Now let’s see what they can really do. I’ve got a batch of training drones lying around. Give me a sec, and I’ll set them up."
 location = "TestArea"
 speaker = 3
 add_npc = ExtResource("2_llr4y")
