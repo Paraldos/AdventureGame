@@ -29,22 +29,31 @@ func _fill_menus():
 		backgrounds_menu.add_item(Utils.id_to_string(background.id))
 
 func _on_roles_menu_item_selected(index: int) -> void:
+	print(index)
 	if disabled: return
 	# save old background
-	var current_actor = ActorManager.current_actors.get_child(slot_index)
-	var old_name = current_actor.actor_name
-	var old_background = current_actor.background
+	var actor_name = ""
+	var background = null
+	var current_actor = ActorManager.get_actor(slot_index)
+	if current_actor:
+		actor_name = current_actor.actor_name
+		background = current_actor.background
 	# remove old actor
 	SignalManager.remove_actor.emit(slot_index)
 	# set new role
 	var new_actor = ActorManager.role_templates.get_child(index).duplicate()
-	new_actor.actor_name = old_name
+	new_actor.actor_name = actor_name
+	new_actor.background = background
 	new_actor.slot_index = slot_index
-	new_actor.background = old_background
+	new_actor.current_hp = new_actor.get_max_hp()
 	ActorManager.current_actors.add_child(new_actor)
+	await get_tree().process_frame
+	SignalManager.update_actor_display.emit(slot_index)
+	SignalManager.update_actor_value.emit()
 
 func _on_backgrounds_menu_item_selected(index: int) -> void:
 	if disabled: return
-	var current_actor = ActorManager.current_actors.get_child(slot_index)
+	var current_actor = ActorManager.get_actor(slot_index)
 	var new_background = ActorManager.background_templates.get_child(index)
 	current_actor.background = new_background
+	SignalManager.update_actor_value.emit()

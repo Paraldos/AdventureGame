@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cesk4hurskoyb"]
+[gd_scene load_steps=6 format=3 uid="uid://cesk4hurskoyb"]
 
 [ext_resource type="Script" uid="uid://dqrdrb1wa2eo4" path="res://actor_manager/actor_manager.gd" id="1_xk1dc"]
 [ext_resource type="Script" uid="uid://d4h87owm58m0i" path="res://actor_manager/actor.gd" id="2_7swvp"]
 [ext_resource type="Script" uid="uid://c4yn5dl0se08o" path="res://actor_manager/background.gd" id="2_y82ap"]
-[ext_resource type="PackedScene" uid="uid://b3f40uinkuugn" path="res://actor_displays/fighter.tscn" id="3_y82ap"]
+[ext_resource type="PackedScene" uid="uid://b3f40uinkuugn" path="res://actor_displays/brawler.tscn" id="3_y82ap"]
+[ext_resource type="PackedScene" uid="uid://dr1jlsdip2t5y" path="res://actor_displays/hacker.tscn" id="5_gh4jt"]
 
 [node name="ActorManager" type="Node"]
 script = ExtResource("1_xk1dc")
@@ -36,14 +37,14 @@ unique_name_in_owner = true
 script = ExtResource("2_7swvp")
 strength = 2
 dex = 1
+bp_display = ExtResource("3_y82ap")
 max_hp = 20
-display = ExtResource("3_y82ap")
 metadata/_custom_type_script = "uid://d4h87owm58m0i"
 
 [node name="Hacker" type="Node" parent="RoleTemplates"]
 script = ExtResource("2_7swvp")
 dex = 1
 wits = 2
+bp_display = ExtResource("5_gh4jt")
 max_hp = 14
-display = ExtResource("3_y82ap")
 metadata/_custom_type_script = "uid://d4h87owm58m0i"

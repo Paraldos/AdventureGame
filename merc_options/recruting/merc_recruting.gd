@@ -12,11 +12,18 @@ var old_actor = null
 func _ready() -> void:
 	# create new actor
 	var new_actor = ActorManager.role_templates.get_child(0).duplicate()
+	new_actor.current_hp = new_actor.get_max_hp()
 	new_actor.slot_index = slot_index
 	new_actor.background = ActorManager.background_templates.get_child(0)
 	ActorManager.current_actors.add_child(new_actor)
 	# role and background selector
 	role_and_background_selector.slot_index = slot_index
+	attributes.slot_index = slot_index
+	stats.slot_index = slot_index
+	# update
+	await get_tree().process_frame
+	SignalManager.update_actor_display.emit(slot_index)
+	SignalManager.update_actor_value.emit()
 
 func _on_x_btn_pressed() -> void:
 	if old_actor:
@@ -34,6 +41,6 @@ func _on_return_btn_pressed() -> void:
 	SignalManager.update_actor_value.emit()
 
 func close() -> void:
-	SignalManager.update_actor_template.emit(slot_index)
+	SignalManager.update_actor_display.emit(slot_index)
 	SignalManager.deselect_slot_btn.emit()
 	queue_free()
