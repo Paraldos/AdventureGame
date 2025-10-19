@@ -22,3 +22,4 @@ signal dialog_option_selected( old_dialog_id : String, selected_option : DialogO
 signal remove_dialog_bubbles()
 
 signal start_battle(battle_id : String)
+signal update_ini

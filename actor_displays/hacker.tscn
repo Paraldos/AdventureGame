@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr1jlsdip2t5y"]
+[gd_scene load_steps=10 format=3 uid="uid://dr1jlsdip2t5y"]
 
 [ext_resource type="PackedScene" uid="uid://cc5lnbv826w40" path="res://actor_displays/templates/actor_display.tscn" id="1_0im2x"]
 [ext_resource type="Texture2D" uid="uid://dax12wln071yc" path="res://assets/img/char_templates/idle_battle-Sheet.png" id="2_xhsu8"]
+[ext_resource type="Texture2D" uid="uid://b0s5a1f2c7ly2" path="res://assets/img/ui/life_bar.png" id="3_0ko3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ko3r"]
 atlas = ExtResource("2_xhsu8")
@@ -50,3 +51,10 @@ animations = [{
 
 [node name="Idle" parent="Sprites" index="0"]
 sprite_frames = SubResource("SpriteFrames_wupxm")
+
+[node name="TextureRect" parent="StatusBar/StatusContainer" index="0"]
+texture = ExtResource("3_0ko3r")
+
+[node name="IniLabel" parent="StatusBar/StatusContainer/IniBox" index="0"]
+offset_left = 1.0
+offset_top = 1.0

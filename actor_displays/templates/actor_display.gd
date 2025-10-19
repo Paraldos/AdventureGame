@@ -2,21 +2,33 @@ extends Node2D
 
 @onready var sprites: Node2D = %Sprites
 @onready var idle: AnimatedSprite2D = %Idle
-@onready var lifebar: TextureProgressBar = %Lifebar
-@onready var status_bar: Node2D = %StatusBar
+
+@onready var lifebar: ProgressBar = %Lifebar
+@onready var ini_box: TextureRect = %IniBox
+@onready var ini_label: Label = %IniLabel
 
 var slot_index = 0
 var actor
 
 func _ready() -> void:
+	SignalManager.state_changed.connect(_on_state_changed)
 	SignalManager.update_actor_display.connect(_on_update_actor_display)
+	SignalManager.update_ini.connect(_on_update_ini)
+	ini_box.visible = false
 	_update_lifebar()
 	if slot_index > 2:
 		sprites.scale.x = -1
 
+func _on_state_changed():
+	ini_box.visible = false
+
 func _on_update_actor_display(target_index : int):
 	if slot_index != target_index: return
 	queue_free()
+
+func _on_update_ini():
+	ini_box.visible = true
+	ini_label.text = "%s" % actor.current_ini_position
 
 func _update_lifebar(slow = false):
 	var tween_time = 0.8

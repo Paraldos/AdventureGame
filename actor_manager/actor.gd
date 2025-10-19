@@ -15,6 +15,7 @@ var background = null
 var actor_name = ""
 var id = name
 var slot_index = -1
+var current_ini_position = 0
 
 var names = Utils.load_json("res://data/names.json")
 var rng = RandomNumberGenerator.new()
@@ -59,4 +60,8 @@ func get_max_hp() -> int:
 
 func get_current_hp() -> int:
 	var value = current_hp
+	return value
+
+func get_ini() -> int:
+	var value = dex
 	return value

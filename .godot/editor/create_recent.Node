@@ -1,3 +1,6 @@
+TextureRect
+ProgressBar
+VBoxContainer
 Actor
 Node
 Sprite2D
@@ -9,6 +12,3 @@ GridContainer
 Control
 Quest
 Marker2D
-CanvasLayer
-Node2D
-MarginContainer
