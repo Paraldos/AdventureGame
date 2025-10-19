@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://c08illhk7hmjt"]
+
+[ext_resource type="PackedScene" uid="uid://cc5lnbv826w40" path="res://actor_displays/templates/actor_display.tscn" id="1_jmkku"]
+[ext_resource type="Texture2D" uid="uid://c5li3e2jak5qo" path="res://assets/img/drone/idle-Sheet.png" id="2_ymwgm"]
+[ext_resource type="Texture2D" uid="uid://c34rc3hohfdtj" path="res://assets/img/small_shadow.png" id="3_u10ej"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u10ej"]
+atlas = ExtResource("2_ymwgm")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3ob3"]
+atlas = ExtResource("2_ymwgm")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pek56"]
+atlas = ExtResource("2_ymwgm")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fojp5"]
+atlas = ExtResource("2_ymwgm")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_esvbn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u10ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3ob3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pek56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fojp5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="Animation" id="Animation_dsw37"]
+resource_name = "loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Idle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_48ilm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Idle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6gsu8"]
+_data = {
+&"RESET": SubResource("Animation_48ilm"),
+&"loop": SubResource("Animation_dsw37")
+}
+
+[node name="Drone" instance=ExtResource("1_jmkku")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites" index="0"]
+texture = ExtResource("3_u10ej")
+
+[node name="Idle" parent="Sprites" index="1"]
+sprite_frames = SubResource("SpriteFrames_esvbn")
+frame_progress = 0.04628259
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprites/Idle" index="0"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_6gsu8")
+}
+autoplay = "loop"

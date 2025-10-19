@@ -1,3 +1,5 @@
+Sprite2D
+AnimationPlayer
 Battle
 Background
 Node
@@ -11,5 +13,3 @@ CanvasLayer
 Node2D
 MarginContainer
 Label
-ColorRect
-VBoxContainer

@@ -27,6 +27,9 @@ func _update_slot_btn():
 			pass
 		GameManager.States.RECRUTING:
 			button.visible = index <= 2
+		GameManager.States.BATTLE:
+			button.visible = true
+			button.disabled = true
 
 # ========================================= btn
 func _on_button_mouse_entered() -> void:
