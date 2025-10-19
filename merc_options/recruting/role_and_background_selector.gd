@@ -29,7 +29,6 @@ func _fill_menus():
 		backgrounds_menu.add_item(Utils.id_to_string(background.id))
 
 func _on_roles_menu_item_selected(index: int) -> void:
-	print(index)
 	if disabled: return
 	# save old background
 	var actor_name = ""

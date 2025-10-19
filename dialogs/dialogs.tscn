@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://j3eaeq126b3d"]
+[gd_scene load_steps=9 format=3 uid="uid://j3eaeq126b3d"]
 
 [ext_resource type="Script" uid="uid://vqv617lov561" path="res://dialogs/resources/dialog.gd" id="1_3musc"]
 [ext_resource type="PackedScene" uid="uid://bgr7yd4sct3b7" path="res://npcs/bug.tscn" id="2_llr4y"]
@@ -24,6 +24,11 @@ metadata/_custom_type_script = "uid://c4papynmlhc0q"
 [sub_resource type="Resource" id="Resource_s8b5a"]
 script = ExtResource("3_a3x5p")
 finish_quest = "Recruite3Mercs"
+metadata/_custom_type_script = "uid://c4papynmlhc0q"
+
+[sub_resource type="Resource" id="Resource_3musc"]
+script = ExtResource("3_a3x5p")
+start_battle = "TutorialBattle"
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [node name="Dialogs" type="CanvasLayer"]
@@ -64,8 +69,9 @@ metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start5" type="Node" parent="Tutorial"]
 script = ExtResource("1_3musc")
-text = "Now let’s see what they can really do. I’ve got a batch of training drones lying around. Give me a sec, and I’ll set them up."
+text = "Now let’s see what they can do. I’ve got a batch of training drones lying around. Give me a sec, and I’ll set them up."
 location = "TestArea"
 speaker = 3
 add_npc = ExtResource("2_llr4y")
+options = Array[ExtResource("3_a3x5p")]([SubResource("Resource_3musc")])
 metadata/_custom_type_script = "uid://vqv617lov561"

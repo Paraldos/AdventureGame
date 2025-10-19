@@ -51,6 +51,9 @@ func _on_dialog_option_selected( old_dialog_id : String, selected_option : Dialo
 			SignalManager.finish_quest.emit( selected_option.finish_quest )
 		if selected_option.start_recruting:
 			GameManager.state = GameManager.States.RECRUTING
+		if selected_option.start_battle:
+			GameManager.state = GameManager.States.BATTLE
+			SignalManager.start_battle.emit(selected_option.start_battle)
 	if selected_option.next_dialog == id:
 		_start_dialog()
 

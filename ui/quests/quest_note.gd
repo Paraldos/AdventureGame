@@ -11,7 +11,6 @@ func _ready() -> void:
 	SignalManager.update_quest.connect(_on_update_quest)
 	animation_player.play('fade_in')
 	quest = Utils.list_of_quests[quest_id]
-	print(quest)
 	label.text = quest.text
 	_update_visibility()
 

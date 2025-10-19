@@ -17,7 +17,8 @@ signal quest_finished
 
 signal update_credits
 
-signal enable_dialog(id : String, new_status : bool, timer : float )
-
+signal enable_dialog(dialog_id : String, new_status : bool, timer : float )
 signal dialog_option_selected( old_dialog_id : String, selected_option : DialogOption )
 signal remove_dialog_bubbles()
+
+signal start_battle(battle_id : String)
