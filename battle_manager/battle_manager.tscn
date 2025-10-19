@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d02tdpsp52i46"]
+[gd_scene load_steps=4 format=3 uid="uid://d02tdpsp52i46"]
 
 [ext_resource type="Script" uid="uid://giluhe47auiw" path="res://battle_manager/battle_manager.gd" id="1_3021x"]
 [ext_resource type="Script" uid="uid://bsi2dkv2qqy47" path="res://battle_manager/battle.gd" id="2_ab43p"]
+[ext_resource type="PackedScene" uid="uid://couq24oxokbfo" path="res://actor_manager/training_drone.tscn" id="3_vte21"]
 
 [node name="BattleManager" type="Node"]
 script = ExtResource("1_3021x")
 
 [node name="TutorialBattle" type="Node" parent="."]
 script = ExtResource("2_ab43p")
+front = Array[PackedScene]([ExtResource("3_vte21")])
+middle = Array[PackedScene]([ExtResource("3_vte21")])
+back = Array[PackedScene]([ExtResource("3_vte21")])

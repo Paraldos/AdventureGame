@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var sprites: Node2D = %Sprites
 @onready var idle: AnimatedSprite2D = %Idle
 @onready var lifebar: TextureProgressBar = %Lifebar
 @onready var status_bar: Node2D = %StatusBar
@@ -10,6 +11,8 @@ var actor
 func _ready() -> void:
 	SignalManager.update_actor_display.connect(_on_update_actor_display)
 	_update_lifebar()
+	if slot_index > 2:
+		sprites.scale.x = -1
 
 func _on_update_actor_display(target_index : int):
 	if slot_index != target_index: return

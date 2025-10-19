@@ -1,9 +1,9 @@
+Actor
+Node
 Sprite2D
 AnimationPlayer
 Battle
 Background
-Node
-Actor
 Button
 GridContainer
 Control
@@ -12,4 +12,3 @@ Marker2D
 CanvasLayer
 Node2D
 MarginContainer
-Label
