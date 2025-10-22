@@ -140,7 +140,7 @@ texture = ExtResource("4_ss6mr")
 [sub_resource type="TileSet" id="TileSet_u5opy"]
 sources/1 = SubResource("TileSetAtlasSource_y36n6")
 
-[node name="LocationTemplate" type="Node2D"]
+[node name="LocationTemplate" type="CanvasLayer"]
 script = ExtResource("1_45dvk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -203,45 +203,136 @@ text = "Search"
 [node name="MainControlls" parent="CanvasLayer" instance=ExtResource("3_sucpv")]
 
 [node name="Background" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_u5opy")
 
 [node name="Middle" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_u5opy")
 
 [node name="Foreground" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_u5opy")
-
-[node name="Slot" parent="." instance=ExtResource("5_w5uto")]
-unique_name_in_owner = true
-position = Vector2(24, 80)
-
-[node name="Slot1" parent="." instance=ExtResource("5_w5uto")]
-unique_name_in_owner = true
-position = Vector2(56, 80)
-index = 1
-
-[node name="Slot2" parent="." instance=ExtResource("5_w5uto")]
-unique_name_in_owner = true
-position = Vector2(88, 80)
-index = 2
-
-[node name="Slot3" parent="." instance=ExtResource("5_w5uto")]
-unique_name_in_owner = true
-position = Vector2(136, 80)
-index = 3
-
-[node name="Slot4" parent="." instance=ExtResource("5_w5uto")]
-unique_name_in_owner = true
-position = Vector2(168, 80)
-index = 4
-
-[node name="Slot5" parent="." instance=ExtResource("5_w5uto")]
-unique_name_in_owner = true
-position = Vector2(200, 80)
-index = 5
 
 [node name="NarratorDialogPosition" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(112, 8)
+scale = Vector2(6, 6)
 
 [node name="Ui" parent="." instance=ExtResource("6_vbyxi")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BorderLeft" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Left" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/Left/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 5
+
+[node name="Slot" parent="VBoxContainer/HBoxContainer/Left/CenterContainer/Control" instance=ExtResource("5_w5uto")]
+unique_name_in_owner = true
+scale = Vector2(6, 6)
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/HBoxContainer/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/Left/CenterContainer2"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 5
+
+[node name="Slot1" parent="VBoxContainer/HBoxContainer/Left/CenterContainer2/Control" instance=ExtResource("5_w5uto")]
+unique_name_in_owner = true
+scale = Vector2(6, 6)
+index = 1
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/HBoxContainer/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/Left/CenterContainer3"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 5
+
+[node name="Slot2" parent="VBoxContainer/HBoxContainer/Left/CenterContainer3/Control" instance=ExtResource("5_w5uto")]
+unique_name_in_owner = true
+scale = Vector2(6, 6)
+index = 2
+
+[node name="Center" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="Right" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/Right/CenterContainer"]
+layout_mode = 2
+
+[node name="Slot3" parent="VBoxContainer/HBoxContainer/Right/CenterContainer/Control" instance=ExtResource("5_w5uto")]
+unique_name_in_owner = true
+scale = Vector2(6, 6)
+index = 3
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/HBoxContainer/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/Right/CenterContainer2"]
+layout_mode = 2
+
+[node name="Slot4" parent="VBoxContainer/HBoxContainer/Right/CenterContainer2/Control" instance=ExtResource("5_w5uto")]
+unique_name_in_owner = true
+scale = Vector2(6, 6)
+index = 4
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/HBoxContainer/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/Right/CenterContainer3"]
+layout_mode = 2
+
+[node name="Slot5" parent="VBoxContainer/HBoxContainer/Right/CenterContainer3/Control" instance=ExtResource("5_w5uto")]
+unique_name_in_owner = true
+scale = Vector2(6, 6)
+index = 5
+
+[node name="BorderRight" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1

@@ -49,6 +49,7 @@ _data = {
 }
 
 [node name="Slot" type="Marker2D"]
+texture_filter = 1
 script = ExtResource("1_8jju3")
 
 [node name="Button" type="Button" parent="."]

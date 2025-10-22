@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 class_name Location
 
 @onready var slots = [

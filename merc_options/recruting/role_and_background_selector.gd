@@ -6,17 +6,10 @@ var slot_index = 0
 var disabled = true
 
 func _ready() -> void:
-	_set_filter_for_popups()
 	_clear_menus()
 	await get_tree().process_frame
 	_fill_menus()
 	disabled = false
-
-func _set_filter_for_popups():
-	var popup1 = roles_menu.get_popup()
-	var popup2 = backgrounds_menu.get_popup()
-	popup1.canvas_item_default_texture_filter = Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
-	popup2.canvas_item_default_texture_filter = Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
 
 func _clear_menus():
 	roles_menu.clear()

@@ -32,6 +32,7 @@ start_battle = "TutorialBattle"
 metadata/_custom_type_script = "uid://c4papynmlhc0q"
 
 [node name="Dialogs" type="CanvasLayer"]
+layer = 5
 
 [node name="Tutorial" type="Node" parent="."]
 
@@ -53,7 +54,7 @@ metadata/_custom_type_script = "uid://vqv617lov561"
 
 [node name="Start3" type="Node" parent="Tutorial"]
 script = ExtResource("1_3musc")
-text = "Shouldn’t be hard. This city’s crawling with people desperate to take any gig."
+text = "Shouldn't be hard. This city's crawling with people desperate to take any gig."
 speaker = 3
 options = Array[ExtResource("3_a3x5p")]([SubResource("Resource_s6txv")])
 metadata/_custom_type_script = "uid://vqv617lov561"

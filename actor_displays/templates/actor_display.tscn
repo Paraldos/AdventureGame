@@ -15,6 +15,7 @@ region = Rect2(0, 0, 16, 6)
 bg_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
 
 [node name="ActorDisplay" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_xrcbu")
 
 [node name="Sprites" type="Node2D" parent="."]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://de3gqofnbvm54" path="res://npcs/template/npc_template.gd" id="1_yo1p2"]
 
 [node name="SpeakerTemplate" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_yo1p2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

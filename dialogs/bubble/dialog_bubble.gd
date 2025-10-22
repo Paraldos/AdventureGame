@@ -1,13 +1,13 @@
 extends CanvasLayer
 class_name DialogBubble
 
-@onready var marker: Marker2D = %Marker
 @onready var panel_container: PanelContainer = %PanelContainer
 @onready var content_container: VBoxContainer = %ContentContainer
 @onready var label: Label = %Label
 @onready var pointer_top: TextureRect = %PointerTop
 @onready var pointer_bottom: TextureRect = %PointerBottom
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var marker: Marker2D = %Marker
 var bp_option_btn = preload("res://dialogs/bubble/option_btn.tscn")
 var dialog : Dialog
 

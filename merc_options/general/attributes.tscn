@@ -1,87 +1,182 @@
-[gd_scene load_steps=4 format=3 uid="uid://ej142y2sc4y4"]
+[gd_scene load_steps=8 format=3 uid="uid://ej142y2sc4y4"]
 
 [ext_resource type="Theme" uid="uid://dxbr2pe0xoeby" path="res://assets/theme/main_theme.tres" id="1_35aiu"]
-[ext_resource type="Texture2D" uid="uid://d4e048h4rv6bb" path="res://assets/img/ui/attributes.png" id="1_lmqno"]
 [ext_resource type="Script" uid="uid://bbau0ydr7qeuj" path="res://merc_options/general/attributes.gd" id="1_pioga"]
+[ext_resource type="Texture2D" uid="uid://boahtgtgmboef" path="res://assets/img/ui/attributes.svg" id="3_35aiu"]
 
-[node name="Attributes" type="HBoxContainer"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftgwk"]
+atlas = ExtResource("3_35aiu")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8uwa"]
+atlas = ExtResource("3_35aiu")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd76c"]
+atlas = ExtResource("3_35aiu")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35aiu"]
+atlas = ExtResource("3_35aiu")
+region = Rect2(300, 0, 100, 100)
+
+[node name="Attributes" type="GridContainer"]
+custom_minimum_size = Vector2(0, 60)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_35aiu")
-theme_override_constants/separation = 2
-alignment = 1
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
 script = ExtResource("1_pioga")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_lmqno")
+size_flags_horizontal = 3
+color = Color(0.64705884, 0.1882353, 0.1882353, 1)
 
-[node name="LabelStrength" type="Label" parent="TextureRect"]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/outline_size = 2
-text = "Strength
-1"
-horizontal_alignment = 1
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 15)
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+texture = SubResource("AtlasTexture_ftgwk")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LabelStrength" type="Label" parent="ColorRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+text = "Strength 1"
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-self_modulate = Color(0.45882353, 0.654902, 0.2627451, 1)
+[node name="ColorRect2" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("1_lmqno")
+size_flags_horizontal = 3
+color = Color(0.30980393, 0.56078434, 0.7294118, 1)
 
-[node name="LabelDex" type="Label" parent="TextureRect2"]
-unique_name_in_owner = true
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/outline_size = 2
-text = "Dex
-1"
-horizontal_alignment = 1
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect2/MarginContainer2"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect2/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(25, 15)
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+texture = SubResource("AtlasTexture_c8uwa")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LabelDex" type="Label" parent="ColorRect2/MarginContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+text = "Dex 1"
 vertical_alignment = 1
 
-[node name="TextureRect4" type="TextureRect" parent="."]
-self_modulate = Color(0.9098039, 0.75686276, 0.4392157, 1)
+[node name="ColorRect3" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("1_lmqno")
+size_flags_horizontal = 3
+color = Color(0.87058824, 0.61960787, 0.25490198, 1)
 
-[node name="LabelCharm" type="Label" parent="TextureRect4"]
-unique_name_in_owner = true
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/outline_size = 2
-text = "Charm
-1"
-horizontal_alignment = 1
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect3/MarginContainer3"]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="ColorRect3/MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(25, 15)
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+texture = SubResource("AtlasTexture_wd76c")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LabelCharm" type="Label" parent="ColorRect3/MarginContainer3/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+text = "Charm 1"
 vertical_alignment = 1
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-self_modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
+[node name="ColorRect4" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("1_lmqno")
+size_flags_horizontal = 3
+color = Color(0.65882355, 0.7921569, 0.34509805, 1)
 
-[node name="LabelWits" type="Label" parent="TextureRect3"]
-unique_name_in_owner = true
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/outline_size = 2
-text = "Wits
-1"
-horizontal_alignment = 1
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect4/MarginContainer4"]
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="ColorRect4/MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(25, 15)
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+texture = SubResource("AtlasTexture_35aiu")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LabelWits" type="Label" parent="ColorRect4/MarginContainer4/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+text = "Wits 1"
 vertical_alignment = 1

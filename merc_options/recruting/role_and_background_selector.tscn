@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bb5evq4hnidap" path="res://merc_options/recruting/role_and_background_selector.gd" id="2_2anrf"]
 
 [node name="RoleAndBackgroundSelector" type="HBoxContainer"]
+texture_filter = 2
 offset_right = 49.0
 offset_bottom = 10.0
 theme = ExtResource("1_ttnuf")

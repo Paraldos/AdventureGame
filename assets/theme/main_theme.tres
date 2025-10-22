@@ -1,102 +1,105 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dxbr2pe0xoeby"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://dxbr2pe0xoeby"]
 
-[ext_resource type="Texture2D" uid="uid://ytigfo5n1b6b" path="res://assets/img/ui/btn2.png" id="1_tnish"]
-[ext_resource type="Texture2D" uid="uid://i0d7aac5t330" path="res://assets/img/ui/btn3.png" id="3_b85mk"]
-[ext_resource type="Texture2D" uid="uid://c5crnfwg3lwyl" path="res://assets/img/ui/btn1.png" id="4_0vr3v"]
-[ext_resource type="Texture2D" uid="uid://5t4ole0i0o0s" path="res://assets/img/ui/pointer.png" id="4_b85mk"]
-[ext_resource type="Texture2D" uid="uid://ba44qjj6lavpu" path="res://assets/img/ui/panel.png" id="5_b85mk"]
-[ext_resource type="Texture2D" uid="uid://cqy25ag8328ki" path="res://assets/img/ui/radio_btn2.png" id="6_ryqvi"]
-[ext_resource type="Texture2D" uid="uid://cx01f8x2c1kae" path="res://assets/img/ui/radio_btn1.png" id="7_vdebs"]
-[ext_resource type="Texture2D" uid="uid://dnqjm7w437dfh" path="res://assets/img/ui/panel_simple.png" id="8_tjmdt"]
-[ext_resource type="FontFile" uid="uid://nn4nvg0af02x" path="res://assets/fonts/W95FA.otf" id="8_vdebs"]
+[ext_resource type="Texture2D" uid="uid://cggo706pltsla" path="res://assets/img/ui/button_disabled.svg" id="1_tjmdt"]
+[ext_resource type="Texture2D" uid="uid://bt4tgne27sf8n" path="res://assets/img/ui/button_hover.svg" id="2_tjmdt"]
+[ext_resource type="Texture2D" uid="uid://csmrk241tbqk5" path="res://assets/img/ui/button.svg" id="3_vdebs"]
+[ext_resource type="Texture2D" uid="uid://d2sejoieytq8" path="res://assets/img/ui/pointer.svg" id="5_tjmdt"]
+[ext_resource type="Texture2D" uid="uid://m7p435crnbin" path="res://assets/img/ui/radio_btn.svg" id="6_vdebs"]
+[ext_resource type="Texture2D" uid="uid://cj0nxb7e8a0ac" path="res://assets/img/ui/radio_btn_checked.svg" id="8_tjmdt"]
+[ext_resource type="Texture2D" uid="uid://decmol37km6q5" path="res://assets/img/ui/radio_btn_checked_disabled.svg" id="8_xamdb"]
+[ext_resource type="Texture2D" uid="uid://t3wxr6ddtox1" path="res://assets/img/ui/radio_btn_disabled.svg" id="9_kvm4y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b85mk"]
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-texture = ExtResource("3_b85mk")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("1_tjmdt")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vdebs"]
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-texture = ExtResource("1_tnish")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("2_tjmdt")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0vr3v"]
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-texture = ExtResource("4_0vr3v")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("3_vdebs")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryqvi"]
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-texture = ExtResource("1_tnish")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvm4y"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("2_tjmdt")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tjmdt"]
-content_margin_top = 5.0
-content_margin_bottom = 5.0
-texture = ExtResource("5_b85mk")
-texture_margin_left = 6.0
-texture_margin_top = 12.0
-texture_margin_right = 6.0
-texture_margin_bottom = 12.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdebs"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.30980393, 0.56078434, 0.7294118, 1)
+corner_radius_top_left = 15
+corner_radius_bottom_right = 15
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b85mk"]
 bg_color = Color(0.0627451, 0.078431375, 0.12156863, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xamdb"]
-texture = ExtResource("8_tjmdt")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-expand_margin_top = 1.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryqvi"]
+bg_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+border_width_left = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4509804, 0.74509805, 0.827451, 1)
 
 [resource]
-default_font = ExtResource("8_vdebs")
-default_font_size = 4
-Button/colors/font_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
-Button/colors/font_hover_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
-Button/colors/font_hover_pressed_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
-Button/colors/font_pressed_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+default_font_size = 20
+Button/colors/font_color = Color(0.30980393, 0.56078434, 0.7294118, 1)
+Button/colors/font_hover_color = Color(0.4509804, 0.74509805, 0.827451, 1)
+Button/colors/font_hover_pressed_color = Color(0.4509804, 0.74509805, 0.827451, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_b85mk")
 Button/styles/hover = SubResource("StyleBoxTexture_vdebs")
 Button/styles/normal = SubResource("StyleBoxTexture_0vr3v")
-Button/styles/pressed = SubResource("StyleBoxTexture_ryqvi")
-Label/colors/font_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
-Label/constants/line_spacing = 1
-OptionButton/colors/font_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
-OptionButton/icons/arrow = ExtResource("4_b85mk")
-PanelContainer/styles/panel = SubResource("StyleBoxTexture_tjmdt")
-PopupMenu/colors/font_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
-PopupMenu/colors/font_disabled_color = Color(0.45882353, 0.14117648, 0.21960784, 1)
-PopupMenu/colors/font_hover_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
-PopupMenu/colors/font_separator_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
-PopupMenu/colors/title_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
+Button/styles/pressed = SubResource("StyleBoxTexture_kvm4y")
+HBoxContainer/constants/separation = 15
+Label/colors/font_color = Color(0.4509804, 0.74509805, 0.827451, 1)
+OptionButton/colors/font_color = Color(0.4509804, 0.74509805, 0.827451, 1)
+OptionButton/colors/font_disabled_color = Color(0.23529412, 0.36862746, 0.54509807, 1)
+OptionButton/colors/font_hover_color = Color(0.4509804, 0.74509805, 0.827451, 1)
+OptionButton/colors/font_pressed_color = Color(0.4509804, 0.74509805, 0.827451, 1)
+OptionButton/icons/arrow = ExtResource("5_tjmdt")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_vdebs")
+PopupMenu/colors/font_color = Color(0.30980393, 0.56078434, 0.7294118, 1)
+PopupMenu/colors/font_disabled_color = Color(0.30980393, 0.56078434, 0.7294118, 1)
+PopupMenu/colors/font_hover_color = Color(0.4509804, 0.74509805, 0.827451, 1)
+PopupMenu/colors/font_separator_color = Color(0.4509804, 0.74509805, 0.827451, 1)
+PopupMenu/colors/title_color = Color(0.4509804, 0.74509805, 0.827451, 1)
 PopupMenu/constants/icon_max_width = 0
-PopupMenu/icons/checked = ExtResource("7_vdebs")
-PopupMenu/icons/checked_disabled = ExtResource("6_ryqvi")
-PopupMenu/icons/radio_checked = ExtResource("6_ryqvi")
-PopupMenu/icons/radio_checked_disabled = ExtResource("7_vdebs")
-PopupMenu/icons/radio_unchecked = ExtResource("7_vdebs")
-PopupMenu/icons/radio_unchecked_disabled = ExtResource("7_vdebs")
-PopupMenu/icons/submenu = ExtResource("7_vdebs")
-PopupMenu/icons/submenu_mirrored = ExtResource("7_vdebs")
-PopupMenu/icons/unchecked = ExtResource("7_vdebs")
-PopupMenu/icons/unchecked_disabled = ExtResource("6_ryqvi")
+PopupMenu/icons/checked = ExtResource("8_tjmdt")
+PopupMenu/icons/checked_disabled = ExtResource("6_vdebs")
+PopupMenu/icons/radio_checked = ExtResource("8_tjmdt")
+PopupMenu/icons/radio_checked_disabled = ExtResource("8_xamdb")
+PopupMenu/icons/radio_unchecked = ExtResource("6_vdebs")
+PopupMenu/icons/radio_unchecked_disabled = ExtResource("9_kvm4y")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_b85mk")
-PopupMenu/styles/panel = SubResource("StyleBoxTexture_xamdb")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_ryqvi")
+VBoxContainer/constants/separation = 15

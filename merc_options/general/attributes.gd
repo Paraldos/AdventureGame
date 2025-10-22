@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends GridContainer
 
 @onready var label_strength: Label = %LabelStrength
 @onready var label_dex: Label = %LabelDex
@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _update():
 	var actor = ActorManager.get_actor(slot_index)
-	label_strength.text = "Strength\n%s" % actor.get_attribute("strength")
-	label_dex.text = "Dex\n%s" % actor.get_attribute("dex")
-	label_charm.text = "Charm\n%s" % actor.get_attribute("charm")
-	label_wits.text = "Wits\n%s" % actor.get_attribute("wits")
+	label_strength.text = "Strength %s" % actor.get_attribute("strength")
+	label_dex.text = "Dex %s" % actor.get_attribute("dex")
+	label_charm.text = "Charm %s" % actor.get_attribute("charm")
+	label_wits.text = "Wits %s" % actor.get_attribute("wits")
