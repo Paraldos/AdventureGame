@@ -1,7 +1,7 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761231175
+::res://::1761250362
 icon.svg::CompressedTexture2D/CompressedTexture2D::1790880795757653::1760121356::1760121360::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-test_scene.tscn::PackedScene::2241170828865584572::1761231175::0::1::::<><><>0<>0<><>::
+test_scene.tscn::PackedScene::2241170828865584572::1761232081::0::1::::<><><>0<>0<><>::uid://dqdxskl0svj1t::::res://assets/img/texture/brick_wall.png
 ::res://actor_displays/::1760869017
 brawler.tscn::PackedScene::4363836695396428041::1760868531::0::1::::<><><>0<>0<><>::uid://cc5lnbv826w40::::res://actor_displays/templates/actor_display.tscn<>uid://cqrhbqr0jmiwy::::res://assets/img/char_templates/idle-Sheet.png
 drone.tscn::PackedScene::6596192892963958701::1760864809::0::1::::<><><>0<>0<><>::uid://cc5lnbv826w40::::res://actor_displays/templates/actor_display.tscn<>uid://c5li3e2jak5qo::::res://assets/img/drone/idle-Sheet.png<>uid://c34rc3hohfdtj::::res://assets/img/small_shadow.png
@@ -36,7 +36,7 @@ buff-Sheet.png::CompressedTexture2D::7443979310297649805::1760199483::1760199867
 death-Sheet.png::CompressedTexture2D::133381324396279385::1760199483::1760199867::1::::<><><>0<>0<>2e5e7fb4df8bb0dc9fb574e7aaf7e166<>res://.godot/imported/death-Sheet.png-e2f3d9fe73ec10135ef483eb8e1e87e5.ctex::
 hurt.png::CompressedTexture2D::7815844688442697240::1760199483::1760199867::1::::<><><>0<>0<>950bb69b819ca9d151e1e32738be3b13<>res://.godot/imported/hurt.png-c843c1055a3489ccd67a5d4ce3f097e9.ctex::
 idle-Sheet.png::CompressedTexture2D::6190103550987427244::1760199483::1760199867::1::::<><><>0<>0<>46629b7f9852a7da6707743650b755bd<>res://.godot/imported/idle-Sheet.png-413b18ea0deb7463be1dd8a936f42cbc.ctex::
-::res://assets/img/texture/::1761231775
+::res://assets/img/texture/::1761231913
 brick_wall.png::CompressedTexture2D::8289905861061043795::1761231771::1761231913::1::::<><><>0<>0<>926f61bf009d6b9dc9fcf63d5a543714<>res://.godot/imported/brick_wall.png-00878bfc3cfe29bd4d9d599f3661daed.s3tc.ctex::
 ::res://assets/img/ui/::1761230201
 ability_btn1.png::CompressedTexture2D::8444476409289733404::1760125584::1760276567::1::::<><><>0<>0<>58db94f868d69716707af3438f08092c<>res://.godot/imported/ability_btn1.png-673db47aace626b23d2b825d513a01fe.ctex::
