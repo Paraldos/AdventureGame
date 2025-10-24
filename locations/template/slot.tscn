@@ -50,6 +50,7 @@ _data = {
 
 [node name="Slot" type="Marker2D"]
 texture_filter = 1
+scale = Vector2(6, 6)
 script = ExtResource("1_8jju3")
 
 [node name="Button" type="Button" parent="."]
@@ -75,7 +76,8 @@ amount = 6
 emission_shape = 3
 emission_rect_extents = Vector2(7, 16)
 gravity = Vector2(0, -10)
-scale_amount_max = 3.0
+scale_amount_min = 6.0
+scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_rjc2u")
 color_ramp = SubResource("Gradient_rjc2u")
 

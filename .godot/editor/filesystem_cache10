@@ -1,7 +1,6 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761250362
+::res://::1761310080
 icon.svg::CompressedTexture2D/CompressedTexture2D::1790880795757653::1760121356::1760121360::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-test_scene.tscn::PackedScene::2241170828865584572::1761232081::0::1::::<><><>0<>0<><>::uid://dqdxskl0svj1t::::res://assets/img/texture/brick_wall.png
 ::res://actor_displays/::1760869017
 brawler.tscn::PackedScene::4363836695396428041::1760868531::0::1::::<><><>0<>0<><>::uid://cc5lnbv826w40::::res://actor_displays/templates/actor_display.tscn<>uid://cqrhbqr0jmiwy::::res://assets/img/char_templates/idle-Sheet.png
 drone.tscn::PackedScene::6596192892963958701::1760864809::0::1::::<><><>0<>0<><>::uid://cc5lnbv826w40::::res://actor_displays/templates/actor_display.tscn<>uid://c5li3e2jak5qo::::res://assets/img/drone/idle-Sheet.png<>uid://c34rc3hohfdtj::::res://assets/img/small_shadow.png
