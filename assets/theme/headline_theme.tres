@@ -1,7 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cux11omgvy4r5"]
-
-[ext_resource type="FontFile" uid="uid://nn4nvg0af02x" path="res://assets/fonts/W95FA.otf" id="1_kski5"]
-
-[resource]
-default_font = ExtResource("1_kski5")
-default_font_size = 10
