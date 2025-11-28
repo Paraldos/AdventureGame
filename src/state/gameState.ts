@@ -1,4 +1,5 @@
 export type SceneId = "menu" | "world" | "battle";
+export type Side = "player" | "enemy";
 export type CharakterId = string;
 
 export interface CharakterData {
@@ -7,23 +8,26 @@ export interface CharakterData {
   level: number;
   maxHp: number;
   hp: number;
+  side: Side;
 }
 
 export interface GameState {
   currentScene: SceneId;
-  party: CharakterData[];
-  enemies: CharakterData[];
+  currentCharakter: number;
+  charackters: CharakterData[];
 }
 
 export const gameState: GameState = {
   currentScene: "menu",
-  party: [
+  currentCharakter: 1,
+  charackters: [
     {
       id: "hero",
       name: "Hero",
       level: 1,
       maxHp: 30,
       hp: 30,
+      side: "player",
     },
     {
       id: "mage",
@@ -31,6 +35,7 @@ export const gameState: GameState = {
       level: 1,
       maxHp: 20,
       hp: 20,
+      side: "player",
     },
     {
       id: "fighter",
@@ -38,29 +43,31 @@ export const gameState: GameState = {
       level: 1,
       maxHp: 20,
       hp: 20,
+      side: "player",
     },
-  ],
-  enemies: [
     {
-      id: "enemy",
+      id: "enemy1",
       name: "Enemy",
       level: 1,
       maxHp: 30,
       hp: 30,
+      side: "enemy",
     },
     {
-      id: "enemy",
+      id: "enemy2",
       name: "Enemy",
       level: 1,
       maxHp: 30,
       hp: 30,
+      side: "enemy",
     },
     {
-      id: "enemy",
+      id: "enemy3",
       name: "Enemy",
       level: 1,
       maxHp: 30,
       hp: 30,
+      side: "enemy",
     },
   ],
 };

@@ -14,5 +14,4 @@ const k = kaplay({
 
 loadAssets(k);
 
-gameState.party.forEach((char, index) => new Charakter(k, index, char));
-gameState.enemies.forEach((char, index) => new Charakter(k, index + 3, char));
+gameState.charackters.forEach((char, index) => new Charakter(k, index, char));
