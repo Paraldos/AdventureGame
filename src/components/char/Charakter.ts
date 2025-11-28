@@ -27,7 +27,7 @@ export default class Charakter {
 
   drawMainSprite() {
     return this.k.add([
-      this.k.rect(16, 16),
+      this.k.sprite("player"),
       this.k.pos(this.posX, this.posY),
       this.k.anchor("center"),
     ]);

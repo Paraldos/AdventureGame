@@ -8,7 +8,7 @@ const k = kaplay({
   height: 240,
   font: "sans-serif",
   scale: 2,
-  background: [0, 0, 255],
+  background: "#757575",
 });
 
 loadAssets(k);
