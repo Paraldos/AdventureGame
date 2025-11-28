@@ -17,7 +17,7 @@ function addBattleUI(k: KAPLAYCtx) {
   const activeIndex = gameState.currentCharakter;
   const activeChar = gameState.charackters[activeIndex];
 
-  const uiBox = k.add([
+  k.add([
     k.rect(k.width(), boxHeight),
     k.pos(0, boxY),
     k.color(0, 0, 0),
@@ -25,7 +25,7 @@ function addBattleUI(k: KAPLAYCtx) {
     k.z(90),
   ]);
 
-  const currentCharakterLabel = k.add([
+  k.add([
     k.text(activeChar ? `${activeChar.name}` : "", {
       font: "MonoPixelFont",
       size: 8,
@@ -34,7 +34,7 @@ function addBattleUI(k: KAPLAYCtx) {
     k.z(100),
   ]);
 
-  const nextButton = k.add([
+  k.add([
     k.rect(60, 20),
     k.pos(8 + 60, boxY + boxHeight / 2),
     k.anchor("center"),

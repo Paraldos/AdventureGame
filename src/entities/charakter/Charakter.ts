@@ -5,7 +5,8 @@ import type {
   SpriteComp,
   AnchorComp,
 } from "kaplay";
-import { type CharakterData, gameState } from "../../state/gameState";
+import type { CharakterData } from "../../state/types";
+import { gameState } from "../../state/gameState";
 
 export default class Charakter {
   private readonly xPositions = [32, 64, 96];
