@@ -1,8 +1,7 @@
 import "./style.css";
 import kaplay from "kaplay";
-import Charakter from "./entities/charakter/Charakter";
 import { loadAssets } from "./assets";
-import { gameState } from "./state/gameState";
+import { registerBattleScene } from "./scenes/battle";
 
 const k = kaplay({
   width: 320,
@@ -11,7 +10,9 @@ const k = kaplay({
   scale: 2,
   background: "#757575",
 });
+// k.debug.inspect = true;
 
 loadAssets(k);
+registerBattleScene(k);
 
-gameState.charackters.forEach((char, index) => new Charakter(k, index, char));
+k.go("battle");

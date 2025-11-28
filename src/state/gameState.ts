@@ -19,7 +19,7 @@ export interface GameState {
 
 export const gameState: GameState = {
   currentScene: "menu",
-  currentCharakter: 1,
+  currentCharakter: 2,
   charackters: [
     {
       id: "hero",
