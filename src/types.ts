@@ -6,6 +6,7 @@ export type PartySlot = CharakterData | null;
 export interface Skill {
   name: string;
   description: string;
+  target: number[];
 }
 
 export interface CharakterData {

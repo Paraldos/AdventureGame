@@ -17,10 +17,15 @@
   border: none;
   width: 40px;
   aspect-ratio: 1;
+  border: 2px solid transparent;
 
   &:hover {
     background-color: grey;
   }
+}
+
+.battleUI .battleUI__skillBtn--selected {
+  border-color: red;
 }
 
 .battleUI__skillBtn--invisible {

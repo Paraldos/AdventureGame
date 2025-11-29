@@ -1,7 +1,7 @@
 import type { KAPLAYCtx } from "kaplay";
 import { gameState } from "../state/gameState";
 import Charakter from "./Charakter";
-import BattleUI from "../ui/battle/BattleUi";
+import { BattleUI } from "../ui/battle/BattleUi";
 import { shuffleArray } from "../utils";
 
 export function registerBattleScene(k: KAPLAYCtx) {
@@ -35,3 +35,5 @@ export function nextChar() {
   }
   document.dispatchEvent(new CustomEvent("nextChar"));
 }
+
+export function skillSelected() {}
