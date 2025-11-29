@@ -23,13 +23,16 @@
   }
 }
 
+.battleUI__skillBtn--invisible {
+  display: none;
+}
+
 .battleUI__skills {
   display: flex;
   gap: 10px;
 }
 
-.battleUI__characterName {
+.battleUI__nameLabel {
   color: white;
-
   line-height: 1.5;
 }

@@ -2,50 +2,92 @@ import "./battleUi.css";
 import type { KAPLAYCtx } from "kaplay";
 import Charakter from "../entities/charakter/Charakter";
 import { gameState } from "../state/gameState";
+import type { CharakterData } from "../state/types";
 
 export function registerBattleScene(k: KAPLAYCtx) {
   k.scene("battle", () => {
     gameState.charackters.forEach((char, index) => {
       new Charakter(k, index, char);
     });
-    addBattleUI();
+    new BattleUI();
   });
 }
 
-function addBattleUI() {
-  const gameContainer = document.querySelector("#game");
-  var charName = gameState.charackters[gameState.currentCharakter].name;
+class BattleUI {
+  private gameContainer = document.querySelector<HTMLDivElement>("#game");
+  private uiPanel = document.createElement("div");
+  private nameLabel: HTMLElement;
+  private description: HTMLElement;
+  private skillBtns: NodeListOf<HTMLButtonElement>;
+  private currentChar: CharakterData;
 
-  const uiPanel = document.createElement("div");
-  uiPanel.classList = "battleUI";
-  uiPanel.innerHTML = /*html*/ `
-    <div class="battleUI">
+  constructor() {
+    this.uiPanel.className = "battleUI";
+    this.uiPanel.innerHTML = /*html*/ `
       <div class="battleUI__controls">
-        <p class="battleUI__characterName">${charName}</p>
+        <p class="battleUI__nameLabel"></p>
         <div class="battleUI__skills">
-          <button class="battleUI__skillBtn">btn1</button>
-          <button class="battleUI__skillBtn">btn2</button>
-          <button class="battleUI__skillBtn">btn3</button>
-          <button class="battleUI__skillBtn battleUI__skillBtn--pass">Pass</button>
+          <button class="battleUI__skillBtn" data-role="skill" data-index="0"></button>
+          <button class="battleUI__skillBtn" data-role="skill" data-index="1"></button>
+          <button class="battleUI__skillBtn" data-role="skill" data-index="2"></button>
+          <button class="battleUI__skillBtn" data-role="pass">Pass</button>
         </div>
       </div>
-
       <div class="battleUI__description"></div>
-    </div>
-  `;
-  gameContainer?.appendChild(uiPanel);
+    `;
+    this.gameContainer?.appendChild(this.uiPanel);
+    this.nameLabel = this.uiPanel.querySelector<HTMLElement>(
+      ".battleUI__nameLabel"
+    )!;
+    this.description = this.uiPanel.querySelector<HTMLElement>(
+      ".battleUI__description"
+    )!;
+    this.skillBtns = this.uiPanel.querySelectorAll<HTMLButtonElement>(
+      ".battleUI__skillBtn"
+    )!;
+    this.currentChar = gameState.charackters[gameState.currentCharakter];
+    this.update();
+    this.skillBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => this.onSkillClick(e));
+      btn.addEventListener("mouseover", (e) => this.onSkillHover(e));
+    });
+  }
 
-  const skillBtns = document.querySelectorAll(".battleUI__skillBtn");
-  skillBtns.forEach((btn) => {
-    btn.addEventListener("click", () => onSkillClick());
-    btn.addEventListener("mouseover", () => onSkillHover());
-  });
+  destroy() {
+    this.uiPanel.remove();
+  }
+
+  update() {
+    this.currentChar = gameState.charackters[gameState.currentCharakter];
+    this.updateNameLabel();
+    this.updateSkillButtons();
+  }
+
+  updateNameLabel() {
+    this.nameLabel.innerText = this.currentChar.name;
+  }
+
+  updateSkillButtons() {
+    this.skillBtns.forEach((btn, index) => {
+      if (!btn.dataset.role?.startsWith("skill")) return;
+      const skill = this.currentChar.skills[index];
+      btn.textContent = skill ? skill!.name : "";
+      btn.classList.toggle("battleUI__skillBtn--invisible", !skill);
+      btn.disabled = !skill;
+    });
+  }
+
+  onSkillHover = (e: Event) => {
+    const btn = e.currentTarget as HTMLButtonElement;
+    if (btn.disabled) return;
+    if (btn.dataset.role === "pass") console.log("hover pass");
+    if (btn.dataset.role?.startsWith("skill")) console.log("hover skill");
+  };
+
+  onSkillClick = (e: Event) => {
+    const btn = e.currentTarget as HTMLButtonElement;
+    if (btn.disabled) return;
+    if (btn.dataset.role === "pass") console.log("click pass");
+    if (btn.dataset.role?.startsWith("skill")) console.log("clicked skill");
+  };
 }
-
-const onSkillHover = () => {
-  console.log("hovered on skill");
-};
-
-const onSkillClick = () => {
-  console.log("clicked on skill");
-};
