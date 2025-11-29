@@ -2,7 +2,7 @@ import "./battleUi.css";
 import type { KAPLAYCtx } from "kaplay";
 import Charakter from "../entities/charakter/Charakter";
 import { gameState } from "../state/gameState";
-import type { CharakterData } from "../state/types";
+import type { CharakterData } from "../types";
 
 export function registerBattleScene(k: KAPLAYCtx) {
   k.scene("battle", () => {

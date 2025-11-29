@@ -5,7 +5,7 @@ import type {
   SpriteComp,
   AnchorComp,
 } from "kaplay";
-import type { CharakterData } from "../../state/types";
+import type { CharakterData } from "../../types";
 import { gameState } from "../../state/gameState";
 
 export default class Charakter {

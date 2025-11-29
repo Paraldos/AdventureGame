@@ -1,4 +1,4 @@
-import type { GameState } from "./types";
+import type { GameState } from "../types";
 import { HERO, MAGE, ENEMY } from "../data/characters";
 
 export const gameState: GameState = {

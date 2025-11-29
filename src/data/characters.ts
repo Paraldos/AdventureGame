@@ -1,4 +1,4 @@
-import type { CharakterData } from "../state/types";
+import type { CharakterData } from "../types";
 import { basicAttack, fireball, heal } from "./skills";
 
 export const HERO: CharakterData = {
