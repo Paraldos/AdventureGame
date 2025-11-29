@@ -17,10 +17,10 @@ export default class BattleUI {
       <div class="battleUI__controls">
         <p class="battleUI__nameLabel"></p>
         <div class="battleUI__skills">
-          <button class="battleUI__skillBtn" data-role="skill" data-index="0"></button>
-          <button class="battleUI__skillBtn" data-role="skill" data-index="1"></button>
-          <button class="battleUI__skillBtn" data-role="skill" data-index="2"></button>
-          <button class="battleUI__skillBtn" data-role="pass">Pass</button>
+			<button class="battleUI__skillBtn" data-role="pass">Pass</button>
+        	<button class="battleUI__skillBtn" data-role="skill" data-index="0"></button>
+        	<button class="battleUI__skillBtn" data-role="skill" data-index="1"></button>
+        	<button class="battleUI__skillBtn" data-role="skill" data-index="2"></button>
         </div>
       </div>
       <div class="battleUI__description"></div>
@@ -58,10 +58,11 @@ export default class BattleUI {
   }
 
   updateSkillButtons() {
-    this.skillBtns.forEach((btn, index) => {
-      if (!btn.dataset.role?.startsWith("skill")) return;
+    this.skillBtns.forEach((btn) => {
+      if (!btn.dataset.index) return;
+      const index = parseInt(btn.dataset.index, 10);
       const skill = this.currentChar.skills[index];
-      btn.textContent = skill ? skill!.name : "";
+      btn.textContent = skill ? skill.name : "";
       btn.classList.toggle("battleUI__skillBtn--invisible", !skill);
       btn.disabled = !skill;
     });

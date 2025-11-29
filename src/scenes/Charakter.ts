@@ -47,6 +47,8 @@ export default class Charakter {
   }
 
   private drawPointer(): void {
+    this.pointer?.destroy();
+
     const baseY = this.posY - 16;
     const amplitude = 3;
     const speed = 4;
