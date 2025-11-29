@@ -5,41 +5,32 @@ import type {
   SpriteComp,
   AnchorComp,
 } from "kaplay";
-import type { CharakterData } from "../../types";
-import { gameState } from "../../state/gameState";
+import type { CharakterData } from "../types";
+import { gameState } from "../state/gameState";
 
 export default class Charakter {
-  private readonly xPositions = [32, 64, 96];
+  private k: KAPLAYCtx;
+  private rank: number;
+  private charakterData: CharakterData;
 
-  rank: number;
-  k: KAPLAYCtx;
-  charakterData: CharakterData;
-
-  posX: number;
-  posY: number;
-
-  mainSprite: GameObj<PosComp | SpriteComp | AnchorComp>;
-  pointerSprite?: GameObj<PosComp | SpriteComp | AnchorComp>;
+  private readonly xPositions = [32, 64, 96, 224, 256, 288];
+  private posX: number;
+  private posY: number;
+  private mainSprite: GameObj<PosComp | SpriteComp | AnchorComp>;
+  private pointerSprite?: GameObj<PosComp | SpriteComp | AnchorComp>;
 
   constructor(k: KAPLAYCtx, rank: number, charakterData: CharakterData) {
-    this.rank = rank;
     this.k = k;
+    this.rank = rank;
     this.charakterData = charakterData;
 
-    this.posX = this.calculatePosX(rank);
+    this.posX = this.xPositions[rank];
     this.posY = this.k.height() / 2;
     this.mainSprite = this.drawMainSprite();
 
     if (gameState.currentCharakter === rank) {
       this.drawPointer();
     }
-  }
-
-  private calculatePosX(rank: number): number {
-    const isPlayerSide = rank < 3;
-    const index = isPlayerSide ? rank : rank - 3;
-    const baseX = this.xPositions[index];
-    return isPlayerSide ? baseX : this.k.width() - baseX;
   }
 
   private drawMainSprite(): GameObj<PosComp | SpriteComp | AnchorComp> {
