@@ -1,6 +1,7 @@
 import "./battleUi.css";
 import type { CharakterData } from "../../types";
 import { gameState } from "../../state/gameState";
+import { nextChar } from "../../scenes/battle";
 
 export default class BattleUI {
   private gameContainer = document.querySelector<HTMLDivElement>("#game");
@@ -34,7 +35,7 @@ export default class BattleUI {
     this.skillBtns = this.uiPanel.querySelectorAll<HTMLButtonElement>(
       ".battleUI__skillBtn"
     )!;
-    this.currentChar = gameState.charackters[gameState.currentCharakter]!;
+    this.currentChar = gameState.charackters[gameState.currentChar]!;
     this.update();
     this.skillBtns.forEach((btn) => {
       btn.addEventListener("click", (e) => this.onSkillClick(e));
@@ -47,7 +48,7 @@ export default class BattleUI {
   }
 
   update() {
-    this.currentChar = gameState.charackters[gameState.currentCharakter]!;
+    this.currentChar = gameState.charackters[gameState.currentChar]!;
     this.updateNameLabel();
     this.updateSkillButtons();
   }
@@ -76,7 +77,10 @@ export default class BattleUI {
   onSkillClick = (e: Event) => {
     const btn = e.currentTarget as HTMLButtonElement;
     if (btn.disabled) return;
-    if (btn.dataset.role === "pass") console.log("click pass");
+    if (btn.dataset.role === "pass") {
+      nextChar();
+      this.update();
+    }
     if (btn.dataset.role?.startsWith("skill")) console.log("clicked skill");
   };
 }

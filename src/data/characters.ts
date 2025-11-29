@@ -20,7 +20,7 @@ export const MAGE: CharakterData = {
 };
 
 export const ENEMY: CharakterData = {
-  name: "ENEMY",
+  name: "Enemy",
   level: 1,
   maxHp: 15,
   hp: 15,

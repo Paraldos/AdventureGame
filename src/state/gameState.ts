@@ -3,6 +3,8 @@ import { HERO, MAGE, ENEMY } from "../data/characters";
 
 export const gameState: GameState = {
   currentScene: "menu",
-  currentCharakter: 2,
   charackters: [MAGE, MAGE, HERO, ENEMY, null, ENEMY],
+  turnOrder: [],
+  currentTurnIndex: 0,
+  currentChar: 0,
 };

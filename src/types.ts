@@ -18,6 +18,8 @@ export interface CharakterData {
 
 export interface GameState {
   currentScene: SceneId;
-  currentCharakter: number;
   charackters: PartySlot[];
+  turnOrder: number[];
+  currentTurnIndex: number;
+  currentChar: number;
 }

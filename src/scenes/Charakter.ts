@@ -17,7 +17,7 @@ export default class Charakter {
   private posX: number;
   private posY: number;
   private mainSprite: GameObj<PosComp | SpriteComp | AnchorComp>;
-  private pointerSprite?: GameObj<PosComp | SpriteComp | AnchorComp>;
+  private pointer?: GameObj<PosComp | SpriteComp | AnchorComp>;
 
   constructor(k: KAPLAYCtx, rank: number, charakterData: CharakterData) {
     this.k = k;
@@ -28,9 +28,8 @@ export default class Charakter {
     this.posY = this.k.height() / 2;
     this.mainSprite = this.drawMainSprite();
 
-    if (gameState.currentCharakter === rank) {
-      this.drawPointer();
-    }
+    this.updatePointer();
+    document.addEventListener("nextChar", () => this.updatePointer());
   }
 
   private drawMainSprite(): GameObj<PosComp | SpriteComp | AnchorComp> {
@@ -41,23 +40,27 @@ export default class Charakter {
     ]);
   }
 
-  private drawPointer() {
+  private updatePointer(): void {
+    gameState.currentChar !== this.rank
+      ? this.pointer?.destroy()
+      : this.drawPointer();
+  }
+
+  private drawPointer(): void {
     const baseY = this.posY - 16;
     const amplitude = 3;
     const speed = 4;
 
-    this.pointerSprite = this.k.add([
+    this.pointer = this.k.add([
       this.k.sprite("pointer"),
       this.k.pos(this.posX, baseY),
       this.k.anchor("center"),
     ]);
 
     this.k.onUpdate(() => {
-      if (!this.pointerSprite) return;
+      if (!this.pointer) return;
       const t = this.k.time() * speed;
-      this.pointerSprite.pos.y = baseY + Math.sin(t) * amplitude;
+      this.pointer.pos.y = baseY + Math.sin(t) * amplitude;
     });
-
-    return this.pointerSprite;
   }
 }
