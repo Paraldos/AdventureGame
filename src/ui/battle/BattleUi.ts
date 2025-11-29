@@ -34,7 +34,7 @@ export default class BattleUI {
     this.skillBtns = this.uiPanel.querySelectorAll<HTMLButtonElement>(
       ".battleUI__skillBtn"
     )!;
-    this.currentChar = gameState.charackters[gameState.currentCharakter];
+    this.currentChar = gameState.charackters[gameState.currentCharakter]!;
     this.update();
     this.skillBtns.forEach((btn) => {
       btn.addEventListener("click", (e) => this.onSkillClick(e));
@@ -47,7 +47,7 @@ export default class BattleUI {
   }
 
   update() {
-    this.currentChar = gameState.charackters[gameState.currentCharakter];
+    this.currentChar = gameState.charackters[gameState.currentCharakter]!;
     this.updateNameLabel();
     this.updateSkillButtons();
   }

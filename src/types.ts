@@ -1,6 +1,7 @@
 export type SceneId = "menu" | "world" | "battle";
 export type Side = "player" | "enemy";
 export type CharakterId = string;
+export type PartySlot = CharakterData | null;
 
 export interface Skill {
   name: string;
@@ -18,5 +19,5 @@ export interface CharakterData {
 export interface GameState {
   currentScene: SceneId;
   currentCharakter: number;
-  charackters: CharakterData[];
+  charackters: PartySlot[];
 }

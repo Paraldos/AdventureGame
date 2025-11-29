@@ -6,6 +6,7 @@ import BattleUI from "../ui/battle/BattleUi";
 export function registerBattleScene(k: KAPLAYCtx) {
   k.scene("battle", () => {
     gameState.charackters.forEach((char, index) => {
+      if (!char) return;
       new Charakter(k, index, char);
     });
     new BattleUI();
