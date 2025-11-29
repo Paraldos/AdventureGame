@@ -1,13 +1,16 @@
-import { type Skill } from "../state/gameState";
+import type { Skill } from "../types";
 
 export const basicAttack: Skill = {
-  name: "Basic Attack",
+  name: "Bonk",
+  description: "Bonk the enemy",
 };
 
 export const fireball: Skill = {
   name: "Fireball",
+  description: "Attack with fire",
 };
 
 export const heal: Skill = {
   name: "Heal",
+  description: "Heal an allie",
 };

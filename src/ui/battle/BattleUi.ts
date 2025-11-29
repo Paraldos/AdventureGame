@@ -23,7 +23,7 @@ export default class BattleUI {
         	<button class="battleUI__skillBtn" data-role="skill" data-index="2"></button>
         </div>
       </div>
-      <div class="battleUI__description"></div>
+      <p class="battleUI__description"></p>
     `;
     this.gameContainer?.appendChild(this.uiPanel);
     this.nameLabel = this.uiPanel.querySelector<HTMLElement>(
@@ -68,14 +68,21 @@ export default class BattleUI {
     });
   }
 
-  onSkillHover = (e: Event) => {
+  onSkillHover(e: Event) {
     const btn = e.currentTarget as HTMLButtonElement;
     if (btn.disabled) return;
-    if (btn.dataset.role === "pass") console.log("hover pass");
-    if (btn.dataset.role?.startsWith("skill")) console.log("hover skill");
-  };
+    if (btn.dataset.role === "pass")
+      this.addDescription(`Pass
+		Skipp this turn.`);
+    if (btn.dataset.role?.startsWith("skill")) {
+      if (!btn.dataset.index) return;
+      const index = parseInt(btn.dataset.index, 10);
+      const skill = this.currentChar.skills[index];
+      this.addDescription(`${skill.name}\n${skill.description}`);
+    }
+  }
 
-  onSkillClick = (e: Event) => {
+  onSkillClick(e: Event) {
     const btn = e.currentTarget as HTMLButtonElement;
     if (btn.disabled) return;
     if (btn.dataset.role === "pass") {
@@ -83,5 +90,9 @@ export default class BattleUI {
       this.update();
     }
     if (btn.dataset.role?.startsWith("skill")) console.log("clicked skill");
-  };
+  }
+
+  addDescription(txt: string): void {
+    this.description.innerText = txt;
+  }
 }

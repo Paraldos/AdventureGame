@@ -32,7 +32,8 @@
   gap: 10px;
 }
 
-.battleUI__nameLabel {
+.battleUI__nameLabel,
+.battleUI__description {
   color: white;
   line-height: 1.5;
 }
