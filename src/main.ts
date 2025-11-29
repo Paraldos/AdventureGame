@@ -12,6 +12,13 @@ const k = kaplay({
 });
 // k.debug.inspect = true;
 
+const gameContainer = document.querySelector("#game");
+if (!gameContainer) {
+  throw new Error("#game container not found");
+} else {
+  gameContainer.appendChild(k.canvas);
+}
+
 loadAssets(k);
 registerBattleScene(k);
 

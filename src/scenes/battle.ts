@@ -1,3 +1,4 @@
+import "./battleUi.css";
 import type { KAPLAYCtx } from "kaplay";
 import Charakter from "../entities/charakter/Charakter";
 import { gameState } from "../state/gameState";
@@ -7,36 +8,44 @@ export function registerBattleScene(k: KAPLAYCtx) {
     gameState.charackters.forEach((char, index) => {
       new Charakter(k, index, char);
     });
-    addBattleUI(k);
+    addBattleUI();
   });
 }
 
-function addBattleUI(k: KAPLAYCtx) {
-  const boxHeight = 60;
-  const boxY = k.height() - boxHeight;
-  const activeIndex = gameState.currentCharakter;
-  const activeChar = gameState.charackters[activeIndex];
+function addBattleUI() {
+  const gameContainer = document.querySelector("#game");
+  var charName = gameState.charackters[gameState.currentCharakter].name;
 
-  k.add([
-    k.rect(k.width(), boxHeight),
-    k.pos(0, boxY),
-    k.color(0, 0, 0),
-    k.opacity(0.8),
-    k.z(90),
-  ]);
+  const uiPanel = document.createElement("div");
+  uiPanel.classList = "battleUI";
+  uiPanel.innerHTML = /*html*/ `
+    <div class="battleUI">
+      <div class="battleUI__controls">
+        <p class="battleUI__characterName">${charName}</p>
+        <div class="battleUI__skills">
+          <button class="battleUI__skillBtn">btn1</button>
+          <button class="battleUI__skillBtn">btn2</button>
+          <button class="battleUI__skillBtn">btn3</button>
+          <button class="battleUI__skillBtn battleUI__skillBtn--pass">Pass</button>
+        </div>
+      </div>
 
-  k.add([
-    k.text(activeChar ? `${activeChar.name}` : "", {
-      font: "MonoPixelFont",
-      size: 8,
-    }),
-    k.pos(8, boxY),
-    k.z(100),
-  ]);
+      <div class="battleUI__description"></div>
+    </div>
+  `;
+  gameContainer?.appendChild(uiPanel);
 
-  k.add([
-    k.rect(60, 20),
-    k.pos(8 + 60, boxY + boxHeight / 2),
-    k.anchor("center"),
-  ]);
+  const skillBtns = document.querySelectorAll(".battleUI__skillBtn");
+  skillBtns.forEach((btn) => {
+    btn.addEventListener("click", () => onSkillClick());
+    btn.addEventListener("mouseover", () => onSkillHover());
+  });
 }
+
+const onSkillHover = () => {
+  console.log("hovered on skill");
+};
+
+const onSkillClick = () => {
+  console.log("clicked on skill");
+};
