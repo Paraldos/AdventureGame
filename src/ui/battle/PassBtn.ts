@@ -1,5 +1,5 @@
 import { nextChar } from "../../scenes/battle";
-import { setBattleDescription } from "./BattleUi";
+import { setBattleDescription } from "../../helper/eventBus";
 
 export default class PassBtn {
   container = document.querySelector(".battleUI__skills");

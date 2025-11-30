@@ -2,7 +2,7 @@ import type { KAPLAYCtx } from "kaplay";
 import { gameState } from "../state/gameState";
 import Charakter from "./Charakter";
 import { BattleUI } from "../ui/battle/BattleUi";
-import { shuffleArray } from "../utils";
+import { shuffleArray } from "../helper/utils";
 
 export function registerBattleScene(k: KAPLAYCtx) {
   k.scene("battle", () => {

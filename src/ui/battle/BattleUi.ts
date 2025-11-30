@@ -36,7 +36,7 @@ export class BattleUI {
     this.currentChar = gameState.charackters[gameState.currentChar]!;
     this.update();
     document.addEventListener("updateBattleDescription", (e) =>
-      this.updateDescription((e as CustomEvent<{ txt: string }>).detail.txt)
+      this.updateDescription((e as CustomEvent).detail.txt)
     );
     document.addEventListener("nextChar", () => this.update());
   }
@@ -53,12 +53,4 @@ export class BattleUI {
   updateDescription(txt: string) {
     this.description.innerText = txt;
   }
-}
-
-export function setBattleDescription(txt: string) {
-  document.dispatchEvent(
-    new CustomEvent("updateBattleDescription", {
-      detail: { txt },
-    })
-  );
 }

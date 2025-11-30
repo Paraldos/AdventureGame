@@ -16,8 +16,9 @@ export default class Charakter {
   private readonly xPositions = [32, 64, 96, 224, 256, 288];
   private posX: number;
   private posY: number;
-  private mainSprite: GameObj<PosComp | SpriteComp | AnchorComp>;
-  private pointer?: GameObj<PosComp | SpriteComp | AnchorComp>;
+  private mainSprite?: GameObj;
+  private pointer?: GameObj;
+  private selector?: GameObj;
 
   constructor(k: KAPLAYCtx, rank: number, charakterData: CharakterData) {
     this.k = k;
@@ -26,30 +27,47 @@ export default class Charakter {
 
     this.posX = this.xPositions[rank];
     this.posY = this.k.height() / 2;
-    this.mainSprite = this.drawMainSprite();
+    this.drawMainSprite();
 
-    this.updatePointer();
-    document.addEventListener("nextChar", () => this.updatePointer());
+    this.drawPointer();
+    document.addEventListener("nextChar", () => this.onNextChar());
+    document.addEventListener("enableTargets", (e) =>
+      this.onEnableTargets(e as CustomEvent)
+    );
   }
 
-  private drawMainSprite(): GameObj<PosComp | SpriteComp | AnchorComp> {
-    return this.k.add([
+  private onNextChar() {
+    this.selector?.destroy();
+    this.drawPointer();
+  }
+
+  private onEnableTargets(e: CustomEvent) {
+    const targets = e.detail.targets;
+    this.selector?.destroy();
+    if (targets.includes(this.rank)) this.drawSelector();
+  }
+
+  private drawSelector(): void {
+    this.selector = this.k.add([
+      this.k.sprite("selector"),
+      this.k.pos(this.posX, this.posY),
+      this.k.anchor("center"),
+    ]);
+  }
+
+  private drawMainSprite(): void {
+    this.mainSprite = this.k.add([
       this.k.sprite("player"),
       this.k.pos(this.posX, this.posY),
       this.k.anchor("center"),
     ]);
   }
 
-  private updatePointer(): void {
-    gameState.currentChar !== this.rank
-      ? this.pointer?.destroy()
-      : this.drawPointer();
-  }
-
   private drawPointer(): void {
     this.pointer?.destroy();
+    if (gameState.currentChar !== this.rank) return;
 
-    const baseY = this.posY - 16;
+    const baseY = this.posY - 18;
     const amplitude = 3;
     const speed = 4;
 

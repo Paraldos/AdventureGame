@@ -1,6 +1,6 @@
 import type { CharakterData, Skill } from "../../types";
 import { gameState } from "../../state/gameState";
-import { setBattleDescription } from "./BattleUi";
+import { setBattleDescription, enableTargets } from "../../helper/eventBus";
 
 export default class SkillBtn {
   container = document.querySelector(".battleUI__skills");
@@ -35,12 +35,13 @@ export default class SkillBtn {
   onHover() {
     if (this.btn.disabled) return;
     setBattleDescription(
-      `${this.skill.name} (Target: ${this.skill.target})\n${this.skill.description}`
+      `${this.skill.name} (Target: ${this.skill.targets})\n${this.skill.description}`
     );
   }
 
   onClick() {
     document.dispatchEvent(new CustomEvent("updateSkillBtn"));
+    enableTargets(this.skill.targets);
     this.btn.classList.add("battleUI__skillBtn--selected");
   }
 }
