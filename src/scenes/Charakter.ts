@@ -1,24 +1,18 @@
-import type {
-  KAPLAYCtx,
-  GameObj,
-  PosComp,
-  SpriteComp,
-  AnchorComp,
-} from "kaplay";
+import type { KAPLAYCtx, GameObj } from "kaplay";
 import type { CharakterData } from "../types";
 import { gameState } from "../state/gameState";
 
 export default class Charakter {
-  private k: KAPLAYCtx;
-  private rank: number;
-  private charakterData: CharakterData;
+  k: KAPLAYCtx;
+  rank: number;
+  charakterData: CharakterData;
 
-  private readonly xPositions = [32, 64, 96, 224, 256, 288];
-  private posX: number;
-  private posY: number;
-  private mainSprite?: GameObj;
-  private pointer?: GameObj;
-  private selector?: GameObj;
+  readonly xPositions = [32, 64, 96, 224, 256, 288];
+  posX: number;
+  posY: number;
+  mainSprite?: GameObj;
+  pointer?: GameObj;
+  selector?: GameObj;
 
   constructor(k: KAPLAYCtx, rank: number, charakterData: CharakterData) {
     this.k = k;
@@ -36,26 +30,30 @@ export default class Charakter {
     );
   }
 
-  private onNextChar() {
+  onNextChar() {
     this.selector?.destroy();
     this.drawPointer();
   }
 
-  private onEnableTargets(e: CustomEvent) {
+  onEnableTargets(e: CustomEvent) {
     const targets = e.detail.targets;
     this.selector?.destroy();
     if (targets.includes(this.rank)) this.drawSelector();
   }
 
-  private drawSelector(): void {
+  drawSelector(): void {
     this.selector = this.k.add([
       this.k.sprite("selector"),
       this.k.pos(this.posX, this.posY),
       this.k.anchor("center"),
+      this.k.area(),
     ]);
+    this.selector?.onClick(() => console.log("Click"));
+    this.selector?.onHover(() => console.log("Hover"));
+    this.selector?.onHoverEnd(() => console.log("Hover End"));
   }
 
-  private drawMainSprite(): void {
+  drawMainSprite(): void {
     this.mainSprite = this.k.add([
       this.k.sprite("player"),
       this.k.pos(this.posX, this.posY),
@@ -63,7 +61,7 @@ export default class Charakter {
     ]);
   }
 
-  private drawPointer(): void {
+  drawPointer(): void {
     this.pointer?.destroy();
     if (gameState.currentChar !== this.rank) return;
 
