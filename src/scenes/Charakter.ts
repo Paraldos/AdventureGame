@@ -1,6 +1,7 @@
 import type { KAPLAYCtx, GameObj } from "kaplay";
 import type { CharakterData } from "../types";
 import { gameState } from "../state/gameState";
+import CharakterSelector from "./CharakterSelector";
 
 export default class Charakter {
   k: KAPLAYCtx;
@@ -12,7 +13,7 @@ export default class Charakter {
   posY: number;
   mainSprite?: GameObj;
   pointer?: GameObj;
-  selector?: GameObj;
+  selector?: CharakterSelector;
 
   constructor(k: KAPLAYCtx, rank: number, charakterData: CharakterData) {
     this.k = k;
@@ -38,19 +39,8 @@ export default class Charakter {
   onEnableTargets(e: CustomEvent) {
     const targets = e.detail.targets;
     this.selector?.destroy();
-    if (targets.includes(this.rank)) this.drawSelector();
-  }
-
-  drawSelector(): void {
-    this.selector = this.k.add([
-      this.k.sprite("selector"),
-      this.k.pos(this.posX, this.posY),
-      this.k.anchor("center"),
-      this.k.area(),
-    ]);
-    this.selector?.onClick(() => console.log("Click"));
-    this.selector?.onHover(() => console.log("Hover"));
-    this.selector?.onHoverEnd(() => console.log("Hover End"));
+    if (targets.includes(this.rank))
+      this.selector = new CharakterSelector(this.k, this.posX, this.posY);
   }
 
   drawMainSprite(): void {
