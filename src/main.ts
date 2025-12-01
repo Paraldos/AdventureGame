@@ -2,6 +2,7 @@ import "./style.css";
 import kaplay from "kaplay";
 import { loadAssets } from "./assets";
 import { registerBattleScene } from "./scenes/battle/battle";
+import { registerMapScene } from "./scenes/map/Map";
 
 const k = kaplay({
   width: 320,
@@ -21,5 +22,6 @@ if (!gameContainer) {
 
 loadAssets(k);
 registerBattleScene(k);
+registerMapScene(k);
 
-k.go("battle");
+k.go("map");
