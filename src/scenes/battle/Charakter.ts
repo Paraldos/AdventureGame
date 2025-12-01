@@ -1,6 +1,6 @@
 import type { KAPLAYCtx, GameObj } from "kaplay";
-import type { CharakterData } from "../types";
-import { gameState } from "../state/gameState";
+import type { CharakterData } from "../../types";
+import { gameState } from "../../state/gameState";
 import CharakterSelector from "./CharakterSelector";
 
 export default class Charakter {

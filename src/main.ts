@@ -1,7 +1,7 @@
 import "./style.css";
 import kaplay from "kaplay";
 import { loadAssets } from "./assets";
-import { registerBattleScene } from "./scenes/battle";
+import { registerBattleScene } from "./scenes/battle/battle";
 
 const k = kaplay({
   width: 320,

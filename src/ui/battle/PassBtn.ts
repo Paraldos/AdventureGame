@@ -1,4 +1,4 @@
-import { nextChar } from "../../scenes/battle";
+import { nextChar } from "../../scenes/battle/battle";
 import { setBattleDescription } from "../../helper/eventBus";
 
 export default class PassBtn {
