@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://fwtqwgl3tany"]
 
-[ext_resource type="Script" uid="uid://dx8nueg2innww" path="res://singeltons/dialogs.gd" id="1_jnf5j"]
-[ext_resource type="Script" uid="uid://bd47pn71r0ckm" path="res://singeltons/dialog_node.gd" id="2_fuo1e"]
+[ext_resource type="Script" uid="uid://dx8nueg2innww" path="res://singeltons/dialog/dialogs.gd" id="1_jnf5j"]
+[ext_resource type="Script" uid="uid://bd47pn71r0ckm" path="res://singeltons/dialog/dialog_node.gd" id="2_fuo1e"]
 [ext_resource type="PackedScene" uid="uid://ywqhjjfee7nn" path="res://charakters/npc_idle.tscn" id="3_gjhbl"]
-[ext_resource type="Script" uid="uid://d17xa2iy3163i" path="res://singeltons/dialog_option.gd" id="4_h0uf6"]
+[ext_resource type="Script" uid="uid://d17xa2iy3163i" path="res://singeltons/dialog/dialog_option.gd" id="4_h0uf6"]
 
 [node name="Dialogs" type="Node"]
 script = ExtResource("1_jnf5j")

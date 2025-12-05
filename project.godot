@@ -17,12 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Utils="*res://singeltons/utils.tscn"
-Signals="*res://singeltons/signals.tscn"
-SceneChanger="*res://singeltons/scene_changer.tscn"
-GlobalEnums="*res://singeltons/global_enums.tscn"
-GameData="*res://singeltons/game_data.tscn"
-Dialogs="*res://singeltons/dialogs.tscn"
+Utils="*res://singeltons/utils/utils.tscn"
+Signals="*res://singeltons/signals/signals.tscn"
+SceneChanger="*res://singeltons/scene_changer/scene_changer.tscn"
+GlobalEnums="*res://singeltons/global_enums/global_enums.tscn"
+GameData="*res://singeltons/game_data/game_data.tscn"
+Dialogs="*res://singeltons/dialog/dialogs.tscn"
 
 [display]
 

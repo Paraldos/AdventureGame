@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var player_label: Label = %PlayerLabel
 @onready var npc_label: Label = %NPCLabel
 @onready var btns_container: VBoxContainer = %BtnsContainer
-var dialog_btn_bp = preload("res://locations/template/dialog_btn.tscn")
+var dialog_btn_bp = preload("res://locations/template/dialog/dialog_btn.tscn")
 
 func update_label(d: DialogNode):
 	player_container.modulate = Color("ffffff00") if d.speaker_name else Color("ffffff")

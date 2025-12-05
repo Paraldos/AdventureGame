@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dq1d48tk63msi"]
 
-[ext_resource type="Script" uid="uid://5wkehri0mhcm" path="res://singeltons/game_data.gd" id="1_brflg"]
+[ext_resource type="Script" uid="uid://5wkehri0mhcm" path="res://singeltons/game_data/game_data.gd" id="1_brflg"]
 
 [node name="GameData" type="Node"]
 script = ExtResource("1_brflg")

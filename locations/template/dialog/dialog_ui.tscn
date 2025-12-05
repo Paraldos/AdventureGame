@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxgcby1twix0i"]
 
-[ext_resource type="Script" uid="uid://dnox27enheh4t" path="res://locations/template/dialog_ui.gd" id="1_i82mr"]
+[ext_resource type="Script" uid="uid://dnox27enheh4t" path="res://locations/template/dialog/dialog_ui.gd" id="1_i82mr"]
 [ext_resource type="Theme" uid="uid://dij1y8wlt3r37" path="res://themes/main_theme.tres" id="2_0ia2m"]
 
 [node name="DialogUi" type="CanvasLayer"]

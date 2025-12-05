@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2ix6swfx8im7"]
 
-[ext_resource type="Script" uid="uid://6wdl4g85mnj2" path="res://singeltons/scene_changer.gd" id="1_asesc"]
+[ext_resource type="Script" uid="uid://6wdl4g85mnj2" path="res://singeltons/scene_changer/scene_changer.gd" id="1_asesc"]
 
 [sub_resource type="Animation" id="Animation_asesc"]
 resource_name = "fade_to_black"
