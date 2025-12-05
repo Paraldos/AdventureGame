@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bci5vm3jkcsio"]
+
+[ext_resource type="Texture2D" uid="uid://c4am588vpmxmd" path="res://assets/images/IDLE.png" id="1_vby28"]
+
+[sub_resource type="Animation" id="Animation_ku7vq"]
+resource_name = "loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 6]
+}
+
+[sub_resource type="Animation" id="Animation_08f2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1gu86"]
+_data = {
+&"RESET": SubResource("Animation_08f2p"),
+&"loop": SubResource("Animation_ku7vq")
+}
+
+[node name="CharakterTemplate" type="Node2D"]
+
+[node name="Idle" type="Sprite2D" parent="."]
+texture = ExtResource("1_vby28")
+hframes = 7
+frame = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Idle"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_1gu86")
+}
+autoplay = "loop"
