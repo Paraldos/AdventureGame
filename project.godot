@@ -23,6 +23,7 @@ SceneChanger="*res://singeltons/scene_changer/scene_changer.tscn"
 GlobalEnums="*res://singeltons/global_enums/global_enums.tscn"
 GameData="*res://singeltons/game_data/game_data.tscn"
 Dialogs="*res://singeltons/dialog/dialogs.tscn"
+Battles="*res://singeltons/battle/battles.tscn"
 
 [display]
 

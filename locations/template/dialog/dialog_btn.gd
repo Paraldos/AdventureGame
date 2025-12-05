@@ -9,7 +9,9 @@ func _ready() -> void:
 		text = "End"
 
 func _on_pressed() -> void:
-	if option and option.target:
+	if option and option.battle_id:
+		Signals.start_battle.emit(option.battle_id)
+	elif option and option.target:
 		Signals.change_dialog_node.emit(option.target)
 	else:
 		Signals.end_dialog.emit()

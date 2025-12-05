@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk07exb3q0mp8"]
+
+[ext_resource type="PackedScene" uid="uid://bci5vm3jkcsio" path="res://charakters/template/charakter_template.tscn" id="1_cdeyt"]
+[ext_resource type="Texture2D" uid="uid://dgmq15v80rm04" path="res://assets/images/knight/HURT.png" id="2_pyw2e"]
+
+[sub_resource type="Animation" id="Animation_pyw2e"]
+resource_name = "default"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sf2kd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxbdg"]
+_data = {
+&"RESET": SubResource("Animation_sf2kd"),
+&"default": SubResource("Animation_pyw2e")
+}
+
+[node name="NPCHurt" instance=ExtResource("1_cdeyt")]
+texture = ExtResource("2_pyw2e")
+hframes = 4
+
+[node name="AnimationPlayer" parent="." index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_kxbdg")
+}

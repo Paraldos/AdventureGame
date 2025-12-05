@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://fwtqwgl3tany"]
+[gd_scene load_steps=4 format=3 uid="uid://fwtqwgl3tany"]
 
-[ext_resource type="Script" uid="uid://dx8nueg2innww" path="res://singeltons/dialog/dialogs.gd" id="1_jnf5j"]
 [ext_resource type="Script" uid="uid://bd47pn71r0ckm" path="res://singeltons/dialog/dialog_node.gd" id="2_fuo1e"]
-[ext_resource type="PackedScene" uid="uid://ywqhjjfee7nn" path="res://charakters/npc_idle.tscn" id="3_gjhbl"]
+[ext_resource type="PackedScene" uid="uid://ywqhjjfee7nn" path="res://charakters/npc/npc_idle.tscn" id="3_gjhbl"]
 [ext_resource type="Script" uid="uid://d17xa2iy3163i" path="res://singeltons/dialog/dialog_option.gd" id="4_h0uf6"]
 
 [node name="Dialogs" type="Node"]
-script = ExtResource("1_jnf5j")
 
 [node name="Test1" type="Node" parent="."]
 script = ExtResource("2_fuo1e")
@@ -19,6 +17,12 @@ metadata/_custom_type_script = "uid://bd47pn71r0ckm"
 script = ExtResource("4_h0uf6")
 text = "Go to Test2"
 target = NodePath("../../Test2")
+metadata/_custom_type_script = "uid://d17xa2iy3163i"
+
+[node name="DialogOption3" type="Node" parent="Test1"]
+script = ExtResource("4_h0uf6")
+text = "Start Battle"
+battle_id = "TestBattle"
 metadata/_custom_type_script = "uid://d17xa2iy3163i"
 
 [node name="DialogOption2" type="Node" parent="Test1"]

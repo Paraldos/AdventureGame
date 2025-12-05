@@ -1,21 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsm7pq3nekkob"]
+[gd_scene load_steps=8 format=3 uid="uid://bsm7pq3nekkob"]
 
 [ext_resource type="Script" uid="uid://cntvuncu76d3" path="res://locations/template/location_template.gd" id="1_08f2p"]
 [ext_resource type="PackedScene" uid="uid://cb18g5vtptwv1" path="res://locations/template/display/DisplayContainer.tscn" id="2_1gu86"]
-[ext_resource type="PackedScene" uid="uid://cdl3mrxrslckr" path="res://charakters/player_idle.tscn" id="2_uk8h5"]
+[ext_resource type="PackedScene" uid="uid://cdl3mrxrslckr" path="res://charakters/player/player_idle.tscn" id="2_uk8h5"]
 [ext_resource type="PackedScene" uid="uid://dxgcby1twix0i" path="res://locations/template/dialog/dialog_ui.tscn" id="3_1gu86"]
+[ext_resource type="PackedScene" uid="uid://dgsnird6jvfhk" path="res://charakters/player/player_attack_1.tscn" id="3_123qr"]
+[ext_resource type="PackedScene" uid="uid://cuacve125s0v0" path="res://charakters/player/player_attack_2.tscn" id="4_hp5ir"]
+[ext_resource type="PackedScene" uid="uid://d31pr18xxig2p" path="res://charakters/player/player_hurt.tscn" id="5_l71pn"]
 
 [node name="LocationTemplate" type="Node2D"]
 script = ExtResource("1_08f2p")
-player_display_bp = ExtResource("2_uk8h5")
+player_idle = ExtResource("2_uk8h5")
+player_attack1 = ExtResource("3_123qr")
+player_attack2 = ExtResource("4_hp5ir")
+player_hurt = ExtResource("5_l71pn")
 
 [node name="PlayerDisplay" parent="." instance=ExtResource("2_1gu86")]
 unique_name_in_owner = true
-position = Vector2(32, 72)
+position = Vector2(32, 64)
 
 [node name="NPCDisplay" parent="." instance=ExtResource("2_1gu86")]
 unique_name_in_owner = true
-position = Vector2(128, 72)
+position = Vector2(128, 64)
 
 [node name="DialogUi" parent="." instance=ExtResource("3_1gu86")]
 unique_name_in_owner = true
+visible = true

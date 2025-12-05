@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=3 uid="uid://7jvbw4tb4au8"]
+
+[ext_resource type="Script" uid="uid://dh0xoebjqjenh" path="res://singeltons/battle/battle.gd" id="1_d8lk3"]
+[ext_resource type="PackedScene" uid="uid://ywqhjjfee7nn" path="res://charakters/npc/npc_idle.tscn" id="2_a1jkw"]
+[ext_resource type="PackedScene" uid="uid://chmne5s517sht" path="res://charakters/npc/npc_attack_1.tscn" id="3_jlj4y"]
+[ext_resource type="PackedScene" uid="uid://eldcw8vk4g68" path="res://charakters/npc/npc_attack_2.tscn" id="4_q8wav"]
+[ext_resource type="PackedScene" uid="uid://dk07exb3q0mp8" path="res://charakters/npc/npc_hurt.tscn" id="5_jp6pi"]
+
+[node name="Battles" type="Node"]
+
+[node name="TestBattle" type="Node" parent="."]
+script = ExtResource("1_d8lk3")
+enemy_idle = ExtResource("2_a1jkw")
+enemy_attack1 = ExtResource("3_jlj4y")
+enemy_attack2 = ExtResource("4_q8wav")
+enemy_hurt = ExtResource("5_jp6pi")

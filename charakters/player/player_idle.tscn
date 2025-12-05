@@ -41,8 +41,8 @@ _data = {
 }
 
 [node name="CharakterTemplate" instance=ExtResource("1_clbas")]
-scale = Vector2(1, 1)
 texture = ExtResource("2_uxdgu")
+flip_h = false
 hframes = 7
 
 [node name="AnimationPlayer" parent="." index="0"]
