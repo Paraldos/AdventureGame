@@ -1,6 +1,11 @@
-[gd_scene format=3 uid="uid://cvfyka57rfrrf"]
+[gd_scene load_steps=3 format=3 uid="uid://cvfyka57rfrrf"]
+
+[ext_resource type="Theme" uid="uid://dij1y8wlt3r37" path="res://themes/main_theme.tres" id="1_qdmhb"]
+[ext_resource type="Script" uid="uid://bqn13y5r5da3h" path="res://start_menu/start_menu.gd" id="1_xloss"]
 
 [node name="StartMenu" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_xloss")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -8,4 +13,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(2.5990605e-06, 0.55770063, 0.7879317, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StartBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_qdmhb")
+text = "Start"
+
+[connection signal="pressed" from="VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
