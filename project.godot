@@ -22,6 +22,7 @@ Signals="*res://singeltons/signals.tscn"
 SceneChanger="*res://singeltons/scene_changer.tscn"
 GlobalEnums="*res://singeltons/global_enums.tscn"
 GameData="*res://singeltons/game_data.tscn"
+Dialogs="*res://singeltons/dialogs.tscn"
 
 [display]
 

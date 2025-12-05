@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://fwtqwgl3tany"]
+
+[ext_resource type="Script" uid="uid://dx8nueg2innww" path="res://singeltons/dialogs.gd" id="1_jnf5j"]
+[ext_resource type="Script" uid="uid://bd47pn71r0ckm" path="res://singeltons/dialog_option.gd" id="2_fuo1e"]
+
+[node name="Dialogs" type="Node"]
+script = ExtResource("1_jnf5j")
+
+[node name="TestDialog" type="Node" parent="."]
+script = ExtResource("2_fuo1e")
+speaker_name = "Cultist"
+text = "Hi, I am a Cultist."
+metadata/_custom_type_script = "uid://bd47pn71r0ckm"
+
+[node name="TestDialog2" type="Node" parent="TestDialog"]
+script = ExtResource("2_fuo1e")
+text = "How can I help you, cultist?"
+speaker_is_npc = false
+metadata/_custom_type_script = "uid://bd47pn71r0ckm"
