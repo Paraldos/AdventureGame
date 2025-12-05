@@ -3,8 +3,9 @@ extends Node2D
 @onready var player_display: Marker2D = %PlayerDisplay
 @onready var npc_display: Marker2D = %NPCDisplay
 @onready var dialog_ui: CanvasLayer = %DialogUi
-@export var dialogs : Array[String] = []
+@onready var battle_ui: CanvasLayer = %BattleUi
 
+@export var dialogs : Array[String] = []
 @export var player_idle : PackedScene
 @export var player_attack1 : PackedScene
 @export var player_attack2 : PackedScene
@@ -14,6 +15,7 @@ var current_battle : Battle
 
 func _ready() -> void:
 	player_display.update(player_idle)
+	_reset_ui()
 	for dialog_id in dialogs:
 		_start_dialog(dialog_id)
 	Signals.change_dialog_node.connect(_change_dialog_node)
@@ -24,7 +26,8 @@ func _ready() -> void:
 func _start_battle(battle_id : String) -> void:
 	var b = Battles.get_node(battle_id)
 	if not b: return
-	dialog_ui.visible = false
+	_reset_ui()
+	battle_ui.visible = true
 	current_battle = b
 	player_display.update(player_idle)
 	npc_display.update(current_battle.enemy_idle)
@@ -49,6 +52,11 @@ func _change_dialog_node(d : DialogNode):
 		npc_display.update(d.npc_display)
 
 func _end_dialog():
-	dialog_ui.visible = false
+	_reset_ui()
 	npc_display.remove_display()
 	player_display.update(player_idle)
+
+# helper
+func _reset_ui():
+	dialog_ui.visible = false
+	battle_ui.visible = false
