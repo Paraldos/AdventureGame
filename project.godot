@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="AdventureGame"
+run/main_scene="uid://cvfyka57rfrrf"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +22,16 @@ Signals="*res://singeltons/signals.tscn"
 SceneChanger="*res://singeltons/scene_changer.tscn"
 GlobalEnums="*res://singeltons/global_enums.tscn"
 GameData="*res://singeltons/game_data.tscn"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=240
+window/size/window_width_override=1280
+window/size/window_height_override=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [rendering]
 
