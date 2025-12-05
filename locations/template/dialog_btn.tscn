@@ -5,6 +5,7 @@
 [node name="DialogBtn" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
+focus_mode = 0
 script = ExtResource("1_vl3g2")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

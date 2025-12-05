@@ -3,4 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://bsm7pq3nekkob" path="res://locations/template/location_template.tscn" id="1_6o2bi"]
 
 [node name="OldGraveyard" instance=ExtResource("1_6o2bi")]
-dialogs = Array[String](["TestDialog"])
+dialogs = Array[String](["Test1"])

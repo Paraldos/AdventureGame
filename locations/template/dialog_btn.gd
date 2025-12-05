@@ -1,7 +1,15 @@
 extends Button
 
-var dialog : DialogNode
-var index = 0
+var option : DialogOption
+
+func _ready() -> void:
+	if option and option.text:
+		text = "%s" % option.text
+	else:
+		text = "End"
 
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	if option and option.target:
+		Signals.change_dialog_node.emit(option.target)
+	else:
+		Signals.end_dialog.emit()

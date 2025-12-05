@@ -15,5 +15,12 @@ func update_label(d: DialogNode):
 	label.text = "%s: %s" % [speaker, d.text]
 
 func update_options(d: DialogNode):
-	for option in d.options:
+	for child in btns_container.get_children():
+		child.queue_free()
+	for option in d.get_children():
 		var btn = dialog_btn_bp.instantiate()
+		btn.option = option
+		btns_container.add_child(btn)
+	if d.get_child_count() == 0:
+		var btn = dialog_btn_bp.instantiate()
+		btns_container.add_child(btn)

@@ -1,8 +1,5 @@
-class_name DialogNode
 extends Node
+class_name DialogOption
 
-@export var speaker_name := ''
-@export var text := ''
-@export var player_display : PackedScene
-@export var npc_display : PackedScene
-@export var options = []
+@export var text: String
+@export var target: DialogNode

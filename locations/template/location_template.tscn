@@ -11,11 +11,11 @@ player_display_bp = ExtResource("2_uk8h5")
 
 [node name="PlayerDisplay" parent="." instance=ExtResource("2_1gu86")]
 unique_name_in_owner = true
-position = Vector2(40, 72)
+position = Vector2(32, 72)
 
 [node name="NPCDisplay" parent="." instance=ExtResource("2_1gu86")]
 unique_name_in_owner = true
-position = Vector2(120, 72)
+position = Vector2(128, 72)
 
 [node name="DialogUi" parent="." instance=ExtResource("3_1gu86")]
 unique_name_in_owner = true

@@ -1,20 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://fwtqwgl3tany"]
+[gd_scene load_steps=5 format=3 uid="uid://fwtqwgl3tany"]
 
 [ext_resource type="Script" uid="uid://dx8nueg2innww" path="res://singeltons/dialogs.gd" id="1_jnf5j"]
-[ext_resource type="Script" uid="uid://bd47pn71r0ckm" path="res://singeltons/dialog_option.gd" id="2_fuo1e"]
+[ext_resource type="Script" uid="uid://bd47pn71r0ckm" path="res://singeltons/dialog_node.gd" id="2_fuo1e"]
 [ext_resource type="PackedScene" uid="uid://ywqhjjfee7nn" path="res://charakters/npc_idle.tscn" id="3_gjhbl"]
+[ext_resource type="Script" uid="uid://d17xa2iy3163i" path="res://singeltons/dialog_option.gd" id="4_h0uf6"]
 
 [node name="Dialogs" type="Node"]
 script = ExtResource("1_jnf5j")
 
-[node name="TestDialog" type="Node" parent="."]
+[node name="Test1" type="Node" parent="."]
 script = ExtResource("2_fuo1e")
 speaker_name = "NPC"
 text = "Hi, I am a NPC."
 npc_display = ExtResource("3_gjhbl")
 metadata/_custom_type_script = "uid://bd47pn71r0ckm"
 
-[node name="TestDialog2" type="Node" parent="TestDialog"]
+[node name="DialogOption" type="Node" parent="Test1" node_paths=PackedStringArray("target")]
+script = ExtResource("4_h0uf6")
+text = "Go to Test2"
+target = NodePath("../../Test2")
+metadata/_custom_type_script = "uid://d17xa2iy3163i"
+
+[node name="DialogOption2" type="Node" parent="Test1"]
+script = ExtResource("4_h0uf6")
+metadata/_custom_type_script = "uid://d17xa2iy3163i"
+
+[node name="Test2" type="Node" parent="."]
 script = ExtResource("2_fuo1e")
-text = "How can I help you, cultist?"
+text = "This is Test 2"
 metadata/_custom_type_script = "uid://bd47pn71r0ckm"
+
+[node name="DialogOption" type="Node" parent="Test2" node_paths=PackedStringArray("target")]
+script = ExtResource("4_h0uf6")
+text = "Go to Test1"
+target = NodePath("../../Test1")
+metadata/_custom_type_script = "uid://d17xa2iy3163i"
