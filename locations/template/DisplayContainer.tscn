@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb18g5vtptwv1"]
+
+[ext_resource type="Script" uid="uid://ca2dt3q5u2q4k" path="res://locations/template/display_container.gd" id="1_uxgc4"]
+
+[node name="DisplayContainer" type="Marker2D"]
+script = ExtResource("1_uxgc4")

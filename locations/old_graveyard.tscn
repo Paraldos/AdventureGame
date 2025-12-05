@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb7ubd8bhktu6"]
+[gd_scene load_steps=2 format=3 uid="uid://bb7ubd8bhktu6"]
 
 [ext_resource type="PackedScene" uid="uid://bsm7pq3nekkob" path="res://locations/template/location_template.tscn" id="1_6o2bi"]
-[ext_resource type="PackedScene" uid="uid://c4f8310vgll5p" path="res://charakters/player.tscn" id="2_jk7cd"]
 
 [node name="OldGraveyard" instance=ExtResource("1_6o2bi")]
 dialogs = Array[String](["TestDialog"])
-
-[node name="Player" parent="PlayerMarker" index="0" instance=ExtResource("2_jk7cd")]
