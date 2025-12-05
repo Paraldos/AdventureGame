@@ -1,4 +1,4 @@
-class_name DialogOption
+class_name DialogNode
 extends Node
 
 @export var speaker_name := ''

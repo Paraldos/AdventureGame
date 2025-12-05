@@ -12,7 +12,7 @@ func _ready() -> void:
 		_update_dialog(dialog_id)
 
 func _update_dialog(dialog_id):
-	var d: DialogOption = Dialogs.get_node(dialog_id)
+	var d: DialogNode = Dialogs.get_node(dialog_id)
 	dialog_ui.update_label(d)
 	dialog_ui.update_options(d)
 	if d.player_display:
