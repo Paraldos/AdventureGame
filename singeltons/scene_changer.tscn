@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2ix6swfx8im7"]
+
+[ext_resource type="Script" uid="uid://6wdl4g85mnj2" path="res://singeltons/scene_changer.gd" id="1_asesc"]
+
+[node name="SceneChanger" type="CanvasLayer"]
+script = ExtResource("1_asesc")

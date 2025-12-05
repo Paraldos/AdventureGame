@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bsm7pq3nekkob"]
+
+[node name="LocationTemplate" type="Node2D"]

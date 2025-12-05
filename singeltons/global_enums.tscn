@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://blhx77smo3ax1"]
+
+[ext_resource type="Script" uid="uid://c0saelki0gygl" path="res://singeltons/global_enums.gd" id="1_d3nc7"]
+
+[node name="GlobalEnums" type="Node"]
+script = ExtResource("1_d3nc7")
