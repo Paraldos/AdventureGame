@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://1w0hfu3kw0n"]
+[gd_scene load_steps=3 format=3 uid="uid://1w0hfu3kw0n"]
+
+[ext_resource type="Texture2D" uid="uid://cbsoa7gbkqk8e" path="res://assets/images/map/map_background.png" id="1_mxvv1"]
+[ext_resource type="PackedScene" uid="uid://dxfbjpb34m6yy" path="res://maps/template/map_icon.tscn" id="2_ittwq"]
 
 [node name="MapTemplate" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mxvv1")
+stretch_mode = 1
+
+[node name="MapIcon" parent="." instance=ExtResource("2_ittwq")]
+position = Vector2(32, 64)

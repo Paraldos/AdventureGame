@@ -11,6 +11,3 @@ position = Vector2(24, 64)
 
 [node name="EnemyMarker" type="Marker2D" parent="."]
 position = Vector2(136, 64)
-
-[node name="CharakterTemplate" parent="EnemyMarker" instance=ExtResource("1_ku7vq")]
-scale = Vector2(-1, 1)

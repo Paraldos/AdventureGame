@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxfbjpb34m6yy"]
+
+[ext_resource type="Texture2D" uid="uid://dh0w3cp2jn8x0" path="res://assets/images/map/icon_graveyard.png" id="1_t6bwt"]
+[ext_resource type="Script" uid="uid://drp4wdlvk8wab" path="res://maps/template/map_icon.gd" id="1_xi6l7"]
+[ext_resource type="Texture2D" uid="uid://c2aus825ojune" path="res://assets/images/map/icon_frame.png" id="2_xi6l7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi6l7"]
+size = Vector2(24, 24)
+
+[node name="MapIcon" type="Node2D"]
+script = ExtResource("1_xi6l7")
+
+[node name="Icon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("1_t6bwt")
+metadata/_edit_lock_ = true
+
+[node name="Frame" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_xi6l7")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xi6l7")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

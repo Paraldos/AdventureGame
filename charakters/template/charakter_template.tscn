@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bci5vm3jkcsio"]
 
-[ext_resource type="Texture2D" uid="uid://c4am588vpmxmd" path="res://assets/images/IDLE.png" id="1_vby28"]
+[ext_resource type="Texture2D" uid="uid://c4am588vpmxmd" path="res://assets/images/knight/IDLE.png" id="1_vby28"]
 
 [sub_resource type="Animation" id="Animation_ku7vq"]
 resource_name = "loop"
