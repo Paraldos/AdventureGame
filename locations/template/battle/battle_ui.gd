@@ -7,7 +7,7 @@ extends CanvasLayer
 
 var action_btn_bp = preload("res://locations/template/battle/action_btn.tscn")
 
-func update_life_bars(b : Battle):
+func init_lifebars(b : Battle):
 	lifebar_player.max_value = GameData.max_hp * 10
 	lifebar_player.value = GameData.current_hp * 10
 	lifebar_npc.max_value = b.max_hp * 10

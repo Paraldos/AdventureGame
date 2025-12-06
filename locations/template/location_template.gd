@@ -24,18 +24,19 @@ func _ready() -> void:
 
 # battle system
 func _start_battle(battle_id : String) -> void:
+	# guard
 	var b = Battles.get_node(battle_id)
 	if not b: return
+	# basic setup
 	_reset_ui()
 	battle_ui.visible = true
 	current_battle = b.duplicate()
+	player_display.update(player_idle)
+	npc_display.update(current_battle.enemy_idle)
+	battle_ui.init_lifebars(current_battle)
 	_next_turn()
 
 func _next_turn() -> void:
-	# player turn
-	player_display.update(player_idle)
-	npc_display.update(current_battle.enemy_idle)
-	battle_ui.update_life_bars(current_battle)
 	battle_ui.update_btns()
 
 # dialog system
