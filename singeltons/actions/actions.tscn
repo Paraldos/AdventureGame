@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dow8rsaim25qs"]
+
+[ext_resource type="Script" uid="uid://7vd8gf5hiriu" path="res://singeltons/actions/action.gd" id="1_stl8b"]
+[ext_resource type="Texture2D" uid="uid://dtsbd6p8bwknl" path="res://assets/images/actions/actions1.png" id="2_ouooq"]
+[ext_resource type="Texture2D" uid="uid://c8i77v8sk6pvu" path="res://assets/images/actions/actions2.png" id="3_omgso"]
+[ext_resource type="Texture2D" uid="uid://ko41aibrmtxw" path="res://assets/images/actions/actions3.png" id="4_ouooq"]
+
+[node name="Actions" type="Node"]
+
+[node name="Attack" type="Node" parent="."]
+script = ExtResource("1_stl8b")
+description = "Bonk the enemy"
+icon = ExtResource("2_ouooq")
+
+[node name="Defense" type="Node" parent="."]
+script = ExtResource("1_stl8b")
+description = "Defend against getting bonked"
+icon = ExtResource("3_omgso")
+animation = 1
+
+[node name="SkipTurn" type="Node" parent="."]
+script = ExtResource("1_stl8b")
+description = "Skip turn."
+icon = ExtResource("4_ouooq")
+animation = 3
+metadata/_custom_type_script = "uid://7vd8gf5hiriu"

@@ -24,6 +24,11 @@ GlobalEnums="*res://singeltons/global_enums/global_enums.tscn"
 GameData="*res://singeltons/game_data/game_data.tscn"
 Dialogs="*res://singeltons/dialog/dialogs.tscn"
 Battles="*res://singeltons/battle/battles.tscn"
+Actions="*res://singeltons/actions/actions.tscn"
+
+[debug]
+
+gdscript/warnings/unused_signal=0
 
 [display]
 
