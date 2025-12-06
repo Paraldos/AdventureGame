@@ -13,8 +13,10 @@ extends Node2D
 @export var player_hurt : PackedScene
 
 var current_battle : Battle
+var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	rng.randomize()
 	player_display.update(player_idle)
 	_reset_ui()
 	for dialog_id in dialogs:
@@ -27,10 +29,13 @@ func _ready() -> void:
 func _on_change_display(display_id, change_player_display):
 	match display_id:
 		GlobalEnums.BattleAnimations.ATTACK:
+			var player_attacks = [player_attack1, player_attack2]
+			var npc_attacks = [current_battle.enemy_attack1, current_battle.enemy_attack2]
+			var attack_number = rng.randi_range(0,1)
 			if change_player_display:
-				player_display.update(player_attack1)
+				player_display.update(player_attacks[attack_number]) 
 			else:
-				npc_display.update(current_battle.enemy_attack1)
+				npc_display.update(npc_attacks[attack_number])
 		GlobalEnums.BattleAnimations.DEFEND:
 			if change_player_display:
 				player_display.update(player_defend)

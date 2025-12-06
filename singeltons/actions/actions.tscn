@@ -9,7 +9,8 @@
 
 [node name="Attack" type="Node" parent="."]
 script = ExtResource("1_stl8b")
-description = "Bonk the enemy"
+description = "Bonk the enemy
+Bonk them really hard"
 icon = ExtResource("2_ouooq")
 player_animation = 0
 npc_animation = 1
