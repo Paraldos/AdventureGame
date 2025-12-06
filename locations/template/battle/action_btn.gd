@@ -6,7 +6,8 @@ func _ready() -> void:
 	icon = action.icon
 
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	Signals.change_display.emit(action.player_animation, true)
+	Signals.change_display.emit(action.npc_animation, false)
 
 func _on_mouse_entered() -> void:
 	Signals.change_action_description.emit(action.description)

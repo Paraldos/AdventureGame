@@ -1,3 +1,3 @@
 extends Node
 
-enum AttackAnimations { ATTACK, DEFEND, HURT, IDLE}
+enum BattleAnimations { ATTACK, DEFEND, HURT, IDLE}

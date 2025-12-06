@@ -11,16 +11,19 @@
 script = ExtResource("1_stl8b")
 description = "Bonk the enemy"
 icon = ExtResource("2_ouooq")
+player_animation = 0
+npc_animation = 1
 
 [node name="Defense" type="Node" parent="."]
 script = ExtResource("1_stl8b")
 description = "Defend against getting bonked"
 icon = ExtResource("3_omgso")
-animation = 1
+npc_animation = 3
 
 [node name="SkipTurn" type="Node" parent="."]
 script = ExtResource("1_stl8b")
 description = "Skip turn."
 icon = ExtResource("4_ouooq")
-animation = 3
+player_animation = 3
+npc_animation = 3
 metadata/_custom_type_script = "uid://7vd8gf5hiriu"

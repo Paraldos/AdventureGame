@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmuoe30c3t6hy"]
+
+[ext_resource type="PackedScene" uid="uid://bci5vm3jkcsio" path="res://charakters/template/charakter_template.tscn" id="1_iou1j"]
+[ext_resource type="Texture2D" uid="uid://wsot0d0ba433" path="res://assets/images/knight/DEFEND.png" id="2_fakm6"]
+
+[sub_resource type="Animation" id="Animation_n4q6s"]
+resource_name = "default"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qxrws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewl1d"]
+_data = {
+&"RESET": SubResource("Animation_qxrws"),
+&"default": SubResource("Animation_n4q6s")
+}
+
+[node name="PlayerDefend" instance=ExtResource("1_iou1j")]
+texture = ExtResource("2_fakm6")
+flip_h = false
+hframes = 6
+
+[node name="AnimationPlayer" parent="." index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_ewl1d")
+}
+autoplay = "default"

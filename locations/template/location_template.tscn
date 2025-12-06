@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsm7pq3nekkob"]
+[gd_scene load_steps=10 format=3 uid="uid://bsm7pq3nekkob"]
 
 [ext_resource type="Script" uid="uid://cntvuncu76d3" path="res://locations/template/location_template.gd" id="1_08f2p"]
 [ext_resource type="PackedScene" uid="uid://cb18g5vtptwv1" path="res://locations/template/display/DisplayContainer.tscn" id="2_1gu86"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxgcby1twix0i" path="res://locations/template/dialog/dialog_ui.tscn" id="3_1gu86"]
 [ext_resource type="PackedScene" uid="uid://dgsnird6jvfhk" path="res://charakters/player/player_attack_1.tscn" id="3_123qr"]
 [ext_resource type="PackedScene" uid="uid://cuacve125s0v0" path="res://charakters/player/player_attack_2.tscn" id="4_hp5ir"]
+[ext_resource type="PackedScene" uid="uid://dmuoe30c3t6hy" path="res://charakters/player/player_defend.tscn" id="5_em50m"]
 [ext_resource type="PackedScene" uid="uid://d31pr18xxig2p" path="res://charakters/player/player_hurt.tscn" id="5_l71pn"]
 [ext_resource type="PackedScene" uid="uid://dy8uudgyixnjg" path="res://locations/template/battle/battle_ui.tscn" id="8_hp5ir"]
 
@@ -14,6 +15,7 @@ script = ExtResource("1_08f2p")
 player_idle = ExtResource("2_uk8h5")
 player_attack1 = ExtResource("3_123qr")
 player_attack2 = ExtResource("4_hp5ir")
+player_defend = ExtResource("5_em50m")
 player_hurt = ExtResource("5_l71pn")
 
 [node name="PlayerDisplay" parent="." instance=ExtResource("2_1gu86")]
