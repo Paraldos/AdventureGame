@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdtolednpifvt"]
+
+[ext_resource type="Theme" uid="uid://dij1y8wlt3r37" path="res://themes/main_theme.tres" id="1_5t64s"]
+[ext_resource type="Script" uid="uid://dxqowkafg5rdk" path="res://locations/template/battle/floating_number.gd" id="1_smi46"]
+
+[node name="FloatingNumber" type="Node2D"]
+script = ExtResource("1_smi46")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -16.0
+offset_right = 96.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5t64s")
+text = "123"
+horizontal_alignment = 1
+vertical_alignment = 1

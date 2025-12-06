@@ -14,6 +14,7 @@ Bonk them really hard"
 icon = ExtResource("2_ouooq")
 player_animation = 0
 npc_animation = 1
+dmg_player = 1.0
 
 [node name="Defense" type="Node" parent="."]
 script = ExtResource("1_stl8b")

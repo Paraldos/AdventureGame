@@ -29,19 +29,6 @@ func _start_battle(battle_id : String) -> void:
 func _next_turn() -> void:
 	battle_ui.update_btns()
 
-func _on_use_action(action : Action):
-	_change_player_display(action.player_animation)
-	_change_npc_display(action.npc_animation)
-	var dice_result = Utils.roll_dice()
-	if action.dmg_player:
-		pass
-	if action.dmg_npc:
-		pass
-	if action.heal_player:
-		pass
-	if action.heal_npc:
-		pass
-
 func _change_player_display(display_id : int):
 	match display_id:
 		GlobalEnums.BattleAnimations.ATTACK:
@@ -67,3 +54,36 @@ func _change_npc_display(display_id : int):
 			npc_display.update(current_battle.enemy_hurt)
 		GlobalEnums.BattleAnimations.IDLE:
 			npc_display.update(current_battle.enemy_idle)
+
+func _on_use_action(action : Action):
+	_change_player_display(action.player_animation)
+	_change_npc_display(action.npc_animation)
+	if action.dmg_player != 0:
+		_player_attack(action)
+	if action.dmg_npc != 0:
+		pass
+	if action.heal_player != 0:
+		pass
+	if action.heal_npc != 0:
+		pass
+
+func _player_attack(action : Action):
+	# attack
+	var attack: int = Utils.roll_d100()
+	var base_dmg: int = Utils.roll_dice(6, 2) + GameData.dmg
+	var action_dmg: int = round(base_dmg * action.dmg_player)
+	# defense
+	var defense = Utils.roll_dice(6, 2) + current_battle.defense
+	# finale dmg
+	var finale_dmg: int = 0
+	if attack <= GameData.crit:
+		var crit_dmg = int(round(action_dmg * 1.5))
+		finale_dmg = max(0, crit_dmg - defense)
+		npc_display.spawn_floating_number(" Crit!\n-%s" % finale_dmg)
+	elif attack <= GameData.accuracy:
+		finale_dmg = max(0, action_dmg - defense)
+		npc_display.spawn_floating_number("-%s" % finale_dmg)
+	else:
+		player_display.spawn_floating_number("Miss!")
+	current_battle.current_hp -= finale_dmg
+	battle_ui.update_lifebars(current_battle)

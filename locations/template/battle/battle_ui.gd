@@ -19,6 +19,12 @@ func init_lifebars(b : Battle):
 	lifebar_npc.max_value = b.max_hp * 10
 	lifebar_npc.value = b.current_hp * 10
 
+func update_lifebars(b : Battle):
+	var player_tween = create_tween()
+	player_tween.tween_property(lifebar_player, "value", GameData.current_hp * 10, 0.1)
+	var npc_tween = create_tween()
+	npc_tween.tween_property(lifebar_npc, "value", b.current_hp * 10, 0.1)
+
 func update_btns():
 	for child in actions_container.get_children():
 		child.queue_free()

@@ -7,9 +7,9 @@ class_name Action
 @export var npc_animation = GlobalEnums.BattleAnimations.ATTACK
 
 @export_group("Basic Effects")
-@export var dmg_player = 0
-@export var dmg_npc = 0
-@export var heal_player = 0
-@export var heal_npc = 0
+@export var dmg_player: float = 0.0
+@export var dmg_npc: float = 0.0
+@export var heal_player: float = 0.0
+@export var heal_npc: float = 0.0
 
 @export_group("Status Effects")
