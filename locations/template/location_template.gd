@@ -28,18 +28,21 @@ func _start_battle(battle_id : String) -> void:
 	if not b: return
 	_reset_ui()
 	battle_ui.visible = true
-	current_battle = b
-	player_display.update(player_idle)
-	npc_display.update(current_battle.enemy_idle)
+	current_battle = b.duplicate()
 	_next_turn()
 
 func _next_turn() -> void:
-	pass
+	# player turn
+	player_display.update(player_idle)
+	npc_display.update(current_battle.enemy_idle)
+	battle_ui.update_life_bars(current_battle)
+	battle_ui.update_btns()
 
 # dialog system
 func _start_dialog(dialog_id : String) -> void:
 	var d: DialogNode = Dialogs.get_node(dialog_id)
 	if not d: return
+	_reset_ui()
 	dialog_ui.visible = true
 	_change_dialog_node(d)
 
