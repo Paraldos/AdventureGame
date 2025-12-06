@@ -24,9 +24,9 @@ func _ready() -> void:
 	Signals.change_dialog_node.connect(_change_dialog_node)
 	Signals.end_dialog.connect(_end_dialog)
 	Signals.start_battle.connect(_start_battle)
-	Signals.change_display.connect(_on_change_display)
+	Signals.change_battle_display.connect(_on_change_battle_display)
 
-func _on_change_display(display_id, change_player_display):
+func _on_change_battle_display(display_id, change_player_display):
 	match display_id:
 		GlobalEnums.BattleAnimations.ATTACK:
 			var player_attacks = [player_attack1, player_attack2]
