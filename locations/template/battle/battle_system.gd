@@ -32,7 +32,15 @@ func _next_turn() -> void:
 func _on_use_action(action : Action):
 	_change_player_display(action.player_animation)
 	_change_npc_display(action.npc_animation)
-	print(action)
+	var dice_result = Utils.roll_dice()
+	if action.dmg_player:
+		pass
+	if action.dmg_npc:
+		pass
+	if action.heal_player:
+		pass
+	if action.heal_npc:
+		pass
 
 func _change_player_display(display_id : int):
 	match display_id:
