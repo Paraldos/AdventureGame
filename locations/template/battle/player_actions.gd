@@ -10,24 +10,24 @@ var rng = RandomNumberGenerator.new()
 func _ready() -> void:
 	rng.randomize()
 	Signals.start_battle.connect(_start_battle)
-	Signals.action_btn_clicked.connect(_on_action_btn_clicked)
 	Signals.start_player_turn.connect(_on_start_player_turn)
+	Signals.action_btn_clicked.connect(_on_action_btn_clicked)
+
+func _start_battle(battle_id : String) -> void:
+	current_battle = Battles.get_node(battle_id).duplicate()
 
 func _on_start_player_turn():
 	battle_system.change_player_display(GlobalEnums.BattleAnimations.IDLE)
 	battle_system.change_npc_display(GlobalEnums.BattleAnimations.IDLE)
 	battle_ui.toggle_btns(false)
 
-func _start_battle(battle_id : String) -> void:
-	current_battle = Battles.get_node(battle_id).duplicate()
-
 func _on_action_btn_clicked(action : Action):
 	battle_ui.toggle_btns(true)
 	_animation(action)
 	_player_attack(action)
 	_player_heal(action)
-	await get_tree().create_timer(0.5).timeout
-	battle_system.next_turn()
+	await get_tree().create_timer(battle_system.time_to_wait_after_turn).timeout
+	Signals.start_npc_turn.emit()
 
 func _animation(action : Action):
 	battle_system.change_player_display(action.player_animation)

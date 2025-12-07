@@ -7,6 +7,7 @@ extends Node
 
 var current_battle : Battle
 var rng = RandomNumberGenerator.new()
+var time_to_wait_after_turn = 1.0
 
 func _ready() -> void:
 	rng.randomize()

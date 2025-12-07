@@ -21,7 +21,7 @@ description = "Heal: Heal yourself."
 icon = ExtResource("3_omgso")
 npc_animation = 3
 attribute = 2
-heal = 0.5
+heal = 0.2
 
 [node name="SkipTurn" type="Node" parent="."]
 script = ExtResource("1_stl8b")
@@ -29,4 +29,17 @@ description = "Skip turn."
 icon = ExtResource("4_ouooq")
 player_animation = 3
 npc_animation = 3
+metadata/_custom_type_script = "uid://7vd8gf5hiriu"
+
+[node name="Stomp" type="Node" parent="."]
+script = ExtResource("1_stl8b")
+attack = 1.0
+metadata/_custom_type_script = "uid://7vd8gf5hiriu"
+
+[node name="Defense" type="Node" parent="."]
+script = ExtResource("1_stl8b")
+player_animation = 3
+npc_animation = 1
+attribute = 2
+heal = 0.2
 metadata/_custom_type_script = "uid://7vd8gf5hiriu"
