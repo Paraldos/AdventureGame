@@ -19,18 +19,18 @@ func init_lifebars(b : Battle):
 	lifebar_npc.max_value = b.max_hp * 10
 	lifebar_npc.value = b.current_hp * 10
 
-func update_lifebars(b : Battle):
-	var player_tween = create_tween()
-	player_tween.tween_property(lifebar_player, "value", GameData.current_hp * 10, 0.1)
-	var npc_tween = create_tween()
-	npc_tween.tween_property(lifebar_npc, "value", b.current_hp * 10, 0.1)
-
-func update_btns():
+func init_btns():
 	for child in actions_container.get_children():
 		child.queue_free()
 	for action_id in GameData.actions:
 		_add_btn(action_id)
 	_add_btn('SkipTurn')
+
+func update_lifebars(b : Battle):
+	var player_tween = create_tween()
+	player_tween.tween_property(lifebar_player, "value", GameData.current_hp * 10, 0.1)
+	var npc_tween = create_tween()
+	npc_tween.tween_property(lifebar_npc, "value", b.current_hp * 10, 0.1)
 
 func _add_btn(action_id : String):
 	var a = Actions.get_node(action_id)
@@ -38,3 +38,7 @@ func _add_btn(action_id : String):
 	var btn = action_btn_bp.instantiate()
 	btn.action = a
 	actions_container.add_child(btn)
+
+func toggle_btns(disable_btns = false):
+	for btn in actions_container.get_children():
+		btn.disabled = disable_btns

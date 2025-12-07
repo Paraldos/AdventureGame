@@ -7,6 +7,7 @@ extends Node
 
 var current_battle : Battle
 var rng = RandomNumberGenerator.new()
+var turn : int = 0
 
 func _ready() -> void:
 	rng.randomize()
@@ -18,16 +19,27 @@ func _start_battle(battle_id : String) -> void:
 	var b = Battles.get_node(battle_id)
 	if not b: return
 	# basic setup
-	parent._reset_ui()
-	battle_ui.visible = true
+	turn = 0
 	current_battle = b.duplicate()
-	player_display.update(parent.player_idle)
-	npc_display.update(current_battle.enemy_idle)
+	# setup ui
+	parent.reset_ui()
+	battle_ui.visible = true
 	battle_ui.init_lifebars(current_battle)
+	battle_ui.init_btns()
+	# start
 	_next_turn()
 
 func _next_turn() -> void:
-	battle_ui.update_btns()
+	turn += 1
+	player_display.update(parent.player_idle)
+	npc_display.update(current_battle.enemy_idle)
+	if turn % 2 == 0:
+		battle_ui.toggle_btns(false)
+	else:
+		_npc_turn()
+
+func _npc_turn():
+	_next_turn()
 
 func _change_player_display(display_id : int):
 	match display_id:
@@ -56,6 +68,7 @@ func _change_npc_display(display_id : int):
 			npc_display.update(current_battle.enemy_idle)
 
 func _on_use_action(action : Action):
+	battle_ui.toggle_btns(true)
 	_change_player_display(action.player_animation)
 	_change_npc_display(action.npc_animation)
 	if action.dmg_player != 0:
@@ -66,6 +79,8 @@ func _on_use_action(action : Action):
 		pass
 	if action.heal_npc != 0:
 		pass
+	await get_tree().create_timer(0.5).timeout
+	_next_turn()
 
 func _player_attack(action : Action):
 	# attack

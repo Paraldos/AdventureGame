@@ -14,7 +14,7 @@ func _ready() -> void:
 func _start_dialog(dialog_id : String) -> void:
 	var d: DialogNode = Dialogs.get_node(dialog_id)
 	if not d: return
-	parent._reset_ui()
+	parent.reset_ui()
 	dialog_ui.visible = true
 	_change_dialog_node(d)
 
@@ -27,6 +27,6 @@ func _change_dialog_node(d : DialogNode):
 		npc_display.update(d.npc_display)
 
 func _end_dialog():
-	parent._reset_ui()
+	parent.reset_ui()
 	npc_display.remove_display()
 	player_display.update(parent.player_idle)

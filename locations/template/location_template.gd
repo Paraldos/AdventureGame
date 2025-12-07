@@ -19,10 +19,10 @@ var rng = RandomNumberGenerator.new()
 func _ready() -> void:
 	rng.randomize()
 	player_display.update(player_idle)
-	_reset_ui()
+	reset_ui()
 	for dialog_id in dialogs:
 		dialog_system._start_dialog(dialog_id)
 
-func _reset_ui():
+func reset_ui():
 	dialog_ui.visible = false
 	battle_ui.visible = false
