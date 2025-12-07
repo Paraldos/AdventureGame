@@ -12,24 +12,21 @@ var turn : int = 0
 func _ready() -> void:
 	rng.randomize()
 	Signals.start_battle.connect(_start_battle)
-	Signals.use_action.connect(_on_use_action)
 
 func _start_battle(battle_id : String) -> void:
-	# guard
-	var b = Battles.get_node(battle_id)
-	if not b: return
 	# basic setup
+	current_battle = Battles.get_node(battle_id).duplicate()
 	turn = 0
-	current_battle = b.duplicate()
+	current_battle.current_hp = current_battle.max_hp
 	# setup ui
 	parent.reset_ui()
 	battle_ui.visible = true
 	battle_ui.init_lifebars(current_battle)
 	battle_ui.init_btns()
 	# start
-	_next_turn()
+	next_turn()
 
-func _next_turn() -> void:
+func next_turn() -> void:
 	turn += 1
 	player_display.update(parent.player_idle)
 	npc_display.update(current_battle.enemy_idle)
@@ -39,9 +36,9 @@ func _next_turn() -> void:
 		_npc_turn()
 
 func _npc_turn():
-	_next_turn()
+	next_turn()
 
-func _change_player_display(display_id : int):
+func change_player_display(display_id : int):
 	match display_id:
 		GlobalEnums.BattleAnimations.ATTACK:
 			var player_attacks = [parent.player_attack1, parent.player_attack2]
@@ -54,7 +51,7 @@ func _change_player_display(display_id : int):
 		GlobalEnums.BattleAnimations.IDLE:
 			player_display.update(parent.player_idle)
 
-func _change_npc_display(display_id : int):
+func change_npc_display(display_id : int):
 	match display_id:
 		GlobalEnums.BattleAnimations.ATTACK:
 			var npc_attacks = [current_battle.enemy_attack1, current_battle.enemy_attack2]
@@ -66,41 +63,3 @@ func _change_npc_display(display_id : int):
 			npc_display.update(current_battle.enemy_hurt)
 		GlobalEnums.BattleAnimations.IDLE:
 			npc_display.update(current_battle.enemy_idle)
-
-func _on_use_action(action : Action):
-	battle_ui.toggle_btns(true)
-	_change_player_display(action.player_animation)
-	_change_npc_display(action.npc_animation)
-	if action.attack != 0.0:
-		_player_attack(action)
-	if action.heal != 0.0:
-		_player_heal(action)
-	await get_tree().create_timer(0.5).timeout
-	_next_turn()
-
-func _player_attack(action : Action):
-	# calc dmg
-	var dmg = Utils.roll_dice(6,2)
-	dmg += Utils.get_player_attribute(action.attribute)
-	dmg *= action.attack
-	if Utils.roll_d100() <= GameData.crit: 
-		dmg *= 1.5
-	dmg -= current_battle.defense
-	dmg = int(round(dmg))
-	# use dmg
-	current_battle.current_hp -= dmg
-	npc_display.spawn_floating_number("-%s" % dmg)
-	battle_ui.update_lifebars(current_battle)
-
-func _player_heal(action : Action):
-	# calc heal
-	var heal = Utils.roll_dice(6,2)
-	heal += Utils.get_player_attribute(action.attribute)
-	heal *= action.heal
-	if Utils.roll_d100() <= GameData.crit: 
-		heal *= 1.5
-	heal = int(round(heal))
-	# use heal
-	GameData.current_hp += heal
-	player_display.spawn_floating_number("+%s" % heal)
-	battle_ui.update_lifebars(current_battle)

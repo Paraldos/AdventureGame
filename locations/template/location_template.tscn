@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsm7pq3nekkob"]
+[gd_scene load_steps=14 format=3 uid="uid://bsm7pq3nekkob"]
 
 [ext_resource type="Script" uid="uid://cntvuncu76d3" path="res://locations/template/location_template.gd" id="1_08f2p"]
 [ext_resource type="PackedScene" uid="uid://cb18g5vtptwv1" path="res://locations/template/display/DisplayContainer.tscn" id="2_1gu86"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://d31pr18xxig2p" path="res://charakters/player/player_hurt.tscn" id="5_l71pn"]
 [ext_resource type="Script" uid="uid://burxtxac1lp61" path="res://locations/template/battle/battle_system.gd" id="7_em50m"]
 [ext_resource type="PackedScene" uid="uid://dy8uudgyixnjg" path="res://locations/template/battle/battle_ui.tscn" id="8_hp5ir"]
+[ext_resource type="Script" uid="uid://ca8civlfmuhej" path="res://locations/template/battle/player_actions.gd" id="8_ji64d"]
 [ext_resource type="Script" uid="uid://c4mtdyrveuin7" path="res://locations/template/dialog/dialog_system.gd" id="8_tlpq6"]
+[ext_resource type="Script" uid="uid://c5tl232k6akg3" path="res://locations/template/battle/npc_actions.gd" id="9_xu0sj"]
 
 [node name="LocationTemplate" type="Node2D"]
 script = ExtResource("1_08f2p")
@@ -23,6 +25,12 @@ player_hurt = ExtResource("5_l71pn")
 [node name="BattleSystem" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_em50m")
+
+[node name="PlayerActions" type="Node" parent="BattleSystem"]
+script = ExtResource("8_ji64d")
+
+[node name="NPCActions" type="Node" parent="BattleSystem"]
+script = ExtResource("9_xu0sj")
 
 [node name="DialogSystem" type="Node" parent="."]
 unique_name_in_owner = true
