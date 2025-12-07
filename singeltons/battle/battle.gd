@@ -10,7 +10,7 @@ class_name Battle
 var max_hp = 40
 var current_hp = 40
 
-var accuracy = 90
-var crit = 5
-var dmg = 5
+var strength = 5
+var dextertiy = 5
+var wisdom = 5
 var defense = 0

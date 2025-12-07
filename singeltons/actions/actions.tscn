@@ -9,18 +9,19 @@
 
 [node name="Attack" type="Node" parent="."]
 script = ExtResource("1_stl8b")
-description = "Bonk the enemy
-Bonk them really hard"
+description = "Attack: Bonk the enemy."
 icon = ExtResource("2_ouooq")
 player_animation = 0
 npc_animation = 1
-dmg_player = 1.0
+attack = 1.0
 
-[node name="Defense" type="Node" parent="."]
+[node name="Heal" type="Node" parent="."]
 script = ExtResource("1_stl8b")
-description = "Defend against getting bonked"
+description = "Heal: Heal yourself."
 icon = ExtResource("3_omgso")
 npc_animation = 3
+attribute = 2
+heal = 0.5
 
 [node name="SkipTurn" type="Node" parent="."]
 script = ExtResource("1_stl8b")

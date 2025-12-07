@@ -71,34 +71,36 @@ func _on_use_action(action : Action):
 	battle_ui.toggle_btns(true)
 	_change_player_display(action.player_animation)
 	_change_npc_display(action.npc_animation)
-	if action.dmg_player != 0:
+	if action.attack != 0.0:
 		_player_attack(action)
-	if action.dmg_npc != 0:
-		pass
-	if action.heal_player != 0:
-		pass
-	if action.heal_npc != 0:
-		pass
+	if action.heal != 0.0:
+		_player_heal(action)
 	await get_tree().create_timer(0.5).timeout
 	_next_turn()
 
 func _player_attack(action : Action):
-	# attack
-	var attack: int = Utils.roll_d100()
-	var base_dmg: int = Utils.roll_dice(6, 2) + GameData.dmg
-	var action_dmg: int = round(base_dmg * action.dmg_player)
-	# defense
-	var defense = Utils.roll_dice(6, 2) + current_battle.defense
-	# finale dmg
-	var finale_dmg: int = 0
-	if attack <= GameData.crit:
-		var crit_dmg = int(round(action_dmg * 1.5))
-		finale_dmg = max(0, crit_dmg - defense)
-		npc_display.spawn_floating_number(" Crit!\n-%s" % finale_dmg)
-	elif attack <= GameData.accuracy:
-		finale_dmg = max(0, action_dmg - defense)
-		npc_display.spawn_floating_number("-%s" % finale_dmg)
-	else:
-		player_display.spawn_floating_number("Miss!")
-	current_battle.current_hp -= finale_dmg
+	# calc dmg
+	var dmg = Utils.roll_dice(6,2)
+	dmg += Utils.get_player_attribute(action.attribute)
+	dmg *= action.attack
+	if Utils.roll_d100() <= GameData.crit: 
+		dmg *= 1.5
+	dmg -= current_battle.defense
+	dmg = int(round(dmg))
+	# use dmg
+	current_battle.current_hp -= dmg
+	npc_display.spawn_floating_number("-%s" % dmg)
+	battle_ui.update_lifebars(current_battle)
+
+func _player_heal(action : Action):
+	# calc heal
+	var heal = Utils.roll_dice(6,2)
+	heal += Utils.get_player_attribute(action.attribute)
+	heal *= action.heal
+	if Utils.roll_d100() <= GameData.crit: 
+		heal *= 1.5
+	heal = int(round(heal))
+	# use heal
+	GameData.current_hp += heal
+	player_display.spawn_floating_number("+%s" % heal)
 	battle_ui.update_lifebars(current_battle)
