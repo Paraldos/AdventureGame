@@ -12,18 +12,17 @@ func _ready() -> void:
 	Signals.start_battle.connect(_start_battle)
 	Signals.start_npc_turn.connect(_on_start_npc_turn)
 
-func _start_battle(battle_id : String) -> void:
-	current_battle = Battles.get_node(battle_id).duplicate()
+func _start_battle(_battle_id : String) -> void:
+	await get_tree().create_timer(0.3).timeout
+	current_battle = battle_system.current_battle
 
 func _on_start_npc_turn():
-	battle_system.change_player_display(GlobalEnums.BattleAnimations.IDLE)
-	battle_system.change_npc_display(GlobalEnums.BattleAnimations.IDLE)
 	var action =_select_action()
 	_animation(action)
 	_npc_attack(action)
 	_npc_heal(action)
 	await get_tree().create_timer(battle_system.time_to_wait_after_turn).timeout
-	Signals.start_player_turn.emit()
+	Signals.next_turn.emit()
 
 func _select_action():
 	current_battle.actions.shuffle()

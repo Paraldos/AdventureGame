@@ -8,22 +8,39 @@ extends Node
 var current_battle : Battle
 var rng = RandomNumberGenerator.new()
 var time_to_wait_after_turn = 1.0
+var turn = 0
 
 func _ready() -> void:
 	rng.randomize()
 	Signals.start_battle.connect(_start_battle)
+	Signals.next_turn.connect(_on_next_turn)
 
 func _start_battle(battle_id : String) -> void:
 	# basic setup
 	current_battle = Battles.get_node(battle_id).duplicate()
 	current_battle.current_hp = current_battle.max_hp
+	turn = 0
 	# setup ui
 	parent.reset_ui()
 	battle_ui.visible = true
 	battle_ui.init_lifebars(current_battle)
 	battle_ui.init_btns()
 	# start
-	Signals.start_player_turn.emit()
+	Signals.next_turn.emit()
+
+func _on_next_turn():
+	if GameData.current_hp <= 0:
+		print('player defeated')
+	elif current_battle.current_hp <= 0:
+		print('npc defeated')
+	else:
+		turn += 1
+		change_player_display(GlobalEnums.BattleAnimations.IDLE)
+		change_npc_display(GlobalEnums.BattleAnimations.IDLE)
+		if turn % 2:
+			Signals.start_player_turn.emit()
+		else:
+			Signals.start_npc_turn.emit()
 
 func _start_player_turn():
 	battle_ui.toggle_btns(false)
