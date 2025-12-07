@@ -17,6 +17,6 @@ func remove_display():
 
 func spawn_floating_number(txt : String):
 	var number = floating_number_bp.instantiate()
-	number.position = position + Vector2(0, -40)
+	number.position = position + Vector2(0, -70)
 	get_tree().current_scene.add_child(number)
 	number.start(txt)

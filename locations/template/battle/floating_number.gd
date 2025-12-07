@@ -9,7 +9,7 @@ func start(text : String) -> void:
 	label.text = text
 	# position
 	var tween_pos := create_tween()
-	var target_pos = position + Vector2(0, -25)
+	var target_pos = position + Vector2(0, -40)
 	tween_pos.tween_property(self, "position", target_pos, 1.0)
 	# visibility
 	var tween_modulate = create_tween()
