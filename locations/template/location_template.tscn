@@ -38,8 +38,8 @@ visible = false
 
 [node name="PlayerDisplay" parent="." instance=ExtResource("2_1gu86")]
 unique_name_in_owner = true
-position = Vector2(32, 64)
+position = Vector2(64, 128)
 
 [node name="NPCDisplay" parent="." instance=ExtResource("2_1gu86")]
 unique_name_in_owner = true
-position = Vector2(128, 64)
+position = Vector2(256, 128)

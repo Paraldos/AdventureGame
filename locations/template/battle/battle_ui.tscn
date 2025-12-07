@@ -12,9 +12,13 @@ bg_color = Color(0, 0, 0, 0.6431373)
 script = ExtResource("1_12gqm")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_top = 88.0
-offset_right = 160.0
-offset_bottom = 120.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("1_8qmsg")
 theme_override_styles/panel = SubResource("StyleBoxFlat_8qmsg")
 
@@ -43,19 +47,19 @@ size_flags_vertical = 1
 
 [node name="LifebarPlayer" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = 16.0
-offset_top = 32.0
-offset_right = 48.0
-offset_bottom = 40.0
+offset_left = 48.0
+offset_top = 72.0
+offset_right = 80.0
+offset_bottom = 80.0
 texture_under = ExtResource("1_7roag")
 texture_progress = ExtResource("2_8qmsg")
 
 [node name="LifebarNPC" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = 112.0
-offset_top = 32.0
-offset_right = 144.0
-offset_bottom = 40.0
+offset_left = 240.0
+offset_top = 72.0
+offset_right = 272.0
+offset_bottom = 80.0
 value = 50.0
 texture_under = ExtResource("1_7roag")
 texture_progress = ExtResource("2_8qmsg")

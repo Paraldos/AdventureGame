@@ -16,7 +16,7 @@ bg_color = Color(0, 0, 0, 0.5411765)
 
 [resource]
 default_font = SubResource("SystemFont_vxwtt")
-default_font_size = 4
+default_font_size = 8
 Button/styles/focus = SubResource("StyleBoxFlat_rjgu6")
 Button/styles/hover = SubResource("StyleBoxFlat_vu6l5")
 Button/styles/normal = SubResource("StyleBoxFlat_vxwtt")
