@@ -11,6 +11,12 @@ func _ready() -> void:
 	rng.randomize()
 	Signals.start_battle.connect(_start_battle)
 	Signals.action_btn_clicked.connect(_on_action_btn_clicked)
+	Signals.start_player_turn.connect(_on_start_player_turn)
+
+func _on_start_player_turn():
+	battle_system.change_player_display(GlobalEnums.BattleAnimations.IDLE)
+	battle_system.change_npc_display(GlobalEnums.BattleAnimations.IDLE)
+	battle_ui.toggle_btns(false)
 
 func _start_battle(battle_id : String) -> void:
 	current_battle = Battles.get_node(battle_id).duplicate()

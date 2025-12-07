@@ -7,7 +7,6 @@ extends Node
 
 var current_battle : Battle
 var rng = RandomNumberGenerator.new()
-var turn : int = 0
 
 func _ready() -> void:
 	rng.randomize()
@@ -16,7 +15,6 @@ func _ready() -> void:
 func _start_battle(battle_id : String) -> void:
 	# basic setup
 	current_battle = Battles.get_node(battle_id).duplicate()
-	turn = 0
 	current_battle.current_hp = current_battle.max_hp
 	# setup ui
 	parent.reset_ui()
@@ -24,19 +22,10 @@ func _start_battle(battle_id : String) -> void:
 	battle_ui.init_lifebars(current_battle)
 	battle_ui.init_btns()
 	# start
-	next_turn()
+	Signals.start_player_turn.emit()
 
-func next_turn() -> void:
-	turn += 1
-	player_display.update(parent.player_idle)
-	npc_display.update(current_battle.enemy_idle)
-	if turn % 2 == 0:
-		battle_ui.toggle_btns(false)
-	else:
-		_npc_turn()
-
-func _npc_turn():
-	next_turn()
+func _start_player_turn():
+	battle_ui.toggle_btns(false)
 
 func change_player_display(display_id : int):
 	match display_id:
