@@ -42,9 +42,6 @@ func _on_next_turn():
 		else:
 			Signals.start_npc_turn.emit()
 
-func _start_player_turn():
-	battle_ui.toggle_btns(false)
-
 func change_player_display(display_id : int):
 	match display_id:
 		GlobalEnums.BattleAnimations.ATTACK:
