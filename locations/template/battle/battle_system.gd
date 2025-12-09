@@ -30,9 +30,9 @@ func _start_battle(battle_id : String) -> void:
 
 func _on_next_turn():
 	if GameData.current_hp <= 0:
-		print('player defeated')
+		_on_player_defeated()
 	elif current_battle.current_hp <= 0:
-		print('npc defeated')
+		_on_npc_defeated()
 	else:
 		turn += 1
 		change_player_display(GlobalEnums.BattleAnimations.IDLE)
@@ -41,6 +41,12 @@ func _on_next_turn():
 			Signals.start_player_turn.emit()
 		else:
 			Signals.start_npc_turn.emit()
+
+func _on_player_defeated():
+	pass
+
+func _on_npc_defeated():
+	pass
 
 func change_player_display(display_id : int):
 	match display_id:
