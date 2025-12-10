@@ -43,7 +43,7 @@ func _on_next_turn():
 			Signals.start_npc_turn.emit()
 
 func _on_player_defeated():
-	pass
+	print('player defeated')
 
 func _on_npc_defeated():
 	pass
