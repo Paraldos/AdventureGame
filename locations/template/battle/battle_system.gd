@@ -46,7 +46,7 @@ func _on_player_defeated():
 	print('player defeated')
 
 func _on_npc_defeated():
-	pass
+	print('npc defeated')
 
 func change_player_display(display_id : int):
 	match display_id:
