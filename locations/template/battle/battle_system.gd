@@ -44,9 +44,11 @@ func _on_next_turn():
 
 func _on_player_defeated():
 	print('player defeated')
+	Signals.end_battle.emit()
 
 func _on_npc_defeated():
 	print('npc defeated')
+	Signals.end_battle.emit()
 
 func change_player_display(display_id : int):
 	match display_id:

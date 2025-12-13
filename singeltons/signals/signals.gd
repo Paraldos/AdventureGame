@@ -4,6 +4,7 @@ signal change_dialog_node(new_node : DialogNode)
 signal end_dialog
 
 signal start_battle(battle_id : String)
+signal end_battle
 signal start_player_turn
 signal start_npc_turn
 signal next_turn
