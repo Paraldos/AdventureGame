@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsm7pq3nekkob"]
+[gd_scene load_steps=15 format=3 uid="uid://bsm7pq3nekkob"]
 
 [ext_resource type="Script" uid="uid://cntvuncu76d3" path="res://locations/template/location_template.gd" id="1_08f2p"]
 [ext_resource type="PackedScene" uid="uid://cb18g5vtptwv1" path="res://locations/template/display/DisplayContainer.tscn" id="2_1gu86"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://ca8civlfmuhej" path="res://locations/template/battle/player_actions.gd" id="8_ji64d"]
 [ext_resource type="Script" uid="uid://c4mtdyrveuin7" path="res://locations/template/dialog/dialog_system.gd" id="8_tlpq6"]
 [ext_resource type="Script" uid="uid://c5tl232k6akg3" path="res://locations/template/battle/npc_actions.gd" id="9_xu0sj"]
+[ext_resource type="PackedScene" uid="uid://bhwx7nm12i741" path="res://locations/template/location_ui.tscn" id="13_xu0sj"]
 
 [node name="LocationTemplate" type="Node2D"]
 script = ExtResource("1_08f2p")
@@ -21,6 +22,16 @@ player_attack1 = ExtResource("3_123qr")
 player_attack2 = ExtResource("4_hp5ir")
 player_defend = ExtResource("5_em50m")
 player_hurt = ExtResource("5_l71pn")
+
+[node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BattleSystem" type="Node" parent="."]
 unique_name_in_owner = true
@@ -43,6 +54,9 @@ visible = false
 [node name="BattleUi" parent="." instance=ExtResource("8_hp5ir")]
 unique_name_in_owner = true
 visible = false
+
+[node name="LocationUi" parent="." instance=ExtResource("13_xu0sj")]
+unique_name_in_owner = true
 
 [node name="PlayerDisplay" parent="." instance=ExtResource("2_1gu86")]
 unique_name_in_owner = true

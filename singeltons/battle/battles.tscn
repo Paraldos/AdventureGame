@@ -17,4 +17,4 @@ enemy_attack2 = ExtResource("4_q8wav")
 enemy_defend = ExtResource("5_q8wav")
 enemy_hurt = ExtResource("5_jp6pi")
 actions = Array[String](["Stomp", "Defense"])
-strength = 500
+max_hp = 5

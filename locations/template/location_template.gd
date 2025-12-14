@@ -2,8 +2,11 @@ extends Node2D
 
 @onready var player_display: Marker2D = %PlayerDisplay
 @onready var npc_display: Marker2D = %NPCDisplay
+
 @onready var dialog_ui: CanvasLayer = %DialogUi
 @onready var battle_ui: CanvasLayer = %BattleUi
+@onready var location_ui: CanvasLayer = %LocationUi
+
 @onready var battle_system: Node = %BattleSystem
 @onready var dialog_system: Node = %DialogSystem
 
@@ -26,3 +29,4 @@ func _ready() -> void:
 func reset_ui():
 	dialog_ui.visible = false
 	battle_ui.visible = false
+	location_ui.visible = false

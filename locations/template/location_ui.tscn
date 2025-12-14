@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhwx7nm12i741"]
+
+[ext_resource type="Theme" uid="uid://dij1y8wlt3r37" path="res://themes/main_theme.tres" id="1_n4u6c"]
+
+[node name="LocationUi" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 208.0
+offset_top = 104.0
+offset_right = 304.0
+offset_bottom = 152.0
+theme = ExtResource("1_n4u6c")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
+
+[node name="Button" type="Button" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+text = "Bert"
+
+[node name="Button2" type="Button" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+text = "Bert"
+
+[node name="Button3" type="Button" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+text = "Bert"
+
+[node name="Button4" type="Button" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+text = "Bert"
+
+[node name="Button5" type="Button" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+text = "Bert"
