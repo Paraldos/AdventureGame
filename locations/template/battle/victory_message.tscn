@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cclwkolnynobr"]
+
+[ext_resource type="Script" uid="uid://yhg40nojwa4e" path="res://locations/template/battle/victory_message.gd" id="1_a2ftn"]
+[ext_resource type="Theme" uid="uid://dij1y8wlt3r37" path="res://themes/main_theme.tres" id="1_eq5bi"]
+
+[node name="VictoryMessage" type="Node2D"]
+script = ExtResource("1_a2ftn")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = -40.0
+offset_top = -56.0
+offset_right = 40.0
+offset_bottom = 56.0
+theme = ExtResource("1_eq5bi")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Victory"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Loot:"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ok"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

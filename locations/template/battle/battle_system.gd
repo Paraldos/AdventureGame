@@ -5,6 +5,8 @@ extends Node
 @onready var npc_display: Marker2D = %NPCDisplay
 @onready var battle_ui: CanvasLayer = %BattleUi
 
+var victory_message_bp = preload('res://locations/template/battle/victory_message.tscn')
+
 var current_battle : Battle
 var rng = RandomNumberGenerator.new()
 var time_to_wait_after_turn = 1.0
@@ -44,11 +46,17 @@ func _on_next_turn():
 
 func _on_player_defeated():
 	print('player defeated')
-	Signals.end_battle.emit()
 
 func _on_npc_defeated():
-	print('npc defeated')
-	Signals.end_battle.emit()
+	# ui
+	change_player_display(GlobalEnums.BattleAnimations.IDLE)
+	parent.reset_ui()
+	# message
+	var message = victory_message_bp.instantiate()
+	message.global_position = npc_display.global_position
+	get_tree().current_scene.add_child(message)
+	# display
+	npc_display.remove_display()
 
 func change_player_display(display_id : int):
 	match display_id:
