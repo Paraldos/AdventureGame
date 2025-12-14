@@ -6,6 +6,7 @@ extends Node
 @onready var battle_ui: CanvasLayer = %BattleUi
 
 var victory_message_bp = preload('res://locations/template/battle/victory_message.tscn')
+var defeate_message_bp = preload('res://locations/template/battle/defeat_message.tscn')
 
 var current_battle : Battle
 var rng = RandomNumberGenerator.new()
@@ -45,7 +46,15 @@ func _on_next_turn():
 			Signals.start_npc_turn.emit()
 
 func _on_player_defeated():
-	print('player defeated')
+	# ui
+	change_player_display(GlobalEnums.BattleAnimations.IDLE)
+	parent.reset_ui()
+	# message
+	var message = defeate_message_bp.instantiate()
+	message.global_position = npc_display.global_position
+	get_tree().current_scene.add_child(message)
+	# display
+	npc_display.remove_display()
 
 func _on_npc_defeated():
 	# ui

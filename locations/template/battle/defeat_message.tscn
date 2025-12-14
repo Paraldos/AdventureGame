@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bujxq7xwei7hy"]
+
+[ext_resource type="Theme" uid="uid://dij1y8wlt3r37" path="res://themes/main_theme.tres" id="1_1wxk4"]
+[ext_resource type="Script" uid="uid://bnsvypg7hc42" path="res://locations/template/battle/defeat_message.gd" id="1_4hnhm"]
+
+[node name="DefeatMessage" type="Node2D"]
+script = ExtResource("1_4hnhm")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = -40.0
+offset_top = -27.0
+offset_right = 40.0
+offset_bottom = 27.0
+theme = ExtResource("1_1wxk4")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Defeat"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "You must flee!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ok"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
