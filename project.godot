@@ -15,20 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="AdventureGame"
-run/main_scene="uid://cvfyka57rfrrf"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Utils="*res://singeltons/utils/utils.tscn"
-Signals="*res://singeltons/signals/signals.tscn"
-SceneChanger="*res://singeltons/scene_changer/scene_changer.tscn"
-GlobalEnums="*res://singeltons/global_enums/global_enums.tscn"
-GameData="*res://singeltons/game_data/game_data.tscn"
-Dialogs="*res://singeltons/dialog/dialogs.tscn"
-Battles="*res://singeltons/battle/battles.tscn"
-Actions="*res://singeltons/actions/actions.tscn"
 
 [debug]
 
