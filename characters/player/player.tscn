@@ -9,6 +9,5 @@ script = ExtResource("1_xxgcw")
 [node name="Characters" type="Sprite2D" parent="." unique_id=412832302]
 texture = ExtResource("1_508ok")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1704745874]
-enabled = false
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1421121296]
 position_smoothing_enabled = true
