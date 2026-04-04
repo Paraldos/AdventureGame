@@ -15,8 +15,15 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="AdventureGame"
+run/main_scene="uid://hnyj44o7bqaj"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Enums="*uid://eo4b8sm54o6p"
+Signals="*uid://cq7c742nhpxba"
+Utils="*uid://bfxey44068tg2"
 
 [debug]
 
@@ -25,7 +32,7 @@ gdscript/warnings/unused_signal=0
 [display]
 
 window/size/viewport_width=320
-window/size/viewport_height=240
+window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=960
 window/stretch/mode="canvas_items"
