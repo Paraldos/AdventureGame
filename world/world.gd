@@ -10,7 +10,6 @@ func _ready() -> void:
 
 func _setup_astar():
 	astar_grid = AStarGrid2D.new()
-	Astar.astar_grid = astar_grid
 	astar_grid.cell_size = tile_map.tile_set.tile_size
 	var used_rect = tile_map.get_used_rect()
 	astar_grid.region = used_rect
