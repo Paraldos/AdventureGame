@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dqt7kayos5f12"]
+
+[ext_resource type="Texture2D" uid="uid://dbj66g7bn5yxd" path="res://assets/images/characters.png" id="1_fysk3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fysk3"]
+size = Vector2(12, 12)
+
+[node name="Location" type="Node2D" unique_id=2129513313]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1447722621]
+texture = ExtResource("1_fysk3")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=589141051]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=356991571]
+shape = SubResource("RectangleShape2D_fysk3")

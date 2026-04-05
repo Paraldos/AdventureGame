@@ -3,12 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://dbj66g7bn5yxd" path="res://assets/images/characters.png" id="1_508ok"]
 [ext_resource type="Script" uid="uid://4u2y43mua441" path="res://characters/player/player.gd" id="1_xxgcw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxgcw"]
+size = Vector2(12, 12)
+
 [node name="Player" type="Node2D" unique_id=647253808]
 script = ExtResource("1_xxgcw")
 
 [node name="Characters" type="Sprite2D" parent="." unique_id=412832302]
 texture = ExtResource("1_508ok")
+hframes = 2
+vframes = 2
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1421121296]
 unique_name_in_owner = true
 position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=756628666]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=711674282]
+shape = SubResource("RectangleShape2D_xxgcw")
