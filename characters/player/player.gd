@@ -19,4 +19,5 @@ func _move(dir):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, 'global_position', target_pos, 0.3)
 	await tween.finished
+	await get_tree().create_timer(0.1).timeout
 	moving = false
