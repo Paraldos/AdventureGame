@@ -6,6 +6,7 @@ var astar_grid: AStarGrid2D
 func _ready() -> void:
 	Utils.world = self
 	_setup_astar()
+	Signals.set_camera_rect.emit(tile_map.get_used_rect())
 	queue_redraw()
 
 func _setup_astar():

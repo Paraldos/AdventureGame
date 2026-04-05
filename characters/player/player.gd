@@ -1,6 +1,17 @@
 extends Node2D
 
+@onready var camera: Camera2D = %Camera
 var moving = false
+
+func _ready() -> void:
+	Signals.set_camera_rect.connect(on_set_camera_rect)
+
+func on_set_camera_rect(rect : Rect2) -> void:
+	print(rect.size[1] * 16)
+	camera.limit_left = rect.position[0]
+	camera.limit_top = rect.position[1]
+	camera.limit_right = rect.size[0] * 16
+	camera.limit_bottom = rect.size[1] * 16
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("left"):
