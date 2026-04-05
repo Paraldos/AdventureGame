@@ -1,3 +1,6 @@
 extends Node
 
-var street_map
+var astar_grid
+
+func pos_to_point():
+    pass

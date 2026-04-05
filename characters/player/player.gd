@@ -4,18 +4,23 @@ var moving = false
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("left"):
-		_move(Vector2(-16,0))
+		_prep_move(Vector2(-16,0))
 	if Input.is_action_pressed("right"):
-		_move(Vector2(16,0))
+		_prep_move(Vector2(16,0))
 	if Input.is_action_pressed("up"):
-		_move(Vector2(0,-16))
+		_prep_move(Vector2(0,-16))
 	if Input.is_action_pressed("down"):
-		_move(Vector2(0,16))
+		_prep_move(Vector2(0,16))
 
-func _move(dir):
+func _prep_move(dir):
 	if moving: return
-	moving = true
 	var target_pos = global_position + dir
+	var target_cell = Utils.world.tile_map.local_to_map(target_pos)
+	if Utils.world.astar_grid.is_point_solid(target_cell): return
+	_move(target_pos)
+
+func _move(target_pos):
+	moving = true
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, 'global_position', target_pos, 0.3)
 	await tween.finished

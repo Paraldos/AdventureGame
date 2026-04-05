@@ -4,12 +4,13 @@ extends Node2D
 var astar_grid: AStarGrid2D
 
 func _ready() -> void:
+	Utils.world = self
 	_setup_astar()
 	queue_redraw()
 
 func _setup_astar():
 	astar_grid = AStarGrid2D.new()
-	Astar.street_map = astar_grid
+	Astar.astar_grid = astar_grid
 	astar_grid.cell_size = tile_map.tile_set.tile_size
 	var used_rect = tile_map.get_used_rect()
 	astar_grid.region = used_rect
