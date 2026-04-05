@@ -18,7 +18,8 @@ vframes = 2
 unique_name_in_owner = true
 position_smoothing_enabled = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=756628666]
+[node name="Area" type="Area2D" parent="." unique_id=756628666]
+unique_name_in_owner = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=711674282]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=711674282]
 shape = SubResource("RectangleShape2D_xxgcw")

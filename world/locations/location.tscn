@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dqt7kayos5f12"]
 
 [ext_resource type="Texture2D" uid="uid://dbj66g7bn5yxd" path="res://assets/images/characters.png" id="1_fysk3"]
+[ext_resource type="Script" uid="uid://dt5pbf6wusu1b" path="res://world/locations/location.gd" id="1_ms1dq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fysk3"]
 size = Vector2(12, 12)
 
 [node name="Location" type="Node2D" unique_id=2129513313]
+script = ExtResource("1_ms1dq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1447722621]
 texture = ExtResource("1_fysk3")
