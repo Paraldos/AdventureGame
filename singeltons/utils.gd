@@ -1,4 +1,4 @@
 extends Node
 
-var debug = false
+var debug_map = false
 var world

@@ -1,4 +1,4 @@
 extends Node2D
 
 func action():
-	print('location')
+	print('entity')

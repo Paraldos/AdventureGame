@@ -21,7 +21,7 @@ func _setup_astar():
 			astar_grid.set_point_solid(id)
 
 func _draw():
-	if not Utils.debug: return
+	if !Utils.debug_map: return
 	for x in astar_grid.region.size.x:
 		for y in astar_grid.region.size.y:
 			var p = Vector2(x, y)

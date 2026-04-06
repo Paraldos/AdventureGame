@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dwvmhbca5ppl6" path="res://assets/images/street.png" id="1_6xmxd"]
 [ext_resource type="Script" uid="uid://bftsr6ij3m1k5" path="res://world/world.gd" id="1_h5o24"]
 [ext_resource type="Texture2D" uid="uid://bbctn3mbqlbt" path="res://assets/images/forest.png" id="2_tcf2h"]
-[ext_resource type="PackedScene" uid="uid://ccrv6ul4i4vyc" path="res://characters/player/player.tscn" id="3_4717r"]
-[ext_resource type="PackedScene" uid="uid://dqt7kayos5f12" path="res://world/locations/location.tscn" id="4_mmdvd"]
+[ext_resource type="PackedScene" uid="uid://ccrv6ul4i4vyc" path="res://player/player.tscn" id="3_4717r"]
+[ext_resource type="PackedScene" uid="uid://dqt7kayos5f12" path="res://entities/entity.tscn" id="4_mmdvd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tcf2h"]
 texture = ExtResource("1_6xmxd")
