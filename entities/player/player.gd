@@ -1,7 +1,6 @@
-extends Node2D
+extends "res://entities/entity.gd"
 
 @onready var camera: Camera2D = %Camera
-@onready var area: Area2D = %Area
 var moving = false
 var cell_size = 16
 
@@ -9,12 +8,12 @@ func _ready() -> void:
 	Signals.set_camera_rect.connect(on_set_camera_rect)
 
 func on_set_camera_rect(rect : Rect2) -> void:
-	camera.limit_left = rect.position[0]
-	camera.limit_top = rect.position[1]
-	camera.limit_right = rect.size[0] * 16
-	camera.limit_bottom = rect.size[1] * 16
+	camera.limit_left = int(rect.position[0])
+	camera.limit_top = int(rect.position[1])
+	camera.limit_right = int(rect.size[0] * 16)
+	camera.limit_bottom = int(rect.size[1] * 16)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("left"):
 		_prep_move(Vector2(-1,0))
 	if Input.is_action_pressed("right"):
@@ -40,7 +39,7 @@ func _move(target_pos):
 
 func _end_move():
 	await get_tree().create_timer(0.05).timeout
-	var overlaps = area.get_overlapping_areas()
+	var overlaps = main_area.get_overlapping_areas()
 	for overlap in overlaps:
 		var parent = overlap.get_parent()
 		if parent.has_method("action"):

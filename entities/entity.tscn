@@ -1,21 +1,35 @@
 [gd_scene format=3 uid="uid://dqt7kayos5f12"]
 
-[ext_resource type="Texture2D" uid="uid://dbj66g7bn5yxd" path="res://assets/images/characters.png" id="1_fysk3"]
 [ext_resource type="Script" uid="uid://dt5pbf6wusu1b" path="res://entities/entity.gd" id="1_ms1dq"]
+[ext_resource type="Texture2D" uid="uid://2ojmotglts6t" path="res://assets/images/character.png" id="2_ep4xq"]
+[ext_resource type="Texture2D" uid="uid://4ujr4bkm8ps5" path="res://assets/images/simple_frame.png" id="2_w5oec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fysk3"]
 size = Vector2(12, 12)
 
-[node name="Location" type="Node2D" unique_id=2129513313]
+[node name="Entity" type="Node2D" unique_id=2129513313]
 script = ExtResource("1_ms1dq")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1447722621]
-texture = ExtResource("1_fysk3")
-hframes = 2
-vframes = 2
-frame = 1
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=401733291]
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("2_w5oec")
+region_rect = Rect2(0, 0, 18, 18)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
 
-[node name="Area2D" type="Area2D" parent="." unique_id=589141051]
+[node name="MainSprite" type="Sprite2D" parent="." unique_id=1447722621]
+unique_name_in_owner = true
+texture = ExtResource("2_ep4xq")
+hframes = 8
+vframes = 11
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=356991571]
+[node name="MainArea" type="Area2D" parent="." unique_id=589141051]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainArea" unique_id=356991571]
 shape = SubResource("RectangleShape2D_fysk3")
