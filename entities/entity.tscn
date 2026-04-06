@@ -10,6 +10,13 @@ size = Vector2(12, 12)
 [node name="Entity" type="Node2D" unique_id=2129513313]
 script = ExtResource("1_ms1dq")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1120268619]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0.0627451, 0.078431375, 0.12156863, 1)
+
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=401733291]
 offset_left = -8.0
 offset_top = -8.0

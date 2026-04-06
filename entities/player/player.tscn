@@ -6,6 +6,13 @@
 [node name="Player" unique_id=2129513313 instance=ExtResource("1_symyc")]
 script = ExtResource("2_abrql")
 
+[node name="NinePatchRect" parent="." index="1" unique_id=401733291]
+self_modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
+
+[node name="MainSprite" parent="." index="2" unique_id=1447722621]
+self_modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
+frame = 5
+
 [node name="Camera" type="Camera2D" parent="." index="3" unique_id=1976604949]
 unique_name_in_owner = true
 position_smoothing_enabled = true

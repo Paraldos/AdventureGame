@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bftsr6ij3m1k5" path="res://world/world.gd" id="1_h5o24"]
 [ext_resource type="Texture2D" uid="uid://bbctn3mbqlbt" path="res://assets/images/forest.png" id="2_tcf2h"]
 [ext_resource type="PackedScene" uid="uid://dqt7kayos5f12" path="res://entities/entity.tscn" id="4_mmdvd"]
+[ext_resource type="PackedScene" uid="uid://cg0dsmxc0ub4s" path="res://entities/enemies/enemy.tscn" id="5_fn3g3"]
 [ext_resource type="PackedScene" uid="uid://cla7vaco5cybb" path="res://entities/player/player.tscn" id="5_mmdvd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tcf2h"]
@@ -437,5 +438,8 @@ position = Vector2(216, 72)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=399809087]
 
+[node name="Enemy" parent="Enemies" unique_id=1853778659 instance=ExtResource("5_fn3g3")]
+position = Vector2(152, 56)
+
 [node name="Player" parent="." unique_id=836380459 instance=ExtResource("5_mmdvd")]
-position = Vector2(40, 88)
+position = Vector2(152, 88)
