@@ -10,8 +10,8 @@ func _ready() -> void:
 func on_set_camera_rect(rect : Rect2) -> void:
 	camera.limit_left = int(rect.position[0])
 	camera.limit_top = int(rect.position[1])
-	camera.limit_right = int(rect.size[0] * 16)
-	camera.limit_bottom = int(rect.size[1] * 16)
+	camera.limit_right = int(rect.size[0] * cell_size)
+	camera.limit_bottom = int(rect.size[1] * cell_size)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("left"):

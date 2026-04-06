@@ -11,10 +11,10 @@ size = Vector2(12, 12)
 script = ExtResource("1_ms1dq")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=401733291]
-offset_left = -9.0
-offset_top = -9.0
-offset_right = 9.0
-offset_bottom = 9.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 texture = ExtResource("2_w5oec")
 region_rect = Rect2(0, 0, 18, 18)
 patch_margin_left = 1
@@ -24,6 +24,7 @@ patch_margin_bottom = 1
 
 [node name="MainSprite" type="Sprite2D" parent="." unique_id=1447722621]
 unique_name_in_owner = true
+scale = Vector2(0.87, 0.87)
 texture = ExtResource("2_ep4xq")
 hframes = 8
 vframes = 11

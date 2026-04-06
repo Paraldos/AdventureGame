@@ -16,8 +16,8 @@ func _setup_astar():
 	astar_grid.region = used_rect
 	astar_grid.update()
 	for id in tile_map.get_used_cells():
-		var data = tile_map.get_cell_tile_data(id)
-		if data and data.get_custom_data('obstacle'):
+		var source_id = tile_map.get_cell_source_id(id)
+		if source_id != 0:
 			astar_grid.set_point_solid(id)
 
 func _draw():
