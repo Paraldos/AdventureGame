@@ -15,17 +15,15 @@ var id: String
 @export var dmg = 1.0
 @export var heal = 0.0
 
-func target_enemy(target : Enemy):
+func use(user: Entity, target: Entity):
 	if dmg > 0.0:
 		var value = Utils.d6()
-		value += round(Game.attack * dmg)
+		value += round(user.attack * dmg)
 		target.hp_current -= int(value)
 	if heal > 0.0:
 		var value = Utils.d6()
-		value += round(Game.magic * heal)
-		Game.hp_current += int(value)
+		value += round(user.magic * heal)
+		user.hp_current += int(value)
 	target.hp_current = max(0, target.hp_current)
+	user.hp_current = min(user.hp_current, user.hp_max)
 	Signals.update_battle_boxes.emit()
-
-func target_player():
-	pass

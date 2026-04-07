@@ -1,5 +1,7 @@
 extends Node
 
+@export var player: Player
+
 @export var abilities: Array[Ability]
 var ability_map: Dictionary = {}
 

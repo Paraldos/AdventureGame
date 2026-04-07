@@ -2,8 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dp8cgx7s4m4fj" path="res://database/database.gd" id="1_kp86k"]
 [ext_resource type="Script" uid="uid://ddhwh5w81k4qh" path="res://database/ability.gd" id="2_20me0"]
+[ext_resource type="Texture2D" uid="uid://2ojmotglts6t" path="res://assets/images/character.png" id="3_1c18i"]
 [ext_resource type="Texture2D" uid="uid://ca7t570q5hhcf" path="res://assets/images/big_picture.png" id="3_8x7pb"]
 [ext_resource type="Script" uid="uid://ctghjlpudm3pr" path="res://database/enemy.gd" id="4_8x7pb"]
+[ext_resource type="Script" uid="uid://cj7m5ruqskkwp" path="res://database/player.gd" id="4_dg8x0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxc3o"]
+atlas = ExtResource("3_1c18i")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_grjk8"]
+script = ExtResource("4_dg8x0")
+img = SubResource("AtlasTexture_lxc3o")
+abilities = Array[String](["attack", "skip"])
+metadata/_custom_type_script = "uid://cj7m5ruqskkwp"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eg6c8"]
 atlas = ExtResource("3_8x7pb")
@@ -36,10 +48,15 @@ region = Rect2(384, 80, 16, 16)
 script = ExtResource("4_8x7pb")
 titel = "Test"
 img = SubResource("AtlasTexture_1c18i")
-hp_max = 10
+hp_max = 15
+attack = 2
+magic = 3
+armor = 1
+abilities = null
 metadata/_custom_type_script = "uid://ctghjlpudm3pr"
 
 [node name="database" type="Node" unique_id=552757474]
 script = ExtResource("1_kp86k")
+player = SubResource("Resource_grjk8")
 abilities = Array[ExtResource("2_20me0")]([SubResource("Resource_1c18i"), SubResource("Resource_dg8x0")])
 enemies = Array[ExtResource("4_8x7pb")]([SubResource("Resource_lxc3o")])

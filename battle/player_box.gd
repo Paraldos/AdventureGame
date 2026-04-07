@@ -9,6 +9,6 @@ func _ready() -> void:
 	Signals.update_battle_boxes.connect(update)
 
 func update():
-	hp.text = "%s/%s" % [Game.hp_current, Game.hp_max]
-	attack.text = "%s" % Game.attack
-	armor.text = "%s" % Game.armor
+	hp.text = "%s/%s" % [Database.player.hp_current, Database.player.hp_max]
+	attack.text = "%s" % Database.player.attack
+	armor.text = "%s" % Database.player.armor

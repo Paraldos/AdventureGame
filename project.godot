@@ -24,7 +24,6 @@ config/icon="res://icon.svg"
 Enums="*uid://eo4b8sm54o6p"
 Signals="*uid://cq7c742nhpxba"
 Utils="*uid://bfxey44068tg2"
-Game="*uid://ct6n26w6g3bc6"
 Database="*uid://gqfpn57i5q65"
 
 [debug]
