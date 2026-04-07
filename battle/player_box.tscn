@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bk5hakydif5ym"]
+
+[ext_resource type="Texture2D" uid="uid://ca7t570q5hhcf" path="res://assets/images/big_picture.png" id="1_3bcnr"]
+[ext_resource type="Script" uid="uid://cplshrt4q4d4s" path="res://battle/player_box.gd" id="1_vxy0x"]
+[ext_resource type="Texture2D" uid="uid://2ojmotglts6t" path="res://assets/images/character.png" id="2_vxy0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mnim"]
+atlas = ExtResource("1_3bcnr")
+region = Rect2(624, 160, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1kiu"]
+load_path = "res://.godot/imported/big_picture.png-96400a6d43062473f433023e10c35e2a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fucf"]
+atlas = SubResource("CompressedTexture2D_l1kiu")
+region = Rect2(544, 96, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iorop"]
+load_path = "res://.godot/imported/big_picture.png-96400a6d43062473f433023e10c35e2a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxlun"]
+atlas = SubResource("CompressedTexture2D_iorop")
+region = Rect2(640, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qubjc"]
+atlas = ExtResource("2_vxy0x")
+region = Rect2(80, 0, 16, 16)
+
+[node name="PlayerBox" type="HBoxContainer" unique_id=1811061908]
+size_flags_horizontal = 3
+script = ExtResource("1_vxy0x")
+
+[node name="PlayerStats" type="VBoxContainer" parent="." unique_id=722269710]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerStats" unique_id=867343558]
+modulate = Color(0.45882353, 0.654902, 0.2627451, 1)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerStats/HBoxContainer" unique_id=1355773954]
+layout_mode = 2
+texture = SubResource("AtlasTexture_4mnim")
+stretch_mode = 3
+
+[node name="HP" type="Label" parent="PlayerStats/HBoxContainer" unique_id=251178073]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "22/22"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PlayerStats" unique_id=715303936]
+modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerStats/HBoxContainer2" unique_id=398500724]
+layout_mode = 2
+texture = SubResource("AtlasTexture_7fucf")
+stretch_mode = 3
+
+[node name="Attack" type="Label" parent="PlayerStats/HBoxContainer2" unique_id=1332864193]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PlayerStats" unique_id=1173166040]
+modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerStats/HBoxContainer3" unique_id=1357214016]
+layout_mode = 2
+texture = SubResource("AtlasTexture_rxlun")
+stretch_mode = 3
+
+[node name="Armor" type="Label" parent="PlayerStats/HBoxContainer3" unique_id=1031202676]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1824565618]
+modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_qubjc")
+stretch_mode = 3

@@ -1,47 +1,13 @@
 [gd_scene format=3 uid="uid://bbhs7aomfkf4t"]
 
 [ext_resource type="PackedScene" uid="uid://bkdmk56pfpmxi" path="res://modal/modal.tscn" id="1_mqutd"]
-[ext_resource type="Texture2D" uid="uid://ca7t570q5hhcf" path="res://assets/images/big_picture.png" id="2_qubjc"]
-[ext_resource type="Texture2D" uid="uid://2ojmotglts6t" path="res://assets/images/character.png" id="2_tiqy5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4mnim"]
-atlas = ExtResource("2_qubjc")
-region = Rect2(624, 160, 16, 16)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1kiu"]
-load_path = "res://.godot/imported/big_picture.png-96400a6d43062473f433023e10c35e2a.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fucf"]
-atlas = SubResource("CompressedTexture2D_l1kiu")
-region = Rect2(544, 96, 16, 16)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iorop"]
-load_path = "res://.godot/imported/big_picture.png-96400a6d43062473f433023e10c35e2a.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rxlun"]
-atlas = SubResource("CompressedTexture2D_iorop")
-region = Rect2(640, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qubjc"]
-atlas = ExtResource("2_tiqy5")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tiqy5"]
-load_path = "res://.godot/imported/character.png-25a277295dadccd305be2c25adf30062.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6hnvb"]
-atlas = SubResource("CompressedTexture2D_tiqy5")
-region = Rect2(0, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l1kiu"]
-atlas = ExtResource("2_qubjc")
-region = Rect2(560, 112, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iorop"]
-atlas = ExtResource("2_qubjc")
-region = Rect2(640, 208, 16, 16)
+[ext_resource type="Script" uid="uid://qr3kvtqdbsrc" path="res://battle/battle.gd" id="2_4mnim"]
+[ext_resource type="PackedScene" uid="uid://bk5hakydif5ym" path="res://battle/player_box.tscn" id="2_6hnvb"]
+[ext_resource type="PackedScene" uid="uid://viplkh61hcws" path="res://battle/enemy_box.tscn" id="3_6hnvb"]
+[ext_resource type="PackedScene" uid="uid://km6pkar3qw2h" path="res://battle/abilities_box.tscn" id="5_4mnim"]
 
 [node name="Battle" unique_id=2067866441 instance=ExtResource("1_mqutd")]
+script = ExtResource("2_4mnim")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" parent_id_path=PackedInt32Array(786487421) index="0" unique_id=1015400348]
 layout_mode = 1
@@ -68,147 +34,14 @@ layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="PlayerStats" type="VBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1829050702]
-layout_mode = 2
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PlayerStats" index="0" unique_id=963770606]
-modulate = Color(0.45882353, 0.654902, 0.2627451, 1)
+[node name="PlayerBox" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1811061908 instance=ExtResource("2_6hnvb")]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PlayerStats/HBoxContainer" index="0" unique_id=987655286]
+[node name="EnemyBox" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="1" unique_id=187840138 instance=ExtResource("3_6hnvb")]
 layout_mode = 2
-texture = SubResource("AtlasTexture_4mnim")
-
-[node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PlayerStats/HBoxContainer" index="1" unique_id=1558759856]
-layout_mode = 2
-text = "22/22"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PlayerStats" index="1" unique_id=656772754]
-modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PlayerStats/HBoxContainer2" index="0" unique_id=1181014742]
-layout_mode = 2
-texture = SubResource("AtlasTexture_7fucf")
-
-[node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PlayerStats/HBoxContainer2" index="1" unique_id=1389372853]
-layout_mode = 2
-text = "5"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PlayerStats" index="2" unique_id=337418599]
-modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PlayerStats/HBoxContainer3" index="0" unique_id=2118536677]
-layout_mode = 2
-texture = SubResource("AtlasTexture_rxlun")
-
-[node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PlayerStats/HBoxContainer3" index="1" unique_id=135361568]
-layout_mode = 2
-text = "3"
-
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="1" unique_id=2011469666]
-modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = SubResource("AtlasTexture_qubjc")
-stretch_mode = 3
-
-[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="2" unique_id=751150046]
-modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = SubResource("AtlasTexture_6hnvb")
-stretch_mode = 3
-
-[node name="EnemyStats" type="VBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="3" unique_id=359709433]
-layout_mode = 2
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/EnemyStats" index="0" unique_id=746705938]
-modulate = Color(0.45882353, 0.654902, 0.2627451, 1)
-layout_mode = 2
-alignment = 2
-
-[node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/EnemyStats/HBoxContainer" index="0" unique_id=863044720]
-layout_mode = 2
-text = "22/22"
-
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/EnemyStats/HBoxContainer" index="1" unique_id=1774587105]
-layout_mode = 2
-texture = SubResource("AtlasTexture_4mnim")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/EnemyStats" index="1" unique_id=381930863]
-modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
-layout_mode = 2
-alignment = 2
-
-[node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/EnemyStats/HBoxContainer2" index="0" unique_id=1316337191]
-layout_mode = 2
-text = "5"
-
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/EnemyStats/HBoxContainer2" index="1" unique_id=482411215]
-layout_mode = 2
-texture = SubResource("AtlasTexture_7fucf")
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/EnemyStats" index="2" unique_id=474931403]
-modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
-layout_mode = 2
-alignment = 2
-
-[node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/EnemyStats/HBoxContainer3" index="0" unique_id=1421838513]
-layout_mode = 2
-text = "3"
-
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/EnemyStats/HBoxContainer3" index="1" unique_id=1101239348]
-layout_mode = 2
-texture = SubResource("AtlasTexture_rxlun")
 
 [node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/PanelContainer/VBoxContainer" index="1" unique_id=312578354]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer" index="2" unique_id=28492102]
+[node name="AbilitiesBox" parent="Control/MarginContainer/PanelContainer/VBoxContainer" index="2" unique_id=1120152352 instance=ExtResource("5_4mnim")]
 layout_mode = 2
-
-[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" index="0" unique_id=75797063]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-columns = 3
-
-[node name="AtkBtn" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/GridContainer" index="0" unique_id=1590336703]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-icon = SubResource("AtlasTexture_l1kiu")
-
-[node name="RunBtn" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/GridContainer" index="1" unique_id=967894565]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0.64705884, 0.1882353, 0.1882353, 1)
-icon = SubResource("AtlasTexture_iorop")
-
-[node name="Button3" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/GridContainer" index="2" unique_id=2100309913]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-
-[node name="Button5" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/GridContainer" index="3" unique_id=1602967865]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-
-[node name="Button6" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/GridContainer" index="4" unique_id=1430007171]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-
-[node name="Button4" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/GridContainer" index="5" unique_id=713333181]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-
-[node name="VSeparator" type="VSeparator" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" index="1" unique_id=2099436838]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" index="2" unique_id=1652753120]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "Text"

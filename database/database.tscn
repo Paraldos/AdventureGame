@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://gqfpn57i5q65"]
+
+[ext_resource type="Script" uid="uid://dp8cgx7s4m4fj" path="res://database/database.gd" id="1_kp86k"]
+[ext_resource type="Script" uid="uid://ddhwh5w81k4qh" path="res://database/ability.gd" id="2_20me0"]
+[ext_resource type="Texture2D" uid="uid://ca7t570q5hhcf" path="res://assets/images/big_picture.png" id="3_8x7pb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg6c8"]
+atlas = ExtResource("3_8x7pb")
+region = Rect2(544, 96, 16, 16)
+
+[sub_resource type="Resource" id="Resource_1c18i"]
+script = ExtResource("2_20me0")
+titel = "Attack"
+description = "Basic Attack"
+img = SubResource("AtlasTexture_eg6c8")
+metadata/_custom_type_script = "uid://ddhwh5w81k4qh"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20me0"]
+atlas = ExtResource("3_8x7pb")
+region = Rect2(640, 208, 16, 16)
+
+[sub_resource type="Resource" id="Resource_dg8x0"]
+script = ExtResource("2_20me0")
+titel = "Skip"
+description = "Skip your turn"
+img = SubResource("AtlasTexture_20me0")
+metadata/_custom_type_script = "uid://ddhwh5w81k4qh"
+
+[node name="database" type="Node" unique_id=552757474]
+script = ExtResource("1_kp86k")
+abilities = Array[ExtResource("2_20me0")]([SubResource("Resource_1c18i"), SubResource("Resource_dg8x0")])
