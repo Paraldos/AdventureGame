@@ -25,6 +25,7 @@ script = ExtResource("2_20me0")
 titel = "Skip"
 description = "Skip your turn"
 img = SubResource("AtlasTexture_20me0")
+dmg = 0.0
 metadata/_custom_type_script = "uid://ddhwh5w81k4qh"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1c18i"]

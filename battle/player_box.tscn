@@ -31,7 +31,9 @@ size_flags_horizontal = 3
 script = ExtResource("1_vxy0x")
 
 [node name="PlayerStats" type="VBoxContainer" parent="." unique_id=722269710]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PlayerStats" unique_id=867343558]

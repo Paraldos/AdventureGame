@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_puhff"]
 atlas = ExtResource("1_4j8rn")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6tl0"]
 texture = SubResource("AtlasTexture_puhff")
@@ -48,6 +48,17 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6tl0"]
+atlas = ExtResource("1_4j8rn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6180q"]
+texture = SubResource("AtlasTexture_q6tl0")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4j8rn"]
 color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 
@@ -69,11 +80,12 @@ Button/colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 Button/colors/font_focus_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 Button/colors/font_hover_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 Button/colors/font_hover_pressed_color = Color(0.5058824, 0.5921569, 0.5882353, 1)
-Button/colors/font_pressed_color = Color(0.65882355, 0.70980394, 0.69803923, 1)
+Button/colors/font_pressed_color = Color(0.5058824, 0.5921569, 0.5882353, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_q6tl0")
 Button/styles/focus = SubResource("StyleBoxTexture_tii35")
 Button/styles/hover = SubResource("StyleBoxTexture_30kfo")
 Button/styles/normal = SubResource("StyleBoxTexture_8xaf5")
+Button/styles/pressed = SubResource("StyleBoxTexture_6180q")
 HSeparator/styles/separator = SubResource("StyleBoxLine_4j8rn")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_4j8rn")
 VSeparator/styles/separator = SubResource("StyleBoxLine_puhff")

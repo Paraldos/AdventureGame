@@ -6,6 +6,9 @@ extends HBoxContainer
 @onready var armor: Label = %Armor
 var enemy : Enemy
 
+func _ready() -> void:
+	Signals.update_battle_boxes.connect(update)
+
 func update():
 	if texture_rect.texture == null:
 		texture_rect.texture = enemy.img

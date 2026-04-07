@@ -6,6 +6,7 @@ extends HBoxContainer
 
 func _ready() -> void:
 	update()
+	Signals.update_battle_boxes.connect(update)
 
 func update():
 	hp.text = "%s/%s" % [Game.hp_current, Game.hp_max]

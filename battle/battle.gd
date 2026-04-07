@@ -9,3 +9,4 @@ var enemy : Enemy
 func _ready() -> void:
 	enemy_box.enemy = enemy
 	enemy_box.update()
+	abilities_box.enemy = enemy

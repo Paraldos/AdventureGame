@@ -33,7 +33,9 @@ size_flags_horizontal = 3
 stretch_mode = 3
 
 [node name="EnemyStats" type="VBoxContainer" parent="." unique_id=147329878]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="EnemyStats" unique_id=1206245120]
@@ -51,6 +53,7 @@ horizontal_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="EnemyStats/HBoxContainer" unique_id=2077732374]
 layout_mode = 2
 texture = SubResource("AtlasTexture_4mnim")
+stretch_mode = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="EnemyStats" unique_id=298607954]
 modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
@@ -67,6 +70,7 @@ horizontal_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="EnemyStats/HBoxContainer2" unique_id=1823244355]
 layout_mode = 2
 texture = SubResource("AtlasTexture_7fucf")
+stretch_mode = 3
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="EnemyStats" unique_id=495833451]
 modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
@@ -83,3 +87,4 @@ horizontal_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="EnemyStats/HBoxContainer3" unique_id=661949597]
 layout_mode = 2
 texture = SubResource("AtlasTexture_rxlun")
+stretch_mode = 3
