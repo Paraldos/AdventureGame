@@ -1,13 +1,14 @@
 extends HBoxContainer
 
+@onready var texture_rect: TextureRect = %TextureRect
 @onready var hp: Label = %HP
 @onready var attack: Label = %Attack
 @onready var armor: Label = %Armor
-
-func _ready() -> void:
-	update()
+var enemy : Enemy
 
 func update():
-	hp.text = "%s/%s" % [5, 10]
-	attack.text = "%s" % 1
-	armor.text = "%s" % 1
+	if texture_rect.texture == null:
+		texture_rect.texture = enemy.img
+	hp.text = "%s/%s" % [enemy.hp_current, enemy.hp_max]
+	attack.text = "%s" % enemy.attack
+	armor.text = "%s" % enemy.armor

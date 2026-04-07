@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dp8cgx7s4m4fj" path="res://database/database.gd" id="1_kp86k"]
 [ext_resource type="Script" uid="uid://ddhwh5w81k4qh" path="res://database/ability.gd" id="2_20me0"]
 [ext_resource type="Texture2D" uid="uid://ca7t570q5hhcf" path="res://assets/images/big_picture.png" id="3_8x7pb"]
+[ext_resource type="Script" uid="uid://ctghjlpudm3pr" path="res://database/enemy.gd" id="4_8x7pb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eg6c8"]
 atlas = ExtResource("3_8x7pb")
@@ -26,6 +27,18 @@ description = "Skip your turn"
 img = SubResource("AtlasTexture_20me0")
 metadata/_custom_type_script = "uid://ddhwh5w81k4qh"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c18i"]
+atlas = ExtResource("3_8x7pb")
+region = Rect2(384, 80, 16, 16)
+
+[sub_resource type="Resource" id="Resource_lxc3o"]
+script = ExtResource("4_8x7pb")
+titel = "Test"
+img = SubResource("AtlasTexture_1c18i")
+hp_max = 10
+metadata/_custom_type_script = "uid://ctghjlpudm3pr"
+
 [node name="database" type="Node" unique_id=552757474]
 script = ExtResource("1_kp86k")
 abilities = Array[ExtResource("2_20me0")]([SubResource("Resource_1c18i"), SubResource("Resource_dg8x0")])
+enemies = Array[ExtResource("4_8x7pb")]([SubResource("Resource_lxc3o")])

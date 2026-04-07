@@ -64,7 +64,7 @@ vertical = true
 
 [resource]
 default_font = ExtResource("3_puhff")
-default_font_size = 5
+default_font_size = 4
 Button/colors/font_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 Button/colors/font_focus_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 Button/colors/font_hover_color = Color(0.92156863, 0.92941177, 0.9137255, 1)

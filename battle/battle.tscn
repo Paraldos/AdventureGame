@@ -35,13 +35,16 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="PlayerBox" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1811061908 instance=ExtResource("2_6hnvb")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="EnemyBox" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="1" unique_id=187840138 instance=ExtResource("3_6hnvb")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/PanelContainer/VBoxContainer" index="1" unique_id=312578354]
 layout_mode = 2
 
 [node name="AbilitiesBox" parent="Control/MarginContainer/PanelContainer/VBoxContainer" index="2" unique_id=1120152352 instance=ExtResource("5_4mnim")]
+unique_name_in_owner = true
 layout_mode = 2

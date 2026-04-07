@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqt7kayos5f12" path="res://entities/entity.tscn" id="1_symyc"]
 [ext_resource type="Script" uid="uid://bux3vrp7gh0lw" path="res://entities/player/player.gd" id="2_abrql"]
+[ext_resource type="Texture2D" uid="uid://2ojmotglts6t" path="res://assets/images/character.png" id="3_sglur"]
 
 [node name="Player" unique_id=2129513313 instance=ExtResource("1_symyc")]
 script = ExtResource("2_abrql")
@@ -11,6 +12,9 @@ self_modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
 
 [node name="MainSprite" parent="." index="2" unique_id=1447722621]
 self_modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
+texture = ExtResource("3_sglur")
+hframes = 8
+vframes = 11
 frame = 5
 
 [node name="Camera" type="Camera2D" parent="." index="3" unique_id=1976604949]

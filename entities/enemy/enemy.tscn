@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cg0dsmxc0ub4s"]
 
 [ext_resource type="PackedScene" uid="uid://dqt7kayos5f12" path="res://entities/entity.tscn" id="1_owq46"]
-[ext_resource type="Script" uid="uid://d05fp565hnhob" path="res://entities/enemies/enemy.gd" id="2_wqcwe"]
+[ext_resource type="Script" uid="uid://d05fp565hnhob" path="res://entities/enemy/enemy.gd" id="2_wqcwe"]
 
 [node name="Enemy" unique_id=2129513313 instance=ExtResource("1_owq46")]
 script = ExtResource("2_wqcwe")
+enemy_id = "test"
 
 [node name="NinePatchRect" parent="." index="1" unique_id=401733291]
 self_modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
 
 [node name="MainSprite" parent="." index="2" unique_id=1447722621]
 self_modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
-frame = 40
