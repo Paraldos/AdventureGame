@@ -32,6 +32,7 @@ alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer" index="0" unique_id=147121920]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="PlayerBox" parent="Control/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1811061908 instance=ExtResource("2_6hnvb")]

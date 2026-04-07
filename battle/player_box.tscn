@@ -26,8 +26,20 @@ region = Rect2(640, 32, 16, 16)
 atlas = ExtResource("2_vxy0x")
 region = Rect2(80, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxy0x"]
+atlas = ExtResource("1_3bcnr")
+region = Rect2(336, 96, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vxy0x"]
+load_path = "res://.godot/imported/big_picture.png-96400a6d43062473f433023e10c35e2a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rmk7"]
+atlas = SubResource("CompressedTexture2D_vxy0x")
+region = Rect2(352, 96, 16, 16)
+
 [node name="PlayerBox" type="HBoxContainer" unique_id=1811061908]
 size_flags_horizontal = 3
+alignment = 2
 script = ExtResource("1_vxy0x")
 
 [node name="PlayerStats" type="VBoxContainer" parent="." unique_id=722269710]
@@ -84,9 +96,46 @@ size_flags_horizontal = 3
 text = "3"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1824565618]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1981428324]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1824565618]
 modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_qubjc")
 stretch_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1802772821]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=357619882]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_vxy0x")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=396274249]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_7rmk7")
+
+[node name="TextureRect5" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1309132149]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_7rmk7")
+
+[node name="TextureRect6" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=300788939]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_7rmk7")
