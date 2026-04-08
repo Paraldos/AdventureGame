@@ -19,6 +19,9 @@ func update():
 	attack.text = "%s" % character.attack
 	armor.text = "%s" % character.armor
 
+func next_turn(next_character : Entity):
+	active_sprite.visible = next_character == character
+
 func _on_spawn_floating_number(entity: Entity, number: int, color: Color):
 	if entity != character: return
 	var pos = float_marker.global_position

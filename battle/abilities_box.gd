@@ -6,31 +6,35 @@ var enemy : Enemy
 
 func _ready() -> void:
 	_init_btns()
-	_update_btns()
-	Signals.disable_battle_btns.connect(_disable_btns)
-	Signals.enable_battle_btns.connect(_update_btns)
+	Signals.disable_battle_btns.connect(_on_disable_battle_btns)
 
 func _init_btns():
 	for i in btns.get_child_count():
 		if Database.player.abilities.size() <= i: return
 		var btn : Button = btns.get_child(i)
-		var ability_id : String = Database.player.abilities[i]
-		var ability : Ability = Database.ability_map[ability_id]
+		var ability : Ability = _get_index_ability(i)
 		btn.icon = ability.img
 		btn.mouse_entered.connect(_on_mouse_entered.bind(ability.description))
 		btn.pressed.connect(_on_btn_pressed.bind(ability))
 
-func _disable_btns():
+func _on_disable_battle_btns():
 	for btn in btns.get_children():
 		btn.disabled = true
 
-func _update_btns():
+func next_turn(next_character : Entity):
 	for i in btns.get_child_count():
+		var player_turn = next_character == Database.player
+		if not player_turn: return
+		var ability = _get_index_ability(i)
+		if not ability: return
 		var btn : Button = btns.get_child(i)
-		if Database.player.abilities.size() <= i:
-			btn.disabled = true
-		else:
-			btn.disabled = false
+		btn.disabled = false
+
+func _get_index_ability(i : int):
+	if Database.player.abilities.size() <= i: return null
+	var ability_id : String = Database.player.abilities[i]
+	var ability : Ability = Database.ability_map[ability_id]
+	return ability
 
 func _on_mouse_entered(description):
 	label.text = description
@@ -38,3 +42,5 @@ func _on_mouse_entered(description):
 func _on_btn_pressed(ability: Ability):
 	Signals.disable_battle_btns.emit()
 	ability.use(Database.player, enemy)
+	await get_tree().create_timer(1.0).timeout
+	Signals.next_turn.emit()
