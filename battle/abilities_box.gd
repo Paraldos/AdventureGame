@@ -9,6 +9,7 @@ func _ready() -> void:
 	Signals.disable_battle_btns.connect(_on_disable_battle_btns)
 
 func _init_btns():
+	_on_disable_battle_btns()
 	for i in btns.get_child_count():
 		if Database.player.abilities.size() <= i: return
 		var btn : Button = btns.get_child(i)
@@ -42,5 +43,4 @@ func _on_mouse_entered(description):
 func _on_btn_pressed(ability: Ability):
 	Signals.disable_battle_btns.emit()
 	ability.use(Database.player, enemy)
-	await get_tree().create_timer(1.0).timeout
 	Signals.next_turn.emit()

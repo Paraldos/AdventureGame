@@ -52,6 +52,7 @@ hp_max = 15
 attack = 2
 magic = 3
 armor = 1
+abilities = Array[String](["attack"])
 metadata/_custom_type_script = "uid://ctghjlpudm3pr"
 
 [node name="database" type="Node" unique_id=552757474]
