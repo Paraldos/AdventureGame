@@ -12,8 +12,8 @@ var id: String
 @export var description: String
 @export var dmg = 1.0
 @export var heal = 0.0
-@export var user_animation := Enums.battle_animations.ATTACK
-@export var target_animation := Enums.battle_animations.SHAKE
+@export var user_animation := Enums.battle_animations.NONE
+@export var target_animation := Enums.battle_animations.NONE
 
 func use(user: Entity, target: Entity):
 	_dmg(user, target)

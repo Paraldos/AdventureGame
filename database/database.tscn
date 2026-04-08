@@ -26,6 +26,8 @@ script = ExtResource("2_20me0")
 img = SubResource("AtlasTexture_eg6c8")
 titel = "Attack"
 description = "Basic Attack"
+user_animation = 1
+target_animation = 2
 metadata/_custom_type_script = "uid://ddhwh5w81k4qh"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20me0"]

@@ -1,4 +1,4 @@
 extends Node
 
 enum target {ENEMY, PLAYER}
-enum battle_animations {ATTACK, SHAKE}
+enum battle_animations {NONE, ATTACK, SHAKE}
