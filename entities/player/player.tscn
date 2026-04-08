@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dqt7kayos5f12" path="res://entities/entity.tscn" id="1_symyc"]
 [ext_resource type="Script" uid="uid://bux3vrp7gh0lw" path="res://entities/player/player.gd" id="2_abrql"]
 [ext_resource type="Texture2D" uid="uid://2ojmotglts6t" path="res://assets/images/character.png" id="3_sglur"]
+[ext_resource type="AudioStream" uid="uid://dasmentpy6xvv" path="res://assets/sound/PowerUp.wav" id="4_bls4j"]
 
 [node name="Player" unique_id=2129513313 instance=ExtResource("1_symyc")]
 script = ExtResource("2_abrql")
@@ -20,3 +21,9 @@ frame = 5
 [node name="Camera" type="Camera2D" parent="." index="3" unique_id=1976604949]
 unique_name_in_owner = true
 position_smoothing_enabled = true
+
+[node name="StepAudio" type="AudioStreamPlayer2D" parent="." index="5" unique_id=1750591466]
+unique_name_in_owner = true
+stream = ExtResource("4_bls4j")
+pitch_scale = 0.4
+bus = &"SFX"

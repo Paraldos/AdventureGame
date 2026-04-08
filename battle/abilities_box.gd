@@ -2,6 +2,7 @@ extends HBoxContainer
 
 @onready var btns: GridContainer = %Btns
 @onready var label: Label = %Label
+@onready var enter_btn_audio: AudioStreamPlayer2D = %EnterBtnAudio
 var enemy : Enemy
 
 func _ready() -> void:
@@ -15,7 +16,7 @@ func _init_btns():
 		var btn : Button = btns.get_child(i)
 		var ability : Ability = _get_index_ability(i)
 		btn.icon = ability.img
-		btn.mouse_entered.connect(_on_mouse_entered.bind(ability.description))
+		btn.mouse_entered.connect(_on_mouse_entered.bind(ability.description, btn))
 		btn.pressed.connect(_on_btn_pressed.bind(ability))
 
 func _on_disable_battle_btns():
@@ -37,7 +38,9 @@ func _get_index_ability(i : int):
 	var ability : Ability = Database.ability_map[ability_id]
 	return ability
 
-func _on_mouse_entered(description):
+func _on_mouse_entered(description, btn: Button):
+	if btn.disabled: return
+	enter_btn_audio.play()
 	label.text = description
 
 func _on_btn_pressed(ability: Ability):

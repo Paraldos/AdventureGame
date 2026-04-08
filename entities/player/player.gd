@@ -1,6 +1,7 @@
 extends "res://entities/entity.gd"
 
 @onready var camera: Camera2D = %Camera
+@onready var step_audio: AudioStreamPlayer2D = %StepAudio
 var moving = false
 var cell_size = 16
 
@@ -32,6 +33,7 @@ func _prep_move(dir):
 
 func _move(target_pos):
 	moving = true
+	step_audio.play()
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, 'global_position', target_pos, 0.2)
 	await tween.finished
