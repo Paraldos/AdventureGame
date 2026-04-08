@@ -27,14 +27,21 @@ func _on_next_turn():
 	current = Database.player if current == enemy else enemy
 	player_box.next_turn(current)
 	enemy_box.next_turn(current)
-	if current == enemy:
-		_enemy_action()
+	if enemy.hp_current <= 0:
+		print('enemy dead')
+	elif Database.player.hp_current <= 0:
+		print('player dead')
+	elif current == enemy:
+		_enemy_turn()
 	else:
-		abilities_box.next_turn(current)
+		_player_turn()
 
-func _enemy_action():
+func _enemy_turn():
 	await get_tree().create_timer(0.5).timeout
 	var ability_id : String = enemy.abilities.pick_random()
 	var ability : Ability = Database.ability_map[ability_id]
 	ability.use(enemy, Database.player)
 	_on_next_turn()
+
+func _player_turn():
+	abilities_box.next_turn(current)

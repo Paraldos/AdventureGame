@@ -2,6 +2,7 @@
 extends Resource
 class_name Ability
 
+@export var img: Texture
 @export var titel: String:
 	set(value):
 		titel = value
@@ -9,15 +10,16 @@ class_name Ability
 			id = Utils.string_to_id(value)
 var id: String
 @export var description: String
-@export var img: Texture
-@export var rune = true
-
 @export var dmg = 1.0
 @export var heal = 0.0
+@export var user_animation := Enums.battle_animations.ATTACK
+@export var target_animation := Enums.battle_animations.SHAKE
 
 func use(user: Entity, target: Entity):
 	_dmg(user, target)
 	_heal(user)
+	Signals.play_battle_animation.emit(user, user_animation)
+	Signals.play_battle_animation.emit(target, target_animation)
 	Signals.update_battle_boxes.emit()
 
 func _dmg(user: Entity, target: Entity):
