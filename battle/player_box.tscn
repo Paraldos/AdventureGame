@@ -22,6 +22,10 @@ load_path = "res://.godot/imported/big_picture.png-96400a6d43062473f433023e10c35
 atlas = SubResource("CompressedTexture2D_iorop")
 region = Rect2(640, 32, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oncw7"]
+atlas = ExtResource("1_3bcnr")
+region = Rect2(400, 320, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qubjc"]
 atlas = ExtResource("2_vxy0x")
 region = Rect2(80, 0, 16, 16)
@@ -102,7 +106,21 @@ layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1824565618]
+[node name="FloatMarker" type="Control" parent="VBoxContainer" unique_id=1358162491]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ActiveSprite" type="TextureRect" parent="VBoxContainer" unique_id=536129139]
+unique_name_in_owner = true
+layout_mode = 2
+texture = SubResource("AtlasTexture_oncw7")
+stretch_mode = 3
+
+[node name="MainSprite" type="TextureRect" parent="VBoxContainer" unique_id=1824565618]
+unique_name_in_owner = true
 modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
 layout_mode = 2
 size_flags_horizontal = 3

@@ -7,6 +7,12 @@ extends "res://modal/modal.gd"
 var enemy : Enemy
 
 func _ready() -> void:
-	enemy_box.enemy = enemy
+	player_box.character = Database.player
+	player_box.target = enemy
+	player_box.update()
+
+	enemy_box.character = enemy
+	enemy_box.target = Database.player
 	enemy_box.update()
+
 	abilities_box.enemy = enemy

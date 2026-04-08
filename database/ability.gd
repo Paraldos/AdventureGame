@@ -20,10 +20,12 @@ func use(user: Entity, target: Entity):
 		var value = Utils.d6()
 		value += round(user.attack * dmg)
 		target.hp_current -= int(value)
+		Signals.spawn_floating_number.emit(target, value, Color("#a53030"))
 	if heal > 0.0:
 		var value = Utils.d6()
 		value += round(user.magic * heal)
 		user.hp_current += int(value)
+		Signals.spawn_floating_number.emit(user, value, Color("#75a743"))
 	target.hp_current = max(0, target.hp_current)
 	user.hp_current = min(user.hp_current, user.hp_max)
 	Signals.update_battle_boxes.emit()

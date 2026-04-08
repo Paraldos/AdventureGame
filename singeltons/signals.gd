@@ -4,3 +4,4 @@ signal set_camera_rect(rect : Rect2)
 signal update_battle_boxes
 signal disable_battle_btns
 signal enable_battle_btns
+signal spawn_floating_number(target, number, color)
