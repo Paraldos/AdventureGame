@@ -8,7 +8,11 @@
 [node name="Player" unique_id=2129513313 instance=ExtResource("1_symyc")]
 script = ExtResource("2_abrql")
 
+[node name="ColorRect" parent="." index="0" unique_id=1120268619]
+visible = false
+
 [node name="NinePatchRect" parent="." index="1" unique_id=401733291]
+visible = false
 self_modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
 
 [node name="MainSprite" parent="." index="2" unique_id=1447722621]
