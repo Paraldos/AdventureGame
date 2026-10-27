@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dkefptcycjjey"]
+
+[ext_resource type="Script" uid="uid://qmyjxajsd6kh" path="res://singeltons/utils.gd" id="1_gj36m"]
+
+[node name="Utils" type="Node2D" unique_id=1944460502]
+script = ExtResource("1_gj36m")
