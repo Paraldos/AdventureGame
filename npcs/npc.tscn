@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://by0sgjl1bjehb"]
+
+[ext_resource type="Texture2D" uid="uid://bfowbs6yae1nd" path="res://assets/img/npc_test.png" id="1_h83up"]
+[ext_resource type="Script" uid="uid://eqtl2vqnqndj" path="res://custom_classes/bumper.gd" id="2_cqejd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhah7"]
+size = Vector2(16, 16)
+
+[node name="NPC" type="Node2D" unique_id=1510554188]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1729933244]
+position = Vector2(8, 8)
+texture = ExtResource("1_h83up")
+
+[node name="Bumper" type="Area2D" parent="." unique_id=826932093]
+position = Vector2(8, 8)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("2_cqejd")
+metadata/_custom_type_script = "uid://eqtl2vqnqndj"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper" unique_id=728207388]
+shape = SubResource("RectangleShape2D_bhah7")
