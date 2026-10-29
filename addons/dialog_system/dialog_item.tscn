@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://df5lg0cjqql7u"]
+
+[ext_resource type="Script" uid="uid://jqs1skenpwuu" path="res://addons/dialog_system/dialog_item.gd" id="1_rawow"]
+
+[node name="DialogItem" type="HBoxContainer" unique_id=283735833]
+custom_minimum_size = Vector2(0, 15)
+script = ExtResource("1_rawow")
+
+[node name="IDLabel" type="LineEdit" parent="." unique_id=887975486]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+placeholder_text = "ID"
+
+[node name="ContentLabel" type="TextEdit" parent="." unique_id=1816686736]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+placeholder_text = "Content"
+
+[connection signal="text_changed" from="IDLabel" to="." method="_on_id_label_text_changed"]
+[connection signal="lines_edited_from" from="ContentLabel" to="." method="_on_content_label_lines_edited_from"]

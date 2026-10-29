@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Dialogs" format=3 uid="uid://qkmuid4nfhrf"]
+
+[ext_resource type="Script" uid="uid://cvf1a6y8pcud" path="res://addons/dialog_system/dialog_segment.gd" id="1_e6fn0"]
+[ext_resource type="Script" uid="uid://dnufyoa8pwhop" path="res://addons/dialog_system/dialogs.gd" id="2_rr4aw"]
+
+[sub_resource type="Resource" id="Resource_e6fn0"]
+script = ExtResource("1_e6fn0")
+id = "111"
+content = "123123123
+
+- Test 1
+- Test 2
+- Test 3
+- Test 4"
+
+[sub_resource type="Resource" id="Resource_rr4aw"]
+script = ExtResource("1_e6fn0")
+id = "asfdadf"
+content = "123"
+
+[resource]
+script = ExtResource("2_rr4aw")
+dialogs = Dictionary[String, ExtResource("1_e6fn0")]({
+"": SubResource("Resource_e6fn0"),
+"__rawow": SubResource("Resource_rr4aw")
+})
+metadata/_custom_type_script = "uid://dnufyoa8pwhop"
