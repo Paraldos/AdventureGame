@@ -4,7 +4,8 @@ extends Node2D
 @onready var movement_detector: RayCast2D = %MovementDetector
 @onready var bump_detector: RayCast2D = %BumpDetector
 
-const MOVE_TIME := 0.15
+const MOVE_TIME := 0.20
+const WAIT_TIME := 0.1
 const OFFSET := Vector2(8,8)
 var animating : = false
 
@@ -25,10 +26,11 @@ func _process(delta: float) -> void:
 
 var direction_frames := {
 	Vector2.RIGHT: 0,
-	Vector2.LEFT: 1,
-	Vector2.DOWN: 2,
+	Vector2.DOWN: 1,
+	Vector2.LEFT: 2,
 	Vector2.UP: 3
 }
+
 func _try_move(dir: Vector2) -> void:
 	animating = true
 
@@ -45,6 +47,8 @@ func _try_move(dir: Vector2) -> void:
 		_bump()
 	elif not movement_detector.is_colliding():
 		await _move(global_position, dir)
+	
+	await get_tree().create_timer(WAIT_TIME).timeout
 	animating = false
 
 func _bump() -> void:
